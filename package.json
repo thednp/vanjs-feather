@@ -1,0 +1,75 @@
+{
+  "name": "vanjs-feather",
+  "version": "0.0.1",
+  "description": "🫦 Feather icons for VanJS",
+  "files": [
+    "dist/index.js",
+    "dist/index.js.map",
+    "dist/index.d.ts"
+  ],
+  "main": "dist/index.js",
+  "browser": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "keywords": [
+    "vanjs",
+    "vanjs-component",
+    "feather",
+    "feather-icons"
+  ],
+  "type": "module",
+  "license": "MIT",
+  "homepage": "https://thednp.github.io/vanjs-feather",
+  "bugs": {
+    "url": "https://github.com/thednp/vanjs-feather/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thednp/vanjs-feather.git"
+  },
+  "scripts": {
+    "dev": "vite serve demo --config demo/vite.config.ts",
+    "build:docs": "pnpm format && vite build demo --config demo/vite.config.docs.ts",
+    "format": "prettier -w \"src/**/*.{js,ts,json,css,tsx,jsx}\" \"demo/**/*.{js,ts,json,css,tsx,jsx}\"",
+    "build": "tsup",
+    "prepublishOnly": "pnpm up && npm update && pnpm format && pnpm lint && pnpm build",
+    "lint": "pnpm lint:types && pnpm lint:code",
+    "lint:code": "eslint 'src/**/*.{ts,tsx}' --max-warnings 0",
+    "lint:types": "tsc --noEmit",
+    "fix:ts": "eslint --fix",
+    "serve": "vite serve docs"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.3.0",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.13",
+    "@types/node": "^20.12.12",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "postcss-import": "^16.1.0",
+    "postcss-nesting": "^12.1.4",
+    "prettier": "^3.2.5",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.9.0",
+    "vite": "^4.5.3"
+  },
+  "dependencies": {
+    "eslint": "^9.3.0",
+    "tsup": "^8.0.2",
+    "vanjs-converter": "^0.2.0",
+    "vanjs-core": "^1.5.0",
+    "vanjs-ext": "^0.1.3",
+    "vanjs-jsx": "^0.2.1",
+    "vanjs-ui": "^0.10.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

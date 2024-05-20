@@ -27,7 +27,7 @@ export default function Header() {
           {
             class:
               'text-slate-600 hover:text-slate-950 dark:text-slate-400 dark:hover:text-slate-100 font-weight-600 font-stretch-125 flex items-center gap-2',
-            href: 'https://github.com/thednp/vanjs-feather',
+            href: 'https://github.com/thednp/vanjs-feather/archive/refs/heads/main.zip',
           },
           ArrowDown({ class: 'h-6' }),
           'Download',

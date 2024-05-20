@@ -12,6 +12,7 @@ node_modules
 dist
 generate
 experiments
+coverage
 *.local
 
 # Editor directories and files

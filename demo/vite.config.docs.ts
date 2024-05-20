@@ -1,21 +1,21 @@
-import { defineConfig } from 'vite';
-import path from 'path';
+import { defineConfig } from "vite";
+import path from "path";
 
 export default defineConfig({
-  base: './',
+  base: "./",
   plugins: [],
   server: {
     port: 3000,
   },
   build: {
-    target: 'esnext',
-    outDir: '../docs',
+    target: "esnext",
+    outDir: "../docs",
     emptyOutDir: true,
   },
   resolve: {
     alias: {
-      '~': path.resolve(__dirname, '..', 'src'),
-      '@': path.resolve(__dirname, 'assets'),
+      "~": path.resolve(__dirname, "..", "src"),
+      "@": path.resolve(__dirname, "assets"),
     },
   },
 });

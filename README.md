@@ -1,5 +1,14 @@
 # vanjs-feather
 
+[![Coverage Status](https://coveralls.io/repos/github/thednp/vanjs-feather/badge.svg)](https://coveralls.io/github/thednp/vanjs-feather)
+[![ci](https://github.com/thednp/vanjs-feather/actions/workflows/ci.yml/badge.svg)](https://github.com/thednp/vanjs-feather/actions/workflows/ci.yml)
+[![NPM Version](https://img.shields.io/npm/v/vanjs-feather.svg)](https://www.npmjs.com/package/vanjs-feather)
+[![typescript version](https://img.shields.io/badge/typescript-5.4.5-brightgreen)](https://www.typescriptlang.org/)
+[![eslint version](https://img.shields.io/badge/eslint-8.57.0-brightgreen)](https://github.com/eslint)
+[![vitest version](https://img.shields.io/badge/vitest-1.6.0-brightgreen)](https://www.vitest.dev/)
+[![vite version](https://img.shields.io/badge/vite-4.5.3-brightgreen)](https://vitejs.dev/)
+[![prettier version](https://img.shields.io/badge/prettier-3.2.5-brightgreen)](https://prettier.io/)
+
 [<img width="100%" src="vanjs-feather.png" alt="vanjs-feather">](https://thednp.github.io/vanjs-feather)
 
 
@@ -8,8 +17,9 @@ Feather icons for [VanJS](https://vanjs.org).
 Powered by:
 
 - [Vite](https://vitejs.dev) and [tsup](https://tsup.egoist.dev/) for tooling
+- [Vitest](https://vitest.dev) for unit tests
 - [TailwindCSS](https://tailwindcss.com) for demo styling
-- [VanJSConverter](https://github.com/vanjs-org/converter)
+- [VanJSConverter](https://github.com/vanjs-org/converter) for generating the source code
 
 ## Installation
 

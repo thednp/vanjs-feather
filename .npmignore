@@ -13,6 +13,7 @@ demo
 docs
 generate
 experiments
+coverage
 *.local
 
 # Editor directories and files

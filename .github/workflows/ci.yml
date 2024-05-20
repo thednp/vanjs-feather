@@ -28,6 +28,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
+      - name: Make sure to format
+        run: pnpm format
+
       - name: Typecheck & ESLint
         run: pnpm lint
 
@@ -37,9 +40,17 @@ jobs:
       - name: Build Docs
         run: pnpm build:docs
 
+      - name: Run Unit Tests
+        run: pnpm test
+
       - name: Deploy pages
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
           branch: gh-pages
           node-version: 18.x
           folder: docs
+
+      - name: Upload coverage report to coveralls.io...
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}          

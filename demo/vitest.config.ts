@@ -4,7 +4,7 @@ export default defineConfig({
   test: {
     coverage: {
       provider: "istanbul",
-      reporter: ["html", "text", "json", "json-summary"],
+      reporter: ["html", "text", "lcov"],
       enabled: true,
       include: ["src/**/*"],
     },

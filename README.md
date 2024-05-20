@@ -57,6 +57,7 @@ Powered by:
    ```
 
    **Properties**
+   * `id`: *string | undefined* - sets an id **non-state** attribute for your icon, *default: ""*
    * `class`: *string | undefined* - sets a className **state** for your icon, *default: ""*
    * `style`: *string | undefined* - sets a style **state** for your icon, *default: ""*
    * `stroke`: *string | undefined* - sets a stroke **state** for your icon, *default: currentColor*

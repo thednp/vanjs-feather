@@ -8,5 +8,4 @@ const App = () => {
   return [Header(), Main(), Footer()];
 };
 
-const app = document.querySelector<HTMLDivElement>("#app")!;
-van.add(app, App());
+van.add(document.body, App());

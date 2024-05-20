@@ -1,7 +1,6 @@
 import van from "vanjs-core";
-import VanJSLogo from "./vanjs.svg";
 import { ArrowDown } from "../src";
-const { header, div, ul, li, a, img, h1 } = van.tags;
+const { header, div, ul, li, a, h1 } = van.tags;
 
 export default function Header() {
   return header(
@@ -13,12 +12,11 @@ export default function Header() {
       { class: "relative container px-5 mx-auto flex flex-row gap-3 text-xl" },
       li(
         { class: "p-3 flex flex-row items-center gap-3 " },
-        img({ src: VanJSLogo, class: "w-10 h-10", alt: "VanJS logo" }),
         h1(
           {
             class: "font-weight-700 font-stretch-125 text-black dark:text-white",
           },
-          "Feather",
+          "VanJS Feather",
         ),
       ),
       li(

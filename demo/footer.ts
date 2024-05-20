@@ -14,7 +14,7 @@ export default function Footer() {
         href: "https://vitejs.dev",
         target: "_blank",
       },
-      img({ src: viteLogo, class: "logo w-4 h-auto", alt: "Vite logo" }),
+      img({ src: viteLogo, class: "logo w-6 h-auto", alt: "Vite logo" }),
     ),
     a(
       {
@@ -24,7 +24,7 @@ export default function Footer() {
       },
       img({
         src: vanjsLogo,
-        class: "logo vanilla w-4 h-auto",
+        class: "logo vanilla w-6 h-auto",
         alt: "VanJS logo",
       }),
     ),
@@ -34,7 +34,7 @@ export default function Footer() {
         href: "https://github.com/thednp/vanjs-feather",
         target: "_blank",
       },
-      Github({ class: "w-4 h-auto" }),
+      Github({ class: "w-6 h-auto" }),
     ),
     span(
       { class: "py-3 ml-auto text-sm" },

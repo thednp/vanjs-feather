@@ -48,23 +48,25 @@ Powered by:
 
    const App = () => {
       return main({},
-         Activity({ class="icon", style="color: turquoise" })
+         Activity({ class="icon", style="color: turquoise" });
       );
    };
 
-   const app = document.querySelector<HTMLDivElement>("#app")!;
-   van.add(app, App());
+   van.add(document.body, App());
    ```
 
    **Properties**
-   * `id`: *string | undefined* - sets an id **non-state** attribute for your icon, *default: ""*
-   * `class`: *string | undefined* - sets a className **state** for your icon, *default: ""*
-   * `style`: *string | undefined* - sets a style **state** for your icon, *default: ""*
-   * `stroke`: *string | undefined* - sets a stroke **state** for your icon, *default: currentColor*
-   * `width`: *number | undefined* - sets a width **state** for your icon, *default: 24*
-   * `height`: *number | undefined* - sets a height **state** for your icon, *default: 24*
+   * `id`: *string | undefined* - sets an *id* **non-state** attribute for your icon, *default: ""*
+   * `class`: *string | undefined* - sets a *class* **state** for your icon, *default: ""*
+   * `style`: *string | undefined* - sets a *style* **state** for your icon, *default: ""*
+   * `stroke`: *string | undefined* - sets a *stroke* **state** for your icon, *default: currentColor*
+   * `strokeWidth`: *number | undefined* - sets a *stroke-width* **state** for your icon, *default: 24*
+   * `width`: *number | undefined* - sets a *width* **state** for your icon, *default: 24*
+   * `height`: *number | undefined* - sets a *height* **state** for your icon, *default: 24*
 
-Since the feather library adds color to icons via the `stroke` property, any `color` value from parent elements would apply to your icons.
+Since the feather library adds color to icons via the `stroke` property, any text `color` value inherited from parent elements would apply to your icons.
+
+The `width` and `height` properties can change the scale of the icons, something you may not want when using custom `style` and / or `class`.
 
 ## License
 

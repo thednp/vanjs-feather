@@ -9,9 +9,9 @@ export default function Header() {
       class: "absolute inset-0 bg-slate-500/25 backdrop-blur-sm",
     }),
     ul(
-      { class: "relative container px-5 mx-auto flex flex-row gap-3 text-xl" },
+      { class: "relative container px-5 mx-auto flex flex-row gap-3" },
       li(
-        { class: "p-3 flex flex-row items-center gap-3 " },
+        { class: "p-3 flex flex-row items-center gap-3 text-xl" },
         h1(
           {
             class: "font-weight-700 font-stretch-125 text-black dark:text-white",
@@ -20,7 +20,7 @@ export default function Header() {
         ),
       ),
       li(
-        { class: "p-3 flex flex-row items-center gap-3 ml-auto" },
+        { class: "p-3 flex flex-row items-center gap-3 ml-auto text-md" },
         a(
           {
             class:

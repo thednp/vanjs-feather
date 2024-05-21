@@ -1,5 +1,6 @@
 @import "tailwindcss/base";
 @import "@/css/mona-sans.css";
 @import "@/css/scalfolding.css";
+@import "@/css/scrollbar.css";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";

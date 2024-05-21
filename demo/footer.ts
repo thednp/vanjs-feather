@@ -1,6 +1,7 @@
 import van from "vanjs-core";
 import vanjsLogo from "./vanjs.svg";
 import viteLogo from "./vite.svg";
+import vitestLogo from "./vitest.svg";
 import { Github } from "../src";
 
 const { footer, a, img, span } = van.tags;
@@ -14,7 +15,15 @@ export default function Footer() {
         href: "https://vitejs.dev",
         target: "_blank",
       },
-      img({ src: viteLogo, class: "logo w-6 h-auto", alt: "Vite logo" }),
+      img({ src: viteLogo, class: "logo w-6 h-auto", width: "24", height: "24", alt: "Vite logo" }),
+    ),
+    a(
+      {
+        class: "py-3 flex items-center",
+        href: "https://vitest.dev",
+        target: "_blank",
+      },
+      img({ src: vitestLogo, class: "logo w-6 h-auto", width: "24", height: "24", alt: "Vitest logo" }),
     ),
     a(
       {
@@ -25,6 +34,8 @@ export default function Footer() {
       img({
         src: vanjsLogo,
         class: "logo vanilla w-6 h-auto",
+        width: "24",
+        height: "24",
         alt: "VanJS logo",
       }),
     ),
@@ -34,6 +45,7 @@ export default function Footer() {
         href: "https://github.com/thednp/vanjs-feather",
         target: "_blank",
       },
+      span({ class: "sr-only" }, "VanJS Feather on Github"),
       Github({ class: "w-6 h-auto" }),
     ),
     span(

@@ -60,7 +60,7 @@ Powered by:
    * `class`: *string | undefined* - sets a *class* **state** for your icon, *default: ""*
    * `style`: *string | undefined* - sets a *style* **state** for your icon, *default: ""*
    * `stroke`: *string | undefined* - sets a *stroke* **state** for your icon, *default: currentColor*
-   * `strokeWidth`: *number | undefined* - sets a *stroke-width* **state** for your icon, *default: 24*
+   * `strokeWidth`: *number | undefined* - sets a *stroke-width* **state** for your icon, *default: 2*
    * `width`: *number | undefined* - sets a *width* **state** for your icon, *default: 24*
    * `height`: *number | undefined* - sets a *height* **state** for your icon, *default: 24*
 

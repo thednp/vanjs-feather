@@ -1,0 +1,70 @@
+.tooltip {
+  --arrow-width: 0.8rem;
+  --arrow-height: 0.4rem;
+  --tooltip-bg: rgba(0, 0, 0, 0.8);
+  z-index: 1080;
+  position: fixed;
+  display: block;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-break: normal;
+  white-space: normal;
+  word-spacing: normal;
+  line-break: auto;
+  font-size: 0.75rem;
+  word-wrap: break-word;
+  opacity: 0;
+
+  & > .tooltip-arrow {
+    position: absolute;
+    display: block;
+    width: var(--arrow-width);
+    height: var(--arrow-height);
+  }
+  & > .tooltip-inner {
+    max-width: 200px;
+    padding: 0.25rem 0.5rem;
+    color: white;
+    text-align: center;
+    background-color: var(--tooltip-bg);
+    border-radius: 0.5rem;
+  }
+  &.show {
+    opacity: 0.9;
+  }
+}
+.fade {
+  transition: opacity 0.15s linear;
+}
+
+.bs-tooltip-top .tooltip-arrow {
+  bottom: calc(-1 * var(--arrow-height));
+}
+.bs-tooltip-bottom .tooltip-arrow {
+  top: calc(-1 * (var(--arrow-height)));
+}
+
+.tooltip .tooltip-arrow::before {
+  position: absolute;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+}
+
+.bs-tooltip-bottom .tooltip-arrow::before {
+  bottom: -1px;
+  border-width: 0 calc(var(--arrow-width) * 0.5) var(--arrow-height);
+  border-bottom-color: var(--tooltip-bg);
+}
+.bs-tooltip-top .tooltip-arrow::before {
+  top: -1px;
+  border-width: var(--arrow-height) calc(var(--arrow-width) * 0.5) 0;
+  border-top-color: var(--tooltip-bg);
+}

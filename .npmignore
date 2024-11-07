@@ -5,6 +5,7 @@
 node_modules
 experiments
 docs
+demo
 coverage
 postcss.config.cjs
 tailwind.config.js

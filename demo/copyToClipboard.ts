@@ -1,4 +1,6 @@
-const copyToClipboard = (e: MouseEvent & { currentTarget: HTMLButtonElement; target: Element }) => {
+const copyToClipboard = (
+  e: MouseEvent & { currentTarget: HTMLButtonElement; target: Element },
+) => {
   const btn = e.target.closest("button") as HTMLButtonElement;
   const pre = document.getElementById(btn.dataset.target as string);
   if (pre) {

@@ -1,23 +1,15 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-pnpm-lock.yaml
+.nyc_output
+.vscode
+.github
+.gitignore
 node_modules
-demo
-docs
-generate
 experiments
+docs
 coverage
-*.local
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
+postcss.config.cjs
+tailwind.config.js
+tsconfig.json
+tsup.config.ts
+vite.env.dts
+test
+src

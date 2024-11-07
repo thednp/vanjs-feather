@@ -15,7 +15,13 @@ export default function Footer() {
         href: "https://vitejs.dev",
         target: "_blank",
       },
-      img({ src: viteLogo, class: "logo w-6 h-auto", width: "24", height: "24", alt: "Vite logo" }),
+      img({
+        src: viteLogo,
+        class: "logo w-6 h-auto",
+        width: "24",
+        height: "24",
+        alt: "Vite logo",
+      }),
     ),
     a(
       {
@@ -23,7 +29,13 @@ export default function Footer() {
         href: "https://vitest.dev",
         target: "_blank",
       },
-      img({ src: vitestLogo, class: "logo w-6 h-auto", width: "24", height: "24", alt: "Vitest logo" }),
+      img({
+        src: vitestLogo,
+        class: "logo w-6 h-auto",
+        width: "24",
+        height: "24",
+        alt: "Vitest logo",
+      }),
     ),
     a(
       {

@@ -48,7 +48,7 @@
   bottom: calc(-1 * var(--arrow-height));
 }
 .bs-tooltip-bottom .tooltip-arrow {
-  top: calc(-1 * (var(--arrow-height)));
+  top: calc(-1 * var(--arrow-height));
 }
 
 .tooltip .tooltip-arrow::before {

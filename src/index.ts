@@ -1,6 +1,8 @@
 // VanJS Feather
 import van from "vanjs-core";
-const { polyline, svg, path, polygon, circle, line, rect, ellipse } = van.tags("http://www.w3.org/2000/svg");
+const { polyline, svg, path, polygon, circle, line, rect, ellipse } = van.tags(
+  "http://www.w3.org/2000/svg",
+);
 
 type IconProps = {
   id?: string;
@@ -42,14 +44,19 @@ const FeatherIcon = (props: IconProps = {}, ...children: Element[]) => {
 
 // VanJS Feather - Activity
 export const Activity = (props?: IconProps) => {
-  return FeatherIcon(props, polyline({ points: "22 12 18 12 15 21 9 3 6 12 2 12" }));
+  return FeatherIcon(
+    props,
+    polyline({ points: "22 12 18 12 15 21 9 3 6 12 2 12" }),
+  );
 };
 
 // VanJS Feather - Airplay
 export const Airplay = (props?: IconProps) => {
   return FeatherIcon(
     props,
-    path({ d: "M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1" }),
+    path({
+      d: "M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1",
+    }),
     polygon({ points: "12 15 17 21 7 21 12 15" }),
   );
 };
@@ -68,7 +75,10 @@ export const AlertCircle = (props?: IconProps) => {
 export const AlertOctagon = (props?: IconProps) => {
   return FeatherIcon(
     props,
-    polygon({ points: "7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2" }),
+    polygon({
+      points:
+        "7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2",
+    }),
     line({ x1: "12", y1: "8", x2: "12", y2: "12" }),
     line({ x1: "12", y1: "16", x2: "12.01", y2: "16" }),
   );
@@ -78,7 +88,9 @@ export const AlertOctagon = (props?: IconProps) => {
 export const AlertTriangle = (props?: IconProps) => {
   return FeatherIcon(
     props,
-    path({ d: "M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" }),
+    path({
+      d: "M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z",
+    }),
     line({ x1: "12", y1: "9", x2: "12", y2: "13" }),
     line({ x1: "12", y1: "17", x2: "12.01", y2: "17" }),
   );
@@ -174,17 +186,29 @@ export const ArrowDownCircle = (props?: IconProps) => {
 
 // VanJS Feather - ArrowDownLeft
 export const ArrowDownLeft = (props?: IconProps) => {
-  return FeatherIcon(props, line({ x1: "17", y1: "7", x2: "7", y2: "17" }), polyline({ points: "17 17 7 17 7 7" }));
+  return FeatherIcon(
+    props,
+    line({ x1: "17", y1: "7", x2: "7", y2: "17" }),
+    polyline({ points: "17 17 7 17 7 7" }),
+  );
 };
 
 // VanJS Feather - ArrowDownRight
 export const ArrowDownRight = (props?: IconProps) => {
-  return FeatherIcon(props, line({ x1: "7", y1: "7", x2: "17", y2: "17" }), polyline({ points: "17 7 17 17 7 17" }));
+  return FeatherIcon(
+    props,
+    line({ x1: "7", y1: "7", x2: "17", y2: "17" }),
+    polyline({ points: "17 7 17 17 7 17" }),
+  );
 };
 
 // VanJS Feather - ArrowDown
 export const ArrowDown = (props?: IconProps) => {
-  return FeatherIcon(props, line({ x1: "12", y1: "5", x2: "12", y2: "19" }), polyline({ points: "19 12 12 19 5 12" }));
+  return FeatherIcon(
+    props,
+    line({ x1: "12", y1: "5", x2: "12", y2: "19" }),
+    polyline({ points: "19 12 12 19 5 12" }),
+  );
 };
 
 // VanJS Feather - ArrowLeftCircle
@@ -199,7 +223,11 @@ export const ArrowLeftCircle = (props?: IconProps) => {
 
 // VanJS Feather - ArrowLeft
 export const ArrowLeft = (props?: IconProps) => {
-  return FeatherIcon(props, line({ x1: "19", y1: "12", x2: "5", y2: "12" }), polyline({ points: "12 19 5 12 12 5" }));
+  return FeatherIcon(
+    props,
+    line({ x1: "19", y1: "12", x2: "5", y2: "12" }),
+    polyline({ points: "12 19 5 12 12 5" }),
+  );
 };
 
 // VanJS Feather - ArrowRightCircle
@@ -214,7 +242,11 @@ export const ArrowRightCircle = (props?: IconProps) => {
 
 // VanJS Feather - ArrowRight
 export const ArrowRight = (props?: IconProps) => {
-  return FeatherIcon(props, line({ x1: "5", y1: "12", x2: "19", y2: "12" }), polyline({ points: "12 5 19 12 12 19" }));
+  return FeatherIcon(
+    props,
+    line({ x1: "5", y1: "12", x2: "19", y2: "12" }),
+    polyline({ points: "12 5 19 12 12 19" }),
+  );
 };
 
 // VanJS Feather - ArrowUpCircle
@@ -229,17 +261,29 @@ export const ArrowUpCircle = (props?: IconProps) => {
 
 // VanJS Feather - ArrowUpLeft
 export const ArrowUpLeft = (props?: IconProps) => {
-  return FeatherIcon(props, line({ x1: "17", y1: "17", x2: "7", y2: "7" }), polyline({ points: "7 17 7 7 17 7" }));
+  return FeatherIcon(
+    props,
+    line({ x1: "17", y1: "17", x2: "7", y2: "7" }),
+    polyline({ points: "7 17 7 7 17 7" }),
+  );
 };
 
 // VanJS Feather - ArrowUpRight
 export const ArrowUpRight = (props?: IconProps) => {
-  return FeatherIcon(props, line({ x1: "7", y1: "17", x2: "17", y2: "7" }), polyline({ points: "7 7 17 7 17 17" }));
+  return FeatherIcon(
+    props,
+    line({ x1: "7", y1: "17", x2: "17", y2: "7" }),
+    polyline({ points: "7 7 17 7 17 17" }),
+  );
 };
 
 // VanJS Feather - ArrowUp
 export const ArrowUp = (props?: IconProps) => {
-  return FeatherIcon(props, line({ x1: "12", y1: "19", x2: "12", y2: "5" }), polyline({ points: "5 12 12 5 19 12" }));
+  return FeatherIcon(
+    props,
+    line({ x1: "12", y1: "19", x2: "12", y2: "5" }),
+    polyline({ points: "5 12 12 5 19 12" }),
+  );
 };
 
 // VanJS Feather - AtSign
@@ -284,7 +328,9 @@ export const BarChart = (props?: IconProps) => {
 export const BatteryCharging = (props?: IconProps) => {
   return FeatherIcon(
     props,
-    path({ d: "M5 18H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3.19M15 6h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3.19" }),
+    path({
+      d: "M5 18H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3.19M15 6h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3.19",
+    }),
     line({ x1: "23", y1: "13", x2: "23", y2: "11" }),
     polyline({ points: "11 6 7 12 13 12 9 18" }),
   );
@@ -322,7 +368,10 @@ export const Bell = (props?: IconProps) => {
 
 // VanJS Feather - Bluetooth
 export const Bluetooth = (props?: IconProps) => {
-  return FeatherIcon(props, polyline({ points: "6.5 6.5 17.5 17.5 12 23 12 1 17.5 6.5 6.5 17.5" }));
+  return FeatherIcon(
+    props,
+    polyline({ points: "6.5 6.5 17.5 17.5 12 23 12 1 17.5 6.5 6.5 17.5" }),
+  );
 };
 
 // VanJS Feather - Bold
@@ -348,13 +397,18 @@ export const Book = (props?: IconProps) => {
   return FeatherIcon(
     props,
     path({ d: "M4 19.5A2.5 2.5 0 0 1 6.5 17H20" }),
-    path({ d: "M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" }),
+    path({
+      d: "M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z",
+    }),
   );
 };
 
 // VanJS Feather - Bookmark
 export const Bookmark = (props?: IconProps) => {
-  return FeatherIcon(props, path({ d: "M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" }));
+  return FeatherIcon(
+    props,
+    path({ d: "M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" }),
+  );
 };
 
 // VanJS Feather - Box
@@ -404,7 +458,9 @@ export const CameraOff = (props?: IconProps) => {
 export const Camera = (props?: IconProps) => {
   return FeatherIcon(
     props,
-    path({ d: "M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" }),
+    path({
+      d: "M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z",
+    }),
     circle({ cx: "12", cy: "13", r: "4" }),
   );
 };
@@ -465,22 +521,38 @@ export const ChevronUp = (props?: IconProps) => {
 
 // VanJS Feather - ChevronsDown
 export const ChevronsDown = (props?: IconProps) => {
-  return FeatherIcon(props, polyline({ points: "7 13 12 18 17 13" }), polyline({ points: "7 6 12 11 17 6" }));
+  return FeatherIcon(
+    props,
+    polyline({ points: "7 13 12 18 17 13" }),
+    polyline({ points: "7 6 12 11 17 6" }),
+  );
 };
 
 // VanJS Feather - ChevronsLeft
 export const ChevronsLeft = (props?: IconProps) => {
-  return FeatherIcon(props, polyline({ points: "11 17 6 12 11 7" }), polyline({ points: "18 17 13 12 18 7" }));
+  return FeatherIcon(
+    props,
+    polyline({ points: "11 17 6 12 11 7" }),
+    polyline({ points: "18 17 13 12 18 7" }),
+  );
 };
 
 // VanJS Feather - ChevronsRight
 export const ChevronsRight = (props?: IconProps) => {
-  return FeatherIcon(props, polyline({ points: "13 17 18 12 13 7" }), polyline({ points: "6 17 11 12 6 7" }));
+  return FeatherIcon(
+    props,
+    polyline({ points: "13 17 18 12 13 7" }),
+    polyline({ points: "6 17 11 12 6 7" }),
+  );
 };
 
 // VanJS Feather - ChevronsUp
 export const ChevronsUp = (props?: IconProps) => {
-  return FeatherIcon(props, polyline({ points: "17 11 12 6 7 11" }), polyline({ points: "17 18 12 13 7 18" }));
+  return FeatherIcon(
+    props,
+    polyline({ points: "17 11 12 6 7 11" }),
+    polyline({ points: "17 18 12 13 7 18" }),
+  );
 };
 
 // VanJS Feather - Chrome
@@ -504,14 +576,20 @@ export const Circle = (props?: IconProps) => {
 export const Clipboard = (props?: IconProps) => {
   return FeatherIcon(
     props,
-    path({ d: "M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" }),
+    path({
+      d: "M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2",
+    }),
     rect({ x: "8", y: "2", width: "8", height: "4", rx: "1", ry: "1" }),
   );
 };
 
 // VanJS Feather - Clock
 export const Clock = (props?: IconProps) => {
-  return FeatherIcon(props, circle({ cx: "12", cy: "12", r: "10" }), polyline({ points: "12 6 12 12 16 14" }));
+  return FeatherIcon(
+    props,
+    circle({ cx: "12", cy: "12", r: "10" }),
+    polyline({ points: "12 6 12 12 16 14" }),
+  );
 };
 
 // VanJS Feather - CloudDrizzle
@@ -541,7 +619,9 @@ export const CloudLightning = (props?: IconProps) => {
 export const CloudOff = (props?: IconProps) => {
   return FeatherIcon(
     props,
-    path({ d: "M22.61 16.95A5 5 0 0 0 18 10h-1.26a8 8 0 0 0-7.05-6M5 5a8 8 0 0 0 4 15h9a5 5 0 0 0 1.7-.3" }),
+    path({
+      d: "M22.61 16.95A5 5 0 0 0 18 10h-1.26a8 8 0 0 0-7.05-6M5 5a8 8 0 0 0 4 15h9a5 5 0 0 0 1.7-.3",
+    }),
     line({ x1: "1", y1: "1", x2: "23", y2: "23" }),
   );
 };
@@ -573,12 +653,19 @@ export const CloudSnow = (props?: IconProps) => {
 
 // VanJS Feather - Cloud
 export const Cloud = (props?: IconProps) => {
-  return FeatherIcon(props, path({ d: "M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" }));
+  return FeatherIcon(
+    props,
+    path({ d: "M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" }),
+  );
 };
 
 // VanJS Feather - Code
 export const Code = (props?: IconProps) => {
-  return FeatherIcon(props, polyline({ points: "16 18 22 12 16 6" }), polyline({ points: "8 6 2 12 8 18" }));
+  return FeatherIcon(
+    props,
+    polyline({ points: "16 18 22 12 16 6" }),
+    polyline({ points: "8 6 2 12 8 18" }),
+  );
 };
 
 // VanJS Feather - Codepen
@@ -624,7 +711,9 @@ export const Coffee = (props?: IconProps) => {
 export const Columns = (props?: IconProps) => {
   return FeatherIcon(
     props,
-    path({ d: "M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7m0-18H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7m0-18v18" }),
+    path({
+      d: "M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7m0-18H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7m0-18v18",
+    }),
   );
 };
 
@@ -643,7 +732,9 @@ export const Compass = (props?: IconProps) => {
   return FeatherIcon(
     props,
     circle({ cx: "12", cy: "12", r: "10" }),
-    polygon({ points: "16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" }),
+    polygon({
+      points: "16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76",
+    }),
   );
 };
 
@@ -658,42 +749,74 @@ export const Copy = (props?: IconProps) => {
 
 // VanJS Feather - CornerDownLeft
 export const CornerDownLeft = (props?: IconProps) => {
-  return FeatherIcon(props, polyline({ points: "9 10 4 15 9 20" }), path({ d: "M20 4v7a4 4 0 0 1-4 4H4" }));
+  return FeatherIcon(
+    props,
+    polyline({ points: "9 10 4 15 9 20" }),
+    path({ d: "M20 4v7a4 4 0 0 1-4 4H4" }),
+  );
 };
 
 // VanJS Feather - CornerDownRight
 export const CornerDownRight = (props?: IconProps) => {
-  return FeatherIcon(props, polyline({ points: "15 10 20 15 15 20" }), path({ d: "M4 4v7a4 4 0 0 0 4 4h12" }));
+  return FeatherIcon(
+    props,
+    polyline({ points: "15 10 20 15 15 20" }),
+    path({ d: "M4 4v7a4 4 0 0 0 4 4h12" }),
+  );
 };
 
 // VanJS Feather - CornerLeftDown
 export const CornerLeftDown = (props?: IconProps) => {
-  return FeatherIcon(props, polyline({ points: "14 15 9 20 4 15" }), path({ d: "M20 4h-7a4 4 0 0 0-4 4v12" }));
+  return FeatherIcon(
+    props,
+    polyline({ points: "14 15 9 20 4 15" }),
+    path({ d: "M20 4h-7a4 4 0 0 0-4 4v12" }),
+  );
 };
 
 // VanJS Feather - CornerLeftUp
 export const CornerLeftUp = (props?: IconProps) => {
-  return FeatherIcon(props, polyline({ points: "14 9 9 4 4 9" }), path({ d: "M20 20h-7a4 4 0 0 1-4-4V4" }));
+  return FeatherIcon(
+    props,
+    polyline({ points: "14 9 9 4 4 9" }),
+    path({ d: "M20 20h-7a4 4 0 0 1-4-4V4" }),
+  );
 };
 
 // VanJS Feather - CornerRightDown
 export const CornerRightDown = (props?: IconProps) => {
-  return FeatherIcon(props, polyline({ points: "10 15 15 20 20 15" }), path({ d: "M4 4h7a4 4 0 0 1 4 4v12" }));
+  return FeatherIcon(
+    props,
+    polyline({ points: "10 15 15 20 20 15" }),
+    path({ d: "M4 4h7a4 4 0 0 1 4 4v12" }),
+  );
 };
 
 // VanJS Feather - CornerRightUp
 export const CornerRightUp = (props?: IconProps) => {
-  return FeatherIcon(props, polyline({ points: "10 9 15 4 20 9" }), path({ d: "M4 20h7a4 4 0 0 0 4-4V4" }));
+  return FeatherIcon(
+    props,
+    polyline({ points: "10 9 15 4 20 9" }),
+    path({ d: "M4 20h7a4 4 0 0 0 4-4V4" }),
+  );
 };
 
 // VanJS Feather - CornerUpLeft
 export const CornerUpLeft = (props?: IconProps) => {
-  return FeatherIcon(props, polyline({ points: "9 14 4 9 9 4" }), path({ d: "M20 20v-7a4 4 0 0 0-4-4H4" }));
+  return FeatherIcon(
+    props,
+    polyline({ points: "9 14 4 9 9 4" }),
+    path({ d: "M20 20v-7a4 4 0 0 0-4-4H4" }),
+  );
 };
 
 // VanJS Feather - CornerUpRight
 export const CornerUpRight = (props?: IconProps) => {
-  return FeatherIcon(props, polyline({ points: "15 14 20 9 15 4" }), path({ d: "M4 20v-7a4 4 0 0 1 4-4h12" }));
+  return FeatherIcon(
+    props,
+    polyline({ points: "15 14 20 9 15 4" }),
+    path({ d: "M4 20v-7a4 4 0 0 1 4-4h12" }),
+  );
 };
 
 // VanJS Feather - Cpu
@@ -724,7 +847,11 @@ export const CreditCard = (props?: IconProps) => {
 
 // VanJS Feather - Crop
 export const Crop = (props?: IconProps) => {
-  return FeatherIcon(props, path({ d: "M6.13 1L6 16a2 2 0 0 0 2 2h15" }), path({ d: "M1 6.13L16 6a2 2 0 0 1 2 2v15" }));
+  return FeatherIcon(
+    props,
+    path({ d: "M6.13 1L6 16a2 2 0 0 0 2 2h15" }),
+    path({ d: "M1 6.13L16 6a2 2 0 0 1 2 2v15" }),
+  );
 };
 
 // VanJS Feather - Crosshair
@@ -761,7 +888,11 @@ export const Delete = (props?: IconProps) => {
 
 // VanJS Feather - Disc
 export const Disc = (props?: IconProps) => {
-  return FeatherIcon(props, circle({ cx: "12", cy: "12", r: "10" }), circle({ cx: "12", cy: "12", r: "3" }));
+  return FeatherIcon(
+    props,
+    circle({ cx: "12", cy: "12", r: "10" }),
+    circle({ cx: "12", cy: "12", r: "3" }),
+  );
 };
 
 // VanJS Feather - DivideCircle
@@ -838,12 +969,18 @@ export const Dribbble = (props?: IconProps) => {
 
 // VanJS Feather - Droplet
 export const Droplet = (props?: IconProps) => {
-  return FeatherIcon(props, path({ d: "M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" }));
+  return FeatherIcon(
+    props,
+    path({ d: "M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" }),
+  );
 };
 
 // VanJS Feather - Edit2
 export const Edit2 = (props?: IconProps) => {
-  return FeatherIcon(props, path({ d: "M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" }));
+  return FeatherIcon(
+    props,
+    path({ d: "M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" }),
+  );
 };
 
 // VanJS Feather - Edit3
@@ -896,12 +1033,21 @@ export const Eye = (props?: IconProps) => {
 
 // VanJS Feather - Facebook
 export const Facebook = (props?: IconProps) => {
-  return FeatherIcon(props, path({ d: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" }));
+  return FeatherIcon(
+    props,
+    path({
+      d: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z",
+    }),
+  );
 };
 
 // VanJS Feather - FastForward
 export const FastForward = (props?: IconProps) => {
-  return FeatherIcon(props, polygon({ points: "13 19 22 12 13 5 13 19" }), polygon({ points: "2 19 11 12 2 5 2 19" }));
+  return FeatherIcon(
+    props,
+    polygon({ points: "13 19 22 12 13 5 13 19" }),
+    polygon({ points: "2 19 11 12 2 5 2 19" }),
+  );
 };
 
 // VanJS Feather - Feather
@@ -985,7 +1131,10 @@ export const Film = (props?: IconProps) => {
 
 // VanJS Feather - Filter
 export const Filter = (props?: IconProps) => {
-  return FeatherIcon(props, polygon({ points: "22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" }));
+  return FeatherIcon(
+    props,
+    polygon({ points: "22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" }),
+  );
 };
 
 // VanJS Feather - Flag
@@ -1001,7 +1150,9 @@ export const Flag = (props?: IconProps) => {
 export const FolderMinus = (props?: IconProps) => {
   return FeatherIcon(
     props,
-    path({ d: "M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" }),
+    path({
+      d: "M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z",
+    }),
     line({ x1: "9", y1: "14", x2: "15", y2: "14" }),
   );
 };
@@ -1010,7 +1161,9 @@ export const FolderMinus = (props?: IconProps) => {
 export const FolderPlus = (props?: IconProps) => {
   return FeatherIcon(
     props,
-    path({ d: "M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" }),
+    path({
+      d: "M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z",
+    }),
     line({ x1: "12", y1: "11", x2: "12", y2: "17" }),
     line({ x1: "9", y1: "14", x2: "15", y2: "14" }),
   );
@@ -1018,12 +1171,20 @@ export const FolderPlus = (props?: IconProps) => {
 
 // VanJS Feather - Folder
 export const Folder = (props?: IconProps) => {
-  return FeatherIcon(props, path({ d: "M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" }));
+  return FeatherIcon(
+    props,
+    path({
+      d: "M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z",
+    }),
+  );
 };
 
 // VanJS Feather - Framer
 export const Framer = (props?: IconProps) => {
-  return FeatherIcon(props, path({ d: "M5 16V9h14V2H5l14 14h-7m-7 0l7 7v-7m-7 0h7" }));
+  return FeatherIcon(
+    props,
+    path({ d: "M5 16V9h14V2H5l14 14h-7m-7 0l7 7v-7m-7 0h7" }),
+  );
 };
 
 // VanJS Feather - Frown
@@ -1117,7 +1278,9 @@ export const Globe = (props?: IconProps) => {
     props,
     circle({ cx: "12", cy: "12", r: "10" }),
     line({ x1: "2", y1: "12", x2: "22", y2: "12" }),
-    path({ d: "M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" }),
+    path({
+      d: "M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z",
+    }),
   );
 };
 
@@ -1305,7 +1468,9 @@ export const LifeBuoy = (props?: IconProps) => {
 export const Link2 = (props?: IconProps) => {
   return FeatherIcon(
     props,
-    path({ d: "M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3" }),
+    path({
+      d: "M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3",
+    }),
     line({ x1: "8", y1: "12", x2: "16", y2: "12" }),
   );
 };
@@ -1323,7 +1488,9 @@ export const Link = (props?: IconProps) => {
 export const Linkedin = (props?: IconProps) => {
   return FeatherIcon(
     props,
-    path({ d: "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" }),
+    path({
+      d: "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z",
+    }),
     rect({ x: "2", y: "9", width: "4", height: "12" }),
     circle({ cx: "4", cy: "4", r: "2" }),
   );
@@ -1390,7 +1557,9 @@ export const LogOut = (props?: IconProps) => {
 export const Mail = (props?: IconProps) => {
   return FeatherIcon(
     props,
-    path({ d: "M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" }),
+    path({
+      d: "M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z",
+    }),
     polyline({ points: "22,6 12,13 2,6" }),
   );
 };
@@ -1429,7 +1598,9 @@ export const Maximize2 = (props?: IconProps) => {
 export const Maximize = (props?: IconProps) => {
   return FeatherIcon(
     props,
-    path({ d: "M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" }),
+    path({
+      d: "M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3",
+    }),
   );
 };
 
@@ -1466,7 +1637,12 @@ export const MessageCircle = (props?: IconProps) => {
 
 // VanJS Feather - MessageSquare
 export const MessageSquare = (props?: IconProps) => {
-  return FeatherIcon(props, path({ d: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" }));
+  return FeatherIcon(
+    props,
+    path({
+      d: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z",
+    }),
+  );
 };
 
 // VanJS Feather - MicOff
@@ -1507,13 +1683,19 @@ export const Minimize2 = (props?: IconProps) => {
 export const Minimize = (props?: IconProps) => {
   return FeatherIcon(
     props,
-    path({ d: "M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3" }),
+    path({
+      d: "M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3",
+    }),
   );
 };
 
 // VanJS Feather - MinusCircle
 export const MinusCircle = (props?: IconProps) => {
-  return FeatherIcon(props, circle({ cx: "12", cy: "12", r: "10" }), line({ x1: "8", y1: "12", x2: "16", y2: "12" }));
+  return FeatherIcon(
+    props,
+    circle({ cx: "12", cy: "12", r: "10" }),
+    line({ x1: "8", y1: "12", x2: "16", y2: "12" }),
+  );
 };
 
 // VanJS Feather - MinusSquare
@@ -1542,7 +1724,10 @@ export const Monitor = (props?: IconProps) => {
 
 // VanJS Feather - Moon
 export const Moon = (props?: IconProps) => {
-  return FeatherIcon(props, path({ d: "M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" }));
+  return FeatherIcon(
+    props,
+    path({ d: "M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" }),
+  );
 };
 
 // VanJS Feather - MoreHorizontal
@@ -1567,7 +1752,11 @@ export const MoreVertical = (props?: IconProps) => {
 
 // VanJS Feather - MousePointer
 export const MousePointer = (props?: IconProps) => {
-  return FeatherIcon(props, path({ d: "M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z" }), path({ d: "M13 13l6 6" }));
+  return FeatherIcon(
+    props,
+    path({ d: "M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z" }),
+    path({ d: "M13 13l6 6" }),
+  );
 };
 
 // VanJS Feather - Move
@@ -1607,7 +1796,10 @@ export const Navigation = (props?: IconProps) => {
 export const Octagon = (props?: IconProps) => {
   return FeatherIcon(
     props,
-    polygon({ points: "7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2" }),
+    polygon({
+      points:
+        "7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2",
+    }),
   );
 };
 
@@ -1755,12 +1947,20 @@ export const Phone = (props?: IconProps) => {
 
 // VanJS Feather - PieChart
 export const PieChart = (props?: IconProps) => {
-  return FeatherIcon(props, path({ d: "M21.21 15.89A10 10 0 1 1 8 2.83" }), path({ d: "M22 12A10 10 0 0 0 12 2v10z" }));
+  return FeatherIcon(
+    props,
+    path({ d: "M21.21 15.89A10 10 0 1 1 8 2.83" }),
+    path({ d: "M22 12A10 10 0 0 0 12 2v10z" }),
+  );
 };
 
 // VanJS Feather - PlayCircle
 export const PlayCircle = (props?: IconProps) => {
-  return FeatherIcon(props, circle({ cx: "12", cy: "12", r: "10" }), polygon({ points: "10 8 16 12 10 16 10 8" }));
+  return FeatherIcon(
+    props,
+    circle({ cx: "12", cy: "12", r: "10" }),
+    polygon({ points: "10 8 16 12 10 16 10 8" }),
+  );
 };
 
 // VanJS Feather - Play
@@ -1801,7 +2001,9 @@ export const Plus = (props?: IconProps) => {
 export const Pocket = (props?: IconProps) => {
   return FeatherIcon(
     props,
-    path({ d: "M4 3h16a2 2 0 0 1 2 2v6a10 10 0 0 1-10 10A10 10 0 0 1 2 11V5a2 2 0 0 1 2-2z" }),
+    path({
+      d: "M4 3h16a2 2 0 0 1 2 2v6a10 10 0 0 1-10 10A10 10 0 0 1 2 11V5a2 2 0 0 1 2-2z",
+    }),
     polyline({ points: "8 10 12 14 16 10" }),
   );
 };
@@ -1820,7 +2022,9 @@ export const Printer = (props?: IconProps) => {
   return FeatherIcon(
     props,
     polyline({ points: "6 9 6 2 18 2 18 9" }),
-    path({ d: "M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" }),
+    path({
+      d: "M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2",
+    }),
     rect({ x: "6", y: "14", width: "12", height: "8" }),
   );
 };
@@ -1842,7 +2046,9 @@ export const RefreshCcw = (props?: IconProps) => {
     props,
     polyline({ points: "1 4 1 10 7 10" }),
     polyline({ points: "23 20 23 14 17 14" }),
-    path({ d: "M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15" }),
+    path({
+      d: "M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15",
+    }),
   );
 };
 
@@ -1852,7 +2058,9 @@ export const RefreshCw = (props?: IconProps) => {
     props,
     polyline({ points: "23 4 23 10 17 10" }),
     polyline({ points: "1 20 1 14 7 14" }),
-    path({ d: "M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" }),
+    path({
+      d: "M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15",
+    }),
   );
 };
 
@@ -1878,7 +2086,11 @@ export const Rewind = (props?: IconProps) => {
 
 // VanJS Feather - RotateCcw
 export const RotateCcw = (props?: IconProps) => {
-  return FeatherIcon(props, polyline({ points: "1 4 1 10 7 10" }), path({ d: "M3.51 15a9 9 0 1 0 2.13-9.36L1 10" }));
+  return FeatherIcon(
+    props,
+    polyline({ points: "1 4 1 10 7 10" }),
+    path({ d: "M3.51 15a9 9 0 1 0 2.13-9.36L1 10" }),
+  );
 };
 
 // VanJS Feather - RotateCw
@@ -1904,7 +2116,9 @@ export const Rss = (props?: IconProps) => {
 export const Save = (props?: IconProps) => {
   return FeatherIcon(
     props,
-    path({ d: "M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" }),
+    path({
+      d: "M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z",
+    }),
     polyline({ points: "17 21 17 13 7 13 7 21" }),
     polyline({ points: "7 3 7 8 15 8" }),
   );
@@ -1996,7 +2210,10 @@ export const ShieldOff = (props?: IconProps) => {
 
 // VanJS Feather - Shield
 export const Shield = (props?: IconProps) => {
-  return FeatherIcon(props, path({ d: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" }));
+  return FeatherIcon(
+    props,
+    path({ d: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" }),
+  );
 };
 
 // VanJS Feather - ShoppingBag
@@ -2015,7 +2232,9 @@ export const ShoppingCart = (props?: IconProps) => {
     props,
     circle({ cx: "9", cy: "21", r: "1" }),
     circle({ cx: "20", cy: "21", r: "1" }),
-    path({ d: "M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" }),
+    path({
+      d: "M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6",
+    }),
   );
 };
 
@@ -2051,21 +2270,41 @@ export const SkipBack = (props?: IconProps) => {
 
 // VanJS Feather - SkipForward
 export const SkipForward = (props?: IconProps) => {
-  return FeatherIcon(props, polygon({ points: "5 4 15 12 5 20 5 4" }), line({ x1: "19", y1: "5", x2: "19", y2: "19" }));
+  return FeatherIcon(
+    props,
+    polygon({ points: "5 4 15 12 5 20 5 4" }),
+    line({ x1: "19", y1: "5", x2: "19", y2: "19" }),
+  );
 };
 
 // VanJS Feather - Slack
 export const Slack = (props?: IconProps) => {
   return FeatherIcon(
     props,
-    path({ d: "M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z" }),
-    path({ d: "M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" }),
-    path({ d: "M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z" }),
-    path({ d: "M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z" }),
-    path({ d: "M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z" }),
-    path({ d: "M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z" }),
-    path({ d: "M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z" }),
-    path({ d: "M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z" }),
+    path({
+      d: "M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z",
+    }),
+    path({
+      d: "M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z",
+    }),
+    path({
+      d: "M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z",
+    }),
+    path({
+      d: "M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z",
+    }),
+    path({
+      d: "M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z",
+    }),
+    path({
+      d: "M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z",
+    }),
+    path({
+      d: "M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z",
+    }),
+    path({
+      d: "M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z",
+    }),
   );
 };
 
@@ -2126,7 +2365,10 @@ export const Speaker = (props?: IconProps) => {
 
 // VanJS Feather - Square
 export const Square = (props?: IconProps) => {
-  return FeatherIcon(props, rect({ x: "3", y: "3", width: "18", height: "18", rx: "2", ry: "2" }));
+  return FeatherIcon(
+    props,
+    rect({ x: "3", y: "3", width: "18", height: "18", rx: "2", ry: "2" }),
+  );
 };
 
 // VanJS Feather - Star
@@ -2134,14 +2376,19 @@ export const Star = (props?: IconProps) => {
   return FeatherIcon(
     props,
     polygon({
-      points: "12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2",
+      points:
+        "12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2",
     }),
   );
 };
 
 // VanJS Feather - StopCircle
 export const StopCircle = (props?: IconProps) => {
-  return FeatherIcon(props, circle({ cx: "12", cy: "12", r: "10" }), rect({ x: "9", y: "9", width: "6", height: "6" }));
+  return FeatherIcon(
+    props,
+    circle({ cx: "12", cy: "12", r: "10" }),
+    rect({ x: "9", y: "9", width: "6", height: "6" }),
+  );
 };
 
 // VanJS Feather - Sun
@@ -2213,7 +2460,9 @@ export const Tablet = (props?: IconProps) => {
 export const Tag = (props?: IconProps) => {
   return FeatherIcon(
     props,
-    path({ d: "M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" }),
+    path({
+      d: "M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z",
+    }),
     line({ x1: "7", y1: "7", x2: "7.01", y2: "7" }),
   );
 };
@@ -2230,12 +2479,19 @@ export const Target = (props?: IconProps) => {
 
 // VanJS Feather - Terminal
 export const Terminal = (props?: IconProps) => {
-  return FeatherIcon(props, polyline({ points: "4 17 10 11 4 5" }), line({ x1: "12", y1: "19", x2: "20", y2: "19" }));
+  return FeatherIcon(
+    props,
+    polyline({ points: "4 17 10 11 4 5" }),
+    line({ x1: "12", y1: "19", x2: "20", y2: "19" }),
+  );
 };
 
 // VanJS Feather - Thermometer
 export const Thermometer = (props?: IconProps) => {
-  return FeatherIcon(props, path({ d: "M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z" }));
+  return FeatherIcon(
+    props,
+    path({ d: "M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z" }),
+  );
 };
 
 // VanJS Feather - ThumbsDown
@@ -2291,7 +2547,9 @@ export const Trash2 = (props?: IconProps) => {
   return FeatherIcon(
     props,
     polyline({ points: "3 6 5 6 21 6" }),
-    path({ d: "M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" }),
+    path({
+      d: "M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2",
+    }),
     line({ x1: "10", y1: "11", x2: "10", y2: "17" }),
     line({ x1: "14", y1: "11", x2: "14", y2: "17" }),
   );
@@ -2302,7 +2560,9 @@ export const Trash = (props?: IconProps) => {
   return FeatherIcon(
     props,
     polyline({ points: "3 6 5 6 21 6" }),
-    path({ d: "M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" }),
+    path({
+      d: "M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2",
+    }),
   );
 };
 
@@ -2338,7 +2598,9 @@ export const TrendingUp = (props?: IconProps) => {
 export const Triangle = (props?: IconProps) => {
   return FeatherIcon(
     props,
-    path({ d: "M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" }),
+    path({
+      d: "M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z",
+    }),
   );
 };
 
@@ -2364,7 +2626,10 @@ export const Tv = (props?: IconProps) => {
 
 // VanJS Feather - Twitch
 export const Twitch = (props?: IconProps) => {
-  return FeatherIcon(props, path({ d: "M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7" }));
+  return FeatherIcon(
+    props,
+    path({ d: "M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7" }),
+  );
 };
 
 // VanJS Feather - Twitter
@@ -2389,7 +2654,10 @@ export const Type = (props?: IconProps) => {
 
 // VanJS Feather - Umbrella
 export const Umbrella = (props?: IconProps) => {
-  return FeatherIcon(props, path({ d: "M23 12a11.05 11.05 0 0 0-22 0zm-5 7a3 3 0 0 1-6 0v-7" }));
+  return FeatherIcon(
+    props,
+    path({ d: "M23 12a11.05 11.05 0 0 0-22 0zm-5 7a3 3 0 0 1-6 0v-7" }),
+  );
 };
 
 // VanJS Feather - Underline
@@ -2497,7 +2765,9 @@ export const Users = (props?: IconProps) => {
 export const VideoOff = (props?: IconProps) => {
   return FeatherIcon(
     props,
-    path({ d: "M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2m5.66 0H14a2 2 0 0 1 2 2v3.34l1 1L23 7v10" }),
+    path({
+      d: "M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2m5.66 0H14a2 2 0 0 1 2 2v3.34l1 1L23 7v10",
+    }),
     line({ x1: "1", y1: "1", x2: "23", y2: "23" }),
   );
 };
@@ -2551,7 +2821,10 @@ export const VolumeX = (props?: IconProps) => {
 
 // VanJS Feather - Volume
 export const Volume = (props?: IconProps) => {
-  return FeatherIcon(props, polygon({ points: "11 5 6 9 2 9 2 15 6 15 11 19 11 5" }));
+  return FeatherIcon(
+    props,
+    polygon({ points: "11 5 6 9 2 9 2 15 6 15 11 19 11 5" }),
+  );
 };
 
 // VanJS Feather - Watch
@@ -2595,7 +2868,9 @@ export const Wifi = (props?: IconProps) => {
 export const Wind = (props?: IconProps) => {
   return FeatherIcon(
     props,
-    path({ d: "M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2" }),
+    path({
+      d: "M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2",
+    }),
   );
 };
 
@@ -2613,7 +2888,10 @@ export const XCircle = (props?: IconProps) => {
 export const XOctagon = (props?: IconProps) => {
   return FeatherIcon(
     props,
-    polygon({ points: "7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2" }),
+    polygon({
+      points:
+        "7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2",
+    }),
     line({ x1: "15", y1: "9", x2: "9", y2: "15" }),
     line({ x1: "9", y1: "9", x2: "15", y2: "15" }),
   );
@@ -2662,7 +2940,10 @@ export const ZapOff = (props?: IconProps) => {
 
 // VanJS Feather - Zap
 export const Zap = (props?: IconProps) => {
-  return FeatherIcon(props, polygon({ points: "13 2 3 14 12 14 11 22 21 10 12 10 13 2" }));
+  return FeatherIcon(
+    props,
+    polygon({ points: "13 2 3 14 12 14 11 22 21 10 12 10 13 2" }),
+  );
 };
 
 // VanJS Feather - ZoomIn

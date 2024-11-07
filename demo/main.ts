@@ -14,30 +14,44 @@ export default function Main() {
       { class: "container h-[75vh] px-5 mx-auto flex flex-row items-center" },
       div(
         { class: "flex gap-5 items-center" },
-        img({ src: VanJSLogo, class: "w-20 h-20", alt: "VanJS logo", width: "80", height: "80" }),
+        img({
+          src: VanJSLogo,
+          class: "w-20 h-20",
+          alt: "VanJS logo",
+          width: "80",
+          height: "80",
+        }),
         div(
           {},
           h2(
             {
-              class: "text-xl md:text-2xl font-weight-300 font-stretch-125 text-black dark:text-white",
+              class:
+                "text-xl md:text-2xl font-weight-300 font-stretch-125 text-black dark:text-white",
             },
             "Feather Icons for VanJS",
           ),
-          p({ class: "font-stretch-125 font-bold" }, "Powered by Vite, Vitest & Typescript"),
+          p(
+            { class: "font-stretch-125 font-bold" },
+            "Powered by Vite, Vitest & Typescript",
+          ),
         ),
       ),
     ),
     div(
       { class: "bg-slate-300 dark:bg-slate-800" },
       div(
-        { class: "container h-[100vh] lg:h-[75vh] px-5 mx-auto flex flex-row items-center" },
+        {
+          class:
+            "container h-[100vh] lg:h-[75vh] px-5 mx-auto flex flex-row items-center",
+        },
         div(
           { class: "w-full flex flex-row gap-[5rem] flex-wrap" },
           div(
             { id: "installation", class: "lg:w-[calc(50%-2.5rem)]" },
             h2(
               {
-                class: "mb-5 text-2xl font-weight-300 font-stretch-125 text-black dark:text-white",
+                class:
+                  "mb-5 text-2xl font-weight-300 font-stretch-125 text-black dark:text-white",
               },
               "Installation",
             ),
@@ -52,15 +66,22 @@ export default function Main() {
             { id: "usage", class: "lg:w-[calc(50%-2.5rem)]" },
             h2(
               {
-                class: "mb-5 text-2xl font-weight-300 font-stretch-125 text-black dark:text-white",
+                class:
+                  "mb-5 text-2xl font-weight-300 font-stretch-125 text-black dark:text-white",
               },
               "Usage",
             ),
             pre(
               { class: "font-mono mb-5 whitespace-pre-line" },
-              span({ class: "text-sky-800 dark:text-sky-300" }, "// import the icon(s)\n"),
+              span(
+                { class: "text-sky-800 dark:text-sky-300" },
+                "// import the icon(s)\n",
+              ),
               'import { Activity } from "vanjs-feather";\n\n',
-              span({ class: "text-sky-800 dark:text-sky-300" }, "// call anywhere within VanJS codespace\n"),
+              span(
+                { class: "text-sky-800 dark:text-sky-300" },
+                "// call anywhere within VanJS codespace\n",
+              ),
               'Activity({ class: "icon" })\n',
             ),
             div(
@@ -93,22 +114,32 @@ export default function Main() {
       { id: "preview", class: "container p-5 mx-auto my-20" },
       h2(
         {
-          class: "mb-5 text-2xl font-weight-300 font-stretch-125 text-black dark:text-white",
+          class:
+            "mb-5 text-2xl font-weight-300 font-stretch-125 text-black dark:text-white",
         },
         "Preview",
       ),
       div(
-        { class: "grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 grid-flow-row gap-4" },
+        {
+          class:
+            "grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 grid-flow-row gap-4",
+        },
         ...Icons.map(([name, icon]) =>
           button(
             {
               "data-target": `feather-icon-${name}`,
               onclick: copyToClipboard,
-              onmouseenter: (e: Event & { target: EventTarget & HTMLElement }) =>
+              onmouseenter: (
+                e: Event & { target: EventTarget & HTMLElement },
+              ) =>
                 new Tooltip(e.target, {
-                  title: span({ class: "font-weight-900 text-base text-expanded" }, name),
+                  title: span({
+                    class: "font-weight-900 text-base text-expanded",
+                  }, name),
                 }).show(),
-              onmouseleave: (e: Event & { target: EventTarget & HTMLElement }) => Tooltip.getInstance(e.target)?.hide(),
+              onmouseleave: (
+                e: Event & { target: EventTarget & HTMLElement },
+              ) => Tooltip.getInstance(e.target)?.hide(),
               class:
                 "flex flex-col items-center cursor-pointer p-3 lg:py-4 xl:py-5 rounded-[5px] bg-slate-50 hover:bg-slate-200 dark:bg-slate-950 dark:hover:bg-slate-800",
             },
@@ -116,11 +147,12 @@ export default function Main() {
             span(
               {
                 id: `feather-icon-${name}`,
-                class: "text-[12px] font-weight-600 font-stretch-90 text-black dark:text-white",
+                class:
+                  "text-[12px] font-weight-600 font-stretch-90 text-black dark:text-white",
               },
               name,
             ),
-          ),
+          )
         ),
       ),
     ),

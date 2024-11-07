@@ -1,6 +1,11 @@
 name: CI & Test
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - src
 
 jobs:
   build:
@@ -17,12 +22,18 @@ jobs:
         with:
           fetch-depth: 2
 
-      - uses: pnpm/action-setup@v3
+      - name: PNPM setup
+        uses: pnpm/action-setup@v3
 
-      - name: Setup Node.js environment ${{ matrix.node-version }}
+      - name: Deno Setup
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
+      - name: Node Setup
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 20
           cache: pnpm
 
       - name: Install dependencies

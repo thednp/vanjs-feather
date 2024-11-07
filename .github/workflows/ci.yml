@@ -3,7 +3,7 @@ name: CI & Test
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - src
 
@@ -62,6 +62,6 @@ jobs:
           folder: docs
 
       - name: Upload coverage report to coveralls.io...
-        uses: coverallsapp/github-action@master
+        uses: coverallsapp/github-action@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}          

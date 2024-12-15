@@ -38,8 +38,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
-      - name: Install doc dependencies
-        run: cd demo && pnpm install --no-frozen-lockfile
+      # - name: Install doc dependencies
+      #   run: cd demo && pnpm install --no-frozen-lockfile
 
       - name: Make sure to format
         run: pnpm format

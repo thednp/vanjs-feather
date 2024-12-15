@@ -1,46 +1,9 @@
 // VanJS Feather
-import van from "vanjs-core";
-const { polyline, svg, path, polygon, circle, line, rect, ellipse } = van.tags(
+import { FeatherIcon, type IconProps, van } from "./FeatherIcon";
+
+const { polyline, path, polygon, circle, line, rect, ellipse } = van.tags(
   "http://www.w3.org/2000/svg",
 );
-
-type IconProps = {
-  id?: string;
-  width?: number;
-  height?: number;
-  strokeWidth?: number;
-  stroke?: string | "currentColor";
-  class?: string;
-  style?: string;
-};
-
-// VanJS Feather - FeatherIcon
-const FeatherIcon = (props: IconProps = {}, ...children: Element[]) => {
-  const width = van.state(props.width || 24);
-  const height = van.state(props.height || 24);
-  const stroke = van.state(props.stroke || "currentColor");
-  const strokeWidth = van.state(props.strokeWidth || 2);
-  const className = van.state(props.class || "");
-  const style = van.state(props.style || "");
-  const id = props.id || "";
-  return svg(
-    {
-      xmlns: "http://www.w3.org/2000/svg",
-      width,
-      height,
-      viewBox: "0 0 24 24",
-      fill: "none",
-      stroke,
-      "stroke-width": strokeWidth,
-      "stroke-linecap": "round",
-      "stroke-linejoin": "round",
-      class: className,
-      style,
-      id,
-    },
-    children,
-  ) as SVGElement;
-};
 
 // VanJS Feather - Activity
 export const Activity = (props?: IconProps) => {

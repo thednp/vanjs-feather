@@ -7,33 +7,18 @@
     "skipLibCheck": true,
 
     /* Bundler mode */
-    "moduleResolution": "Bundler",
+    "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
     "isolatedModules": true,
+    "moduleDetection": "force",
     "noEmit": true,
-    "types": [
-      "vite/client",
-      "node"
-    ],
 
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "baseUrl": "./",
-    "paths": {
-      "~/*": ["./src/*",],
-      "@/*": ["demo__/assets"],
-    }
+    "noUncheckedSideEffectImports": true
   },
-  "include": ["src", "demo__"],
-  "exclude": [
-    "node_modules",
-    "demo",
-    "coverage",
-    "dist",
-    "docs",
-  ]
+  "include": ["src", "prerender.js", "server.js"]
 }

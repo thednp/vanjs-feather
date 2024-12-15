@@ -4,8 +4,14 @@ import * as VanJSFeather from ".";
 
 const Icons = Object.entries(VanJSFeather);
 
-Icons.forEach(([name, icon]) => {
+Icons.forEach(([name, icon], idx) => {
   test(`Test ${name} icon`, () => {
-    expect(icon()).toBeInstanceOf(SVGElement);
+    if (idx === 0) {
+      expect(
+        icon({ class: "test", id: "test-" + name, style: "display: block" }),
+      ).toBeInstanceOf(SVGElement);
+    } else {
+      expect(icon()).toBeInstanceOf(SVGElement);
+    }
   });
 });

@@ -1,13 +1,13 @@
-import Tooltip from "bootstrap.native/tooltip";
-import van from "vanjs-core";
-import * as VanJSFeather from "~/index";
-import VanJSLogo from "./vanjs.svg";
-import copyToClipboard from "./copyToClipboard";
+import { env } from "mini-van-plate/shared";
+import copyToClipboard from "../util/copyToClipboard";
+import * as VanJSFeather from "../../../src/index";
+import Tooltip from "./tooltip";
 
 const Icons = Object.entries(VanJSFeather);
-const { main, div, button, span, h2, img, p, pre, a } = van.tags;
 
 export default function Main() {
+  const { main, div, button, span, h2, img, p, pre, a } = env.van.tags;
+
   return main(
     { class: "main" },
     div(
@@ -15,7 +15,7 @@ export default function Main() {
       div(
         { class: "flex gap-5 items-center" },
         img({
-          src: VanJSLogo,
+          src: "/vanjs.svg",
           class: "w-20 h-20",
           alt: "VanJS logo",
           width: "80",
@@ -125,32 +125,26 @@ export default function Main() {
             "grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 grid-flow-row gap-4",
         },
         ...Icons.map(([name, icon]) =>
-          button(
+          Tooltip(
             {
-              "data-target": `feather-icon-${name}`,
-              onclick: copyToClipboard,
-              onmouseenter: (
-                e: Event & { target: EventTarget & HTMLElement },
-              ) =>
-                new Tooltip(e.target, {
-                  title: span({
-                    class: "font-weight-900 text-base text-expanded",
-                  }, name),
-                }).show(),
-              onmouseleave: (
-                e: Event & { target: EventTarget & HTMLElement },
-              ) => Tooltip.getInstance(e.target)?.hide(),
-              class:
-                "flex flex-col items-center cursor-pointer p-3 lg:py-4 xl:py-5 rounded-[5px] bg-slate-50 hover:bg-slate-200 dark:bg-slate-950 dark:hover:bg-slate-800",
+              tip: name,
             },
-            icon({ class: "text-slate-500" }),
-            span(
+            button(
               {
-                id: `feather-icon-${name}`,
+                "data-target": `feather-icon-${name}`,
+                onclick: copyToClipboard,
                 class:
-                  "text-[12px] font-weight-600 font-stretch-90 text-black dark:text-white",
+                  "w-full flex flex-col items-center cursor-pointer p-3 lg:py-4 xl:py-5 rounded-[5px] bg-slate-50 hover:bg-slate-200 dark:bg-slate-950 dark:hover:bg-slate-800",
               },
-              name,
+              icon({ class: "text-slate-500" }),
+              span(
+                {
+                  id: `feather-icon-${name}`,
+                  class:
+                    "text-[12px] font-weight-600 font-stretch-90 text-black dark:text-white",
+                },
+                name,
+              ),
             ),
           )
         ),

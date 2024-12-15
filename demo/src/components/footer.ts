@@ -1,12 +1,8 @@
-import van from "vanjs-core";
-import vanjsLogo from "./vanjs.svg";
-import viteLogo from "./vite.svg";
-import vitestLogo from "./vitest.svg";
-import { Github } from "../src";
-
-const { footer, a, img, span } = van.tags;
+import { env } from "mini-van-plate/shared";
+import { Github } from "../../../src";
 
 export default function Footer() {
+  const { footer, a, img, span } = env.van.tags;
   return footer(
     { class: "container mx-auto px-5 flex flex-row gap-3" },
     a(
@@ -16,7 +12,7 @@ export default function Footer() {
         target: "_blank",
       },
       img({
-        src: viteLogo,
+        src: "/vite.svg",
         class: "logo w-6 h-auto",
         width: "24",
         height: "24",
@@ -30,7 +26,7 @@ export default function Footer() {
         target: "_blank",
       },
       img({
-        src: vitestLogo,
+        src: "/vitest.svg",
         class: "logo w-6 h-auto",
         width: "24",
         height: "24",
@@ -44,7 +40,7 @@ export default function Footer() {
         target: "_blank",
       },
       img({
-        src: vanjsLogo,
+        src: "/vanjs.svg",
         class: "logo vanilla w-6 h-auto",
         width: "24",
         height: "24",

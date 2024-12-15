@@ -1,0 +1,38 @@
+{
+  "name": "vanjs-feather-demo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "author": "thednp",
+  "scripts": {
+    "dev": "node server",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "vite build --ssrManifest .vite/ssr-manifest.json --outDir dist/client",
+    "build:server": "vite build --ssr src/entry-server.ts --outDir dist/server",
+    "generate": "pnpm build:server && vite build  --emptyOutDir --ssrManifest .vite/ssr-manifest.json --outDir dist/static && node prerender",
+    "copy_": "pnpm clear:docs && cp -rf dist/static/**/* ../docs",
+    "clear:docs_": "rm -r ../docs/*",
+    "start": "NODE_ENV=production node server",
+    "preview": "npm run generate && vite dist/static --port 3000"
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.9",
+    "@tailwindcss/typography": "^0.5.15",
+    "compression": "^1.7.5",
+    "express": "^5.0.1",
+    "mini-van-plate": "^0.6.1",
+    "postcss": "^8.4.49",
+    "postcss-import": "^16.1.0",
+    "postcss-nesting": "^13.0.1",
+    "sirv": "^3.0.0",
+    "tailwindcss": "^3.4.16",
+    "vanjs-core": "^1.5.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.2",
+    "cross-env": "^7.0.3",
+    "typescript": "~5.7.2",
+    "vite": "^6.0.3"
+  }
+}

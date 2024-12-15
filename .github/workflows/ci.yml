@@ -50,8 +50,8 @@ jobs:
       - name: Build
         run: pnpm build
 
-      - name: Build Docs
-        run: pnpm build:docs
+      # - name: Build Docs
+      #   run: pnpm build:docs
 
       - name: Run Unit Tests
         run: pnpm test

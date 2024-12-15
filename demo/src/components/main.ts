@@ -15,7 +15,7 @@ export default function Main() {
       div(
         { class: "flex gap-5 items-center" },
         img({
-          src: "/vanjs.svg",
+          src: "./vanjs.svg",
           class: "w-20 h-20",
           alt: "VanJS logo",
           width: "80",

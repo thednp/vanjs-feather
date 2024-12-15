@@ -34,7 +34,7 @@
     "url": "git+https://github.com/thednp/vanjs-feather.git"
   },
   "scripts": {
-    "dev": "cd demo && node server --open --port 3000",
+    "dev": "cd demo && node server --port 3000",
     "test": "vitest --config demo/vitest.config.ts",
     "format": "deno fmt src demo",
     "build": "tsup",
@@ -45,7 +45,7 @@
     "lint:code": "deno lint src",
     "lint:types": "tsc --noEmit",
     "fix:ts": "deno lint src --fix",
-    "serve": "vite serve docs --port 3000 --open"
+    "serve": "vite serve docs --port 3000"
   },
   "devDependencies": {
     "@types/node": "^20.17.10",

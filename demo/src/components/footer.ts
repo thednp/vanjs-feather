@@ -12,7 +12,7 @@ export default function Footer() {
         target: "_blank",
       },
       img({
-        src: "/vite.svg",
+        src: "./vite.svg",
         class: "logo w-6 h-auto",
         width: "24",
         height: "24",
@@ -26,7 +26,7 @@ export default function Footer() {
         target: "_blank",
       },
       img({
-        src: "/vitest.svg",
+        src: "./vitest.svg",
         class: "logo w-6 h-auto",
         width: "24",
         height: "24",
@@ -40,7 +40,7 @@ export default function Footer() {
         target: "_blank",
       },
       img({
-        src: "/vanjs.svg",
+        src: "./vanjs.svg",
         class: "logo vanilla w-6 h-auto",
         width: "24",
         height: "24",

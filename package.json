@@ -45,7 +45,7 @@
     "lint:code": "deno lint src",
     "lint:types": "tsc --noEmit",
     "fix:ts": "deno lint src --fix",
-    "serve": "vite serve docs"
+    "serve": "vite serve docs --port 3000 --open"
   },
   "devDependencies": {
     "@types/node": "^20.17.10",

@@ -6,15 +6,14 @@ on:
       - main
     paths:
       - src
+      - test
+      - package.json
+      - .github/workflows/ci.yml
 
 jobs:
   build:
-    runs-on: ${{ matrix.operating-system }}
-
-    strategy:
-      matrix:
-        node-version: [20.x]
-        operating-system: [ubuntu-latest]
+    runs-on: ubuntu-20.04
+    name: Test on Node
 
     steps:
       - name: Checkout repo

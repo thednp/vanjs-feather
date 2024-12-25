@@ -1,14 +1,5 @@
-import { env, registerEnv } from "mini-van-plate/shared";
-import { type Element } from "mini-van-plate/van-plate";
-import vanPlate from "mini-van-plate/van-plate";
-import vanCore, { State } from "vanjs-core";
-
-/* istanbul ignore next @preserve */
-if (typeof window === "undefined") {
-  registerEnv({ van: vanPlate });
-} else {
-  registerEnv({ van: vanCore });
-}
+import { type State } from "vanjs-core";
+import van from "@vanjs/van";
 
 export type IconProps = {
   id?: string;
@@ -20,11 +11,11 @@ export type IconProps = {
   style?: string;
 };
 
-/* istanbul ignore next @preserve */
-export const van = env.van || vanCore;
-
 // VanJS Feather - FeatherIcon
-export const FeatherIcon = (props: IconProps = {}, ...children: Element[]) => {
+export const FeatherIcon = (
+  props: IconProps = {},
+  ...children: ChildNode[]
+) => {
   const ns = "http://www.w3.org/2000/svg";
   const svg = van.tags(ns).svg;
   const {
@@ -65,5 +56,5 @@ export const FeatherIcon = (props: IconProps = {}, ...children: Element[]) => {
       ...rest,
     },
     children,
-  ) as Element;
+  );
 };

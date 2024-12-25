@@ -7,13 +7,13 @@
   "scripts": {
     "dev": "node server",
     "build": "npm run build:client && npm run build:server",
-    "build:client": "vite build --ssrManifest .vite/ssr-manifest.json --outDir dist/client",
-    "build:server": "vite build --ssr src/entry-server.ts --outDir dist/server",
-    "generate": "pnpm build:server && vite build  --emptyOutDir --ssrManifest .vite/ssr-manifest.json --outDir dist/static && node prerender && pnpm copy:docs",
+    "build:client": "NODE_ENV=production vite build --sourcemap=false --ssrManifest .vite/ssr-manifest.json --outDir dist/client --mode=production",
+    "build:server": "NODE_ENV=production vite build --sourcemap=false --ssr src/entry-server.ts --outDir dist/server --mode=production",
+    "generate": "npm run build:client && NODE_ENV=production vite build --sourcemap=false --ssrManifest .vite/ssr-manifest.json --outDir dist/static && npm run build:server && node prerender --mode=production",
     "copy:docs": "cp -rf dist/static/* ../docs/",
     "clear:docs_": "rm -r ../docs/*",
     "start": "NODE_ENV=production node server",
-    "preview": "npm run generate && vite dist/static --port 3000"
+    "preview": "npm run generate && NODE_ENV=production STATIC=true node server --port 5173"
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.5.9",
@@ -25,14 +25,15 @@
     "postcss-import": "^16.1.0",
     "postcss-nesting": "^13.0.1",
     "sirv": "^3.0.0",
-    "tailwindcss": "^3.4.16",
-    "vanjs-core": "^1.5.2"
+    "tailwindcss": "^3.4.17",
+    "vanjs-core": "^1.5.2",
+    "vite-plugin-vanjs": "^0.0.2"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.2",
     "cross-env": "^7.0.3",
     "typescript": "~5.7.2",
-    "vite": "^6.0.3"
+    "vite": "^6.0.5"
   }
 }

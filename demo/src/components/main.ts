@@ -1,4 +1,4 @@
-import { env } from "mini-van-plate/shared";
+import van from "@vanjs/van";
 import copyToClipboard from "../util/copyToClipboard";
 import * as VanJSFeather from "../../../src/index";
 import Tooltip from "./tooltip";
@@ -6,7 +6,7 @@ import Tooltip from "./tooltip";
 const Icons = Object.entries(VanJSFeather);
 
 export default function Main() {
-  const { main, div, button, span, h2, img, p, pre, a } = env.van.tags;
+  const { main, div, button, span, h2, img, p, pre, a } = van.tags;
 
   return main(
     { class: "main" },

@@ -1,8 +1,8 @@
-import { env } from "mini-van-plate/shared";
+import van from "@vanjs/van";
 import { Github } from "../../../src";
 
 export default function Footer() {
-  const { footer, a, img, span } = env.van.tags;
+  const { footer, a, img, span } = van.tags;
   return footer(
     { class: "container mx-auto px-5 flex flex-row gap-3" },
     a(

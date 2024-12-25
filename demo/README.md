@@ -3,6 +3,13 @@
 A fully working vite starter template for [VanJS](https://vanjs.org) forked from
 [template-ssr-vanilla-ts](https://github.com/bluwy/create-vite-extra/tree/master/template-ssr-vanilla-ts).
 
+**Features**:
+
+- SSR server powered by express;
+- SSG prerender script included;
+- isomorphic render powered by
+  [vite-plugin-vanjs](https://github.com/thednp/vite-plugin-vanjs).
+
 ### Install
 
 Clone the repository from Github.
@@ -22,6 +29,10 @@ npm install
 pnpm install
 ```
 
+```bash
+deno install
+```
+
 ### Development
 
 Start the development server.
@@ -34,6 +45,10 @@ npm run dev
 pnpm dev
 ```
 
+```bash
+deno task dev
+```
+
 ### Preview
 
 Prerender the application and start the server.
@@ -44,6 +59,10 @@ npm run preview
 
 ```bash
 pnpm preview
+```
+
+```bash
+deno task preview
 ```
 
 ### Build a Static Application
@@ -78,7 +97,7 @@ npm run start
 
 - you are expected to create pages in the `src/pages` folder in order for the
   prerenderer to work;
-- for more information about SSR, it's highly recommand to check the
+- for more information about SSR, it's highly recommanded to check the
   [Vite documentation](https://vite.dev/guide/ssr.html).
 
 ### License

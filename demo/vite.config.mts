@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import path from "path";
+import vanjs from "vite-plugin-vanjs";
 
 // import generateIcons from "../generate";
 // if (typeof generateIcons === "function") {
@@ -7,7 +8,7 @@ import path from "path";
 // }
 
 export default defineConfig({
-  plugins: [],
+  plugins: [vanjs()],
   resolve: {
     alias: {
       "~": path.resolve(__dirname, "..", "src"),

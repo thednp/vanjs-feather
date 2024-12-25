@@ -29,7 +29,7 @@ export function renderPreloadLinks(
 
 function renderPreloadLink(file: string) {
   if (file.endsWith(".js")) {
-    return `<link rel="modulepreload" crossorigin href="${file}">`;
+    return `<link rel="modulepreload" as="script" crossorigin href="${file}">`;
   } else if (file.endsWith(".css")) {
     return `<link rel="stylesheet" href="${file}">`;
   } else if (file.endsWith(".woff")) {
@@ -42,6 +42,8 @@ function renderPreloadLink(file: string) {
     return ` <link rel="preload" href="${file}" as="image" type="image/jpeg">`;
   } else if (file.endsWith(".png")) {
     return ` <link rel="preload" href="${file}" as="image" type="image/png">`;
+  } else if (file.endsWith(".webp")) {
+    return ` <link rel="preload" href="${file}" as="image" type="image/webp">`;
   } else {
     // TODO
     return "";

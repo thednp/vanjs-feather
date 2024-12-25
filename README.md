@@ -14,7 +14,8 @@ Feather icons for [VanJS](https://vanjs.org).
 
 Powered by:
 
-- [Vite](https://vitejs.dev) and [tsup](https://tsup.egoist.dev/) for tooling
+- [Vite](https://vitejs.dev) for tooling
+- [Vite-Plugin-VanJS](https://github.com/thednp/vite-plugin-vanjs) for SSR support
 - [Vitest](https://vitest.dev) for unit tests
 - [TailwindCSS](https://tailwindcss.com) for demo styling
 - [VanJSConverter](https://github.com/vanjs-org/converter) for generating the source code

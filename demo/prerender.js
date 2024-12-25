@@ -23,7 +23,7 @@ const routesToPrerender = fs.existsSync(toAbsolute("src/pages"))
   ? fs
     .readdirSync(toAbsolute("src/pages"))
     .map((file) => {
-      const name = file.replace(/\.(ts|js)$/, "").toLowerCase();
+      const name = file.replace(/\.(ts|js|tsx|jsx)$/, "").toLowerCase();
       return name === "home" ? `/` : `/${name}`;
     })
   : ["/"];

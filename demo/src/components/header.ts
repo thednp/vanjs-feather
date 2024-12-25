@@ -1,8 +1,8 @@
-import { env } from "mini-van-plate/shared";
+import van from "@vanjs/van";
 import { ArrowDown } from "../../../src";
 
 export default function Header() {
-  const { header, div, ul, li, a, h1 } = env.van.tags;
+  const { header, div, ul, li, a, h1 } = van.tags;
   return header(
     { class: "sticky top-0", style: "z-index: 1;" },
     div({

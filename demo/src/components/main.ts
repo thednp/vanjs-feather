@@ -1,4 +1,4 @@
-import van from "@vanjs/van";
+import van from "vanjs-core";
 import copyToClipboard from "../util/copyToClipboard";
 import * as VanJSFeather from "../../../src/index";
 import Tooltip from "./tooltip";

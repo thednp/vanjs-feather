@@ -1,5 +1,5 @@
 // entry-client.ts
-import van from "@vanjs/van";
+import van from "vanjs-core";
 import App from "./app.ts";
 
 const root = document.getElementById("app") as HTMLElement;

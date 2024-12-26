@@ -68,7 +68,7 @@
   "peerDependencies": {
     "mini-van-plate": "^0.6.1",
     "vanjs-core": "^1.5.0",
-    "vite-plugin-vanjs": "^0.0.2"
+    "vite-plugin-vanjs": "^0.0.3"
   },
   "packageManager": "pnpm@8.6.12",
   "engines": {

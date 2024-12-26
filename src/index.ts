@@ -1,6 +1,6 @@
 // VanJS Feather
 import { FeatherIcon, type IconProps } from "./FeatherIcon";
-import van from "@vanjs/van";
+import van from "vanjs-core";
 
 const { polyline, path, polygon, circle, line, rect, ellipse } = van.tags(
   "http://www.w3.org/2000/svg",

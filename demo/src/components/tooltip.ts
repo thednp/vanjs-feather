@@ -1,4 +1,4 @@
-import van from "@vanjs/van";
+import van from "vanjs-core";
 import { type ChildDom, type Props } from "vanjs-core";
 
 const Tooltip = (props: Props = {}, ...children: ChildDom[]) => {

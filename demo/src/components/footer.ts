@@ -1,4 +1,4 @@
-import van from "@vanjs/van";
+import van from "vanjs-core";
 import { Github } from "../../../src";
 
 export default function Footer() {

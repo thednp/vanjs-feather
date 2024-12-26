@@ -1,5 +1,5 @@
 import { type State } from "vanjs-core";
-import van from "@vanjs/van";
+import van from "vanjs-core";
 
 export type IconProps = {
   id?: string;

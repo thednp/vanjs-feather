@@ -37,6 +37,11 @@ Powered by:
    yarn add vanjs-feather
    ```
 
+  **Install with deno**:
+   ```bash
+   deno add npm:vanjs-feather
+   ```
+
 ## Usage
 
    **Basic Usage**

@@ -32,35 +32,47 @@ export const FeatherIcon = (
     id,
     class: className,
     style,
-    width: w,
-    height: h,
-    strokeWidth: sw,
-    stroke: s,
+    width,
+    height,
+    strokeWidth,
+    stroke,
     ...rest
   } = props;
 
-  // const iconProps: Record<string, number | string | State<string | number>> = {
-  // const finalProps: Record<string, PropValueOrDerived | undefined> = {
   const finalProps: Record<string, PropValueOrDerived | undefined> = {
     xmlns: ns,
-    id: id,
-    class: van.derive(() =>
-      isState(className) ? className.val : className as string
-    ),
-    style: van.derive(() => isState(style) ? style.val : style as string),
-    width: van.derive(() => isState(w) ? w.val : w as number || 24),
-    height: van.derive(() => isState(h) ? h.val : h as number || 24),
-    stroke: van.derive(() =>
-      isState(s) ? s.val : s as string || "currentColor"
-    ),
-    "stroke-width": van.derive(() =>
-      isState(sw) ? sw.val : (sw as number || 2)
-    ),
     viewBox: "0 0 24 24",
     fill: "none",
+    width: van.derive(() => isState(width) ? width.val : width as number || 24),
+    height: van.derive(() =>
+      isState(height) ? height.val : height as number || 24
+    ),
+    stroke: van.derive(() =>
+      isState(stroke) ? stroke.val : stroke as string || "currentColor"
+    ),
+    "stroke-width": van.derive(() =>
+      isState(strokeWidth) ? strokeWidth.val : (strokeWidth as number || 2)
+    ),
     "stroke-linecap": "round",
     "stroke-linejoin": "round",
   };
+
+  if (id) {
+    finalProps.id = id;
+  }
+
+  van.derive(() => {
+    if (className) {
+      finalProps.class = isState(className)
+        ? className.val
+        : (className || "") as string;
+    }
+  });
+  van.derive(() => {
+    if (style) {
+      finalProps.style = isState(style) ? style.val : (style || "") as string;
+    }
+  });
 
   return svg(
     {

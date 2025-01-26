@@ -44,7 +44,7 @@ Powered by:
 
   **Install with bun**:
    ```bash
-   bun install vanjs-feather
+   bun add vanjs-feather
    ```
 
 ## Usage

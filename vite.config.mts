@@ -22,7 +22,7 @@ export default defineConfig({
       copyDtsFiles: true,
       rollupTypes: true,
     }),
-    vanjs() as any,
+    vanjs(),
   ],
   build: {
     minify: 'esbuild',

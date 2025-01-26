@@ -1,5 +1,5 @@
-const L = {}, D1 = (t) => {
-  t.van && (L.van = t.van), t.vanX && (L.vanX = t.vanX);
+const P = {}, D1 = (t) => {
+  t.van && (P.van = t.van), t.vanX && (P.vanX = t.vanX);
 }, t1 = {
   calc: (t) => t(),
   reactive: (t) => t,
@@ -7,7 +7,7 @@ const L = {}, D1 = (t) => {
   stateFields: (t) => {
     const y = Array.isArray(t) ? [] : { __proto__: Object.getPrototypeOf(t) };
     for (const [s, c] of Object.entries(t))
-      y[s] = L.van.state(c);
+      y[s] = P.van.state(c);
     return y;
   },
   raw: (t) => t,
@@ -15,7 +15,7 @@ const L = {}, D1 = (t) => {
     t instanceof Function && (t = t());
     const c = Array.isArray(y);
     for (const [a, l] of Object.entries(y))
-      L.van.add(t, s(L.van.state(l), () => {
+      P.van.add(t, s(P.van.state(l), () => {
       }, c ? Number(a) : a));
     return t;
   },
@@ -45,19 +45,19 @@ const L = {}, D1 = (t) => {
   "&": "&amp;",
   "<": "&lt;",
   ">": "&gt;"
-}, R1 = (t) => t.replace(/[&<>]/g, (y) => B1[y] || y), U1 = (t) => t.replace(/"/g, "&quot;"), w = Object.getPrototypeOf, c1 = w(w), $1 = w(s1), a1 = { get oldVal() {
+}, R1 = (t) => t.replace(/[&<>]/g, (y) => B1[y] || y), U1 = (t) => t.replace(/"/g, "&quot;"), A = Object.getPrototypeOf, c1 = A(A), $1 = A(s1), a1 = { get oldVal() {
   return this.val;
 }, get rawVal() {
   return this.val;
 } }, r1 = (t) => ({ __proto__: a1, val: t }), i1 = (t, y) => {
-  let s = w(t ?? 0);
+  let s = A(t ?? 0);
   return s === a1 ? t.val : s !== c1 || y?.startsWith("on") ? t : t();
 }, l1 = {
   renderToBuf(t) {
     if (t.push(`<${this.name}${this.propsStr}>`), !s1[this.name]) {
       for (const y of this.children) {
         const s = i1(y);
-        w(s) === l1 ? s.renderToBuf(t) : t.push((F1[this.name] ? (c) => c : R1)(s.toString()));
+        A(s) === l1 ? s.renderToBuf(t) : t.push((F1[this.name] ? (c) => c : R1)(s.toString()));
       }
       t.push(`</${this.name}>`);
     }
@@ -67,12 +67,12 @@ const L = {}, D1 = (t) => {
     return this.renderToBuf(t), t.join("");
   }
 }, d1 = (t, ...y) => {
-  const [s, ...c] = w(y[0] ?? 0) === $1 ? y : [{}, ...y], a = Object.entries(s).map(([l, d]) => {
+  const [s, ...c] = A(y[0] ?? 0) === $1 ? y : [{}, ...y], a = Object.entries(s).map(([l, d]) => {
     const u = i1(d, l);
     return typeof u == "boolean" ? u ? " " + l : "" : (
       // Disable setting attribute for function-valued properties (mostly event handlers),
       // as they're usually not useful for SSR (server-side rendering).
-      u && w(u) !== c1 ? ` ${l}=${JSON.stringify(U1(u.toString()))}` : ""
+      A(u ?? 0) !== c1 ? ` ${l}=${JSON.stringify(U1(String(u)))}` : ""
     );
   }).join("");
   return {
@@ -91,29 +91,29 @@ const L = {}, D1 = (t) => {
     return e1.html(...t).renderToBuf(y), y.join("");
   }
 };
-let v = Object.getPrototypeOf, P, N, C, _, h1 = { isConnected: 1 }, I1 = 1e3, F, X1 = {}, N1 = v(h1), u1 = v(v), f, p1 = (t, y, s, c) => (t ?? (setTimeout(s, c), /* @__PURE__ */ new Set())).add(y), M1 = (t, y, s) => {
-  let c = C;
-  C = y;
+let v = Object.getPrototypeOf, b, N, z, L, h1 = { isConnected: 1 }, I1 = 1e3, F, X1 = {}, N1 = v(h1), u1 = v(v), w, p1 = (t, y, s, c) => (t ?? (setTimeout(s, c), /* @__PURE__ */ new Set())).add(y), M1 = (t, y, s) => {
+  let c = z;
+  z = y;
   try {
     return t(s);
   } catch (a) {
     return console.error(a), s;
   } finally {
-    C = c;
+    z = c;
   }
 }, R = (t) => t.filter((y) => y._dom?.isConnected), v1 = (t) => F = p1(F, t, () => {
   for (let y of F)
     y._bindings = R(y._bindings), y._listeners = R(y._listeners);
-  F = f;
+  F = w;
 }, I1), U = {
   get val() {
-    return C?._getters?.add(this), this.rawVal;
+    return z?._getters?.add(this), this.rawVal;
   },
   get oldVal() {
-    return C?._getters?.add(this), this._oldVal;
+    return z?._getters?.add(this), this._oldVal;
   },
   set val(t) {
-    C?._setters?.add(this), t !== this.rawVal && (this.rawVal = t, this._bindings.length + this._listeners.length ? (N?.add(this), P = p1(P, this, q1)) : this._oldVal = t);
+    z?._setters?.add(this), t !== this.rawVal && (this.rawVal = t, this._bindings.length + this._listeners.length ? (N?.add(this), b = p1(b, this, q1)) : this._oldVal = t);
   }
 }, g1 = (t) => ({
   __proto__: U,
@@ -121,115 +121,115 @@ let v = Object.getPrototypeOf, P, N, C, _, h1 = { isConnected: 1 }, I1 = 1e3, F,
   _oldVal: t,
   _bindings: [],
   _listeners: []
-}), b = (t, y) => {
-  let s = { _getters: /* @__PURE__ */ new Set(), _setters: /* @__PURE__ */ new Set() }, c = { f: t }, a = _;
-  _ = [];
+}), k = (t, y) => {
+  let s = { _getters: /* @__PURE__ */ new Set(), _setters: /* @__PURE__ */ new Set() }, c = { f: t }, a = L;
+  L = [];
   let l = M1(t, s, y);
   l = (l ?? document).nodeType ? l : new Text(l);
   for (let d of s._getters)
     s._setters.has(d) || (v1(d), d._bindings.push(c));
-  for (let d of _) d._dom = l;
-  return _ = a, c._dom = l;
+  for (let d of L) d._dom = l;
+  return L = a, c._dom = l;
 }, J = (t, y = g1(), s) => {
   let c = { _getters: /* @__PURE__ */ new Set(), _setters: /* @__PURE__ */ new Set() }, a = { f: t, s: y };
-  a._dom = s ?? _?.push(a) ?? h1, y.val = M1(t, c, y.rawVal);
+  a._dom = s ?? L?.push(a) ?? h1, y.val = M1(t, c, y.rawVal);
   for (let l of c._getters)
     c._setters.has(l) || (v1(l), l._listeners.push(a));
   return y;
 }, f1 = (t, ...y) => {
   for (let s of y.flat(1 / 0)) {
-    let c = v(s ?? 0), a = c === U ? b(() => s.val) : c === u1 ? b(s) : s;
-    a != f && t.append(a);
+    let c = v(s ?? 0), a = c === U ? k(() => s.val) : c === u1 ? k(s) : s;
+    a != w && t.append(a);
   }
   return t;
 }, w1 = (t, y, ...s) => {
   let [{ is: c, ...a }, ...l] = v(s[0] ?? 0) === N1 ? s : [{}, ...s], d = t ? document.createElementNS(t, y, { is: c }) : document.createElement(y, { is: c });
   for (let [u, p] of Object.entries(a)) {
-    let m = (S) => S ? Object.getOwnPropertyDescriptor(S, u) ?? m(v(S)) : f, H = y + "," + u, O = X1[H] ??= m(v(d))?.set ?? 0, D = u.startsWith("on") ? (S, O1) => {
+    let V = (_) => _ ? Object.getOwnPropertyDescriptor(_, u) ?? V(v(_)) : w, S = y + "," + u, D = X1[S] ??= V(v(d))?.set ?? 0, g = u.startsWith("on") ? (_, O1) => {
       let j = u.slice(2);
-      d.removeEventListener(j, O1), d.addEventListener(j, S);
-    } : O ? O.bind(d) : d.setAttribute.bind(d, u), X = v(p ?? 0);
-    u.startsWith("on") || X === u1 && (p = J(p), X = U), X === U ? b(() => (D(p.val, p._oldVal), d)) : D(p);
+      d.removeEventListener(j, O1), d.addEventListener(j, _);
+    } : D ? D.bind(d) : d.setAttribute.bind(d, u), X = v(p ?? 0);
+    u.startsWith("on") || X === u1 && (p = J(p), X = U), X === U ? k(() => (g(p.val, p._oldVal), d)) : g(p);
   }
   return f1(d, l);
-}, y1 = (t) => ({ get: (y, s) => w1.bind(f, t, s) }), A1 = (t, y) => y ? y !== t && t.replaceWith(y) : t.remove(), q1 = () => {
-  let t = 0, y = [...P].filter((c) => c.rawVal !== c._oldVal);
+}, y1 = (t) => ({ get: (y, s) => w1.bind(w, t, s) }), A1 = (t, y) => y ? y !== t && t.replaceWith(y) : t.remove(), q1 = () => {
+  let t = 0, y = [...b].filter((c) => c.rawVal !== c._oldVal);
   do {
     N = /* @__PURE__ */ new Set();
     for (let c of new Set(y.flatMap((a) => a._listeners = R(a._listeners))))
-      J(c.f, c.s, c._dom), c._dom = f;
+      J(c.f, c.s, c._dom), c._dom = w;
   } while (++t < 100 && (y = [...N]).length);
-  let s = [...P].filter((c) => c.rawVal !== c._oldVal);
-  P = f;
+  let s = [...b].filter((c) => c.rawVal !== c._oldVal);
+  b = w;
   for (let c of new Set(s.flatMap((a) => a._bindings = R(a._bindings))))
-    A1(c._dom, b(c.f, c._dom)), c._dom = f;
+    A1(c._dom, k(c.f, c._dom)), c._dom = w;
   for (let c of s) c._oldVal = c.rawVal;
 };
 const m1 = {
   tags: new Proxy((t) => new Proxy(w1, y1(t)), y1()),
-  hydrate: (t, y) => A1(t, b(y, t)),
+  hydrate: (t, y) => A1(t, k(y, t)),
   add: f1,
   state: g1,
   derive: J
 };
-let { fromEntries: V1, entries: T, keys: q, hasOwn: W, getPrototypeOf: Y } = Object, { get: C1, set: o1, deleteProperty: W1, ownKeys: K1 } = Reflect, { state: $, derive: Z1, add: J1 } = m1, B, Y1 = 1e3, Q, K, A = Symbol(), z1 = Symbol(), E = Symbol(), g = Symbol(), k = Symbol(), H1 = Symbol(), Q1 = (t) => (t[z1] = 1, t), z = (t) => t instanceof Object && !(t instanceof Function) && !t[H1], S1 = (t) => {
+let { fromEntries: V1, entries: O, keys: q, hasOwn: W, getPrototypeOf: Y } = Object, { get: C1, set: o1, deleteProperty: W1, ownKeys: K1 } = Reflect, { state: $, derive: Z1, add: J1 } = m1, B, Y1 = 1e3, Q, K, m = Symbol(), z1 = Symbol(), E = Symbol(), f = Symbol(), T = Symbol(), H1 = Symbol(), Q1 = (t) => (t[z1] = 1, t), H = (t) => t instanceof Object && !(t instanceof Function) && !t[H1], S1 = (t) => {
   if (t?.[z1]) {
     let y = $();
     return Z1(() => {
       let s = t();
-      z(y.rawVal) && z(s) ? k1(y.rawVal, s) : y.val = G(s);
+      H(y.rawVal) && H(s) ? k1(y.rawVal, s) : y.val = G(s);
     }), y;
   } else return $(G(t));
 }, j1 = (t) => {
   let y = Array.isArray(t) ? [] : { __proto__: Y(t) };
-  for (let [s, c] of T(t)) y[s] = S1(c);
-  return y[E] = [], y[g] = $(1), y;
+  for (let [s, c] of O(t)) y[s] = S1(c);
+  return y[E] = [], y[f] = $(1), y;
 }, _1 = {
-  get: (t, y, s) => y === A ? t : W(t, y) ? Array.isArray(t) && y === "length" ? (t[g].val, t.length) : t[y].val : C1(t, y, s),
-  set: (t, y, s, c) => W(t, y) ? Array.isArray(t) && y === "length" ? (s !== t.length && ++t[g].val, t.length = s, 1) : (t[y].val = G(s), 1) : y in t ? o1(t, y, s, c) : o1(t, y, S1(s)) && (++t[g].val, I(t).forEach(
+  get: (t, y, s) => y === m ? t : W(t, y) ? Array.isArray(t) && y === "length" ? (t[f].val, t.length) : t[y].val : C1(t, y, s),
+  set: (t, y, s, c) => W(t, y) ? Array.isArray(t) && y === "length" ? (s !== t.length && ++t[f].val, t.length = s, 1) : (t[y].val = G(s), 1) : y in t ? o1(t, y, s, c) : o1(t, y, S1(s)) && (++t[f].val, I(t).forEach(
     P1.bind(Q, c, y, t[y], K)
   ), 1),
-  deleteProperty: (t, y) => (W1(t, y) && y2(t, y), ++t[g].val),
-  ownKeys: (t) => (t[g].val, K1(t))
-}, G = (t) => !z(t) || t[A] ? t : new Proxy(j1(t), _1), t2 = (t) => (t[H1] = 1, t), r2 = (t) => t[A], n2 = Y($()), e2 = (t) => new Proxy(t, {
+  deleteProperty: (t, y) => (W1(t, y) && y2(t, y), ++t[f].val),
+  ownKeys: (t) => (t[f].val, K1(t))
+}, G = (t) => !H(t) || t[m] ? t : new Proxy(j1(t), _1), t2 = (t) => (t[H1] = 1, t), r2 = (t) => t[m], n2 = Y($()), e2 = (t) => new Proxy(t, {
   get: (y, s, c) => Y(y[s] ?? 0) === n2 ? { val: L1(y[s].rawVal) } : C1(y, s, c)
-}), L1 = (t) => t?.[A] ? new Proxy(e2(t[A]), _1) : t, I = (t) => t[E] = t[E].filter((y) => y._containerDom.isConnected), P1 = (t, y, s, c, { _containerDom: a, f: l }) => {
+}), L1 = (t) => t?.[m] ? new Proxy(e2(t[m]), _1) : t, I = (t) => t[E] = t[E].filter((y) => y._containerDom.isConnected), P1 = (t, y, s, c, { _containerDom: a, f: l }) => {
   let d = Array.isArray(t), u = d ? Number(y) : y;
-  J1(a, () => a[k][y] = l(s, () => delete t[y], u)), d && !c && u !== t.length - 1 && a.insertBefore(
+  J1(a, () => a[T][y] = l(s, () => delete t[y], u)), d && !c && u !== t.length - 1 && a.insertBefore(
     a.lastChild,
-    a[k][q(t).find((p) => Number(p) > u)]
+    a[T][q(t).find((p) => Number(p) > u)]
   );
 }, y2 = (t, y) => {
   for (let s of I(t)) {
-    let c = s._containerDom[k];
+    let c = s._containerDom[T];
     c[y]?.remove(), delete c[y];
   }
 }, o2 = (t) => (B ?? (B = (setTimeout(
   () => (B.forEach(I), B = Q),
   Y1
 ), /* @__PURE__ */ new Set()))).add(t), x2 = (t, y, s) => {
-  let c = { _containerDom: t instanceof Function ? t() : t, f: s }, a = y[A];
-  c._containerDom[k] = {}, a[E].push(c), o2(a);
-  for (let [l, d] of T(a)) P1(y, l, d, 1, c);
+  let c = { _containerDom: t instanceof Function ? t() : t, f: s }, a = y[m];
+  c._containerDom[T] = {}, a[E].push(c), o2(a);
+  for (let [l, d] of O(a)) P1(y, l, d, 1, c);
   return c._containerDom;
 }, b1 = (t, y) => {
-  for (let [a, l] of T(y)) {
+  for (let [a, l] of O(y)) {
     let d = t[a];
-    z(d) && z(l) ? b1(d, l) : t[a] = l;
+    H(d) && H(l) ? b1(d, l) : t[a] = l;
   }
   for (let a in t) W(y, a) || delete t[a];
   let s = q(y), c = Array.isArray(t);
   if (c || q(t).some((a, l) => a !== s[l])) {
-    let a = t[A];
+    let a = t[m];
     if (c) t.length = y.length;
     else {
-      ++a[g].val;
+      ++a[f].val;
       let l = { ...a };
       for (let d of s) delete a[d];
       for (let d of s) a[d] = l[d];
     }
     for (let { _containerDom: l } of I(a)) {
-      let { firstChild: d, [k]: u } = l;
+      let { firstChild: d, [T]: u } = l;
       for (let p of s) d === u[p] ? d = d.nextSibling : l.insertBefore(u[p], d);
     }
   }
@@ -239,12 +239,12 @@ let { fromEntries: V1, entries: T, keys: q, hasOwn: W, getPrototypeOf: Y } = Obj
   try {
     return b1(
       t,
-      y instanceof Function ? Array.isArray(t) ? y(t.filter((s) => 1)) : V1(y(T(t))) : y
+      y instanceof Function ? Array.isArray(t) ? y(t.filter((s) => 1)) : V1(y(O(t))) : y
     );
   } finally {
     K = Q;
   }
-}, Z = (t) => Array.isArray(t) ? t.filter((y) => 1).map(Z) : z(t) ? V1(T(t).map(([y, s]) => [y, Z(s)])) : t;
+}, Z = (t) => Array.isArray(t) ? t.filter((y) => 1).map(Z) : H(t) ? V1(O(t).map(([y, s]) => [y, Z(s)])) : t;
 const x1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   calc: Q1,
@@ -265,40 +265,41 @@ const x1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   }
 };
 D1(T1);
-const M = T1.van, V = (t) => t !== null && typeof t == "object" && "val" in t, n = (t = {}, ...y) => {
+const M = T1.van, C = (t) => t !== null && typeof t == "object" && "val" in t, n = (t = {}, ...y) => {
   const s = "http://www.w3.org/2000/svg", { svg: c } = M.tags(s), {
     id: a,
     class: l,
     style: d,
     width: u,
     height: p,
-    strokeWidth: m,
-    stroke: H,
-    ...O
-  } = t, D = {
+    strokeWidth: V,
+    stroke: S,
+    ...D
+  } = t, g = {
     xmlns: s,
-    id: a,
-    class: M.derive(
-      () => V(l) ? l.val : l
-    ),
-    style: M.derive(() => V(d) ? d.val : d),
-    width: M.derive(() => V(u) ? u.val : u || 24),
-    height: M.derive(() => V(p) ? p.val : p || 24),
-    stroke: M.derive(
-      () => V(H) ? H.val : H || "currentColor"
-    ),
-    "stroke-width": M.derive(
-      () => V(m) ? m.val : m || 2
-    ),
     viewBox: "0 0 24 24",
     fill: "none",
+    width: M.derive(() => C(u) ? u.val : u || 24),
+    height: M.derive(
+      () => C(p) ? p.val : p || 24
+    ),
+    stroke: M.derive(
+      () => C(S) ? S.val : S || "currentColor"
+    ),
+    "stroke-width": M.derive(
+      () => C(V) ? V.val : V || 2
+    ),
     "stroke-linecap": "round",
     "stroke-linejoin": "round"
   };
-  return c(
+  return a && (g.id = a), M.derive(() => {
+    l && (g.class = C(l) ? l.val : l || "");
+  }), M.derive(() => {
+    d && (g.style = C(d) ? d.val : d || "");
+  }), c(
     {
-      ...D,
-      ...O
+      ...g,
+      ...D
     },
     y
   );

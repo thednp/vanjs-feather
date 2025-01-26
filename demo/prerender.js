@@ -32,11 +32,15 @@ const routesToPrerender = fs.existsSync(toAbsolute("src/pages"))
   // pre-render each route...
   for (const url of routesToPrerender) {
     const rendered = await render(url, manifest);
+    console.log("pre-rendering:", rendered.head);
 
     const html = template
       .replace(`<!--preload-links-->`, rendered.preloadLinks)
       .replace(`<!--app-head-->`, rendered.head)
-      .replace(`<!--app-html-->`, rendered.html);
+      .replace(`<!--app-html-->`, rendered.html)
+      // hack for relative assets
+      .replace(/src="\/assets/g, 'src="./assets')
+      .replace(/href="\/assets/g, 'href="./assets');
 
     const filePath = `dist/static${url === "/" ? "/index" : url}.html`;
     fs.writeFileSync(toAbsolute(filePath), html);

@@ -68,11 +68,11 @@ const S = {}, O1 = (t) => {
   }
 }, l1 = (t, ...y) => {
   const [s, ...c] = A(y[0] ?? 0) === U1 ? y : [{}, ...y], a = Object.entries(s).map(([l, d]) => {
-    const u = a1(d, l), p = l.toLowerCase();
-    return typeof u == "boolean" ? u ? " " + p : "" : (
+    const u = a1(d, l);
+    return typeof u == "boolean" ? u ? " " + l : "" : (
       // Disable setting attribute for function-valued properties (mostly event handlers),
       // as they're usually not useful for SSR (server-side rendering).
-      A(u) !== s1 ? ` ${p}=${JSON.stringify(R1(u.toString()))}` : ""
+      A(u) !== s1 ? ` ${l}=${JSON.stringify(R1(u.toString()))}` : ""
     );
   }).join("");
   return {

@@ -39,7 +39,12 @@ Powered by:
 
   **Install with deno**:
    ```bash
-   deno add npm:vanjs-feather
+   deno install npm:vanjs-feather
+   ```
+
+  **Install with bun**:
+   ```bash
+   bun install vanjs-feather
    ```
 
 ## Usage

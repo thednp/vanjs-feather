@@ -1,13 +1,13 @@
-const S = {}, O1 = (t) => {
-  t.van && (S.van = t.van), t.vanX && (S.vanX = t.vanX);
-}, j = {
+const L = {}, D1 = (t) => {
+  t.van && (L.van = t.van), t.vanX && (L.vanX = t.vanX);
+}, t1 = {
   calc: (t) => t(),
   reactive: (t) => t,
   noreactive: (t) => t,
   stateFields: (t) => {
     const y = Array.isArray(t) ? [] : { __proto__: Object.getPrototypeOf(t) };
     for (const [s, c] of Object.entries(t))
-      y[s] = S.van.state(c);
+      y[s] = L.van.state(c);
     return y;
   },
   raw: (t) => t,
@@ -15,13 +15,13 @@ const S = {}, O1 = (t) => {
     t instanceof Function && (t = t());
     const c = Array.isArray(y);
     for (const [a, l] of Object.entries(y))
-      S.van.add(t, s(S.van.state(l), () => {
+      L.van.add(t, s(L.van.state(l), () => {
       }, c ? Number(a) : a));
     return t;
   },
   replace: (t) => t,
   compact: (t) => t
-}, x1 = {
+}, s1 = {
   input: 1,
   meta: 1,
   br: 1,
@@ -38,26 +38,26 @@ const S = {}, O1 = (t) => {
   embed: 1,
   command: 1,
   keygen: 1
-}, D1 = {
+}, F1 = {
   script: 1,
   style: 1
-}, F1 = {
+}, B1 = {
   "&": "&amp;",
   "<": "&lt;",
   ">": "&gt;"
-}, B1 = (t) => t.replace(/[&<>]/g, (y) => F1[y] || y), R1 = (t) => t.replace(/"/g, "&quot;"), A = Object.getPrototypeOf, s1 = A(A), U1 = A(x1), c1 = { get oldVal() {
+}, R1 = (t) => t.replace(/[&<>]/g, (y) => B1[y] || y), U1 = (t) => t.replace(/"/g, "&quot;"), w = Object.getPrototypeOf, c1 = w(w), $1 = w(s1), a1 = { get oldVal() {
   return this.val;
 }, get rawVal() {
   return this.val;
-} }, t1 = (t) => ({ __proto__: c1, val: t }), a1 = (t, y) => {
-  let s = A(t ?? 0);
-  return s === c1 ? t.val : s !== s1 || y?.startsWith("on") ? t : t();
-}, i1 = {
+} }, r1 = (t) => ({ __proto__: a1, val: t }), i1 = (t, y) => {
+  let s = w(t ?? 0);
+  return s === a1 ? t.val : s !== c1 || y?.startsWith("on") ? t : t();
+}, l1 = {
   renderToBuf(t) {
-    if (t.push(`<${this.name}${this.propsStr}>`), !x1[this.name]) {
+    if (t.push(`<${this.name}${this.propsStr}>`), !s1[this.name]) {
       for (const y of this.children) {
-        const s = a1(y);
-        A(s) === i1 ? s.renderToBuf(t) : t.push((D1[this.name] ? (c) => c : B1)(s.toString()));
+        const s = i1(y);
+        w(s) === l1 ? s.renderToBuf(t) : t.push((F1[this.name] ? (c) => c : R1)(s.toString()));
       }
       t.push(`</${this.name}>`);
     }
@@ -66,293 +66,302 @@ const S = {}, O1 = (t) => {
     const t = [];
     return this.renderToBuf(t), t.join("");
   }
-}, l1 = (t, ...y) => {
-  const [s, ...c] = A(y[0] ?? 0) === U1 ? y : [{}, ...y], a = Object.entries(s).map(([l, d]) => {
-    const u = a1(d, l);
+}, d1 = (t, ...y) => {
+  const [s, ...c] = w(y[0] ?? 0) === $1 ? y : [{}, ...y], a = Object.entries(s).map(([l, d]) => {
+    const u = i1(d, l);
     return typeof u == "boolean" ? u ? " " + l : "" : (
       // Disable setting attribute for function-valued properties (mostly event handlers),
       // as they're usually not useful for SSR (server-side rendering).
-      A(u) !== s1 ? ` ${l}=${JSON.stringify(R1(u.toString()))}` : ""
+      u && w(u) !== c1 ? ` ${l}=${JSON.stringify(U1(u.toString()))}` : ""
     );
   }).join("");
   return {
-    __proto__: i1,
+    __proto__: l1,
     name: t,
     propsStr: a,
     children: c.flat(1 / 0).filter((l) => l != null)
   };
-}, r1 = { get: (t, y) => l1.bind(null, y) }, n1 = new Proxy((t) => new Proxy(l1, r1), r1), $1 = (t, ...y) => (t.children.push(...y.flat(1 / 0).filter((s) => s != null)), t), E1 = {
-  add: $1,
-  tags: n1,
-  state: t1,
-  derive: (t) => t1(t()),
+}, n1 = { get: (t, y) => d1.bind(null, y) }, e1 = new Proxy((t) => new Proxy(d1, n1), n1), E1 = (t, ...y) => (t.children.push(...y.flat(1 / 0).filter((s) => s != null)), t), G1 = {
+  add: E1,
+  tags: e1,
+  state: r1,
+  derive: (t) => r1(t()),
   html: (...t) => {
     const y = ["<!DOCTYPE html>"];
-    return n1.html(...t).renderToBuf(y), y.join("");
+    return e1.html(...t).renderToBuf(y), y.join("");
   }
 };
-let v = Object.getPrototypeOf, _, X, V, H, d1 = { isConnected: 1 }, G1 = 1e3, O, I1 = {}, X1 = v(d1), h1 = v(v), w, u1 = (t, y, s, c) => (t ?? (setTimeout(s, c), /* @__PURE__ */ new Set())).add(y), p1 = (t, y, s) => {
-  let c = V;
-  V = y;
+let v = Object.getPrototypeOf, P, N, C, _, h1 = { isConnected: 1 }, I1 = 1e3, F, X1 = {}, N1 = v(h1), u1 = v(v), f, p1 = (t, y, s, c) => (t ?? (setTimeout(s, c), /* @__PURE__ */ new Set())).add(y), M1 = (t, y, s) => {
+  let c = C;
+  C = y;
   try {
     return t(s);
   } catch (a) {
     return console.error(a), s;
   } finally {
-    V = c;
+    C = c;
   }
-}, F = (t) => t.filter((y) => y._dom?.isConnected), M1 = (t) => O = u1(O, t, () => {
-  for (let y of O)
-    y._bindings = F(y._bindings), y._listeners = F(y._listeners);
-  O = w;
-}, G1), B = {
+}, R = (t) => t.filter((y) => y._dom?.isConnected), v1 = (t) => F = p1(F, t, () => {
+  for (let y of F)
+    y._bindings = R(y._bindings), y._listeners = R(y._listeners);
+  F = f;
+}, I1), U = {
   get val() {
-    return V?._getters?.add(this), this.rawVal;
+    return C?._getters?.add(this), this.rawVal;
   },
   get oldVal() {
-    return V?._getters?.add(this), this._oldVal;
+    return C?._getters?.add(this), this._oldVal;
   },
   set val(t) {
-    V?._setters?.add(this), t !== this.rawVal && (this.rawVal = t, this._bindings.length + this._listeners.length ? (X?.add(this), _ = u1(_, this, N1)) : this._oldVal = t);
+    C?._setters?.add(this), t !== this.rawVal && (this.rawVal = t, this._bindings.length + this._listeners.length ? (N?.add(this), P = p1(P, this, q1)) : this._oldVal = t);
   }
-}, v1 = (t) => ({
-  __proto__: B,
+}, g1 = (t) => ({
+  __proto__: U,
   rawVal: t,
   _oldVal: t,
   _bindings: [],
   _listeners: []
-}), L = (t, y) => {
-  let s = { _getters: /* @__PURE__ */ new Set(), _setters: /* @__PURE__ */ new Set() }, c = { f: t }, a = H;
-  H = [];
-  let l = p1(t, s, y);
+}), b = (t, y) => {
+  let s = { _getters: /* @__PURE__ */ new Set(), _setters: /* @__PURE__ */ new Set() }, c = { f: t }, a = _;
+  _ = [];
+  let l = M1(t, s, y);
   l = (l ?? document).nodeType ? l : new Text(l);
   for (let d of s._getters)
-    s._setters.has(d) || (M1(d), d._bindings.push(c));
-  for (let d of H) d._dom = l;
-  return H = a, c._dom = l;
-}, Z = (t, y = v1(), s) => {
+    s._setters.has(d) || (v1(d), d._bindings.push(c));
+  for (let d of _) d._dom = l;
+  return _ = a, c._dom = l;
+}, J = (t, y = g1(), s) => {
   let c = { _getters: /* @__PURE__ */ new Set(), _setters: /* @__PURE__ */ new Set() }, a = { f: t, s: y };
-  a._dom = s ?? H?.push(a) ?? d1, y.val = p1(t, c, y.rawVal);
+  a._dom = s ?? _?.push(a) ?? h1, y.val = M1(t, c, y.rawVal);
   for (let l of c._getters)
-    c._setters.has(l) || (M1(l), l._listeners.push(a));
+    c._setters.has(l) || (v1(l), l._listeners.push(a));
   return y;
-}, g1 = (t, ...y) => {
+}, f1 = (t, ...y) => {
   for (let s of y.flat(1 / 0)) {
-    let c = v(s ?? 0), a = c === B ? L(() => s.val) : c === h1 ? L(s) : s;
-    a != w && t.append(a);
+    let c = v(s ?? 0), a = c === U ? b(() => s.val) : c === u1 ? b(s) : s;
+    a != f && t.append(a);
   }
   return t;
-}, f1 = (t, y, ...s) => {
-  let [{ is: c, ...a }, ...l] = v(s[0] ?? 0) === X1 ? s : [{}, ...s], d = t ? document.createElementNS(t, y, { is: c }) : document.createElement(y, { is: c });
+}, w1 = (t, y, ...s) => {
+  let [{ is: c, ...a }, ...l] = v(s[0] ?? 0) === N1 ? s : [{}, ...s], d = t ? document.createElementNS(t, y, { is: c }) : document.createElement(y, { is: c });
   for (let [u, p] of Object.entries(a)) {
-    let k = (z) => z ? Object.getOwnPropertyDescriptor(z, u) ?? k(v(z)) : w, G = y + "," + u, T = I1[G] ??= k(v(d))?.set ?? 0, g = u.startsWith("on") ? (z, T1) => {
-      let Q = u.slice(2);
-      d.removeEventListener(Q, T1), d.addEventListener(Q, z);
-    } : T ? T.bind(d) : d.setAttribute.bind(d, u), I = v(p ?? 0);
-    u.startsWith("on") || I === h1 && (p = Z(p), I = B), I === B ? L(() => (g(p.val, p._oldVal), d)) : g(p);
+    let m = (S) => S ? Object.getOwnPropertyDescriptor(S, u) ?? m(v(S)) : f, H = y + "," + u, O = X1[H] ??= m(v(d))?.set ?? 0, D = u.startsWith("on") ? (S, O1) => {
+      let j = u.slice(2);
+      d.removeEventListener(j, O1), d.addEventListener(j, S);
+    } : O ? O.bind(d) : d.setAttribute.bind(d, u), X = v(p ?? 0);
+    u.startsWith("on") || X === u1 && (p = J(p), X = U), X === U ? b(() => (D(p.val, p._oldVal), d)) : D(p);
   }
-  return g1(d, l);
-}, e1 = (t) => ({ get: (y, s) => f1.bind(w, t, s) }), w1 = (t, y) => y ? y !== t && t.replaceWith(y) : t.remove(), N1 = () => {
-  let t = 0, y = [..._].filter((c) => c.rawVal !== c._oldVal);
+  return f1(d, l);
+}, y1 = (t) => ({ get: (y, s) => w1.bind(f, t, s) }), A1 = (t, y) => y ? y !== t && t.replaceWith(y) : t.remove(), q1 = () => {
+  let t = 0, y = [...P].filter((c) => c.rawVal !== c._oldVal);
   do {
-    X = /* @__PURE__ */ new Set();
-    for (let c of new Set(y.flatMap((a) => a._listeners = F(a._listeners))))
-      Z(c.f, c.s, c._dom), c._dom = w;
-  } while (++t < 100 && (y = [...X]).length);
-  let s = [..._].filter((c) => c.rawVal !== c._oldVal);
-  _ = w;
-  for (let c of new Set(s.flatMap((a) => a._bindings = F(a._bindings))))
-    w1(c._dom, L(c.f, c._dom)), c._dom = w;
+    N = /* @__PURE__ */ new Set();
+    for (let c of new Set(y.flatMap((a) => a._listeners = R(a._listeners))))
+      J(c.f, c.s, c._dom), c._dom = f;
+  } while (++t < 100 && (y = [...N]).length);
+  let s = [...P].filter((c) => c.rawVal !== c._oldVal);
+  P = f;
+  for (let c of new Set(s.flatMap((a) => a._bindings = R(a._bindings))))
+    A1(c._dom, b(c.f, c._dom)), c._dom = f;
   for (let c of s) c._oldVal = c.rawVal;
 };
-const A1 = {
-  tags: new Proxy((t) => new Proxy(f1, e1(t)), e1()),
-  hydrate: (t, y) => w1(t, L(y, t)),
-  add: g1,
-  state: v1,
-  derive: Z
+const m1 = {
+  tags: new Proxy((t) => new Proxy(w1, y1(t)), y1()),
+  hydrate: (t, y) => A1(t, b(y, t)),
+  add: f1,
+  state: g1,
+  derive: J
 };
-let { fromEntries: m1, entries: b, keys: N, hasOwn: q, getPrototypeOf: J } = Object, { get: V1, set: y1, deleteProperty: q1, ownKeys: W1 } = Reflect, { state: R, derive: K1, add: Z1 } = A1, D, J1 = 1e3, Y, W, m = Symbol(), C1 = Symbol(), U = Symbol(), f = Symbol(), P = Symbol(), z1 = Symbol(), Y1 = (t) => (t[C1] = 1, t), C = (t) => t instanceof Object && !(t instanceof Function) && !t[z1], H1 = (t) => {
-  if (t?.[C1]) {
-    let y = R();
-    return K1(() => {
+let { fromEntries: V1, entries: T, keys: q, hasOwn: W, getPrototypeOf: Y } = Object, { get: C1, set: o1, deleteProperty: W1, ownKeys: K1 } = Reflect, { state: $, derive: Z1, add: J1 } = m1, B, Y1 = 1e3, Q, K, A = Symbol(), z1 = Symbol(), E = Symbol(), g = Symbol(), k = Symbol(), H1 = Symbol(), Q1 = (t) => (t[z1] = 1, t), z = (t) => t instanceof Object && !(t instanceof Function) && !t[H1], S1 = (t) => {
+  if (t?.[z1]) {
+    let y = $();
+    return Z1(() => {
       let s = t();
-      C(y.rawVal) && C(s) ? b1(y.rawVal, s) : y.val = $(s);
+      z(y.rawVal) && z(s) ? k1(y.rawVal, s) : y.val = G(s);
     }), y;
-  } else return R($(t));
-}, Q1 = (t) => {
-  let y = Array.isArray(t) ? [] : { __proto__: J(t) };
-  for (let [s, c] of b(t)) y[s] = H1(c);
-  return y[U] = [], y[f] = R(1), y;
-}, S1 = {
-  get: (t, y, s) => y === m ? t : q(t, y) ? Array.isArray(t) && y === "length" ? (t[f].val, t.length) : t[y].val : V1(t, y, s),
-  set: (t, y, s, c) => q(t, y) ? Array.isArray(t) && y === "length" ? (s !== t.length && ++t[f].val, t.length = s, 1) : (t[y].val = $(s), 1) : y in t ? y1(t, y, s, c) : y1(t, y, H1(s)) && (++t[f].val, E(t).forEach(
-    L1.bind(Y, c, y, t[y], W)
+  } else return $(G(t));
+}, j1 = (t) => {
+  let y = Array.isArray(t) ? [] : { __proto__: Y(t) };
+  for (let [s, c] of T(t)) y[s] = S1(c);
+  return y[E] = [], y[g] = $(1), y;
+}, _1 = {
+  get: (t, y, s) => y === A ? t : W(t, y) ? Array.isArray(t) && y === "length" ? (t[g].val, t.length) : t[y].val : C1(t, y, s),
+  set: (t, y, s, c) => W(t, y) ? Array.isArray(t) && y === "length" ? (s !== t.length && ++t[g].val, t.length = s, 1) : (t[y].val = G(s), 1) : y in t ? o1(t, y, s, c) : o1(t, y, S1(s)) && (++t[g].val, I(t).forEach(
+    P1.bind(Q, c, y, t[y], K)
   ), 1),
-  deleteProperty: (t, y) => (q1(t, y) && e2(t, y), ++t[f].val),
-  ownKeys: (t) => (t[f].val, W1(t))
-}, $ = (t) => !C(t) || t[m] ? t : new Proxy(Q1(t), S1), j1 = (t) => (t[z1] = 1, t), t2 = (t) => t[m], r2 = J(R()), n2 = (t) => new Proxy(t, {
-  get: (y, s, c) => J(y[s] ?? 0) === r2 ? { val: _1(y[s].rawVal) } : V1(y, s, c)
-}), _1 = (t) => t?.[m] ? new Proxy(n2(t[m]), S1) : t, E = (t) => t[U] = t[U].filter((y) => y._containerDom.isConnected), L1 = (t, y, s, c, { _containerDom: a, f: l }) => {
+  deleteProperty: (t, y) => (W1(t, y) && y2(t, y), ++t[g].val),
+  ownKeys: (t) => (t[g].val, K1(t))
+}, G = (t) => !z(t) || t[A] ? t : new Proxy(j1(t), _1), t2 = (t) => (t[H1] = 1, t), r2 = (t) => t[A], n2 = Y($()), e2 = (t) => new Proxy(t, {
+  get: (y, s, c) => Y(y[s] ?? 0) === n2 ? { val: L1(y[s].rawVal) } : C1(y, s, c)
+}), L1 = (t) => t?.[A] ? new Proxy(e2(t[A]), _1) : t, I = (t) => t[E] = t[E].filter((y) => y._containerDom.isConnected), P1 = (t, y, s, c, { _containerDom: a, f: l }) => {
   let d = Array.isArray(t), u = d ? Number(y) : y;
-  Z1(a, () => a[P][y] = l(s, () => delete t[y], u)), d && !c && u !== t.length - 1 && a.insertBefore(
+  J1(a, () => a[k][y] = l(s, () => delete t[y], u)), d && !c && u !== t.length - 1 && a.insertBefore(
     a.lastChild,
-    a[P][N(t).find((p) => Number(p) > u)]
+    a[k][q(t).find((p) => Number(p) > u)]
   );
-}, e2 = (t, y) => {
-  for (let s of E(t)) {
-    let c = s._containerDom[P];
+}, y2 = (t, y) => {
+  for (let s of I(t)) {
+    let c = s._containerDom[k];
     c[y]?.remove(), delete c[y];
   }
-}, y2 = (t) => (D ?? (D = (setTimeout(
-  () => (D.forEach(E), D = Y),
-  J1
-), /* @__PURE__ */ new Set()))).add(t), o2 = (t, y, s) => {
-  let c = { _containerDom: t instanceof Function ? t() : t, f: s }, a = y[m];
-  c._containerDom[P] = {}, a[U].push(c), y2(a);
-  for (let [l, d] of b(a)) L1(y, l, d, 1, c);
+}, o2 = (t) => (B ?? (B = (setTimeout(
+  () => (B.forEach(I), B = Q),
+  Y1
+), /* @__PURE__ */ new Set()))).add(t), x2 = (t, y, s) => {
+  let c = { _containerDom: t instanceof Function ? t() : t, f: s }, a = y[A];
+  c._containerDom[k] = {}, a[E].push(c), o2(a);
+  for (let [l, d] of T(a)) P1(y, l, d, 1, c);
   return c._containerDom;
-}, P1 = (t, y) => {
-  for (let [a, l] of b(y)) {
+}, b1 = (t, y) => {
+  for (let [a, l] of T(y)) {
     let d = t[a];
-    C(d) && C(l) ? P1(d, l) : t[a] = l;
+    z(d) && z(l) ? b1(d, l) : t[a] = l;
   }
-  for (let a in t) q(y, a) || delete t[a];
-  let s = N(y), c = Array.isArray(t);
-  if (c || N(t).some((a, l) => a !== s[l])) {
-    let a = t[m];
+  for (let a in t) W(y, a) || delete t[a];
+  let s = q(y), c = Array.isArray(t);
+  if (c || q(t).some((a, l) => a !== s[l])) {
+    let a = t[A];
     if (c) t.length = y.length;
     else {
-      ++a[f].val;
+      ++a[g].val;
       let l = { ...a };
       for (let d of s) delete a[d];
       for (let d of s) a[d] = l[d];
     }
-    for (let { _containerDom: l } of E(a)) {
-      let { firstChild: d, [P]: u } = l;
+    for (let { _containerDom: l } of I(a)) {
+      let { firstChild: d, [k]: u } = l;
       for (let p of s) d === u[p] ? d = d.nextSibling : l.insertBefore(u[p], d);
     }
   }
   return t;
-}, b1 = (t, y) => {
-  W = 1;
+}, k1 = (t, y) => {
+  K = 1;
   try {
-    return P1(
+    return b1(
       t,
-      y instanceof Function ? Array.isArray(t) ? y(t.filter((s) => 1)) : m1(y(b(t))) : y
+      y instanceof Function ? Array.isArray(t) ? y(t.filter((s) => 1)) : V1(y(T(t))) : y
     );
   } finally {
-    W = Y;
+    K = Q;
   }
-}, K = (t) => Array.isArray(t) ? t.filter((y) => 1).map(K) : C(t) ? m1(b(t).map(([y, s]) => [y, K(s)])) : t;
-const o1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+}, Z = (t) => Array.isArray(t) ? t.filter((y) => 1).map(Z) : z(t) ? V1(T(t).map(([y, s]) => [y, Z(s)])) : t;
+const x1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  calc: Y1,
-  compact: K,
-  list: o2,
-  noreactive: j1,
-  raw: _1,
-  reactive: $,
-  replace: b1,
-  stateFields: t2
-}, Symbol.toStringTag, { value: "Module" })), x2 = { ...o1, default: o1 }, s2 = { ...j, default: j }, k1 = {
+  calc: Q1,
+  compact: Z,
+  list: x2,
+  noreactive: t2,
+  raw: L1,
+  reactive: G,
+  replace: k1,
+  stateFields: r2
+}, Symbol.toStringTag, { value: "Module" })), s2 = { ...x1, default: x1 }, c2 = { ...t1, default: t1 }, T1 = {
   isServer: typeof window > "u",
   get van() {
-    return this.isServer ? E1 : A1;
+    return this.isServer ? G1 : m1;
   },
   get vanX() {
-    return this.isServer ? s2 : x2;
+    return this.isServer ? c2 : s2;
   }
 };
-O1(k1);
-const M = k1.van, n = (t = {}, ...y) => {
-  const s = "http://www.w3.org/2000/svg", c = M.tags(s).svg, {
+D1(T1);
+const M = T1.van, V = (t) => t !== null && typeof t == "object" && "val" in t, n = (t = {}, ...y) => {
+  const s = "http://www.w3.org/2000/svg", { svg: c } = M.tags(s), {
     id: a,
     class: l,
     style: d,
     width: u,
     height: p,
-    strokeWidth: k,
-    stroke: G,
-    ...T
-  } = t, g = {
+    strokeWidth: m,
+    stroke: H,
+    ...O
+  } = t, D = {
     xmlns: s,
-    width: M.state(u || 24),
-    height: M.state(p || 24),
+    id: a,
+    class: M.derive(
+      () => V(l) ? l.val : l
+    ),
+    style: M.derive(() => V(d) ? d.val : d),
+    width: M.derive(() => V(u) ? u.val : u || 24),
+    height: M.derive(() => V(p) ? p.val : p || 24),
+    stroke: M.derive(
+      () => V(H) ? H.val : H || "currentColor"
+    ),
+    "stroke-width": M.derive(
+      () => V(m) ? m.val : m || 2
+    ),
     viewBox: "0 0 24 24",
     fill: "none",
-    stroke: M.state(G || "currentColor"),
-    "stroke-width": M.state(k || 2),
     "stroke-linecap": "round",
     "stroke-linejoin": "round"
   };
-  return a && (g.id = a), l && (g.class = M.state(l)), d && (g.style = M.state(d)), c(
+  return c(
     {
-      ...g,
-      ...T
+      ...D,
+      ...O
     },
     y
   );
-}, { polyline: o, path: e, polygon: h, circle: x, line: r, rect: i, ellipse: c2 } = M.tags(
+}, { polyline: o, path: e, polygon: h, circle: x, line: r, rect: i, ellipse: a2 } = M.tags(
   "http://www.w3.org/2000/svg"
-), a2 = (t) => n(
+), i2 = (t) => n(
   t,
   o({ points: "22 12 18 12 15 21 9 3 6 12 2 12" })
-), i2 = (t) => n(
+), l2 = (t) => n(
   t,
   e({
     d: "M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"
   }),
   h({ points: "12 15 17 21 7 21 12 15" })
-), l2 = (t) => n(
+), d2 = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "10" }),
   r({ x1: "12", y1: "8", x2: "12", y2: "12" }),
   r({ x1: "12", y1: "16", x2: "12.01", y2: "16" })
-), d2 = (t) => n(
+), h2 = (t) => n(
   t,
   h({
     points: "7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"
   }),
   r({ x1: "12", y1: "8", x2: "12", y2: "12" }),
   r({ x1: "12", y1: "16", x2: "12.01", y2: "16" })
-), h2 = (t) => n(
+), u2 = (t) => n(
   t,
   e({
     d: "M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
   }),
   r({ x1: "12", y1: "9", x2: "12", y2: "13" }),
   r({ x1: "12", y1: "17", x2: "12.01", y2: "17" })
-), u2 = (t) => n(
+), p2 = (t) => n(
   t,
   r({ x1: "18", y1: "10", x2: "6", y2: "10" }),
   r({ x1: "21", y1: "6", x2: "3", y2: "6" }),
   r({ x1: "21", y1: "14", x2: "3", y2: "14" }),
   r({ x1: "18", y1: "18", x2: "6", y2: "18" })
-), p2 = (t) => n(
+), M2 = (t) => n(
   t,
   r({ x1: "21", y1: "10", x2: "3", y2: "10" }),
   r({ x1: "21", y1: "6", x2: "3", y2: "6" }),
   r({ x1: "21", y1: "14", x2: "3", y2: "14" }),
   r({ x1: "21", y1: "18", x2: "3", y2: "18" })
-), M2 = (t) => n(
+), v2 = (t) => n(
   t,
   r({ x1: "17", y1: "10", x2: "3", y2: "10" }),
   r({ x1: "21", y1: "6", x2: "3", y2: "6" }),
   r({ x1: "21", y1: "14", x2: "3", y2: "14" }),
   r({ x1: "17", y1: "18", x2: "3", y2: "18" })
-), v2 = (t) => n(
+), g2 = (t) => n(
   t,
   r({ x1: "21", y1: "10", x2: "7", y2: "10" }),
   r({ x1: "21", y1: "6", x2: "3", y2: "6" }),
   r({ x1: "21", y1: "14", x2: "3", y2: "14" }),
   r({ x1: "21", y1: "18", x2: "7", y2: "18" })
-), g2 = (t) => n(
+), f2 = (t) => n(
   t,
   x({ cx: "12", cy: "5", r: "3" }),
   r({ x1: "12", y1: "22", x2: "12", y2: "8" }),
   e({ d: "M5 12H2a10 10 0 0 0 20 0h-3" })
-), f2 = (t) => n(
+), w2 = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "10" }),
   r({ x1: "14.31", y1: "8", x2: "20.05", y2: "17.94" }),
@@ -361,200 +370,200 @@ const M = k1.van, n = (t = {}, ...y) => {
   r({ x1: "9.69", y1: "16", x2: "3.95", y2: "6.06" }),
   r({ x1: "14.31", y1: "16", x2: "2.83", y2: "16" }),
   r({ x1: "16.62", y1: "12", x2: "10.88", y2: "21.94" })
-), w2 = (t) => n(
+), A2 = (t) => n(
   t,
   o({ points: "21 8 21 21 3 21 3 8" }),
   i({ x: "1", y: "3", width: "22", height: "5" }),
   r({ x1: "10", y1: "12", x2: "14", y2: "12" })
-), A2 = (t) => n(
+), m2 = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "10" }),
   o({ points: "8 12 12 16 16 12" }),
   r({ x1: "12", y1: "8", x2: "12", y2: "16" })
-), m2 = (t) => n(
+), V2 = (t) => n(
   t,
   r({ x1: "17", y1: "7", x2: "7", y2: "17" }),
   o({ points: "17 17 7 17 7 7" })
-), V2 = (t) => n(
+), C2 = (t) => n(
   t,
   r({ x1: "7", y1: "7", x2: "17", y2: "17" }),
   o({ points: "17 7 17 17 7 17" })
-), C2 = (t) => n(
+), z2 = (t) => n(
   t,
   r({ x1: "12", y1: "5", x2: "12", y2: "19" }),
   o({ points: "19 12 12 19 5 12" })
-), z2 = (t) => n(
+), H2 = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "10" }),
   o({ points: "12 8 8 12 12 16" }),
   r({ x1: "16", y1: "12", x2: "8", y2: "12" })
-), H2 = (t) => n(
+), S2 = (t) => n(
   t,
   r({ x1: "19", y1: "12", x2: "5", y2: "12" }),
   o({ points: "12 19 5 12 12 5" })
-), S2 = (t) => n(
+), _2 = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "10" }),
   o({ points: "12 16 16 12 12 8" }),
   r({ x1: "8", y1: "12", x2: "16", y2: "12" })
-), _2 = (t) => n(
+), L2 = (t) => n(
   t,
   r({ x1: "5", y1: "12", x2: "19", y2: "12" }),
   o({ points: "12 5 19 12 12 19" })
-), L2 = (t) => n(
+), P2 = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "10" }),
   o({ points: "16 12 12 8 8 12" }),
   r({ x1: "12", y1: "16", x2: "12", y2: "8" })
-), P2 = (t) => n(
+), b2 = (t) => n(
   t,
   r({ x1: "17", y1: "17", x2: "7", y2: "7" }),
   o({ points: "7 17 7 7 17 7" })
-), b2 = (t) => n(
+), k2 = (t) => n(
   t,
   r({ x1: "7", y1: "17", x2: "17", y2: "7" }),
   o({ points: "7 7 17 7 17 17" })
-), k2 = (t) => n(
+), T2 = (t) => n(
   t,
   r({ x1: "12", y1: "19", x2: "12", y2: "5" }),
   o({ points: "5 12 12 5 19 12" })
-), T2 = (t) => n(
+), O2 = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "4" }),
   e({ d: "M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94" })
-), O2 = (t) => n(
+), D2 = (t) => n(
   t,
   x({ cx: "12", cy: "8", r: "7" }),
   o({ points: "8.21 13.89 7 23 12 20 17 23 15.79 13.88" })
-), D2 = (t) => n(
+), F2 = (t) => n(
   t,
   r({ x1: "18", y1: "20", x2: "18", y2: "10" }),
   r({ x1: "12", y1: "20", x2: "12", y2: "4" }),
   r({ x1: "6", y1: "20", x2: "6", y2: "14" })
-), F2 = (t) => n(
+), B2 = (t) => n(
   t,
   r({ x1: "12", y1: "20", x2: "12", y2: "10" }),
   r({ x1: "18", y1: "20", x2: "18", y2: "4" }),
   r({ x1: "6", y1: "20", x2: "6", y2: "16" })
-), B2 = (t) => n(
+), R2 = (t) => n(
   t,
   e({
     d: "M5 18H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3.19M15 6h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3.19"
   }),
   r({ x1: "23", y1: "13", x2: "23", y2: "11" }),
   o({ points: "11 6 7 12 13 12 9 18" })
-), R2 = (t) => n(
+), U2 = (t) => n(
   t,
   i({ x: "1", y: "6", width: "18", height: "12", rx: "2", ry: "2" }),
   r({ x1: "23", y1: "13", x2: "23", y2: "11" })
-), U2 = (t) => n(
+), $2 = (t) => n(
   t,
   e({ d: "M13.73 21a2 2 0 0 1-3.46 0" }),
   e({ d: "M18.63 13A17.89 17.89 0 0 1 18 8" }),
   e({ d: "M6.26 6.26A5.86 5.86 0 0 0 6 8c0 7-3 9-3 9h14" }),
   e({ d: "M18 8a6 6 0 0 0-9.33-5" }),
   r({ x1: "1", y1: "1", x2: "23", y2: "23" })
-), $2 = (t) => n(
+), E2 = (t) => n(
   t,
   e({ d: "M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" }),
   e({ d: "M13.73 21a2 2 0 0 1-3.46 0" })
-), E2 = (t) => n(
+), G2 = (t) => n(
   t,
   o({ points: "6.5 6.5 17.5 17.5 12 23 12 1 17.5 6.5 6.5 17.5" })
-), G2 = (t) => n(
+), I2 = (t) => n(
   t,
   e({ d: "M6 4h8a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z" }),
   e({ d: "M6 12h9a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z" })
-), I2 = (t) => n(
+), X2 = (t) => n(
   t,
   e({ d: "M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" }),
   e({ d: "M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" })
-), X2 = (t) => n(
+), N2 = (t) => n(
   t,
   e({ d: "M4 19.5A2.5 2.5 0 0 1 6.5 17H20" }),
   e({
     d: "M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
   })
-), N2 = (t) => n(
+), q2 = (t) => n(
   t,
   e({ d: "M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" })
-), q2 = (t) => n(
+), W2 = (t) => n(
   t,
   e({
     d: "M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
   }),
   o({ points: "3.27 6.96 12 12.01 20.73 6.96" }),
   r({ x1: "12", y1: "22.08", x2: "12", y2: "12" })
-), W2 = (t) => n(
+), K2 = (t) => n(
   t,
   i({ x: "2", y: "7", width: "20", height: "14", rx: "2", ry: "2" }),
   e({ d: "M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" })
-), K2 = (t) => n(
+), Z2 = (t) => n(
   t,
   i({ x: "3", y: "4", width: "18", height: "18", rx: "2", ry: "2" }),
   r({ x1: "16", y1: "2", x2: "16", y2: "6" }),
   r({ x1: "8", y1: "2", x2: "8", y2: "6" }),
   r({ x1: "3", y1: "10", x2: "21", y2: "10" })
-), Z2 = (t) => n(
+), J2 = (t) => n(
   t,
   r({ x1: "1", y1: "1", x2: "23", y2: "23" }),
   e({
     d: "M21 21H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3m3-3h6l2 3h4a2 2 0 0 1 2 2v9.34m-7.72-2.06a4 4 0 1 1-5.56-5.56"
   })
-), J2 = (t) => n(
+), Y2 = (t) => n(
   t,
   e({
     d: "M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"
   }),
   x({ cx: "12", cy: "13", r: "4" })
-), Y2 = (t) => n(
+), Q2 = (t) => n(
   t,
   e({
     d: "M2 16.1A5 5 0 0 1 5.9 20M2 12.05A9 9 0 0 1 9.95 20M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6"
   }),
   r({ x1: "2", y1: "20", x2: "2.01", y2: "20" })
-), Q2 = (t) => n(
+), j2 = (t) => n(
   t,
   e({ d: "M22 11.08V12a10 10 0 1 1-5.93-9.14" }),
   o({ points: "22 4 12 14.01 9 11.01" })
-), j2 = (t) => n(
+), t0 = (t) => n(
   t,
   o({ points: "9 11 12 14 22 4" }),
   e({ d: "M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" })
-), t0 = (t) => n(t, o({ points: "20 6 9 17 4 12" })), r0 = (t) => n(t, o({ points: "6 9 12 15 18 9" })), n0 = (t) => n(t, o({ points: "15 18 9 12 15 6" })), e0 = (t) => n(t, o({ points: "9 18 15 12 9 6" })), y0 = (t) => n(t, o({ points: "18 15 12 9 6 15" })), o0 = (t) => n(
+), r0 = (t) => n(t, o({ points: "20 6 9 17 4 12" })), n0 = (t) => n(t, o({ points: "6 9 12 15 18 9" })), e0 = (t) => n(t, o({ points: "15 18 9 12 15 6" })), y0 = (t) => n(t, o({ points: "9 18 15 12 9 6" })), o0 = (t) => n(t, o({ points: "18 15 12 9 6 15" })), x0 = (t) => n(
   t,
   o({ points: "7 13 12 18 17 13" }),
   o({ points: "7 6 12 11 17 6" })
-), x0 = (t) => n(
+), s0 = (t) => n(
   t,
   o({ points: "11 17 6 12 11 7" }),
   o({ points: "18 17 13 12 18 7" })
-), s0 = (t) => n(
+), c0 = (t) => n(
   t,
   o({ points: "13 17 18 12 13 7" }),
   o({ points: "6 17 11 12 6 7" })
-), c0 = (t) => n(
+), a0 = (t) => n(
   t,
   o({ points: "17 11 12 6 7 11" }),
   o({ points: "17 18 12 13 7 18" })
-), a0 = (t) => n(
+), i0 = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "10" }),
   x({ cx: "12", cy: "12", r: "4" }),
   r({ x1: "21.17", y1: "8", x2: "12", y2: "8" }),
   r({ x1: "3.95", y1: "6.06", x2: "8.54", y2: "14" }),
   r({ x1: "10.88", y1: "21.94", x2: "15.46", y2: "14" })
-), i0 = (t) => n(t, x({ cx: "12", cy: "12", r: "10" })), l0 = (t) => n(
+), l0 = (t) => n(t, x({ cx: "12", cy: "12", r: "10" })), d0 = (t) => n(
   t,
   e({
     d: "M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"
   }),
   i({ x: "8", y: "2", width: "8", height: "4", rx: "1", ry: "1" })
-), d0 = (t) => n(
+), h0 = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "10" }),
   o({ points: "12 6 12 12 16 14" })
-), h0 = (t) => n(
+), u0 = (t) => n(
   t,
   r({ x1: "8", y1: "19", x2: "8", y2: "21" }),
   r({ x1: "8", y1: "13", x2: "8", y2: "15" }),
@@ -563,23 +572,23 @@ const M = k1.van, n = (t = {}, ...y) => {
   r({ x1: "12", y1: "21", x2: "12", y2: "23" }),
   r({ x1: "12", y1: "15", x2: "12", y2: "17" }),
   e({ d: "M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25" })
-), u0 = (t) => n(
+), p0 = (t) => n(
   t,
   e({ d: "M19 16.9A5 5 0 0 0 18 7h-1.26a8 8 0 1 0-11.62 9" }),
   o({ points: "13 11 9 17 15 17 11 23" })
-), p0 = (t) => n(
+), M0 = (t) => n(
   t,
   e({
     d: "M22.61 16.95A5 5 0 0 0 18 10h-1.26a8 8 0 0 0-7.05-6M5 5a8 8 0 0 0 4 15h9a5 5 0 0 0 1.7-.3"
   }),
   r({ x1: "1", y1: "1", x2: "23", y2: "23" })
-), M0 = (t) => n(
+), v0 = (t) => n(
   t,
   r({ x1: "16", y1: "13", x2: "16", y2: "21" }),
   r({ x1: "8", y1: "13", x2: "8", y2: "21" }),
   r({ x1: "12", y1: "15", x2: "12", y2: "23" }),
   e({ d: "M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25" })
-), v0 = (t) => n(
+), g0 = (t) => n(
   t,
   e({ d: "M20 17.58A5 5 0 0 0 18 8h-1.26A8 8 0 1 0 4 16.25" }),
   r({ x1: "8", y1: "16", x2: "8.01", y2: "16" }),
@@ -588,21 +597,21 @@ const M = k1.van, n = (t = {}, ...y) => {
   r({ x1: "12", y1: "22", x2: "12.01", y2: "22" }),
   r({ x1: "16", y1: "16", x2: "16.01", y2: "16" }),
   r({ x1: "16", y1: "20", x2: "16.01", y2: "20" })
-), g0 = (t) => n(
+), f0 = (t) => n(
   t,
   e({ d: "M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" })
-), f0 = (t) => n(
+), w0 = (t) => n(
   t,
   o({ points: "16 18 22 12 16 6" }),
   o({ points: "8 6 2 12 8 18" })
-), w0 = (t) => n(
+), A0 = (t) => n(
   t,
   h({ points: "12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2" }),
   r({ x1: "12", y1: "22", x2: "12", y2: "15.5" }),
   o({ points: "22 8.5 12 15.5 2 8.5" }),
   o({ points: "2 15.5 12 8.5 22 15.5" }),
   r({ x1: "12", y1: "2", x2: "12", y2: "8.5" })
-), A0 = (t) => n(
+), m0 = (t) => n(
   t,
   e({
     d: "M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
@@ -612,66 +621,66 @@ const M = k1.van, n = (t = {}, ...y) => {
   o({ points: "21 12 16.5 14.6 16.5 19.79" }),
   o({ points: "3.27 6.96 12 12.01 20.73 6.96" }),
   r({ x1: "12", y1: "22.08", x2: "12", y2: "12" })
-), m0 = (t) => n(
+), V0 = (t) => n(
   t,
   e({ d: "M18 8h1a4 4 0 0 1 0 8h-1" }),
   e({ d: "M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" }),
   r({ x1: "6", y1: "1", x2: "6", y2: "4" }),
   r({ x1: "10", y1: "1", x2: "10", y2: "4" }),
   r({ x1: "14", y1: "1", x2: "14", y2: "4" })
-), V0 = (t) => n(
+), C0 = (t) => n(
   t,
   e({
     d: "M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7m0-18H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7m0-18v18"
   })
-), C0 = (t) => n(
+), z0 = (t) => n(
   t,
   e({
     d: "M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"
   })
-), z0 = (t) => n(
+), H0 = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "10" }),
   h({
     points: "16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"
   })
-), H0 = (t) => n(
+), S0 = (t) => n(
   t,
   i({ x: "9", y: "9", width: "13", height: "13", rx: "2", ry: "2" }),
   e({ d: "M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" })
-), S0 = (t) => n(
+), _0 = (t) => n(
   t,
   o({ points: "9 10 4 15 9 20" }),
   e({ d: "M20 4v7a4 4 0 0 1-4 4H4" })
-), _0 = (t) => n(
+), L0 = (t) => n(
   t,
   o({ points: "15 10 20 15 15 20" }),
   e({ d: "M4 4v7a4 4 0 0 0 4 4h12" })
-), L0 = (t) => n(
+), P0 = (t) => n(
   t,
   o({ points: "14 15 9 20 4 15" }),
   e({ d: "M20 4h-7a4 4 0 0 0-4 4v12" })
-), P0 = (t) => n(
+), b0 = (t) => n(
   t,
   o({ points: "14 9 9 4 4 9" }),
   e({ d: "M20 20h-7a4 4 0 0 1-4-4V4" })
-), b0 = (t) => n(
+), k0 = (t) => n(
   t,
   o({ points: "10 15 15 20 20 15" }),
   e({ d: "M4 4h7a4 4 0 0 1 4 4v12" })
-), k0 = (t) => n(
+), T0 = (t) => n(
   t,
   o({ points: "10 9 15 4 20 9" }),
   e({ d: "M4 20h7a4 4 0 0 0 4-4V4" })
-), T0 = (t) => n(
+), O0 = (t) => n(
   t,
   o({ points: "9 14 4 9 9 4" }),
   e({ d: "M20 20v-7a4 4 0 0 0-4-4H4" })
-), O0 = (t) => n(
+), D0 = (t) => n(
   t,
   o({ points: "15 14 20 9 15 4" }),
   e({ d: "M4 20v-7a4 4 0 0 1 4-4h12" })
-), D0 = (t) => n(
+), F0 = (t) => n(
   t,
   i({ x: "4", y: "4", width: "16", height: "16", rx: "2", ry: "2" }),
   i({ x: "9", y: "9", width: "6", height: "6" }),
@@ -683,145 +692,145 @@ const M = k1.van, n = (t = {}, ...y) => {
   r({ x1: "20", y1: "14", x2: "23", y2: "14" }),
   r({ x1: "1", y1: "9", x2: "4", y2: "9" }),
   r({ x1: "1", y1: "14", x2: "4", y2: "14" })
-), F0 = (t) => n(
+), B0 = (t) => n(
   t,
   i({ x: "1", y: "4", width: "22", height: "16", rx: "2", ry: "2" }),
   r({ x1: "1", y1: "10", x2: "23", y2: "10" })
-), B0 = (t) => n(
+), R0 = (t) => n(
   t,
   e({ d: "M6.13 1L6 16a2 2 0 0 0 2 2h15" }),
   e({ d: "M1 6.13L16 6a2 2 0 0 1 2 2v15" })
-), R0 = (t) => n(
+), U0 = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "10" }),
   r({ x1: "22", y1: "12", x2: "18", y2: "12" }),
   r({ x1: "6", y1: "12", x2: "2", y2: "12" }),
   r({ x1: "12", y1: "6", x2: "12", y2: "2" }),
   r({ x1: "12", y1: "22", x2: "12", y2: "18" })
-), U0 = (t) => n(
+), $0 = (t) => n(
   t,
-  c2({ cx: "12", cy: "5", rx: "9", ry: "3" }),
+  a2({ cx: "12", cy: "5", rx: "9", ry: "3" }),
   e({ d: "M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" }),
   e({ d: "M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" })
-), $0 = (t) => n(
+), E0 = (t) => n(
   t,
   e({ d: "M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z" }),
   r({ x1: "18", y1: "9", x2: "12", y2: "15" }),
   r({ x1: "12", y1: "9", x2: "18", y2: "15" })
-), E0 = (t) => n(
+), G0 = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "10" }),
   x({ cx: "12", cy: "12", r: "3" })
-), G0 = (t) => n(
+), I0 = (t) => n(
   t,
   r({ x1: "8", y1: "12", x2: "16", y2: "12" }),
   r({ x1: "12", y1: "16", x2: "12", y2: "16" }),
   r({ x1: "12", y1: "8", x2: "12", y2: "8" }),
   x({ cx: "12", cy: "12", r: "10" })
-), I0 = (t) => n(
+), X0 = (t) => n(
   t,
   i({ x: "3", y: "3", width: "18", height: "18", rx: "2", ry: "2" }),
   r({ x1: "8", y1: "12", x2: "16", y2: "12" }),
   r({ x1: "12", y1: "16", x2: "12", y2: "16" }),
   r({ x1: "12", y1: "8", x2: "12", y2: "8" })
-), X0 = (t) => n(
+), N0 = (t) => n(
   t,
   x({ cx: "12", cy: "6", r: "2" }),
   r({ x1: "5", y1: "12", x2: "19", y2: "12" }),
   x({ cx: "12", cy: "18", r: "2" })
-), N0 = (t) => n(
+), q0 = (t) => n(
   t,
   r({ x1: "12", y1: "1", x2: "12", y2: "23" }),
   e({ d: "M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" })
-), q0 = (t) => n(
+), W0 = (t) => n(
   t,
   o({ points: "8 17 12 21 16 17" }),
   r({ x1: "12", y1: "12", x2: "12", y2: "21" }),
   e({ d: "M20.88 18.09A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.29" })
-), W0 = (t) => n(
+), K0 = (t) => n(
   t,
   e({ d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" }),
   o({ points: "7 10 12 15 17 10" }),
   r({ x1: "12", y1: "15", x2: "12", y2: "3" })
-), K0 = (t) => n(
+), Z0 = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "10" }),
   e({
     d: "M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"
   })
-), Z0 = (t) => n(
-  t,
-  e({ d: "M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" })
 ), J0 = (t) => n(
   t,
-  e({ d: "M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" })
+  e({ d: "M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" })
 ), Y0 = (t) => n(
+  t,
+  e({ d: "M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" })
+), Q0 = (t) => n(
   t,
   e({ d: "M12 20h9" }),
   e({ d: "M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" })
-), Q0 = (t) => n(
+), j0 = (t) => n(
   t,
   e({ d: "M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" }),
   e({ d: "M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" })
-), j0 = (t) => n(
+), tt = (t) => n(
   t,
   e({ d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" }),
   o({ points: "15 3 21 3 21 9" }),
   r({ x1: "10", y1: "14", x2: "21", y2: "3" })
-), tt = (t) => n(
+), rt = (t) => n(
   t,
   e({
     d: "M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"
   }),
   r({ x1: "1", y1: "1", x2: "23", y2: "23" })
-), rt = (t) => n(
+), nt = (t) => n(
   t,
   e({ d: "M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" }),
   x({ cx: "12", cy: "12", r: "3" })
-), nt = (t) => n(
+), et = (t) => n(
   t,
   e({
     d: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
   })
-), et = (t) => n(
+), yt = (t) => n(
   t,
   h({ points: "13 19 22 12 13 5 13 19" }),
   h({ points: "2 19 11 12 2 5 2 19" })
-), yt = (t) => n(
+), ot = (t) => n(
   t,
   e({ d: "M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z" }),
   r({ x1: "16", y1: "8", x2: "2", y2: "22" }),
   r({ x1: "17.5", y1: "15", x2: "9", y2: "15" })
-), ot = (t) => n(
+), xt = (t) => n(
   t,
   e({ d: "M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z" }),
   e({ d: "M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z" }),
   e({ d: "M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z" }),
   e({ d: "M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z" }),
   e({ d: "M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z" })
-), xt = (t) => n(
+), st = (t) => n(
   t,
   e({ d: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" }),
   o({ points: "14 2 14 8 20 8" }),
   r({ x1: "9", y1: "15", x2: "15", y2: "15" })
-), st = (t) => n(
+), ct = (t) => n(
   t,
   e({ d: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" }),
   o({ points: "14 2 14 8 20 8" }),
   r({ x1: "12", y1: "18", x2: "12", y2: "12" }),
   r({ x1: "9", y1: "15", x2: "15", y2: "15" })
-), ct = (t) => n(
+), at = (t) => n(
   t,
   e({ d: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" }),
   o({ points: "14 2 14 8 20 8" }),
   r({ x1: "16", y1: "13", x2: "8", y2: "13" }),
   r({ x1: "16", y1: "17", x2: "8", y2: "17" }),
   o({ points: "10 9 9 9 8 9" })
-), at = (t) => n(
+), it = (t) => n(
   t,
   e({ d: "M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" }),
   o({ points: "13 2 13 9 20 9" })
-), it = (t) => n(
+), lt = (t) => n(
   t,
   i({ x: "2", y: "2", width: "20", height: "20", rx: "2.18", ry: "2.18" }),
   r({ x1: "7", y1: "2", x2: "7", y2: "22" }),
@@ -831,93 +840,93 @@ const M = k1.van, n = (t = {}, ...y) => {
   r({ x1: "2", y1: "17", x2: "7", y2: "17" }),
   r({ x1: "17", y1: "17", x2: "22", y2: "17" }),
   r({ x1: "17", y1: "7", x2: "22", y2: "7" })
-), lt = (t) => n(
+), dt = (t) => n(
   t,
   h({ points: "22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" })
-), dt = (t) => n(
+), ht = (t) => n(
   t,
   e({ d: "M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" }),
   r({ x1: "4", y1: "22", x2: "4", y2: "15" })
-), ht = (t) => n(
+), ut = (t) => n(
   t,
   e({
     d: "M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
   }),
   r({ x1: "9", y1: "14", x2: "15", y2: "14" })
-), ut = (t) => n(
+), pt = (t) => n(
   t,
   e({
     d: "M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
   }),
   r({ x1: "12", y1: "11", x2: "12", y2: "17" }),
   r({ x1: "9", y1: "14", x2: "15", y2: "14" })
-), pt = (t) => n(
+), Mt = (t) => n(
   t,
   e({
     d: "M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
   })
-), Mt = (t) => n(
+), vt = (t) => n(
   t,
   e({ d: "M5 16V9h14V2H5l14 14h-7m-7 0l7 7v-7m-7 0h7" })
-), vt = (t) => n(
+), gt = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "10" }),
   e({ d: "M16 16s-1.5-2-4-2-4 2-4 2" }),
   r({ x1: "9", y1: "9", x2: "9.01", y2: "9" }),
   r({ x1: "15", y1: "9", x2: "15.01", y2: "9" })
-), gt = (t) => n(
+), ft = (t) => n(
   t,
   o({ points: "20 12 20 22 4 22 4 12" }),
   i({ x: "2", y: "7", width: "20", height: "5" }),
   r({ x1: "12", y1: "22", x2: "12", y2: "7" }),
   e({ d: "M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z" }),
   e({ d: "M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" })
-), ft = (t) => n(
+), wt = (t) => n(
   t,
   r({ x1: "6", y1: "3", x2: "6", y2: "15" }),
   x({ cx: "18", cy: "6", r: "3" }),
   x({ cx: "6", cy: "18", r: "3" }),
   e({ d: "M18 9a9 9 0 0 1-9 9" })
-), wt = (t) => n(
+), At = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "4" }),
   r({ x1: "1.05", y1: "12", x2: "7", y2: "12" }),
   r({ x1: "17.01", y1: "12", x2: "22.96", y2: "12" })
-), At = (t) => n(
+), mt = (t) => n(
   t,
   x({ cx: "18", cy: "18", r: "3" }),
   x({ cx: "6", cy: "6", r: "3" }),
   e({ d: "M6 21V9a9 9 0 0 0 9 9" })
-), mt = (t) => n(
+), Vt = (t) => n(
   t,
   x({ cx: "18", cy: "18", r: "3" }),
   x({ cx: "6", cy: "6", r: "3" }),
   e({ d: "M13 6h3a2 2 0 0 1 2 2v7" }),
   r({ x1: "6", y1: "9", x2: "6", y2: "21" })
-), Vt = (t) => n(
+), Ct = (t) => n(
   t,
   e({
     d: "M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
   })
-), Ct = (t) => n(
+), zt = (t) => n(
   t,
   e({
     d: "M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 0 1-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 0 1 4.82 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.49h8.1l2.44-7.51A.42.42 0 0 1 18.6 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.51L23 13.45a.84.84 0 0 1-.35.94z"
   })
-), zt = (t) => n(
+), Ht = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "10" }),
   r({ x1: "2", y1: "12", x2: "22", y2: "12" }),
   e({
     d: "M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
   })
-), Ht = (t) => n(
+), St = (t) => n(
   t,
   i({ x: "3", y: "3", width: "7", height: "7" }),
   i({ x: "14", y: "3", width: "7", height: "7" }),
   i({ x: "14", y: "14", width: "7", height: "7" }),
   i({ x: "3", y: "14", width: "7", height: "7" })
-), St = (t) => n(
+), _t = (t) => n(
   t,
   r({ x1: "22", y1: "12", x2: "2", y2: "12" }),
   e({
@@ -925,79 +934,79 @@ const M = k1.van, n = (t = {}, ...y) => {
   }),
   r({ x1: "6", y1: "16", x2: "6.01", y2: "16" }),
   r({ x1: "10", y1: "16", x2: "10.01", y2: "16" })
-), _t = (t) => n(
+), Lt = (t) => n(
   t,
   r({ x1: "4", y1: "9", x2: "20", y2: "9" }),
   r({ x1: "4", y1: "15", x2: "20", y2: "15" }),
   r({ x1: "10", y1: "3", x2: "8", y2: "21" }),
   r({ x1: "16", y1: "3", x2: "14", y2: "21" })
-), Lt = (t) => n(
+), Pt = (t) => n(
   t,
   e({ d: "M3 18v-6a9 9 0 0 1 18 0v6" }),
   e({
     d: "M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"
   })
-), Pt = (t) => n(
+), bt = (t) => n(
   t,
   e({
     d: "M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
   })
-), bt = (t) => n(
+), kt = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "10" }),
   e({ d: "M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" }),
   r({ x1: "12", y1: "17", x2: "12.01", y2: "17" })
-), kt = (t) => n(
+), Tt = (t) => n(
   t,
   e({
     d: "M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
   })
-), Tt = (t) => n(
+), Ot = (t) => n(
   t,
   e({ d: "M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" }),
   o({ points: "9 22 9 12 15 12 15 22" })
-), Ot = (t) => n(
+), Dt = (t) => n(
   t,
   i({ x: "3", y: "3", width: "18", height: "18", rx: "2", ry: "2" }),
   x({ cx: "8.5", cy: "8.5", r: "1.5" }),
   o({ points: "21 15 16 10 5 21" })
-), Dt = (t) => n(
+), Ft = (t) => n(
   t,
   o({ points: "22 12 16 12 14 15 10 15 8 12 2 12" }),
   e({
     d: "M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"
   })
-), Ft = (t) => n(
+), Bt = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "10" }),
   r({ x1: "12", y1: "16", x2: "12", y2: "12" }),
   r({ x1: "12", y1: "8", x2: "12.01", y2: "8" })
-), Bt = (t) => n(
+), Rt = (t) => n(
   t,
   i({ x: "2", y: "2", width: "20", height: "20", rx: "5", ry: "5" }),
   e({ d: "M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" }),
   r({ x1: "17.5", y1: "6.5", x2: "17.51", y2: "6.5" })
-), Rt = (t) => n(
+), Ut = (t) => n(
   t,
   r({ x1: "19", y1: "4", x2: "10", y2: "4" }),
   r({ x1: "14", y1: "20", x2: "5", y2: "20" }),
   r({ x1: "15", y1: "4", x2: "9", y2: "20" })
-), Ut = (t) => n(
+), $t = (t) => n(
   t,
   e({
     d: "M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"
   })
-), $t = (t) => n(
+), Et = (t) => n(
   t,
   h({ points: "12 2 2 7 12 12 22 7 12 2" }),
   o({ points: "2 17 12 22 22 17" }),
   o({ points: "2 12 12 17 22 12" })
-), Et = (t) => n(
+), Gt = (t) => n(
   t,
   i({ x: "3", y: "3", width: "18", height: "18", rx: "2", ry: "2" }),
   r({ x1: "3", y1: "9", x2: "21", y2: "9" }),
   r({ x1: "9", y1: "21", x2: "9", y2: "9" })
-), Gt = (t) => n(
+), It = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "10" }),
   x({ cx: "12", cy: "12", r: "4" }),
@@ -1006,24 +1015,24 @@ const M = k1.van, n = (t = {}, ...y) => {
   r({ x1: "14.83", y1: "9.17", x2: "19.07", y2: "4.93" }),
   r({ x1: "14.83", y1: "9.17", x2: "18.36", y2: "5.64" }),
   r({ x1: "4.93", y1: "19.07", x2: "9.17", y2: "14.83" })
-), It = (t) => n(
+), Xt = (t) => n(
   t,
   e({
     d: "M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"
   }),
   r({ x1: "8", y1: "12", x2: "16", y2: "12" })
-), Xt = (t) => n(
+), Nt = (t) => n(
   t,
   e({ d: "M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" }),
   e({ d: "M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" })
-), Nt = (t) => n(
+), qt = (t) => n(
   t,
   e({
     d: "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
   }),
   i({ x: "2", y: "9", width: "4", height: "12" }),
   x({ cx: "4", cy: "4", r: "2" })
-), qt = (t) => n(
+), Wt = (t) => n(
   t,
   r({ x1: "8", y1: "6", x2: "21", y2: "6" }),
   r({ x1: "8", y1: "12", x2: "21", y2: "12" }),
@@ -1031,7 +1040,7 @@ const M = k1.van, n = (t = {}, ...y) => {
   r({ x1: "3", y1: "6", x2: "3.01", y2: "6" }),
   r({ x1: "3", y1: "12", x2: "3.01", y2: "12" }),
   r({ x1: "3", y1: "18", x2: "3.01", y2: "18" })
-), Wt = (t) => n(
+), Kt = (t) => n(
   t,
   r({ x1: "12", y1: "2", x2: "12", y2: "6" }),
   r({ x1: "12", y1: "18", x2: "12", y2: "22" }),
@@ -1041,122 +1050,122 @@ const M = k1.van, n = (t = {}, ...y) => {
   r({ x1: "18", y1: "12", x2: "22", y2: "12" }),
   r({ x1: "4.93", y1: "19.07", x2: "7.76", y2: "16.24" }),
   r({ x1: "16.24", y1: "7.76", x2: "19.07", y2: "4.93" })
-), Kt = (t) => n(
+), Zt = (t) => n(
   t,
   i({ x: "3", y: "11", width: "18", height: "11", rx: "2", ry: "2" }),
   e({ d: "M7 11V7a5 5 0 0 1 10 0v4" })
-), Zt = (t) => n(
+), Jt = (t) => n(
   t,
   e({ d: "M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" }),
   o({ points: "10 17 15 12 10 7" }),
   r({ x1: "15", y1: "12", x2: "3", y2: "12" })
-), Jt = (t) => n(
+), Yt = (t) => n(
   t,
   e({ d: "M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" }),
   o({ points: "16 17 21 12 16 7" }),
   r({ x1: "21", y1: "12", x2: "9", y2: "12" })
-), Yt = (t) => n(
+), Qt = (t) => n(
   t,
   e({
     d: "M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
   }),
   o({ points: "22,6 12,13 2,6" })
-), Qt = (t) => n(
+), jt = (t) => n(
   t,
   e({ d: "M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" }),
   x({ cx: "12", cy: "10", r: "3" })
-), jt = (t) => n(
+), tr = (t) => n(
   t,
   h({ points: "1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" }),
   r({ x1: "8", y1: "2", x2: "8", y2: "18" }),
   r({ x1: "16", y1: "6", x2: "16", y2: "22" })
-), tr = (t) => n(
+), rr = (t) => n(
   t,
   o({ points: "15 3 21 3 21 9" }),
   o({ points: "9 21 3 21 3 15" }),
   r({ x1: "21", y1: "3", x2: "14", y2: "10" }),
   r({ x1: "3", y1: "21", x2: "10", y2: "14" })
-), rr = (t) => n(
+), nr = (t) => n(
   t,
   e({
     d: "M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"
   })
-), nr = (t) => n(
+), er = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "10" }),
   r({ x1: "8", y1: "15", x2: "16", y2: "15" }),
   r({ x1: "9", y1: "9", x2: "9.01", y2: "9" }),
   r({ x1: "15", y1: "9", x2: "15.01", y2: "9" })
-), er = (t) => n(
+), yr = (t) => n(
   t,
   r({ x1: "3", y1: "12", x2: "21", y2: "12" }),
   r({ x1: "3", y1: "6", x2: "21", y2: "6" }),
   r({ x1: "3", y1: "18", x2: "21", y2: "18" })
-), yr = (t) => n(
+), or = (t) => n(
   t,
   e({
     d: "M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
   })
-), or = (t) => n(
+), xr = (t) => n(
   t,
   e({
     d: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
   })
-), xr = (t) => n(
+), sr = (t) => n(
   t,
   r({ x1: "1", y1: "1", x2: "23", y2: "23" }),
   e({ d: "M9 9v3a3 3 0 0 0 5.12 2.12M15 9.34V4a3 3 0 0 0-5.94-.6" }),
   e({ d: "M17 16.95A7 7 0 0 1 5 12v-2m14 0v2a7 7 0 0 1-.11 1.23" }),
   r({ x1: "12", y1: "19", x2: "12", y2: "23" }),
   r({ x1: "8", y1: "23", x2: "16", y2: "23" })
-), sr = (t) => n(
+), cr = (t) => n(
   t,
   e({ d: "M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" }),
   e({ d: "M19 10v2a7 7 0 0 1-14 0v-2" }),
   r({ x1: "12", y1: "19", x2: "12", y2: "23" }),
   r({ x1: "8", y1: "23", x2: "16", y2: "23" })
-), cr = (t) => n(
+), ar = (t) => n(
   t,
   o({ points: "4 14 10 14 10 20" }),
   o({ points: "20 10 14 10 14 4" }),
   r({ x1: "14", y1: "10", x2: "21", y2: "3" }),
   r({ x1: "3", y1: "21", x2: "10", y2: "14" })
-), ar = (t) => n(
+), ir = (t) => n(
   t,
   e({
     d: "M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"
   })
-), ir = (t) => n(
+), lr = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "10" }),
   r({ x1: "8", y1: "12", x2: "16", y2: "12" })
-), lr = (t) => n(
+), dr = (t) => n(
   t,
   i({ x: "3", y: "3", width: "18", height: "18", rx: "2", ry: "2" }),
   r({ x1: "8", y1: "12", x2: "16", y2: "12" })
-), dr = (t) => n(t, r({ x1: "5", y1: "12", x2: "19", y2: "12" })), hr = (t) => n(
+), hr = (t) => n(t, r({ x1: "5", y1: "12", x2: "19", y2: "12" })), ur = (t) => n(
   t,
   i({ x: "2", y: "3", width: "20", height: "14", rx: "2", ry: "2" }),
   r({ x1: "8", y1: "21", x2: "16", y2: "21" }),
   r({ x1: "12", y1: "17", x2: "12", y2: "21" })
-), ur = (t) => n(
+), pr = (t) => n(
   t,
   e({ d: "M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" })
-), pr = (t) => n(
+), Mr = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "1" }),
   x({ cx: "19", cy: "12", r: "1" }),
   x({ cx: "5", cy: "12", r: "1" })
-), Mr = (t) => n(
+), vr = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "1" }),
   x({ cx: "12", cy: "5", r: "1" }),
   x({ cx: "12", cy: "19", r: "1" })
-), vr = (t) => n(
+), gr = (t) => n(
   t,
   e({ d: "M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z" }),
   e({ d: "M13 13l6 6" })
-), gr = (t) => n(
+), fr = (t) => n(
   t,
   o({ points: "5 9 2 12 5 15" }),
   o({ points: "9 5 12 2 15 5" }),
@@ -1164,17 +1173,17 @@ const M = k1.van, n = (t = {}, ...y) => {
   o({ points: "19 9 22 12 19 15" }),
   r({ x1: "2", y1: "12", x2: "22", y2: "12" }),
   r({ x1: "12", y1: "2", x2: "12", y2: "22" })
-), fr = (t) => n(
+), wr = (t) => n(
   t,
   e({ d: "M9 18V5l12-2v13" }),
   x({ cx: "6", cy: "18", r: "3" }),
   x({ cx: "18", cy: "16", r: "3" })
-), wr = (t) => n(t, h({ points: "12 2 19 21 12 17 5 21 12 2" })), Ar = (t) => n(t, h({ points: "3 11 22 2 13 21 11 13 3 11" })), mr = (t) => n(
+), Ar = (t) => n(t, h({ points: "12 2 19 21 12 17 5 21 12 2" })), mr = (t) => n(t, h({ points: "3 11 22 2 13 21 11 13 3 11" })), Vr = (t) => n(
   t,
   h({
     points: "7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"
   })
-), Vr = (t) => n(
+), Cr = (t) => n(
   t,
   r({ x1: "16.5", y1: "9.4", x2: "7.5", y2: "4.21" }),
   e({
@@ -1182,243 +1191,243 @@ const M = k1.van, n = (t = {}, ...y) => {
   }),
   o({ points: "3.27 6.96 12 12.01 20.73 6.96" }),
   r({ x1: "12", y1: "22.08", x2: "12", y2: "12" })
-), Cr = (t) => n(
+), zr = (t) => n(
   t,
   e({
     d: "M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"
   })
-), zr = (t) => n(
+), Hr = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "10" }),
   r({ x1: "10", y1: "15", x2: "10", y2: "9" }),
   r({ x1: "14", y1: "15", x2: "14", y2: "9" })
-), Hr = (t) => n(
+), Sr = (t) => n(
   t,
   i({ x: "6", y: "4", width: "4", height: "16" }),
   i({ x: "14", y: "4", width: "4", height: "16" })
-), Sr = (t) => n(
+), _r = (t) => n(
   t,
   e({ d: "M12 19l7-7 3 3-7 7-3-3z" }),
   e({ d: "M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" }),
   e({ d: "M2 2l7.586 7.586" }),
   x({ cx: "11", cy: "11", r: "2" })
-), _r = (t) => n(
+), Lr = (t) => n(
   t,
   r({ x1: "19", y1: "5", x2: "5", y2: "19" }),
   x({ cx: "6.5", cy: "6.5", r: "2.5" }),
   x({ cx: "17.5", cy: "17.5", r: "2.5" })
-), Lr = (t) => n(
+), Pr = (t) => n(
   t,
   e({
     d: "M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
   })
-), Pr = (t) => n(
+), br = (t) => n(
   t,
   o({ points: "19 1 23 5 19 9" }),
   r({ x1: "15", y1: "5", x2: "23", y2: "5" }),
   e({
     d: "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
   })
-), br = (t) => n(
+), kr = (t) => n(
   t,
   o({ points: "16 2 16 8 22 8" }),
   r({ x1: "23", y1: "1", x2: "16", y2: "8" }),
   e({
     d: "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
   })
-), kr = (t) => n(
+), Tr = (t) => n(
   t,
   r({ x1: "23", y1: "1", x2: "17", y2: "7" }),
   r({ x1: "17", y1: "1", x2: "23", y2: "7" }),
   e({
     d: "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
   })
-), Tr = (t) => n(
+), Or = (t) => n(
   t,
   e({
     d: "M10.68 13.31a16 16 0 0 0 3.41 2.6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7 2 2 0 0 1 1.72 2v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.42 19.42 0 0 1-3.33-2.67m-2.67-3.34a19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91"
   }),
   r({ x1: "23", y1: "1", x2: "1", y2: "23" })
-), Or = (t) => n(
+), Dr = (t) => n(
   t,
   o({ points: "23 7 23 1 17 1" }),
   r({ x1: "16", y1: "8", x2: "23", y2: "1" }),
   e({
     d: "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
   })
-), Dr = (t) => n(
+), Fr = (t) => n(
   t,
   e({
     d: "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
   })
-), Fr = (t) => n(
+), Br = (t) => n(
   t,
   e({ d: "M21.21 15.89A10 10 0 1 1 8 2.83" }),
   e({ d: "M22 12A10 10 0 0 0 12 2v10z" })
-), Br = (t) => n(
+), Rr = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "10" }),
   h({ points: "10 8 16 12 10 16 10 8" })
-), Rr = (t) => n(t, h({ points: "5 3 19 12 5 21 5 3" })), Ur = (t) => n(
+), Ur = (t) => n(t, h({ points: "5 3 19 12 5 21 5 3" })), $r = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "10" }),
-  r({ x1: "12", y1: "8", x2: "12", y2: "16" }),
-  r({ x1: "8", y1: "12", x2: "16", y2: "12" })
-), $r = (t) => n(
-  t,
-  i({ x: "3", y: "3", width: "18", height: "18", rx: "2", ry: "2" }),
   r({ x1: "12", y1: "8", x2: "12", y2: "16" }),
   r({ x1: "8", y1: "12", x2: "16", y2: "12" })
 ), Er = (t) => n(
   t,
+  i({ x: "3", y: "3", width: "18", height: "18", rx: "2", ry: "2" }),
+  r({ x1: "12", y1: "8", x2: "12", y2: "16" }),
+  r({ x1: "8", y1: "12", x2: "16", y2: "12" })
+), Gr = (t) => n(
+  t,
   r({ x1: "12", y1: "5", x2: "12", y2: "19" }),
   r({ x1: "5", y1: "12", x2: "19", y2: "12" })
-), Gr = (t) => n(
+), Ir = (t) => n(
   t,
   e({
     d: "M4 3h16a2 2 0 0 1 2 2v6a10 10 0 0 1-10 10A10 10 0 0 1 2 11V5a2 2 0 0 1 2-2z"
   }),
   o({ points: "8 10 12 14 16 10" })
-), Ir = (t) => n(
+), Xr = (t) => n(
   t,
   e({ d: "M18.36 6.64a9 9 0 1 1-12.73 0" }),
   r({ x1: "12", y1: "2", x2: "12", y2: "12" })
-), Xr = (t) => n(
+), Nr = (t) => n(
   t,
   o({ points: "6 9 6 2 18 2 18 9" }),
   e({
     d: "M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"
   }),
   i({ x: "6", y: "14", width: "12", height: "8" })
-), Nr = (t) => n(
+), qr = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "2" }),
   e({
     d: "M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"
   })
-), qr = (t) => n(
+), Wr = (t) => n(
   t,
   o({ points: "1 4 1 10 7 10" }),
   o({ points: "23 20 23 14 17 14" }),
   e({
     d: "M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"
   })
-), Wr = (t) => n(
+), Kr = (t) => n(
   t,
   o({ points: "23 4 23 10 17 10" }),
   o({ points: "1 20 1 14 7 14" }),
   e({
     d: "M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"
   })
-), Kr = (t) => n(
+), Zr = (t) => n(
   t,
   o({ points: "17 1 21 5 17 9" }),
   e({ d: "M3 11V9a4 4 0 0 1 4-4h14" }),
   o({ points: "7 23 3 19 7 15" }),
   e({ d: "M21 13v2a4 4 0 0 1-4 4H3" })
-), Zr = (t) => n(
+), Jr = (t) => n(
   t,
   h({ points: "11 19 2 12 11 5 11 19" }),
   h({ points: "22 19 13 12 22 5 22 19" })
-), Jr = (t) => n(
+), Yr = (t) => n(
   t,
   o({ points: "1 4 1 10 7 10" }),
   e({ d: "M3.51 15a9 9 0 1 0 2.13-9.36L1 10" })
-), Yr = (t) => n(
+), Qr = (t) => n(
   t,
   o({ points: "23 4 23 10 17 10" }),
   e({ d: "M20.49 15a9 9 0 1 1-2.12-9.36L23 10" })
-), Qr = (t) => n(
+), jr = (t) => n(
   t,
   e({ d: "M4 11a9 9 0 0 1 9 9" }),
   e({ d: "M4 4a16 16 0 0 1 16 16" }),
   x({ cx: "5", cy: "19", r: "1" })
-), jr = (t) => n(
+), tn = (t) => n(
   t,
   e({
     d: "M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"
   }),
   o({ points: "17 21 17 13 7 13 7 21" }),
   o({ points: "7 3 7 8 15 8" })
-), tn = (t) => n(
+), rn = (t) => n(
   t,
   x({ cx: "6", cy: "6", r: "3" }),
   x({ cx: "6", cy: "18", r: "3" }),
   r({ x1: "20", y1: "4", x2: "8.12", y2: "15.88" }),
   r({ x1: "14.47", y1: "14.48", x2: "20", y2: "20" }),
   r({ x1: "8.12", y1: "8.12", x2: "12", y2: "12" })
-), rn = (t) => n(
+), nn = (t) => n(
   t,
   x({ cx: "11", cy: "11", r: "8" }),
   r({ x1: "21", y1: "21", x2: "16.65", y2: "16.65" })
-), nn = (t) => n(
+), en = (t) => n(
   t,
   r({ x1: "22", y1: "2", x2: "11", y2: "13" }),
   h({ points: "22 2 15 22 11 13 2 9 22 2" })
-), en = (t) => n(
+), yn = (t) => n(
   t,
   i({ x: "2", y: "2", width: "20", height: "8", rx: "2", ry: "2" }),
   i({ x: "2", y: "14", width: "20", height: "8", rx: "2", ry: "2" }),
   r({ x1: "6", y1: "6", x2: "6.01", y2: "6" }),
   r({ x1: "6", y1: "18", x2: "6.01", y2: "18" })
-), yn = (t) => n(
+), on = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "3" }),
   e({
     d: "M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
   })
-), on = (t) => n(
+), xn = (t) => n(
   t,
   x({ cx: "18", cy: "5", r: "3" }),
   x({ cx: "6", cy: "12", r: "3" }),
   x({ cx: "18", cy: "19", r: "3" }),
   r({ x1: "8.59", y1: "13.51", x2: "15.42", y2: "17.49" }),
   r({ x1: "15.41", y1: "6.51", x2: "8.59", y2: "10.49" })
-), xn = (t) => n(
+), sn = (t) => n(
   t,
   e({ d: "M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" }),
   o({ points: "16 6 12 2 8 6" }),
   r({ x1: "12", y1: "2", x2: "12", y2: "15" })
-), sn = (t) => n(
+), cn = (t) => n(
   t,
   e({ d: "M19.69 14a6.9 6.9 0 0 0 .31-2V5l-8-3-3.16 1.18" }),
   e({ d: "M4.73 4.73L4 5v7c0 6 8 10 8 10a20.29 20.29 0 0 0 5.62-4.38" }),
   r({ x1: "1", y1: "1", x2: "23", y2: "23" })
-), cn = (t) => n(
+), an = (t) => n(
   t,
   e({ d: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" })
-), an = (t) => n(
+), ln = (t) => n(
   t,
   e({ d: "M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" }),
   r({ x1: "3", y1: "6", x2: "21", y2: "6" }),
   e({ d: "M16 10a4 4 0 0 1-8 0" })
-), ln = (t) => n(
+), dn = (t) => n(
   t,
   x({ cx: "9", cy: "21", r: "1" }),
   x({ cx: "20", cy: "21", r: "1" }),
   e({
     d: "M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
   })
-), dn = (t) => n(
+), hn = (t) => n(
   t,
   o({ points: "16 3 21 3 21 8" }),
   r({ x1: "4", y1: "20", x2: "21", y2: "3" }),
   o({ points: "21 16 21 21 16 21" }),
   r({ x1: "15", y1: "15", x2: "21", y2: "21" }),
   r({ x1: "4", y1: "4", x2: "9", y2: "9" })
-), hn = (t) => n(
+), un = (t) => n(
   t,
   i({ x: "3", y: "3", width: "18", height: "18", rx: "2", ry: "2" }),
   r({ x1: "9", y1: "3", x2: "9", y2: "21" })
-), un = (t) => n(
+), pn = (t) => n(
   t,
   h({ points: "19 20 9 12 19 4 19 20" }),
   r({ x1: "5", y1: "19", x2: "5", y2: "5" })
-), pn = (t) => n(
+), Mn = (t) => n(
   t,
   h({ points: "5 4 15 12 5 20 5 4" }),
   r({ x1: "19", y1: "5", x2: "19", y2: "19" })
-), Mn = (t) => n(
+), vn = (t) => n(
   t,
   e({
     d: "M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"
@@ -1444,11 +1453,11 @@ const M = k1.van, n = (t = {}, ...y) => {
   e({
     d: "M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"
   })
-), vn = (t) => n(
+), gn = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "10" }),
   r({ x1: "4.93", y1: "4.93", x2: "19.07", y2: "19.07" })
-), gn = (t) => n(
+), fn = (t) => n(
   t,
   r({ x1: "4", y1: "21", x2: "4", y2: "14" }),
   r({ x1: "4", y1: "10", x2: "4", y2: "3" }),
@@ -1459,34 +1468,34 @@ const M = k1.van, n = (t = {}, ...y) => {
   r({ x1: "1", y1: "14", x2: "7", y2: "14" }),
   r({ x1: "9", y1: "8", x2: "15", y2: "8" }),
   r({ x1: "17", y1: "16", x2: "23", y2: "16" })
-), fn = (t) => n(
+), wn = (t) => n(
   t,
   i({ x: "5", y: "2", width: "14", height: "20", rx: "2", ry: "2" }),
   r({ x1: "12", y1: "18", x2: "12.01", y2: "18" })
-), wn = (t) => n(
+), An = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "10" }),
   e({ d: "M8 14s1.5 2 4 2 4-2 4-2" }),
   r({ x1: "9", y1: "9", x2: "9.01", y2: "9" }),
   r({ x1: "15", y1: "9", x2: "15.01", y2: "9" })
-), An = (t) => n(
+), mn = (t) => n(
   t,
   i({ x: "4", y: "2", width: "16", height: "20", rx: "2", ry: "2" }),
   x({ cx: "12", cy: "14", r: "4" }),
   r({ x1: "12", y1: "6", x2: "12.01", y2: "6" })
-), mn = (t) => n(
+), Vn = (t) => n(
   t,
   i({ x: "3", y: "3", width: "18", height: "18", rx: "2", ry: "2" })
-), Vn = (t) => n(
+), Cn = (t) => n(
   t,
   h({
     points: "12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
   })
-), Cn = (t) => n(
+), zn = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "10" }),
   i({ x: "9", y: "9", width: "6", height: "6" })
-), zn = (t) => n(
+), Hn = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "5" }),
   r({ x1: "12", y1: "1", x2: "12", y2: "3" }),
@@ -1497,7 +1506,7 @@ const M = k1.van, n = (t = {}, ...y) => {
   r({ x1: "21", y1: "12", x2: "23", y2: "12" }),
   r({ x1: "4.22", y1: "19.78", x2: "5.64", y2: "18.36" }),
   r({ x1: "18.36", y1: "5.64", x2: "19.78", y2: "4.22" })
-), Hn = (t) => n(
+), Sn = (t) => n(
   t,
   e({ d: "M17 18a5 5 0 0 0-10 0" }),
   r({ x1: "12", y1: "2", x2: "12", y2: "9" }),
@@ -1507,7 +1516,7 @@ const M = k1.van, n = (t = {}, ...y) => {
   r({ x1: "18.36", y1: "11.64", x2: "19.78", y2: "10.22" }),
   r({ x1: "23", y1: "22", x2: "1", y2: "22" }),
   o({ points: "8 6 12 2 16 6" })
-), Sn = (t) => n(
+), _n = (t) => n(
   t,
   e({ d: "M17 18a5 5 0 0 0-10 0" }),
   r({ x1: "12", y1: "9", x2: "12", y2: "2" }),
@@ -1517,57 +1526,57 @@ const M = k1.van, n = (t = {}, ...y) => {
   r({ x1: "18.36", y1: "11.64", x2: "19.78", y2: "10.22" }),
   r({ x1: "23", y1: "22", x2: "1", y2: "22" }),
   o({ points: "16 5 12 9 8 5" })
-), _n = (t) => n(
+), Ln = (t) => n(
   t,
   e({
     d: "M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"
   })
-), Ln = (t) => n(
+), Pn = (t) => n(
   t,
   i({ x: "4", y: "2", width: "16", height: "20", rx: "2", ry: "2" }),
   r({ x1: "12", y1: "18", x2: "12.01", y2: "18" })
-), Pn = (t) => n(
+), bn = (t) => n(
   t,
   e({
     d: "M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"
   }),
   r({ x1: "7", y1: "7", x2: "7.01", y2: "7" })
-), bn = (t) => n(
+), kn = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "10" }),
   x({ cx: "12", cy: "12", r: "6" }),
   x({ cx: "12", cy: "12", r: "2" })
-), kn = (t) => n(
+), Tn = (t) => n(
   t,
   o({ points: "4 17 10 11 4 5" }),
   r({ x1: "12", y1: "19", x2: "20", y2: "19" })
-), Tn = (t) => n(
+), On = (t) => n(
   t,
   e({ d: "M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z" })
-), On = (t) => n(
+), Dn = (t) => n(
   t,
   e({
     d: "M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"
   })
-), Dn = (t) => n(
+), Fn = (t) => n(
   t,
   e({
     d: "M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"
   })
-), Fn = (t) => n(
-  t,
-  i({ x: "1", y: "5", width: "22", height: "14", rx: "7", ry: "7" }),
-  x({ cx: "8", cy: "12", r: "3" })
 ), Bn = (t) => n(
   t,
   i({ x: "1", y: "5", width: "22", height: "14", rx: "7", ry: "7" }),
-  x({ cx: "16", cy: "12", r: "3" })
+  x({ cx: "8", cy: "12", r: "3" })
 ), Rn = (t) => n(
+  t,
+  i({ x: "1", y: "5", width: "22", height: "14", rx: "7", ry: "7" }),
+  x({ cx: "16", cy: "12", r: "3" })
+), Un = (t) => n(
   t,
   e({
     d: "M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
   })
-), Un = (t) => n(
+), $n = (t) => n(
   t,
   o({ points: "3 6 5 6 21 6" }),
   e({
@@ -1575,146 +1584,146 @@ const M = k1.van, n = (t = {}, ...y) => {
   }),
   r({ x1: "10", y1: "11", x2: "10", y2: "17" }),
   r({ x1: "14", y1: "11", x2: "14", y2: "17" })
-), $n = (t) => n(
+), En = (t) => n(
   t,
   o({ points: "3 6 5 6 21 6" }),
   e({
     d: "M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
   })
-), En = (t) => n(
+), Gn = (t) => n(
   t,
   i({ x: "3", y: "3", width: "18", height: "18", rx: "2", ry: "2" }),
   i({ x: "7", y: "7", width: "3", height: "9" }),
   i({ x: "14", y: "7", width: "3", height: "5" })
-), Gn = (t) => n(
+), In = (t) => n(
   t,
   o({ points: "23 18 13.5 8.5 8.5 13.5 1 6" }),
   o({ points: "17 18 23 18 23 12" })
-), In = (t) => n(
+), Xn = (t) => n(
   t,
   o({ points: "23 6 13.5 15.5 8.5 10.5 1 18" }),
   o({ points: "17 6 23 6 23 12" })
-), Xn = (t) => n(
+), Nn = (t) => n(
   t,
   e({
     d: "M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
   })
-), Nn = (t) => n(
+), qn = (t) => n(
   t,
   i({ x: "1", y: "3", width: "15", height: "13" }),
   h({ points: "16 8 20 8 23 11 23 16 16 16 16 8" }),
   x({ cx: "5.5", cy: "18.5", r: "2.5" }),
   x({ cx: "18.5", cy: "18.5", r: "2.5" })
-), qn = (t) => n(
+), Wn = (t) => n(
   t,
   i({ x: "2", y: "7", width: "20", height: "15", rx: "2", ry: "2" }),
   o({ points: "17 2 12 7 7 2" })
-), Wn = (t) => n(
+), Kn = (t) => n(
   t,
   e({ d: "M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7" })
-), Kn = (t) => n(
+), Zn = (t) => n(
   t,
   e({
     d: "M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
   })
-), Zn = (t) => n(
+), Jn = (t) => n(
   t,
   o({ points: "4 7 4 4 20 4 20 7" }),
   r({ x1: "9", y1: "20", x2: "15", y2: "20" }),
   r({ x1: "12", y1: "4", x2: "12", y2: "20" })
-), Jn = (t) => n(
+), Yn = (t) => n(
   t,
   e({ d: "M23 12a11.05 11.05 0 0 0-22 0zm-5 7a3 3 0 0 1-6 0v-7" })
-), Yn = (t) => n(
+), Qn = (t) => n(
   t,
   e({ d: "M6 3v7a6 6 0 0 0 6 6 6 6 0 0 0 6-6V3" }),
   r({ x1: "4", y1: "21", x2: "20", y2: "21" })
-), Qn = (t) => n(
+), jn = (t) => n(
   t,
   i({ x: "3", y: "11", width: "18", height: "11", rx: "2", ry: "2" }),
   e({ d: "M7 11V7a5 5 0 0 1 9.9-1" })
-), jn = (t) => n(
+), te = (t) => n(
   t,
   o({ points: "16 16 12 12 8 16" }),
   r({ x1: "12", y1: "12", x2: "12", y2: "21" }),
   e({ d: "M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3" }),
   o({ points: "16 16 12 12 8 16" })
-), te = (t) => n(
+), re = (t) => n(
   t,
   e({ d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" }),
   o({ points: "17 8 12 3 7 8" }),
   r({ x1: "12", y1: "3", x2: "12", y2: "15" })
-), re = (t) => n(
-  t,
-  e({ d: "M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" }),
-  x({ cx: "8.5", cy: "7", r: "4" }),
-  o({ points: "17 11 19 13 23 9" })
 ), ne = (t) => n(
   t,
   e({ d: "M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" }),
   x({ cx: "8.5", cy: "7", r: "4" }),
-  r({ x1: "23", y1: "11", x2: "17", y2: "11" })
+  o({ points: "17 11 19 13 23 9" })
 ), ee = (t) => n(
   t,
   e({ d: "M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" }),
   x({ cx: "8.5", cy: "7", r: "4" }),
-  r({ x1: "20", y1: "8", x2: "20", y2: "14" }),
   r({ x1: "23", y1: "11", x2: "17", y2: "11" })
 ), ye = (t) => n(
   t,
   e({ d: "M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" }),
   x({ cx: "8.5", cy: "7", r: "4" }),
+  r({ x1: "20", y1: "8", x2: "20", y2: "14" }),
+  r({ x1: "23", y1: "11", x2: "17", y2: "11" })
+), oe = (t) => n(
+  t,
+  e({ d: "M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" }),
+  x({ cx: "8.5", cy: "7", r: "4" }),
   r({ x1: "18", y1: "8", x2: "23", y2: "13" }),
   r({ x1: "23", y1: "8", x2: "18", y2: "13" })
-), oe = (t) => n(
+), xe = (t) => n(
   t,
   e({ d: "M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" }),
   x({ cx: "12", cy: "7", r: "4" })
-), xe = (t) => n(
+), se = (t) => n(
   t,
   e({ d: "M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" }),
   x({ cx: "9", cy: "7", r: "4" }),
   e({ d: "M23 21v-2a4 4 0 0 0-3-3.87" }),
   e({ d: "M16 3.13a4 4 0 0 1 0 7.75" })
-), se = (t) => n(
+), ce = (t) => n(
   t,
   e({
     d: "M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2m5.66 0H14a2 2 0 0 1 2 2v3.34l1 1L23 7v10"
   }),
   r({ x1: "1", y1: "1", x2: "23", y2: "23" })
-), ce = (t) => n(
+), ae = (t) => n(
   t,
   h({ points: "23 7 16 12 23 17 23 7" }),
   i({ x: "1", y: "5", width: "15", height: "14", rx: "2", ry: "2" })
-), ae = (t) => n(
+), ie = (t) => n(
   t,
   x({ cx: "5.5", cy: "11.5", r: "4.5" }),
   x({ cx: "18.5", cy: "11.5", r: "4.5" }),
   r({ x1: "5.5", y1: "16", x2: "18.5", y2: "16" })
-), ie = (t) => n(
-  t,
-  h({ points: "11 5 6 9 2 9 2 15 6 15 11 19 11 5" }),
-  e({ d: "M15.54 8.46a5 5 0 0 1 0 7.07" })
 ), le = (t) => n(
   t,
   h({ points: "11 5 6 9 2 9 2 15 6 15 11 19 11 5" }),
-  e({ d: "M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" })
+  e({ d: "M15.54 8.46a5 5 0 0 1 0 7.07" })
 ), de = (t) => n(
+  t,
+  h({ points: "11 5 6 9 2 9 2 15 6 15 11 19 11 5" }),
+  e({ d: "M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" })
+), he = (t) => n(
   t,
   h({ points: "11 5 6 9 2 9 2 15 6 15 11 19 11 5" }),
   r({ x1: "23", y1: "9", x2: "17", y2: "15" }),
   r({ x1: "17", y1: "9", x2: "23", y2: "15" })
-), he = (t) => n(
+), ue = (t) => n(
   t,
   h({ points: "11 5 6 9 2 9 2 15 6 15 11 19 11 5" })
-), ue = (t) => n(
+), pe = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "7" }),
   o({ points: "12 9 12 12 13.5 13.5" }),
   e({
     d: "M16.51 17.35l-.35 3.83a2 2 0 0 1-2 1.82H9.83a2 2 0 0 1-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 0 1 9.83 1h4.35a2 2 0 0 1 2 1.82l.35 3.83"
   })
-), pe = (t) => n(
+), Me = (t) => n(
   t,
   r({ x1: "1", y1: "1", x2: "23", y2: "23" }),
   e({ d: "M16.72 11.06A10.94 10.94 0 0 1 19 12.55" }),
@@ -1723,352 +1732,352 @@ const M = k1.van, n = (t = {}, ...y) => {
   e({ d: "M1.42 9a15.91 15.91 0 0 1 4.7-2.88" }),
   e({ d: "M8.53 16.11a6 6 0 0 1 6.95 0" }),
   r({ x1: "12", y1: "20", x2: "12.01", y2: "20" })
-), Me = (t) => n(
+), ve = (t) => n(
   t,
   e({ d: "M5 12.55a11 11 0 0 1 14.08 0" }),
   e({ d: "M1.42 9a16 16 0 0 1 21.16 0" }),
   e({ d: "M8.53 16.11a6 6 0 0 1 6.95 0" }),
   r({ x1: "12", y1: "20", x2: "12.01", y2: "20" })
-), ve = (t) => n(
+), ge = (t) => n(
   t,
   e({
     d: "M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"
   })
-), ge = (t) => n(
+), fe = (t) => n(
   t,
   x({ cx: "12", cy: "12", r: "10" }),
   r({ x1: "15", y1: "9", x2: "9", y2: "15" }),
   r({ x1: "9", y1: "9", x2: "15", y2: "15" })
-), fe = (t) => n(
+), we = (t) => n(
   t,
   h({
     points: "7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"
   }),
   r({ x1: "15", y1: "9", x2: "9", y2: "15" }),
   r({ x1: "9", y1: "9", x2: "15", y2: "15" })
-), we = (t) => n(
+), Ae = (t) => n(
   t,
   i({ x: "3", y: "3", width: "18", height: "18", rx: "2", ry: "2" }),
   r({ x1: "9", y1: "9", x2: "15", y2: "15" }),
   r({ x1: "15", y1: "9", x2: "9", y2: "15" })
-), Ae = (t) => n(
+), me = (t) => n(
   t,
   r({ x1: "18", y1: "6", x2: "6", y2: "18" }),
   r({ x1: "6", y1: "6", x2: "18", y2: "18" })
-), me = (t) => n(
+), Ve = (t) => n(
   t,
   e({
     d: "M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
   }),
   h({ points: "9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" })
-), Ve = (t) => n(
+), Ce = (t) => n(
   t,
   o({ points: "12.41 6.75 13 2 10.57 4.92" }),
   o({ points: "18.57 12.91 21 10 15.66 10" }),
   o({ points: "8 8 3 14 12 14 11 22 16 16" }),
   r({ x1: "1", y1: "1", x2: "23", y2: "23" })
-), Ce = (t) => n(
+), ze = (t) => n(
   t,
   h({ points: "13 2 3 14 12 14 11 22 21 10 12 10 13 2" })
-), ze = (t) => n(
+), He = (t) => n(
   t,
   x({ cx: "11", cy: "11", r: "8" }),
   r({ x1: "21", y1: "21", x2: "16.65", y2: "16.65" }),
   r({ x1: "11", y1: "8", x2: "11", y2: "14" }),
   r({ x1: "8", y1: "11", x2: "14", y2: "11" })
-), He = (t) => n(
+), Se = (t) => n(
   t,
   x({ cx: "11", cy: "11", r: "8" }),
   r({ x1: "21", y1: "21", x2: "16.65", y2: "16.65" }),
   r({ x1: "8", y1: "11", x2: "14", y2: "11" })
 );
 export {
-  a2 as Activity,
-  i2 as Airplay,
-  l2 as AlertCircle,
-  d2 as AlertOctagon,
-  h2 as AlertTriangle,
-  u2 as AlignCenter,
-  p2 as AlignJustify,
-  M2 as AlignLeft,
-  v2 as AlignRight,
-  g2 as Anchor,
-  f2 as Aperture,
-  w2 as Archive,
-  C2 as ArrowDown,
-  A2 as ArrowDownCircle,
-  m2 as ArrowDownLeft,
-  V2 as ArrowDownRight,
-  H2 as ArrowLeft,
-  z2 as ArrowLeftCircle,
-  _2 as ArrowRight,
-  S2 as ArrowRightCircle,
-  k2 as ArrowUp,
-  L2 as ArrowUpCircle,
-  P2 as ArrowUpLeft,
-  b2 as ArrowUpRight,
-  T2 as AtSign,
-  O2 as Award,
-  F2 as BarChart,
-  D2 as BarChart2,
-  R2 as Battery,
-  B2 as BatteryCharging,
-  $2 as Bell,
-  U2 as BellOff,
-  E2 as Bluetooth,
-  G2 as Bold,
-  X2 as Book,
-  I2 as BookOpen,
-  N2 as Bookmark,
-  q2 as Box,
-  W2 as Briefcase,
-  K2 as Calendar,
-  J2 as Camera,
-  Z2 as CameraOff,
-  Y2 as Cast,
-  t0 as Check,
-  Q2 as CheckCircle,
-  j2 as CheckSquare,
-  r0 as ChevronDown,
-  n0 as ChevronLeft,
-  e0 as ChevronRight,
-  y0 as ChevronUp,
-  o0 as ChevronsDown,
-  x0 as ChevronsLeft,
-  s0 as ChevronsRight,
-  c0 as ChevronsUp,
-  a0 as Chrome,
-  i0 as Circle,
-  l0 as Clipboard,
-  d0 as Clock,
-  g0 as Cloud,
-  h0 as CloudDrizzle,
-  u0 as CloudLightning,
-  p0 as CloudOff,
-  M0 as CloudRain,
-  v0 as CloudSnow,
-  f0 as Code,
-  w0 as Codepen,
-  A0 as Codesandbox,
-  m0 as Coffee,
-  V0 as Columns,
-  C0 as Command,
-  z0 as Compass,
-  H0 as Copy,
-  S0 as CornerDownLeft,
-  _0 as CornerDownRight,
-  L0 as CornerLeftDown,
-  P0 as CornerLeftUp,
-  b0 as CornerRightDown,
-  k0 as CornerRightUp,
-  T0 as CornerUpLeft,
-  O0 as CornerUpRight,
-  D0 as Cpu,
-  F0 as CreditCard,
-  B0 as Crop,
-  R0 as Crosshair,
-  U0 as Database,
-  $0 as Delete,
-  E0 as Disc,
-  X0 as Divide,
-  G0 as DivideCircle,
-  I0 as DivideSquare,
-  N0 as DollarSign,
-  W0 as Download,
-  q0 as DownloadCloud,
-  K0 as Dribbble,
-  Z0 as Droplet,
-  Q0 as Edit,
-  J0 as Edit2,
-  Y0 as Edit3,
-  j0 as ExternalLink,
-  rt as Eye,
-  tt as EyeOff,
-  nt as Facebook,
-  et as FastForward,
-  yt as Feather,
-  ot as Figma,
-  at as File,
-  xt as FileMinus,
-  st as FilePlus,
-  ct as FileText,
-  it as Film,
-  lt as Filter,
-  dt as Flag,
-  pt as Folder,
-  ht as FolderMinus,
-  ut as FolderPlus,
-  Mt as Framer,
-  vt as Frown,
-  gt as Gift,
-  ft as GitBranch,
-  wt as GitCommit,
-  At as GitMerge,
-  mt as GitPullRequest,
-  Vt as Github,
-  Ct as Gitlab,
-  zt as Globe,
-  Ht as Grid,
-  St as HardDrive,
-  _t as Hash,
-  Lt as Headphones,
-  Pt as Heart,
-  bt as HelpCircle,
-  kt as Hexagon,
-  Tt as Home,
-  Ot as Image,
-  Dt as Inbox,
-  Ft as Info,
-  Bt as Instagram,
-  Rt as Italic,
-  Ut as Key,
-  $t as Layers,
-  Et as Layout,
-  Gt as LifeBuoy,
-  Xt as Link,
-  It as Link2,
-  Nt as Linkedin,
-  qt as List,
-  Wt as Loader,
-  Kt as Lock,
-  Zt as LogIn,
-  Jt as LogOut,
-  Yt as Mail,
-  jt as Map,
-  Qt as MapPin,
-  rr as Maximize,
-  tr as Maximize2,
-  nr as Meh,
-  er as Menu,
-  yr as MessageCircle,
-  or as MessageSquare,
-  sr as Mic,
-  xr as MicOff,
-  ar as Minimize,
-  cr as Minimize2,
-  dr as Minus,
-  ir as MinusCircle,
-  lr as MinusSquare,
-  hr as Monitor,
-  ur as Moon,
-  pr as MoreHorizontal,
-  Mr as MoreVertical,
-  vr as MousePointer,
-  gr as Move,
-  fr as Music,
-  Ar as Navigation,
-  wr as Navigation2,
-  mr as Octagon,
-  Vr as Package,
-  Cr as Paperclip,
-  Hr as Pause,
-  zr as PauseCircle,
-  Sr as PenTool,
-  _r as Percent,
-  Dr as Phone,
-  Lr as PhoneCall,
-  Pr as PhoneForwarded,
-  br as PhoneIncoming,
-  kr as PhoneMissed,
-  Tr as PhoneOff,
-  Or as PhoneOutgoing,
-  Fr as PieChart,
-  Rr as Play,
-  Br as PlayCircle,
-  Er as Plus,
-  Ur as PlusCircle,
-  $r as PlusSquare,
-  Gr as Pocket,
-  Ir as Power,
-  Xr as Printer,
-  Nr as Radio,
-  qr as RefreshCcw,
-  Wr as RefreshCw,
-  Kr as Repeat,
-  Zr as Rewind,
-  Jr as RotateCcw,
-  Yr as RotateCw,
-  Qr as Rss,
-  jr as Save,
-  tn as Scissors,
-  rn as Search,
-  nn as Send,
-  en as Server,
-  yn as Settings,
-  xn as Share,
-  on as Share2,
-  cn as Shield,
-  sn as ShieldOff,
-  an as ShoppingBag,
-  ln as ShoppingCart,
-  dn as Shuffle,
-  hn as Sidebar,
-  un as SkipBack,
-  pn as SkipForward,
-  Mn as Slack,
-  vn as Slash,
-  gn as Sliders,
-  fn as Smartphone,
-  wn as Smile,
-  An as Speaker,
-  mn as Square,
-  Vn as Star,
-  Cn as StopCircle,
-  zn as Sun,
-  Hn as Sunrise,
-  Sn as Sunset,
-  _n as Table,
-  Ln as Tablet,
-  Pn as Tag,
-  bn as Target,
-  kn as Terminal,
-  Tn as Thermometer,
-  On as ThumbsDown,
-  Dn as ThumbsUp,
-  Fn as ToggleLeft,
-  Bn as ToggleRight,
-  Rn as Tool,
-  $n as Trash,
-  Un as Trash2,
-  En as Trello,
-  Gn as TrendingDown,
-  In as TrendingUp,
-  Xn as Triangle,
-  Nn as Truck,
-  qn as Tv,
-  Wn as Twitch,
-  Kn as Twitter,
-  Zn as Type,
-  Jn as Umbrella,
-  Yn as Underline,
-  Qn as Unlock,
-  te as Upload,
-  jn as UploadCloud,
-  oe as User,
-  re as UserCheck,
-  ne as UserMinus,
-  ee as UserPlus,
-  ye as UserX,
-  xe as Users,
-  ce as Video,
-  se as VideoOff,
-  ae as Voicemail,
-  he as Volume,
-  ie as Volume1,
-  le as Volume2,
-  de as VolumeX,
-  ue as Watch,
-  Me as Wifi,
-  pe as WifiOff,
-  ve as Wind,
-  Ae as X,
-  ge as XCircle,
-  fe as XOctagon,
-  we as XSquare,
-  me as Youtube,
-  Ce as Zap,
-  Ve as ZapOff,
-  ze as ZoomIn,
-  He as ZoomOut
+  i2 as Activity,
+  l2 as Airplay,
+  d2 as AlertCircle,
+  h2 as AlertOctagon,
+  u2 as AlertTriangle,
+  p2 as AlignCenter,
+  M2 as AlignJustify,
+  v2 as AlignLeft,
+  g2 as AlignRight,
+  f2 as Anchor,
+  w2 as Aperture,
+  A2 as Archive,
+  z2 as ArrowDown,
+  m2 as ArrowDownCircle,
+  V2 as ArrowDownLeft,
+  C2 as ArrowDownRight,
+  S2 as ArrowLeft,
+  H2 as ArrowLeftCircle,
+  L2 as ArrowRight,
+  _2 as ArrowRightCircle,
+  T2 as ArrowUp,
+  P2 as ArrowUpCircle,
+  b2 as ArrowUpLeft,
+  k2 as ArrowUpRight,
+  O2 as AtSign,
+  D2 as Award,
+  B2 as BarChart,
+  F2 as BarChart2,
+  U2 as Battery,
+  R2 as BatteryCharging,
+  E2 as Bell,
+  $2 as BellOff,
+  G2 as Bluetooth,
+  I2 as Bold,
+  N2 as Book,
+  X2 as BookOpen,
+  q2 as Bookmark,
+  W2 as Box,
+  K2 as Briefcase,
+  Z2 as Calendar,
+  Y2 as Camera,
+  J2 as CameraOff,
+  Q2 as Cast,
+  r0 as Check,
+  j2 as CheckCircle,
+  t0 as CheckSquare,
+  n0 as ChevronDown,
+  e0 as ChevronLeft,
+  y0 as ChevronRight,
+  o0 as ChevronUp,
+  x0 as ChevronsDown,
+  s0 as ChevronsLeft,
+  c0 as ChevronsRight,
+  a0 as ChevronsUp,
+  i0 as Chrome,
+  l0 as Circle,
+  d0 as Clipboard,
+  h0 as Clock,
+  f0 as Cloud,
+  u0 as CloudDrizzle,
+  p0 as CloudLightning,
+  M0 as CloudOff,
+  v0 as CloudRain,
+  g0 as CloudSnow,
+  w0 as Code,
+  A0 as Codepen,
+  m0 as Codesandbox,
+  V0 as Coffee,
+  C0 as Columns,
+  z0 as Command,
+  H0 as Compass,
+  S0 as Copy,
+  _0 as CornerDownLeft,
+  L0 as CornerDownRight,
+  P0 as CornerLeftDown,
+  b0 as CornerLeftUp,
+  k0 as CornerRightDown,
+  T0 as CornerRightUp,
+  O0 as CornerUpLeft,
+  D0 as CornerUpRight,
+  F0 as Cpu,
+  B0 as CreditCard,
+  R0 as Crop,
+  U0 as Crosshair,
+  $0 as Database,
+  E0 as Delete,
+  G0 as Disc,
+  N0 as Divide,
+  I0 as DivideCircle,
+  X0 as DivideSquare,
+  q0 as DollarSign,
+  K0 as Download,
+  W0 as DownloadCloud,
+  Z0 as Dribbble,
+  J0 as Droplet,
+  j0 as Edit,
+  Y0 as Edit2,
+  Q0 as Edit3,
+  tt as ExternalLink,
+  nt as Eye,
+  rt as EyeOff,
+  et as Facebook,
+  yt as FastForward,
+  ot as Feather,
+  xt as Figma,
+  it as File,
+  st as FileMinus,
+  ct as FilePlus,
+  at as FileText,
+  lt as Film,
+  dt as Filter,
+  ht as Flag,
+  Mt as Folder,
+  ut as FolderMinus,
+  pt as FolderPlus,
+  vt as Framer,
+  gt as Frown,
+  ft as Gift,
+  wt as GitBranch,
+  At as GitCommit,
+  mt as GitMerge,
+  Vt as GitPullRequest,
+  Ct as Github,
+  zt as Gitlab,
+  Ht as Globe,
+  St as Grid,
+  _t as HardDrive,
+  Lt as Hash,
+  Pt as Headphones,
+  bt as Heart,
+  kt as HelpCircle,
+  Tt as Hexagon,
+  Ot as Home,
+  Dt as Image,
+  Ft as Inbox,
+  Bt as Info,
+  Rt as Instagram,
+  Ut as Italic,
+  $t as Key,
+  Et as Layers,
+  Gt as Layout,
+  It as LifeBuoy,
+  Nt as Link,
+  Xt as Link2,
+  qt as Linkedin,
+  Wt as List,
+  Kt as Loader,
+  Zt as Lock,
+  Jt as LogIn,
+  Yt as LogOut,
+  Qt as Mail,
+  tr as Map,
+  jt as MapPin,
+  nr as Maximize,
+  rr as Maximize2,
+  er as Meh,
+  yr as Menu,
+  or as MessageCircle,
+  xr as MessageSquare,
+  cr as Mic,
+  sr as MicOff,
+  ir as Minimize,
+  ar as Minimize2,
+  hr as Minus,
+  lr as MinusCircle,
+  dr as MinusSquare,
+  ur as Monitor,
+  pr as Moon,
+  Mr as MoreHorizontal,
+  vr as MoreVertical,
+  gr as MousePointer,
+  fr as Move,
+  wr as Music,
+  mr as Navigation,
+  Ar as Navigation2,
+  Vr as Octagon,
+  Cr as Package,
+  zr as Paperclip,
+  Sr as Pause,
+  Hr as PauseCircle,
+  _r as PenTool,
+  Lr as Percent,
+  Fr as Phone,
+  Pr as PhoneCall,
+  br as PhoneForwarded,
+  kr as PhoneIncoming,
+  Tr as PhoneMissed,
+  Or as PhoneOff,
+  Dr as PhoneOutgoing,
+  Br as PieChart,
+  Ur as Play,
+  Rr as PlayCircle,
+  Gr as Plus,
+  $r as PlusCircle,
+  Er as PlusSquare,
+  Ir as Pocket,
+  Xr as Power,
+  Nr as Printer,
+  qr as Radio,
+  Wr as RefreshCcw,
+  Kr as RefreshCw,
+  Zr as Repeat,
+  Jr as Rewind,
+  Yr as RotateCcw,
+  Qr as RotateCw,
+  jr as Rss,
+  tn as Save,
+  rn as Scissors,
+  nn as Search,
+  en as Send,
+  yn as Server,
+  on as Settings,
+  sn as Share,
+  xn as Share2,
+  an as Shield,
+  cn as ShieldOff,
+  ln as ShoppingBag,
+  dn as ShoppingCart,
+  hn as Shuffle,
+  un as Sidebar,
+  pn as SkipBack,
+  Mn as SkipForward,
+  vn as Slack,
+  gn as Slash,
+  fn as Sliders,
+  wn as Smartphone,
+  An as Smile,
+  mn as Speaker,
+  Vn as Square,
+  Cn as Star,
+  zn as StopCircle,
+  Hn as Sun,
+  Sn as Sunrise,
+  _n as Sunset,
+  Ln as Table,
+  Pn as Tablet,
+  bn as Tag,
+  kn as Target,
+  Tn as Terminal,
+  On as Thermometer,
+  Dn as ThumbsDown,
+  Fn as ThumbsUp,
+  Bn as ToggleLeft,
+  Rn as ToggleRight,
+  Un as Tool,
+  En as Trash,
+  $n as Trash2,
+  Gn as Trello,
+  In as TrendingDown,
+  Xn as TrendingUp,
+  Nn as Triangle,
+  qn as Truck,
+  Wn as Tv,
+  Kn as Twitch,
+  Zn as Twitter,
+  Jn as Type,
+  Yn as Umbrella,
+  Qn as Underline,
+  jn as Unlock,
+  re as Upload,
+  te as UploadCloud,
+  xe as User,
+  ne as UserCheck,
+  ee as UserMinus,
+  ye as UserPlus,
+  oe as UserX,
+  se as Users,
+  ae as Video,
+  ce as VideoOff,
+  ie as Voicemail,
+  ue as Volume,
+  le as Volume1,
+  de as Volume2,
+  he as VolumeX,
+  pe as Watch,
+  ve as Wifi,
+  Me as WifiOff,
+  ge as Wind,
+  me as X,
+  fe as XCircle,
+  we as XOctagon,
+  Ae as XSquare,
+  Ve as Youtube,
+  ze as Zap,
+  Ce as ZapOff,
+  He as ZoomIn,
+  Se as ZoomOut
 };
 //# sourceMappingURL=index.mjs.map

@@ -1,7 +1,6 @@
 import { resolve } from 'node:path';
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
-import vanjs from "vite-plugin-vanjs";
 
 const NAME = 'VanJSFeather';
 
@@ -22,7 +21,6 @@ export default defineConfig({
       copyDtsFiles: true,
       rollupTypes: true,
     }),
-    vanjs(),
   ],
   build: {
     minify: 'esbuild',

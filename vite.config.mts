@@ -35,6 +35,9 @@ export default defineConfig({
       formats: ['es', 'cjs', 'iife'],
       fileName: (format) => fileName[format],
     },
+    rollupOptions: {
+      external: ['vanjs-core'],
+    },
     sourcemap: true,
   },
 });

@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       mini-van-plate:
-        specifier: ^0.6.1
+        specifier: ^0.6.3
         version: 0.6.3
       vanjs-core:
         specifier: ^1.5.3

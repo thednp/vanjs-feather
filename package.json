@@ -77,12 +77,13 @@
     "vitest": "^3.0.4"
   },
   "peerDependencies": {
-    "mini-van-plate": "^0.6.1",
-    "vanjs-core": "^1.5.0",
+    "mini-van-plate": "^0.6.3",
+    "vanjs-core": "^1.5.3",
     "vite-plugin-vanjs": "^0.0.5"
   },
   "dependencies": {
-    "vanjs-core": "^1.5.3"
+    "vanjs-core": "^1.5.3",
+    "vite-plugin-vanjs": "^0.0.5"
   },
   "packageManager": "pnpm@8.6.12",
   "engines": {

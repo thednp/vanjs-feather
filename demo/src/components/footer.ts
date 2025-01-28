@@ -60,7 +60,7 @@ export default function Footer() {
       { class: "py-3 ml-auto text-sm" },
       span(
         {
-          class: "font-weight-800 font-stretch-125 text-black dark:text-white",
+          class: "font-bold font-stretch-125% text-black dark:text-white",
         },
         "thednp",
       ),

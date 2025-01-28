@@ -26,12 +26,12 @@ export default function Main() {
           h2(
             {
               class:
-                "text-xl md:text-2xl font-weight-300 font-stretch-125 text-black dark:text-white",
+                "text-xl md:text-2xl font-light font-stretch-125% text-black dark:text-white",
             },
             "Feather Icons for VanJS",
           ),
           p(
-            { class: "font-stretch-125 font-bold" },
+            { class: "font-stretch-125% font-bold" },
             "Powered by Vite, Vitest & Typescript",
           ),
         ),
@@ -51,7 +51,7 @@ export default function Main() {
             h2(
               {
                 class:
-                  "mb-5 text-2xl font-weight-300 font-stretch-125 text-black dark:text-white",
+                  "mb-5 text-2xl font-light font-stretch-125% text-black dark:text-white",
               },
               "Installation",
             ),
@@ -67,7 +67,7 @@ export default function Main() {
             h2(
               {
                 class:
-                  "mb-5 text-2xl font-weight-300 font-stretch-125 text-black dark:text-white",
+                  "mb-5 text-2xl font-light font-stretch-125% text-black dark:text-white",
               },
               "Usage",
             ),
@@ -115,7 +115,7 @@ export default function Main() {
       h2(
         {
           class:
-            "mb-5 text-2xl font-weight-300 font-stretch-125 text-black dark:text-white",
+            "mb-5 text-2xl font-light font-stretch-125% text-black dark:text-white",
         },
         "Preview",
       ),
@@ -141,7 +141,7 @@ export default function Main() {
                 {
                   id: `feather-icon-${name}`,
                   class:
-                    "text-[12px] font-weight-600 font-stretch-90 text-black dark:text-white",
+                    "text-[12px] font-semibold font-stretch-90% text-black dark:text-white",
                 },
                 name,
               ),

@@ -14,25 +14,21 @@
   --tw-content: attr(data-tip);
 }
 
-.tooltip,
-.tooltip-top {
-  &:before {
-    transform: translateX(-50%);
-    top: auto;
-    left: 50%;
-    right: auto;
-    bottom: var(--tooltip-offset);
-  }
+.tooltip:before,
+.tooltip-top:before {
+  transform: translateX(-50%);
+  top: auto;
+  left: 50%;
+  right: auto;
+  bottom: var(--tooltip-offset);
 }
 
-.tooltip-bottom {
-  &:before {
-    transform: translateX(-50%);
-    top: var(--tooltip-offset);
-    left: 50%;
-    right: auto;
-    bottom: auto;
-  }
+.tooltip-bottom:before {
+  transform: translateX(-50%);
+  top: var(--tooltip-offset);
+  left: 50%;
+  right: auto;
+  bottom: auto;
 }
 
 .tooltip {
@@ -41,6 +37,13 @@
   --tooltip-color: theme(colors.gray.950);
   --tooltip-text-color: theme(colors.white);
   --tooltip-tail-offset: calc(100% + 0.0625rem - var(--tooltip-tail));
+}
+
+@media (prefers-color-scheme: dark) {
+  .tooltip {
+    --tooltip-color: theme(colors.gray.50);
+    --tooltip-text-color: theme(colors.black);
+  }
 }
 
 .tooltip:before,
@@ -96,14 +99,12 @@
   position: absolute;
 }
 
-.tooltip,
-.tooltip-top {
-  &:after {
-    transform: translateX(-50%);
-    border-color: var(--tooltip-color) transparent transparent transparent;
-    top: auto;
-    left: 50%;
-    right: auto;
-    bottom: var(--tooltip-tail-offset);
-  }
+.tooltip::after,
+.tooltip-top:after {
+  transform: translateX(-50%);
+  border-color: var(--tooltip-color) transparent transparent transparent;
+  top: auto;
+  left: 50%;
+  right: auto;
+  bottom: var(--tooltip-tail-offset);
 }

@@ -1,6 +1,11 @@
-@import "tailwindcss/base";
-@import "@/css/scalfolding.css";
-@import "@/css/scrollbar.css";
-@import "@/css/tooltip.css";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import "tailwindcss";
+@import "@/css/scrollbar.css" layer(base);
+@import "@/css/scalfolding.css" layer(base);
+@import "@/css/tooltip.css" layer(base);
+@theme {
+  --font-sans:
+    "Mona Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+@plugin "@tailwindcss/typography";

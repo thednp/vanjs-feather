@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import path from "path";
 import vanjs from "vite-plugin-vanjs";
+import tailwind from "@tailwindcss/vite";
 
 // import generateIcons from "../generate";
 // if (typeof generateIcons === "function") {
@@ -8,7 +9,7 @@ import vanjs from "vite-plugin-vanjs";
 // }
 
 export default defineConfig({
-  plugins: [vanjs()],
+  plugins: [tailwind(), vanjs()],
   resolve: {
     alias: {
       "~": path.resolve(__dirname, "..", "src"),

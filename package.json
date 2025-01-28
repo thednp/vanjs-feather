@@ -50,6 +50,7 @@
     "build:docs": "cd demo && pnpm generate && pnpm copy:docs",
     "build:all": "pnpm build && pnpm build:docs",
     "prepublishOnly": "pnpm up && pnpm format && pnpm lint && pnpm build:all",
+    "postinstall": "cd demo && pnpm install",
     "lint": "pnpm lint:types && pnpm lint:code",
     "lint:code": "deno lint src",
     "lint:types": "tsc --noEmit",
@@ -77,13 +78,10 @@
     "vitest": "^3.0.4"
   },
   "peerDependencies": {
-    "mini-van-plate": "^0.6.3",
-    "vanjs-core": "^1.5.3",
-    "vite-plugin-vanjs": "^0.0.5"
+    "vanjs-core": "^1.5.3"
   },
   "dependencies": {
-    "vanjs-core": "^1.5.3",
-    "vite-plugin-vanjs": "^0.0.5"
+    "vanjs-core": "^1.5.3"
   },
   "packageManager": "pnpm@8.6.12",
   "engines": {

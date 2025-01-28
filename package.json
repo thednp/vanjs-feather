@@ -1,6 +1,6 @@
 {
   "name": "vanjs-feather",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "🫦 Feather icons for VanJS",
   "files": [
     "dist/index.js",
@@ -79,7 +79,7 @@
   "peerDependencies": {
     "mini-van-plate": "^0.6.1",
     "vanjs-core": "^1.5.0",
-    "vite-plugin-vanjs": "^0.0.4"
+    "vite-plugin-vanjs": "^0.0.5"
   },
   "dependencies": {
     "vanjs-core": "^1.5.3"

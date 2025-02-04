@@ -11,6 +11,7 @@ postcss.config.cjs
 tailwind.config.js
 tsconfig.json
 tsup.config.ts
-vite.env.dts
+vite.config.ts
+vite-env.dts
 test
 src

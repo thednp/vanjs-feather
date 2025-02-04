@@ -1,6 +1,5 @@
 import { resolve } from 'node:path';
 import { defineConfig } from "vite";
-import dts from "vite-plugin-dts";
 
 const NAME = 'VanJSFeather';
 
@@ -15,27 +14,19 @@ export default defineConfig({
   esbuild: {
     legalComments: 'none',
   },
-  plugins: [
-    dts({
-      outDir: 'dist',
-      copyDtsFiles: true,
-      rollupTypes: true,
-    }),
-  ],
+
   build: {
     minify: 'esbuild',
-    emptyOutDir: true,
+    emptyOutDir: false,
     outDir: 'dist',
     target: 'ESNext',
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       name: NAME,
-      formats: ['es', 'cjs', 'iife'],
+      formats: ['iife'],
       fileName: (format) => fileName[format],
     },
-    rollupOptions: {
-      external: ['vanjs-core'],
-    },
+
     sourcemap: true,
   },
 });

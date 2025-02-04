@@ -44,12 +44,16 @@
   },
   "scripts": {
     "dev": "cd demo && node server --port 3000",
-    "test": "vitest --config demo/vitest.config.mts",
+    "test": "vitest --config demo/vitest.config.ts",
     "format": "deno fmt src demo",
-    "build": "vite build",
+    "build": "tsup && pnpm build:iife",
+    "build:iife": "vite build --config vite.config.ts",
     "build:docs": "cd demo && pnpm generate && pnpm copy:docs",
     "build:all": "pnpm build && pnpm build:docs",
-    "prepublishOnly": "pnpm up && pnpm format && pnpm lint && pnpm build:all",
+    "prepublishOnly": "pnpm upd && pnpm format && pnpm lint && pnpm build:all",
+    "upd": "pnpm run --parallel /^up:/",
+    "up:root": "pnpm up",
+    "up:demo": "cd demo && pnpm up",
     "lint": "pnpm lint:types && pnpm lint:code",
     "lint:code": "deno lint src",
     "lint:types": "tsc --noEmit",
@@ -59,9 +63,9 @@
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/typography": "^0.5.16",
-    "@types/node": "^20.17.16",
-    "@vitest/browser": "^3.0.4",
-    "@vitest/coverage-istanbul": "^3.0.4",
+    "@types/node": "^20.17.17",
+    "@vitest/browser": "^3.0.5",
+    "@vitest/coverage-istanbul": "^3.0.5",
     "autoprefixer": "^10.4.20",
     "express": "^5.0.1",
     "happy-dom": "^14.12.3",
@@ -71,10 +75,8 @@
     "tailwindcss": "^3.4.17",
     "tsup": "^8.3.6",
     "typescript": "^5.7.3",
-    "vanjs-converter": "^0.2.1",
     "vite": "^6.0.11",
-    "vite-plugin-dts": "^4.5.0",
-    "vitest": "^3.0.4"
+    "vitest": "^3.0.5"
   },
   "peerDependencies": {
     "vanjs-core": "^1.5.3"

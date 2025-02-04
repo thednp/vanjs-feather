@@ -28,7 +28,7 @@
       "@/*": ["demo/assets"],
     }
   },
-  "include": ["src", "demo", "env.d.ts"],
+  "include": ["src", "src/icons", "demo", "env.d.ts", "experiments/index-old.ts"],
   "exclude": [
     "node_modules",
     "demo",

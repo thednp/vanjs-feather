@@ -82,7 +82,8 @@
     "vanjs-core": "^1.5.3"
   },
   "dependencies": {
-    "vanjs-core": "^1.5.3"
+    "vanjs-core": "^1.5.3",
+    "vite-plugin-vanjs": "^0.0.5"
   },
   "packageManager": "pnpm@8.6.12",
   "engines": {

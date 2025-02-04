@@ -11,6 +11,9 @@ importers:
       vanjs-core:
         specifier: ^1.5.3
         version: 1.5.3
+      vite-plugin-vanjs:
+        specifier: ^0.0.5
+        version: 0.0.5(csstype@3.1.3)(mini-van-plate@0.6.3)(vanjs-core@1.5.3)(vanjs-ext@0.6.2)
     devDependencies:
       '@tailwindcss/forms':
         specifier: ^0.5.10
@@ -831,6 +834,9 @@ packages:
     engines: {node: '>=4'}
     hasBin: true
 
+  csstype@3.1.3:
+    resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
+
   debug@2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
     peerDependencies:
@@ -1294,6 +1300,9 @@ packages:
   mini-svg-data-uri@1.4.4:
     resolution: {integrity: sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==}
     hasBin: true
+
+  mini-van-plate@0.6.3:
+    resolution: {integrity: sha512-PWq3GSjLzVpd1veP1lYzR4YIpZdFgJ20OSOWtScBLsZP6O267NKeWcQpsZC1qERf1G20ynO4IrguN0PuDB7tqw==}
 
   minimatch@3.0.8:
     resolution: {integrity: sha512-6FsRAQsxQ61mw+qP1ZzbL9Bc78x2p5OqNgNpnoAFLTrX8n5Kxph0CsnhmKKNXTWjXqU5L0pGPR7hYk+XWZr60Q==}
@@ -1875,6 +1884,9 @@ packages:
   vanjs-core@1.5.3:
     resolution: {integrity: sha512-NDt++52tE8rA7rcThaFtIJ7C3pEIuB51giOmE9o5dA9Cw3iv+a0tRIVVYP1PGLItXBbEL0wxDTa2VRjjuKIPlw==}
 
+  vanjs-ext@0.6.2:
+    resolution: {integrity: sha512-f07ilL5blprEQk7bc/YhWSBsVZmNBy9+ZlAEY0uHoKMOzq100LAsDMCjfDzEm4Pd7CnEGV1VEhfY2T+T/agAxg==}
+
   vary@1.1.2:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
@@ -1883,6 +1895,15 @@ packages:
     resolution: {integrity: sha512-02JEJl7SbtwSDJdYS537nU6l+ktdvcREfLksk/NDAqtdKWGqHl+joXzEubHROmS3E6pip+Xgu2tFezMu75jH7A==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
+
+  vite-plugin-vanjs@0.0.5:
+    resolution: {integrity: sha512-RSE8VArUxI+cjxa55CAQBgilc0G9KfNH2RBZPOEic+NNsIP/SdJGYezvZJDhv6Q6hmyGBn83ljjwMVmcI2ghrw==}
+    engines: {node: '>=20', pnpm: '>=8.6.0'}
+    peerDependencies:
+      csstype: '*'
+      mini-van-plate: '*'
+      vanjs-core: '*'
+      vanjs-ext: '*'
 
   vite@6.0.11:
     resolution: {integrity: sha512-4VL9mQPKoHy4+FE0NnRE/kbY51TOfaknxAjt3fJbGJxhIpBZiqVzlZDEesWWsuREXHwNdAoOFZ9MkPEVXczHwg==}
@@ -2797,6 +2818,8 @@ snapshots:
 
   cssesc@3.0.0: {}
 
+  csstype@3.1.3: {}
+
   debug@2.6.9:
     dependencies:
       ms: 2.0.0
@@ -3245,6 +3268,8 @@ snapshots:
       mime-db: 1.53.0
 
   mini-svg-data-uri@1.4.4: {}
+
+  mini-van-plate@0.6.3: {}
 
   minimatch@3.0.8:
     dependencies:
@@ -3838,6 +3863,10 @@ snapshots:
 
   vanjs-core@1.5.3: {}
 
+  vanjs-ext@0.6.2:
+    dependencies:
+      vanjs-core: 1.5.3
+
   vary@1.1.2: {}
 
   vite-node@3.0.5(@types/node@20.17.17)(jiti@1.21.7)(yaml@2.7.0):
@@ -3860,6 +3889,13 @@ snapshots:
       - terser
       - tsx
       - yaml
+
+  vite-plugin-vanjs@0.0.5(csstype@3.1.3)(mini-van-plate@0.6.3)(vanjs-core@1.5.3)(vanjs-ext@0.6.2):
+    dependencies:
+      csstype: 3.1.3
+      mini-van-plate: 0.6.3
+      vanjs-core: 1.5.3
+      vanjs-ext: 0.6.2
 
   vite@6.0.11(@types/node@20.17.17)(jiti@1.21.7)(yaml@2.7.0):
     dependencies:

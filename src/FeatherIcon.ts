@@ -70,7 +70,9 @@ export const FeatherIcon = (
   });
   van.derive(() => {
     if (style) {
-      reactiveProps.style = isState(style) ? style.val : (style || "") as string;
+      reactiveProps.style = isState(style)
+        ? style.val
+        : (style || "") as string;
     }
   });
 

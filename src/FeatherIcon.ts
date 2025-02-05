@@ -39,7 +39,7 @@ export const FeatherIcon = (
     ...rest
   } = props;
 
-  const finalProps: Record<string, PropValueOrDerived | undefined> = {
+  const reactiveProps: Record<string, PropValueOrDerived | undefined> = {
     xmlns: ns,
     viewBox: "0 0 24 24",
     fill: "none",
@@ -58,25 +58,25 @@ export const FeatherIcon = (
   };
 
   if (id) {
-    finalProps.id = id;
+    reactiveProps.id = id;
   }
 
   van.derive(() => {
     if (className) {
-      finalProps.class = isState(className)
+      reactiveProps.class = isState(className)
         ? className.val
         : (className || "") as string;
     }
   });
   van.derive(() => {
     if (style) {
-      finalProps.style = isState(style) ? style.val : (style || "") as string;
+      reactiveProps.style = isState(style) ? style.val : (style || "") as string;
     }
   });
 
   return svg(
     {
-      ...finalProps,
+      ...reactiveProps,
       ...rest,
     },
     children,

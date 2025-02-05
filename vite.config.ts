@@ -4,8 +4,6 @@ import { defineConfig } from "vite";
 const NAME = 'VanJSFeather';
 
 const fileName = {
-  es: `index.mjs`,
-  cjs: `index.cjs`,
   iife: `index.js`,
 };
 
@@ -19,7 +17,7 @@ export default defineConfig({
     minify: 'esbuild',
     emptyOutDir: false,
     outDir: 'dist',
-    target: 'ESNext',
+    target: 'es2020',
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       name: NAME,

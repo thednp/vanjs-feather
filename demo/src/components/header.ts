@@ -1,5 +1,5 @@
 import van from "vanjs-core";
-import { ArrowDown } from "../../../src";
+import { ArrowDown } from "../../../dist";
 
 export default function Header() {
   const { header, div, ul, li, a, h1, span } = van.tags;

@@ -8,7 +8,7 @@ export default defineConfig(
     format: ['esm', 'cjs'],
     dts: true,
     clean: true,
-    minify: true,
+    // minify: true,
     splitting: true,
     outDir: 'dist',
     target: 'es2020',
@@ -26,6 +26,8 @@ export default defineConfig(
     esbuildOptions(options) {
       options.legalComments = 'none'
       options.target = 'es2020'
+      options.minify = false
+      options.minifyIdentifiers = false
       options.sourcemap = true
       options.keepNames = true
       options.treeShaking = true

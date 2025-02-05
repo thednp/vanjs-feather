@@ -5,7 +5,7 @@
 [![NPM Version](https://img.shields.io/npm/v/vanjs-feather.svg)](https://www.npmjs.com/package/vanjs-feather)
 [![typescript version](https://img.shields.io/badge/typescript-5.7.3-brightgreen)](https://www.typescriptlang.org/)
 [![vitest version](https://img.shields.io/badge/vitest-3.0.5-brightgreen)](https://www.vitest.dev/)
-[![vite version](https://img.shields.io/badge/vite-6.0.11-brightgreen)](https://vitejs.dev/)
+[![vite version](https://img.shields.io/badge/vite-6.1.0-brightgreen)](https://vitejs.dev/)
 
 [<img width="100%" src="vanjs-feather.png" alt="vanjs-feather">](https://thednp.github.io/vanjs-feather)
 

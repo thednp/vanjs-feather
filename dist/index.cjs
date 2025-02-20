@@ -1,17 +1,337 @@
-"use strict";Object.defineProperty(exports, "__esModule", {value: true}); function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }var __defProp = Object.defineProperty;
+"use strict";
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __name = (target, value) => __defProp(target, "name", { value, configurable: true });
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+
+// src/index.ts
+var index_exports = {};
+__export(index_exports, {
+  Activity: () => Activity,
+  Airplay: () => Airplay,
+  AlertCircle: () => AlertCircle,
+  AlertOctagon: () => AlertOctagon,
+  AlertTriangle: () => AlertTriangle,
+  AlignCenter: () => AlignCenter,
+  AlignJustify: () => AlignJustify,
+  AlignLeft: () => AlignLeft,
+  AlignRight: () => AlignRight,
+  Anchor: () => Anchor,
+  Aperture: () => Aperture,
+  Archive: () => Archive,
+  ArrowDown: () => ArrowDown,
+  ArrowDownCircle: () => ArrowDownCircle,
+  ArrowDownLeft: () => ArrowDownLeft,
+  ArrowDownRight: () => ArrowDownRight,
+  ArrowLeft: () => ArrowLeft,
+  ArrowLeftCircle: () => ArrowLeftCircle,
+  ArrowRight: () => ArrowRight,
+  ArrowRightCircle: () => ArrowRightCircle,
+  ArrowUp: () => ArrowUp,
+  ArrowUpCircle: () => ArrowUpCircle,
+  ArrowUpLeft: () => ArrowUpLeft,
+  ArrowUpRight: () => ArrowUpRight,
+  AtSign: () => AtSign,
+  Award: () => Award,
+  BarChart: () => BarChart,
+  BarChart2: () => BarChart2,
+  Battery: () => Battery,
+  BatteryCharging: () => BatteryCharging,
+  Bell: () => Bell,
+  BellOff: () => BellOff,
+  Bluetooth: () => Bluetooth,
+  Bold: () => Bold,
+  Book: () => Book,
+  BookOpen: () => BookOpen,
+  Bookmark: () => Bookmark,
+  Box: () => Box,
+  Briefcase: () => Briefcase,
+  Calendar: () => Calendar,
+  Camera: () => Camera,
+  CameraOff: () => CameraOff,
+  Cast: () => Cast,
+  Check: () => Check,
+  CheckCircle: () => CheckCircle,
+  CheckSquare: () => CheckSquare,
+  ChevronDown: () => ChevronDown,
+  ChevronLeft: () => ChevronLeft,
+  ChevronRight: () => ChevronRight,
+  ChevronUp: () => ChevronUp,
+  ChevronsDown: () => ChevronsDown,
+  ChevronsLeft: () => ChevronsLeft,
+  ChevronsRight: () => ChevronsRight,
+  ChevronsUp: () => ChevronsUp,
+  Chrome: () => Chrome,
+  Circle: () => Circle,
+  Clipboard: () => Clipboard,
+  Clock: () => Clock,
+  Cloud: () => Cloud,
+  CloudDrizzle: () => CloudDrizzle,
+  CloudLightning: () => CloudLightning,
+  CloudOff: () => CloudOff,
+  CloudRain: () => CloudRain,
+  CloudSnow: () => CloudSnow,
+  Code: () => Code,
+  Codepen: () => Codepen,
+  Codesandbox: () => Codesandbox,
+  Coffee: () => Coffee,
+  Columns: () => Columns,
+  Command: () => Command,
+  Compass: () => Compass,
+  Copy: () => Copy,
+  CornerDownLeft: () => CornerDownLeft,
+  CornerDownRight: () => CornerDownRight,
+  CornerLeftDown: () => CornerLeftDown,
+  CornerLeftUp: () => CornerLeftUp,
+  CornerRightDown: () => CornerRightDown,
+  CornerRightUp: () => CornerRightUp,
+  CornerUpLeft: () => CornerUpLeft,
+  CornerUpRight: () => CornerUpRight,
+  Cpu: () => Cpu,
+  CreditCard: () => CreditCard,
+  Crop: () => Crop,
+  Crosshair: () => Crosshair,
+  Database: () => Database,
+  Delete: () => Delete,
+  Disc: () => Disc,
+  Divide: () => Divide,
+  DivideCircle: () => DivideCircle,
+  DivideSquare: () => DivideSquare,
+  DollarSign: () => DollarSign,
+  Download: () => Download,
+  DownloadCloud: () => DownloadCloud,
+  Dribbble: () => Dribbble,
+  Droplet: () => Droplet,
+  Edit: () => Edit,
+  Edit2: () => Edit2,
+  Edit3: () => Edit3,
+  ExternalLink: () => ExternalLink,
+  Eye: () => Eye,
+  EyeOff: () => EyeOff,
+  Facebook: () => Facebook,
+  FastForward: () => FastForward,
+  Feather: () => Feather,
+  Figma: () => Figma,
+  File: () => File,
+  FileMinus: () => FileMinus,
+  FilePlus: () => FilePlus,
+  FileText: () => FileText,
+  Film: () => Film,
+  Filter: () => Filter,
+  Flag: () => Flag,
+  Folder: () => Folder,
+  FolderMinus: () => FolderMinus,
+  FolderPlus: () => FolderPlus,
+  Framer: () => Framer,
+  Frown: () => Frown,
+  Gift: () => Gift,
+  GitBranch: () => GitBranch,
+  GitCommit: () => GitCommit,
+  GitMerge: () => GitMerge,
+  GitPullRequest: () => GitPullRequest,
+  Github: () => Github,
+  Gitlab: () => Gitlab,
+  Globe: () => Globe,
+  Grid: () => Grid,
+  HardDrive: () => HardDrive,
+  Hash: () => Hash,
+  Headphones: () => Headphones,
+  Heart: () => Heart,
+  HelpCircle: () => HelpCircle,
+  Hexagon: () => Hexagon,
+  Home: () => Home,
+  Image: () => Image,
+  Inbox: () => Inbox,
+  Info: () => Info,
+  Instagram: () => Instagram,
+  Italic: () => Italic,
+  Key: () => Key,
+  Layers: () => Layers,
+  Layout: () => Layout,
+  LifeBuoy: () => LifeBuoy,
+  Link: () => Link,
+  Link2: () => Link2,
+  Linkedin: () => Linkedin,
+  List: () => List,
+  Loader: () => Loader,
+  Lock: () => Lock,
+  LogIn: () => LogIn,
+  LogOut: () => LogOut,
+  Mail: () => Mail,
+  Map: () => Map,
+  MapPin: () => MapPin,
+  Maximize: () => Maximize,
+  Maximize2: () => Maximize2,
+  Meh: () => Meh,
+  Menu: () => Menu,
+  MessageCircle: () => MessageCircle,
+  MessageSquare: () => MessageSquare,
+  Mic: () => Mic,
+  MicOff: () => MicOff,
+  Minimize: () => Minimize,
+  Minimize2: () => Minimize2,
+  Minus: () => Minus,
+  MinusCircle: () => MinusCircle,
+  MinusSquare: () => MinusSquare,
+  Monitor: () => Monitor,
+  Moon: () => Moon,
+  MoreHorizontal: () => MoreHorizontal,
+  MoreVertical: () => MoreVertical,
+  MousePointer: () => MousePointer,
+  Move: () => Move,
+  Music: () => Music,
+  Navigation: () => Navigation,
+  Navigation2: () => Navigation2,
+  Octagon: () => Octagon,
+  Package: () => Package,
+  Paperclip: () => Paperclip,
+  Pause: () => Pause,
+  PauseCircle: () => PauseCircle,
+  PenTool: () => PenTool,
+  Percent: () => Percent,
+  Phone: () => Phone,
+  PhoneCall: () => PhoneCall,
+  PhoneForwarded: () => PhoneForwarded,
+  PhoneIncoming: () => PhoneIncoming,
+  PhoneMissed: () => PhoneMissed,
+  PhoneOff: () => PhoneOff,
+  PhoneOutgoing: () => PhoneOutgoing,
+  PieChart: () => PieChart,
+  Play: () => Play,
+  PlayCircle: () => PlayCircle,
+  Plus: () => Plus,
+  PlusCircle: () => PlusCircle,
+  PlusSquare: () => PlusSquare,
+  Pocket: () => Pocket,
+  Power: () => Power,
+  Printer: () => Printer,
+  Radio: () => Radio,
+  RefreshCcw: () => RefreshCcw,
+  RefreshCw: () => RefreshCw,
+  Repeat: () => Repeat,
+  Rewind: () => Rewind,
+  RotateCcw: () => RotateCcw,
+  RotateCw: () => RotateCw,
+  Rss: () => Rss,
+  Save: () => Save,
+  Scissors: () => Scissors,
+  Search: () => Search,
+  Send: () => Send,
+  Server: () => Server,
+  Settings: () => Settings,
+  Share: () => Share,
+  Share2: () => Share2,
+  Shield: () => Shield,
+  ShieldOff: () => ShieldOff,
+  ShoppingBag: () => ShoppingBag,
+  ShoppingCart: () => ShoppingCart,
+  Shuffle: () => Shuffle,
+  Sidebar: () => Sidebar,
+  SkipBack: () => SkipBack,
+  SkipForward: () => SkipForward,
+  Slack: () => Slack,
+  Slash: () => Slash,
+  Sliders: () => Sliders,
+  Smartphone: () => Smartphone,
+  Smile: () => Smile,
+  Speaker: () => Speaker,
+  Square: () => Square,
+  Star: () => Star,
+  StopCircle: () => StopCircle,
+  Sun: () => Sun,
+  Sunrise: () => Sunrise,
+  Sunset: () => Sunset,
+  Table: () => Table,
+  Tablet: () => Tablet,
+  Tag: () => Tag,
+  Target: () => Target,
+  Terminal: () => Terminal,
+  Thermometer: () => Thermometer,
+  ThumbsDown: () => ThumbsDown,
+  ThumbsUp: () => ThumbsUp,
+  ToggleLeft: () => ToggleLeft,
+  ToggleRight: () => ToggleRight,
+  Tool: () => Tool,
+  Trash: () => Trash,
+  Trash2: () => Trash2,
+  Trello: () => Trello,
+  TrendingDown: () => TrendingDown,
+  TrendingUp: () => TrendingUp,
+  Triangle: () => Triangle,
+  Truck: () => Truck,
+  Tv: () => Tv,
+  Twitch: () => Twitch,
+  Twitter: () => Twitter,
+  Type: () => Type,
+  Umbrella: () => Umbrella,
+  Underline: () => Underline,
+  Unlock: () => Unlock,
+  Upload: () => Upload,
+  UploadCloud: () => UploadCloud,
+  User: () => User,
+  UserCheck: () => UserCheck,
+  UserMinus: () => UserMinus,
+  UserPlus: () => UserPlus,
+  UserX: () => UserX,
+  Users: () => Users,
+  Video: () => Video,
+  VideoOff: () => VideoOff,
+  Voicemail: () => Voicemail,
+  Volume: () => Volume,
+  Volume1: () => Volume1,
+  Volume2: () => Volume2,
+  VolumeX: () => VolumeX,
+  Watch: () => Watch,
+  Wifi: () => Wifi,
+  WifiOff: () => WifiOff,
+  Wind: () => Wind,
+  X: () => X,
+  XCircle: () => XCircle,
+  XOctagon: () => XOctagon,
+  XSquare: () => XSquare,
+  Youtube: () => Youtube,
+  Zap: () => Zap,
+  ZapOff: () => ZapOff,
+  ZoomIn: () => ZoomIn,
+  ZoomOut: () => ZoomOut
+});
+module.exports = __toCommonJS(index_exports);
 
 // src/icons/Activity.ts
-var _vanjscore = require('vanjs-core'); var _vanjscore2 = _interopRequireDefault(_vanjscore);
+var import_vanjs_core2 = __toESM(require("vanjs-core"), 1);
 
 // src/FeatherIcon.ts
-
+var import_vanjs_core = __toESM(require("vanjs-core"), 1);
 var isState = /* @__PURE__ */ __name((v) => {
   return v !== null && typeof v === "object" && "val" in v;
 }, "isState");
 var FeatherIcon = /* @__PURE__ */ __name((props = {}, ...children) => {
   const ns = "http://www.w3.org/2000/svg";
-  const { svg } = _vanjscore2.default.tags(ns);
+  const { svg } = import_vanjs_core.default.tags(ns);
   const {
     id,
     class: className,
@@ -26,14 +346,14 @@ var FeatherIcon = /* @__PURE__ */ __name((props = {}, ...children) => {
     xmlns: ns,
     viewBox: "0 0 24 24",
     fill: "none",
-    width: _vanjscore2.default.derive(() => isState(width) ? width.val : width || 24),
-    height: _vanjscore2.default.derive(
+    width: import_vanjs_core.default.derive(() => isState(width) ? width.val : width || 24),
+    height: import_vanjs_core.default.derive(
       () => isState(height) ? height.val : height || 24
     ),
-    stroke: _vanjscore2.default.derive(
+    stroke: import_vanjs_core.default.derive(
       () => isState(stroke) ? stroke.val : stroke || "currentColor"
     ),
-    "stroke-width": _vanjscore2.default.derive(
+    "stroke-width": import_vanjs_core.default.derive(
       () => isState(strokeWidth) ? strokeWidth.val : strokeWidth || 2
     ),
     "stroke-linecap": "round",
@@ -42,12 +362,12 @@ var FeatherIcon = /* @__PURE__ */ __name((props = {}, ...children) => {
   if (id) {
     reactiveProps.id = id;
   }
-  _vanjscore2.default.derive(() => {
+  import_vanjs_core.default.derive(() => {
     if (className) {
       reactiveProps.class = isState(className) ? className.val : className || "";
     }
   });
-  _vanjscore2.default.derive(() => {
+  import_vanjs_core.default.derive(() => {
     if (style) {
       reactiveProps.style = isState(style) ? style.val : style || "";
     }
@@ -63,7 +383,7 @@ var FeatherIcon = /* @__PURE__ */ __name((props = {}, ...children) => {
 
 // src/icons/Activity.ts
 var Activity = /* @__PURE__ */ __name((props) => {
-  const { polyline } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline } = import_vanjs_core2.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -73,9 +393,9 @@ var Activity = /* @__PURE__ */ __name((props) => {
 }, "Activity");
 
 // src/icons/Airplay.ts
-
+var import_vanjs_core3 = __toESM(require("vanjs-core"), 1);
 var Airplay = /* @__PURE__ */ __name((props) => {
-  const { path, polygon } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, polygon } = import_vanjs_core3.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -88,9 +408,9 @@ var Airplay = /* @__PURE__ */ __name((props) => {
 }, "Airplay");
 
 // src/icons/AlertCircle.ts
-
+var import_vanjs_core4 = __toESM(require("vanjs-core"), 1);
 var AlertCircle = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = import_vanjs_core4.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -114,9 +434,9 @@ var AlertCircle = /* @__PURE__ */ __name((props) => {
 }, "AlertCircle");
 
 // src/icons/AlertOctagon.ts
-
+var import_vanjs_core5 = __toESM(require("vanjs-core"), 1);
 var AlertOctagon = /* @__PURE__ */ __name((props) => {
-  const { polygon, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polygon, line } = import_vanjs_core5.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polygon({
@@ -138,9 +458,9 @@ var AlertOctagon = /* @__PURE__ */ __name((props) => {
 }, "AlertOctagon");
 
 // src/icons/AlertTriangle.ts
-
+var import_vanjs_core6 = __toESM(require("vanjs-core"), 1);
 var AlertTriangle = /* @__PURE__ */ __name((props) => {
-  const { path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line } = import_vanjs_core6.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -162,9 +482,9 @@ var AlertTriangle = /* @__PURE__ */ __name((props) => {
 }, "AlertTriangle");
 
 // src/icons/AlignCenter.ts
-
+var import_vanjs_core7 = __toESM(require("vanjs-core"), 1);
 var AlignCenter = /* @__PURE__ */ __name((props) => {
-  const { line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { line } = import_vanjs_core7.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -195,9 +515,9 @@ var AlignCenter = /* @__PURE__ */ __name((props) => {
 }, "AlignCenter");
 
 // src/icons/AlignJustify.ts
-
+var import_vanjs_core8 = __toESM(require("vanjs-core"), 1);
 var AlignJustify = /* @__PURE__ */ __name((props) => {
-  const { line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { line } = import_vanjs_core8.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -228,9 +548,9 @@ var AlignJustify = /* @__PURE__ */ __name((props) => {
 }, "AlignJustify");
 
 // src/icons/AlignLeft.ts
-
+var import_vanjs_core9 = __toESM(require("vanjs-core"), 1);
 var AlignLeft = /* @__PURE__ */ __name((props) => {
-  const { line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { line } = import_vanjs_core9.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -261,9 +581,9 @@ var AlignLeft = /* @__PURE__ */ __name((props) => {
 }, "AlignLeft");
 
 // src/icons/AlignRight.ts
-
+var import_vanjs_core10 = __toESM(require("vanjs-core"), 1);
 var AlignRight = /* @__PURE__ */ __name((props) => {
-  const { line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { line } = import_vanjs_core10.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -294,9 +614,9 @@ var AlignRight = /* @__PURE__ */ __name((props) => {
 }, "AlignRight");
 
 // src/icons/Anchor.ts
-
+var import_vanjs_core11 = __toESM(require("vanjs-core"), 1);
 var Anchor = /* @__PURE__ */ __name((props) => {
-  const { path, circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, circle, line } = import_vanjs_core11.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -317,9 +637,9 @@ var Anchor = /* @__PURE__ */ __name((props) => {
 }, "Anchor");
 
 // src/icons/Aperture.ts
-
+var import_vanjs_core12 = __toESM(require("vanjs-core"), 1);
 var Aperture = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = import_vanjs_core12.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -367,9 +687,9 @@ var Aperture = /* @__PURE__ */ __name((props) => {
 }, "Aperture");
 
 // src/icons/Archive.ts
-
+var import_vanjs_core13 = __toESM(require("vanjs-core"), 1);
 var Archive = /* @__PURE__ */ __name((props) => {
-  const { polyline, line, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, line, rect } = import_vanjs_core13.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -391,9 +711,9 @@ var Archive = /* @__PURE__ */ __name((props) => {
 }, "Archive");
 
 // src/icons/ArrowDown.ts
-
+var import_vanjs_core14 = __toESM(require("vanjs-core"), 1);
 var ArrowDown = /* @__PURE__ */ __name((props) => {
-  const { polyline, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, line } = import_vanjs_core14.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -409,9 +729,9 @@ var ArrowDown = /* @__PURE__ */ __name((props) => {
 }, "ArrowDown");
 
 // src/icons/ArrowDownCircle.ts
-
+var import_vanjs_core15 = __toESM(require("vanjs-core"), 1);
 var ArrowDownCircle = /* @__PURE__ */ __name((props) => {
-  const { polyline, circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, circle, line } = import_vanjs_core15.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -432,9 +752,9 @@ var ArrowDownCircle = /* @__PURE__ */ __name((props) => {
 }, "ArrowDownCircle");
 
 // src/icons/ArrowDownLeft.ts
-
+var import_vanjs_core16 = __toESM(require("vanjs-core"), 1);
 var ArrowDownLeft = /* @__PURE__ */ __name((props) => {
-  const { polyline, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, line } = import_vanjs_core16.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -450,9 +770,9 @@ var ArrowDownLeft = /* @__PURE__ */ __name((props) => {
 }, "ArrowDownLeft");
 
 // src/icons/ArrowDownRight.ts
-
+var import_vanjs_core17 = __toESM(require("vanjs-core"), 1);
 var ArrowDownRight = /* @__PURE__ */ __name((props) => {
-  const { polyline, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, line } = import_vanjs_core17.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -468,9 +788,9 @@ var ArrowDownRight = /* @__PURE__ */ __name((props) => {
 }, "ArrowDownRight");
 
 // src/icons/ArrowLeft.ts
-
+var import_vanjs_core18 = __toESM(require("vanjs-core"), 1);
 var ArrowLeft = /* @__PURE__ */ __name((props) => {
-  const { polyline, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, line } = import_vanjs_core18.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -486,9 +806,9 @@ var ArrowLeft = /* @__PURE__ */ __name((props) => {
 }, "ArrowLeft");
 
 // src/icons/ArrowLeftCircle.ts
-
+var import_vanjs_core19 = __toESM(require("vanjs-core"), 1);
 var ArrowLeftCircle = /* @__PURE__ */ __name((props) => {
-  const { polyline, circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, circle, line } = import_vanjs_core19.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -509,9 +829,9 @@ var ArrowLeftCircle = /* @__PURE__ */ __name((props) => {
 }, "ArrowLeftCircle");
 
 // src/icons/ArrowRight.ts
-
+var import_vanjs_core20 = __toESM(require("vanjs-core"), 1);
 var ArrowRight = /* @__PURE__ */ __name((props) => {
-  const { polyline, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, line } = import_vanjs_core20.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -527,9 +847,9 @@ var ArrowRight = /* @__PURE__ */ __name((props) => {
 }, "ArrowRight");
 
 // src/icons/ArrowRightCircle.ts
-
+var import_vanjs_core21 = __toESM(require("vanjs-core"), 1);
 var ArrowRightCircle = /* @__PURE__ */ __name((props) => {
-  const { polyline, circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, circle, line } = import_vanjs_core21.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -550,9 +870,9 @@ var ArrowRightCircle = /* @__PURE__ */ __name((props) => {
 }, "ArrowRightCircle");
 
 // src/icons/ArrowUp.ts
-
+var import_vanjs_core22 = __toESM(require("vanjs-core"), 1);
 var ArrowUp = /* @__PURE__ */ __name((props) => {
-  const { polyline, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, line } = import_vanjs_core22.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -568,9 +888,9 @@ var ArrowUp = /* @__PURE__ */ __name((props) => {
 }, "ArrowUp");
 
 // src/icons/ArrowUpCircle.ts
-
+var import_vanjs_core23 = __toESM(require("vanjs-core"), 1);
 var ArrowUpCircle = /* @__PURE__ */ __name((props) => {
-  const { polyline, circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, circle, line } = import_vanjs_core23.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -591,9 +911,9 @@ var ArrowUpCircle = /* @__PURE__ */ __name((props) => {
 }, "ArrowUpCircle");
 
 // src/icons/ArrowUpLeft.ts
-
+var import_vanjs_core24 = __toESM(require("vanjs-core"), 1);
 var ArrowUpLeft = /* @__PURE__ */ __name((props) => {
-  const { polyline, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, line } = import_vanjs_core24.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -609,9 +929,9 @@ var ArrowUpLeft = /* @__PURE__ */ __name((props) => {
 }, "ArrowUpLeft");
 
 // src/icons/ArrowUpRight.ts
-
+var import_vanjs_core25 = __toESM(require("vanjs-core"), 1);
 var ArrowUpRight = /* @__PURE__ */ __name((props) => {
-  const { polyline, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, line } = import_vanjs_core25.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -627,9 +947,9 @@ var ArrowUpRight = /* @__PURE__ */ __name((props) => {
 }, "ArrowUpRight");
 
 // src/icons/AtSign.ts
-
+var import_vanjs_core26 = __toESM(require("vanjs-core"), 1);
 var AtSign = /* @__PURE__ */ __name((props) => {
-  const { path, circle } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, circle } = import_vanjs_core26.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -644,9 +964,9 @@ var AtSign = /* @__PURE__ */ __name((props) => {
 }, "AtSign");
 
 // src/icons/Award.ts
-
+var import_vanjs_core27 = __toESM(require("vanjs-core"), 1);
 var Award = /* @__PURE__ */ __name((props) => {
-  const { polyline, circle } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, circle } = import_vanjs_core27.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -661,9 +981,9 @@ var Award = /* @__PURE__ */ __name((props) => {
 }, "Award");
 
 // src/icons/BarChart.ts
-
+var import_vanjs_core28 = __toESM(require("vanjs-core"), 1);
 var BarChart = /* @__PURE__ */ __name((props) => {
-  const { line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { line } = import_vanjs_core28.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -688,9 +1008,9 @@ var BarChart = /* @__PURE__ */ __name((props) => {
 }, "BarChart");
 
 // src/icons/BarChart2.ts
-
+var import_vanjs_core29 = __toESM(require("vanjs-core"), 1);
 var BarChart2 = /* @__PURE__ */ __name((props) => {
-  const { line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { line } = import_vanjs_core29.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -715,9 +1035,9 @@ var BarChart2 = /* @__PURE__ */ __name((props) => {
 }, "BarChart2");
 
 // src/icons/Battery.ts
-
+var import_vanjs_core30 = __toESM(require("vanjs-core"), 1);
 var Battery = /* @__PURE__ */ __name((props) => {
-  const { line, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { line, rect } = import_vanjs_core30.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     rect({
@@ -738,9 +1058,9 @@ var Battery = /* @__PURE__ */ __name((props) => {
 }, "Battery");
 
 // src/icons/BatteryCharging.ts
-
+var import_vanjs_core31 = __toESM(require("vanjs-core"), 1);
 var BatteryCharging = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = import_vanjs_core31.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -759,9 +1079,9 @@ var BatteryCharging = /* @__PURE__ */ __name((props) => {
 }, "BatteryCharging");
 
 // src/icons/Bell.ts
-
+var import_vanjs_core32 = __toESM(require("vanjs-core"), 1);
 var Bell = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core32.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -774,9 +1094,9 @@ var Bell = /* @__PURE__ */ __name((props) => {
 }, "Bell");
 
 // src/icons/BellOff.ts
-
+var import_vanjs_core33 = __toESM(require("vanjs-core"), 1);
 var BellOff = /* @__PURE__ */ __name((props) => {
-  const { path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line } = import_vanjs_core33.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -801,9 +1121,9 @@ var BellOff = /* @__PURE__ */ __name((props) => {
 }, "BellOff");
 
 // src/icons/Bluetooth.ts
-
+var import_vanjs_core34 = __toESM(require("vanjs-core"), 1);
 var Bluetooth = /* @__PURE__ */ __name((props) => {
-  const { polyline } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline } = import_vanjs_core34.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -813,9 +1133,9 @@ var Bluetooth = /* @__PURE__ */ __name((props) => {
 }, "Bluetooth");
 
 // src/icons/Bold.ts
-
+var import_vanjs_core35 = __toESM(require("vanjs-core"), 1);
 var Bold = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core35.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -828,9 +1148,9 @@ var Bold = /* @__PURE__ */ __name((props) => {
 }, "Bold");
 
 // src/icons/Book.ts
-
+var import_vanjs_core36 = __toESM(require("vanjs-core"), 1);
 var Book = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core36.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -843,9 +1163,9 @@ var Book = /* @__PURE__ */ __name((props) => {
 }, "Book");
 
 // src/icons/BookOpen.ts
-
+var import_vanjs_core37 = __toESM(require("vanjs-core"), 1);
 var BookOpen = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core37.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -858,9 +1178,9 @@ var BookOpen = /* @__PURE__ */ __name((props) => {
 }, "BookOpen");
 
 // src/icons/Bookmark.ts
-
+var import_vanjs_core38 = __toESM(require("vanjs-core"), 1);
 var Bookmark = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core38.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -870,9 +1190,9 @@ var Bookmark = /* @__PURE__ */ __name((props) => {
 }, "Bookmark");
 
 // src/icons/Box.ts
-
+var import_vanjs_core39 = __toESM(require("vanjs-core"), 1);
 var Box = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = import_vanjs_core39.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -891,9 +1211,9 @@ var Box = /* @__PURE__ */ __name((props) => {
 }, "Box");
 
 // src/icons/Briefcase.ts
-
+var import_vanjs_core40 = __toESM(require("vanjs-core"), 1);
 var Briefcase = /* @__PURE__ */ __name((props) => {
-  const { path, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, rect } = import_vanjs_core40.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     rect({
@@ -911,9 +1231,9 @@ var Briefcase = /* @__PURE__ */ __name((props) => {
 }, "Briefcase");
 
 // src/icons/Calendar.ts
-
+var import_vanjs_core41 = __toESM(require("vanjs-core"), 1);
 var Calendar = /* @__PURE__ */ __name((props) => {
-  const { line, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { line, rect } = import_vanjs_core41.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     rect({
@@ -946,9 +1266,9 @@ var Calendar = /* @__PURE__ */ __name((props) => {
 }, "Calendar");
 
 // src/icons/Camera.ts
-
+var import_vanjs_core42 = __toESM(require("vanjs-core"), 1);
 var Camera = /* @__PURE__ */ __name((props) => {
-  const { path, circle } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, circle } = import_vanjs_core42.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -963,9 +1283,9 @@ var Camera = /* @__PURE__ */ __name((props) => {
 }, "Camera");
 
 // src/icons/CameraOff.ts
-
+var import_vanjs_core43 = __toESM(require("vanjs-core"), 1);
 var CameraOff = /* @__PURE__ */ __name((props) => {
-  const { path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line } = import_vanjs_core43.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -981,9 +1301,9 @@ var CameraOff = /* @__PURE__ */ __name((props) => {
 }, "CameraOff");
 
 // src/icons/Cast.ts
-
+var import_vanjs_core44 = __toESM(require("vanjs-core"), 1);
 var Cast = /* @__PURE__ */ __name((props) => {
-  const { path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line } = import_vanjs_core44.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -999,9 +1319,9 @@ var Cast = /* @__PURE__ */ __name((props) => {
 }, "Cast");
 
 // src/icons/Check.ts
-
+var import_vanjs_core45 = __toESM(require("vanjs-core"), 1);
 var Check = /* @__PURE__ */ __name((props) => {
-  const { polyline } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline } = import_vanjs_core45.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -1011,9 +1331,9 @@ var Check = /* @__PURE__ */ __name((props) => {
 }, "Check");
 
 // src/icons/CheckCircle.ts
-
+var import_vanjs_core46 = __toESM(require("vanjs-core"), 1);
 var CheckCircle = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = import_vanjs_core46.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -1026,9 +1346,9 @@ var CheckCircle = /* @__PURE__ */ __name((props) => {
 }, "CheckCircle");
 
 // src/icons/CheckSquare.ts
-
+var import_vanjs_core47 = __toESM(require("vanjs-core"), 1);
 var CheckSquare = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = import_vanjs_core47.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -1041,9 +1361,9 @@ var CheckSquare = /* @__PURE__ */ __name((props) => {
 }, "CheckSquare");
 
 // src/icons/ChevronDown.ts
-
+var import_vanjs_core48 = __toESM(require("vanjs-core"), 1);
 var ChevronDown = /* @__PURE__ */ __name((props) => {
-  const { polyline } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline } = import_vanjs_core48.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -1053,9 +1373,9 @@ var ChevronDown = /* @__PURE__ */ __name((props) => {
 }, "ChevronDown");
 
 // src/icons/ChevronLeft.ts
-
+var import_vanjs_core49 = __toESM(require("vanjs-core"), 1);
 var ChevronLeft = /* @__PURE__ */ __name((props) => {
-  const { polyline } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline } = import_vanjs_core49.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -1065,9 +1385,9 @@ var ChevronLeft = /* @__PURE__ */ __name((props) => {
 }, "ChevronLeft");
 
 // src/icons/ChevronRight.ts
-
+var import_vanjs_core50 = __toESM(require("vanjs-core"), 1);
 var ChevronRight = /* @__PURE__ */ __name((props) => {
-  const { polyline } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline } = import_vanjs_core50.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -1077,9 +1397,9 @@ var ChevronRight = /* @__PURE__ */ __name((props) => {
 }, "ChevronRight");
 
 // src/icons/ChevronUp.ts
-
+var import_vanjs_core51 = __toESM(require("vanjs-core"), 1);
 var ChevronUp = /* @__PURE__ */ __name((props) => {
-  const { polyline } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline } = import_vanjs_core51.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -1089,9 +1409,9 @@ var ChevronUp = /* @__PURE__ */ __name((props) => {
 }, "ChevronUp");
 
 // src/icons/ChevronsDown.ts
-
+var import_vanjs_core52 = __toESM(require("vanjs-core"), 1);
 var ChevronsDown = /* @__PURE__ */ __name((props) => {
-  const { polyline } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline } = import_vanjs_core52.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -1104,9 +1424,9 @@ var ChevronsDown = /* @__PURE__ */ __name((props) => {
 }, "ChevronsDown");
 
 // src/icons/ChevronsLeft.ts
-
+var import_vanjs_core53 = __toESM(require("vanjs-core"), 1);
 var ChevronsLeft = /* @__PURE__ */ __name((props) => {
-  const { polyline } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline } = import_vanjs_core53.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -1119,9 +1439,9 @@ var ChevronsLeft = /* @__PURE__ */ __name((props) => {
 }, "ChevronsLeft");
 
 // src/icons/ChevronsRight.ts
-
+var import_vanjs_core54 = __toESM(require("vanjs-core"), 1);
 var ChevronsRight = /* @__PURE__ */ __name((props) => {
-  const { polyline } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline } = import_vanjs_core54.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -1134,9 +1454,9 @@ var ChevronsRight = /* @__PURE__ */ __name((props) => {
 }, "ChevronsRight");
 
 // src/icons/ChevronsUp.ts
-
+var import_vanjs_core55 = __toESM(require("vanjs-core"), 1);
 var ChevronsUp = /* @__PURE__ */ __name((props) => {
-  const { polyline } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline } = import_vanjs_core55.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -1149,9 +1469,9 @@ var ChevronsUp = /* @__PURE__ */ __name((props) => {
 }, "ChevronsUp");
 
 // src/icons/Chrome.ts
-
+var import_vanjs_core56 = __toESM(require("vanjs-core"), 1);
 var Chrome = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = import_vanjs_core56.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -1186,9 +1506,9 @@ var Chrome = /* @__PURE__ */ __name((props) => {
 }, "Chrome");
 
 // src/icons/Circle.ts
-
+var import_vanjs_core57 = __toESM(require("vanjs-core"), 1);
 var Circle = /* @__PURE__ */ __name((props) => {
-  const { circle } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle } = import_vanjs_core57.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -1200,9 +1520,9 @@ var Circle = /* @__PURE__ */ __name((props) => {
 }, "Circle");
 
 // src/icons/Clipboard.ts
-
+var import_vanjs_core58 = __toESM(require("vanjs-core"), 1);
 var Clipboard = /* @__PURE__ */ __name((props) => {
-  const { path, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, rect } = import_vanjs_core58.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -1220,9 +1540,9 @@ var Clipboard = /* @__PURE__ */ __name((props) => {
 }, "Clipboard");
 
 // src/icons/Clock.ts
-
+var import_vanjs_core59 = __toESM(require("vanjs-core"), 1);
 var Clock = /* @__PURE__ */ __name((props) => {
-  const { polyline, circle } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, circle } = import_vanjs_core59.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -1237,9 +1557,9 @@ var Clock = /* @__PURE__ */ __name((props) => {
 }, "Clock");
 
 // src/icons/Cloud.ts
-
+var import_vanjs_core60 = __toESM(require("vanjs-core"), 1);
 var Cloud = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core60.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -1249,9 +1569,9 @@ var Cloud = /* @__PURE__ */ __name((props) => {
 }, "Cloud");
 
 // src/icons/CloudDrizzle.ts
-
+var import_vanjs_core61 = __toESM(require("vanjs-core"), 1);
 var CloudDrizzle = /* @__PURE__ */ __name((props) => {
-  const { path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line } = import_vanjs_core61.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -1297,9 +1617,9 @@ var CloudDrizzle = /* @__PURE__ */ __name((props) => {
 }, "CloudDrizzle");
 
 // src/icons/CloudLightning.ts
-
+var import_vanjs_core62 = __toESM(require("vanjs-core"), 1);
 var CloudLightning = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = import_vanjs_core62.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -1312,9 +1632,9 @@ var CloudLightning = /* @__PURE__ */ __name((props) => {
 }, "CloudLightning");
 
 // src/icons/CloudOff.ts
-
+var import_vanjs_core63 = __toESM(require("vanjs-core"), 1);
 var CloudOff = /* @__PURE__ */ __name((props) => {
-  const { path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line } = import_vanjs_core63.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -1330,9 +1650,9 @@ var CloudOff = /* @__PURE__ */ __name((props) => {
 }, "CloudOff");
 
 // src/icons/CloudRain.ts
-
+var import_vanjs_core64 = __toESM(require("vanjs-core"), 1);
 var CloudRain = /* @__PURE__ */ __name((props) => {
-  const { path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line } = import_vanjs_core64.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -1360,9 +1680,9 @@ var CloudRain = /* @__PURE__ */ __name((props) => {
 }, "CloudRain");
 
 // src/icons/CloudSnow.ts
-
+var import_vanjs_core65 = __toESM(require("vanjs-core"), 1);
 var CloudSnow = /* @__PURE__ */ __name((props) => {
-  const { path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line } = import_vanjs_core65.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -1408,9 +1728,9 @@ var CloudSnow = /* @__PURE__ */ __name((props) => {
 }, "CloudSnow");
 
 // src/icons/Code.ts
-
+var import_vanjs_core66 = __toESM(require("vanjs-core"), 1);
 var Code = /* @__PURE__ */ __name((props) => {
-  const { polyline } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline } = import_vanjs_core66.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -1423,9 +1743,9 @@ var Code = /* @__PURE__ */ __name((props) => {
 }, "Code");
 
 // src/icons/Codepen.ts
-
+var import_vanjs_core67 = __toESM(require("vanjs-core"), 1);
 var Codepen = /* @__PURE__ */ __name((props) => {
-  const { polyline, polygon, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, polygon, line } = import_vanjs_core67.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polygon({
@@ -1453,9 +1773,9 @@ var Codepen = /* @__PURE__ */ __name((props) => {
 }, "Codepen");
 
 // src/icons/Codesandbox.ts
-
+var import_vanjs_core68 = __toESM(require("vanjs-core"), 1);
 var Codesandbox = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = import_vanjs_core68.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -1483,9 +1803,9 @@ var Codesandbox = /* @__PURE__ */ __name((props) => {
 }, "Codesandbox");
 
 // src/icons/Coffee.ts
-
+var import_vanjs_core69 = __toESM(require("vanjs-core"), 1);
 var Coffee = /* @__PURE__ */ __name((props) => {
-  const { path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line } = import_vanjs_core69.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -1516,9 +1836,9 @@ var Coffee = /* @__PURE__ */ __name((props) => {
 }, "Coffee");
 
 // src/icons/Columns.ts
-
+var import_vanjs_core70 = __toESM(require("vanjs-core"), 1);
 var Columns = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core70.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -1528,9 +1848,9 @@ var Columns = /* @__PURE__ */ __name((props) => {
 }, "Columns");
 
 // src/icons/Command.ts
-
+var import_vanjs_core71 = __toESM(require("vanjs-core"), 1);
 var Command = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core71.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -1540,9 +1860,9 @@ var Command = /* @__PURE__ */ __name((props) => {
 }, "Command");
 
 // src/icons/Compass.ts
-
+var import_vanjs_core72 = __toESM(require("vanjs-core"), 1);
 var Compass = /* @__PURE__ */ __name((props) => {
-  const { polygon, circle } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polygon, circle } = import_vanjs_core72.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -1557,9 +1877,9 @@ var Compass = /* @__PURE__ */ __name((props) => {
 }, "Compass");
 
 // src/icons/Copy.ts
-
+var import_vanjs_core73 = __toESM(require("vanjs-core"), 1);
 var Copy = /* @__PURE__ */ __name((props) => {
-  const { path, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, rect } = import_vanjs_core73.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     rect({
@@ -1577,9 +1897,9 @@ var Copy = /* @__PURE__ */ __name((props) => {
 }, "Copy");
 
 // src/icons/CornerDownLeft.ts
-
+var import_vanjs_core74 = __toESM(require("vanjs-core"), 1);
 var CornerDownLeft = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = import_vanjs_core74.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -1592,9 +1912,9 @@ var CornerDownLeft = /* @__PURE__ */ __name((props) => {
 }, "CornerDownLeft");
 
 // src/icons/CornerDownRight.ts
-
+var import_vanjs_core75 = __toESM(require("vanjs-core"), 1);
 var CornerDownRight = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = import_vanjs_core75.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -1607,9 +1927,9 @@ var CornerDownRight = /* @__PURE__ */ __name((props) => {
 }, "CornerDownRight");
 
 // src/icons/CornerLeftDown.ts
-
+var import_vanjs_core76 = __toESM(require("vanjs-core"), 1);
 var CornerLeftDown = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = import_vanjs_core76.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -1622,9 +1942,9 @@ var CornerLeftDown = /* @__PURE__ */ __name((props) => {
 }, "CornerLeftDown");
 
 // src/icons/CornerLeftUp.ts
-
+var import_vanjs_core77 = __toESM(require("vanjs-core"), 1);
 var CornerLeftUp = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = import_vanjs_core77.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -1637,9 +1957,9 @@ var CornerLeftUp = /* @__PURE__ */ __name((props) => {
 }, "CornerLeftUp");
 
 // src/icons/CornerRightDown.ts
-
+var import_vanjs_core78 = __toESM(require("vanjs-core"), 1);
 var CornerRightDown = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = import_vanjs_core78.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -1652,9 +1972,9 @@ var CornerRightDown = /* @__PURE__ */ __name((props) => {
 }, "CornerRightDown");
 
 // src/icons/CornerRightUp.ts
-
+var import_vanjs_core79 = __toESM(require("vanjs-core"), 1);
 var CornerRightUp = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = import_vanjs_core79.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -1667,9 +1987,9 @@ var CornerRightUp = /* @__PURE__ */ __name((props) => {
 }, "CornerRightUp");
 
 // src/icons/CornerUpLeft.ts
-
+var import_vanjs_core80 = __toESM(require("vanjs-core"), 1);
 var CornerUpLeft = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = import_vanjs_core80.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -1682,9 +2002,9 @@ var CornerUpLeft = /* @__PURE__ */ __name((props) => {
 }, "CornerUpLeft");
 
 // src/icons/CornerUpRight.ts
-
+var import_vanjs_core81 = __toESM(require("vanjs-core"), 1);
 var CornerUpRight = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = import_vanjs_core81.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -1697,9 +2017,9 @@ var CornerUpRight = /* @__PURE__ */ __name((props) => {
 }, "CornerUpRight");
 
 // src/icons/Cpu.ts
-
+var import_vanjs_core82 = __toESM(require("vanjs-core"), 1);
 var Cpu = /* @__PURE__ */ __name((props) => {
-  const { line, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { line, rect } = import_vanjs_core82.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     rect({
@@ -1768,9 +2088,9 @@ var Cpu = /* @__PURE__ */ __name((props) => {
 }, "Cpu");
 
 // src/icons/CreditCard.ts
-
+var import_vanjs_core83 = __toESM(require("vanjs-core"), 1);
 var CreditCard = /* @__PURE__ */ __name((props) => {
-  const { line, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { line, rect } = import_vanjs_core83.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     rect({
@@ -1791,9 +2111,9 @@ var CreditCard = /* @__PURE__ */ __name((props) => {
 }, "CreditCard");
 
 // src/icons/Crop.ts
-
+var import_vanjs_core84 = __toESM(require("vanjs-core"), 1);
 var Crop = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core84.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -1806,9 +2126,9 @@ var Crop = /* @__PURE__ */ __name((props) => {
 }, "Crop");
 
 // src/icons/Crosshair.ts
-
+var import_vanjs_core85 = __toESM(require("vanjs-core"), 1);
 var Crosshair = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = import_vanjs_core85.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -1844,9 +2164,9 @@ var Crosshair = /* @__PURE__ */ __name((props) => {
 }, "Crosshair");
 
 // src/icons/Database.ts
-
+var import_vanjs_core86 = __toESM(require("vanjs-core"), 1);
 var Database = /* @__PURE__ */ __name((props) => {
-  const { path, ellipse } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, ellipse } = import_vanjs_core86.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     ellipse({
@@ -1865,9 +2185,9 @@ var Database = /* @__PURE__ */ __name((props) => {
 }, "Database");
 
 // src/icons/Delete.ts
-
+var import_vanjs_core87 = __toESM(require("vanjs-core"), 1);
 var Delete = /* @__PURE__ */ __name((props) => {
-  const { path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line } = import_vanjs_core87.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -1889,9 +2209,9 @@ var Delete = /* @__PURE__ */ __name((props) => {
 }, "Delete");
 
 // src/icons/Disc.ts
-
+var import_vanjs_core88 = __toESM(require("vanjs-core"), 1);
 var Disc = /* @__PURE__ */ __name((props) => {
-  const { circle } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle } = import_vanjs_core88.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -1908,9 +2228,9 @@ var Disc = /* @__PURE__ */ __name((props) => {
 }, "Disc");
 
 // src/icons/Divide.ts
-
+var import_vanjs_core89 = __toESM(require("vanjs-core"), 1);
 var Divide = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = import_vanjs_core89.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -1933,9 +2253,9 @@ var Divide = /* @__PURE__ */ __name((props) => {
 }, "Divide");
 
 // src/icons/DivideCircle.ts
-
+var import_vanjs_core90 = __toESM(require("vanjs-core"), 1);
 var DivideCircle = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = import_vanjs_core90.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -1965,9 +2285,9 @@ var DivideCircle = /* @__PURE__ */ __name((props) => {
 }, "DivideCircle");
 
 // src/icons/DivideSquare.ts
-
+var import_vanjs_core91 = __toESM(require("vanjs-core"), 1);
 var DivideSquare = /* @__PURE__ */ __name((props) => {
-  const { line, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { line, rect } = import_vanjs_core91.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     rect({
@@ -2000,9 +2320,9 @@ var DivideSquare = /* @__PURE__ */ __name((props) => {
 }, "DivideSquare");
 
 // src/icons/DollarSign.ts
-
+var import_vanjs_core92 = __toESM(require("vanjs-core"), 1);
 var DollarSign = /* @__PURE__ */ __name((props) => {
-  const { path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line } = import_vanjs_core92.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -2018,9 +2338,9 @@ var DollarSign = /* @__PURE__ */ __name((props) => {
 }, "DollarSign");
 
 // src/icons/Download.ts
-
+var import_vanjs_core93 = __toESM(require("vanjs-core"), 1);
 var Download = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = import_vanjs_core93.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -2039,9 +2359,9 @@ var Download = /* @__PURE__ */ __name((props) => {
 }, "Download");
 
 // src/icons/DownloadCloud.ts
-
+var import_vanjs_core94 = __toESM(require("vanjs-core"), 1);
 var DownloadCloud = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = import_vanjs_core94.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -2060,9 +2380,9 @@ var DownloadCloud = /* @__PURE__ */ __name((props) => {
 }, "DownloadCloud");
 
 // src/icons/Dribbble.ts
-
+var import_vanjs_core95 = __toESM(require("vanjs-core"), 1);
 var Dribbble = /* @__PURE__ */ __name((props) => {
-  const { path, circle } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, circle } = import_vanjs_core95.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -2077,9 +2397,9 @@ var Dribbble = /* @__PURE__ */ __name((props) => {
 }, "Dribbble");
 
 // src/icons/Droplet.ts
-
+var import_vanjs_core96 = __toESM(require("vanjs-core"), 1);
 var Droplet = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core96.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -2089,9 +2409,9 @@ var Droplet = /* @__PURE__ */ __name((props) => {
 }, "Droplet");
 
 // src/icons/Edit.ts
-
+var import_vanjs_core97 = __toESM(require("vanjs-core"), 1);
 var Edit = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core97.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -2104,9 +2424,9 @@ var Edit = /* @__PURE__ */ __name((props) => {
 }, "Edit");
 
 // src/icons/Edit2.ts
-
+var import_vanjs_core98 = __toESM(require("vanjs-core"), 1);
 var Edit2 = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core98.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -2116,9 +2436,9 @@ var Edit2 = /* @__PURE__ */ __name((props) => {
 }, "Edit2");
 
 // src/icons/Edit3.ts
-
+var import_vanjs_core99 = __toESM(require("vanjs-core"), 1);
 var Edit3 = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core99.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -2131,9 +2451,9 @@ var Edit3 = /* @__PURE__ */ __name((props) => {
 }, "Edit3");
 
 // src/icons/ExternalLink.ts
-
+var import_vanjs_core100 = __toESM(require("vanjs-core"), 1);
 var ExternalLink = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = import_vanjs_core100.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -2152,9 +2472,9 @@ var ExternalLink = /* @__PURE__ */ __name((props) => {
 }, "ExternalLink");
 
 // src/icons/Eye.ts
-
+var import_vanjs_core101 = __toESM(require("vanjs-core"), 1);
 var Eye = /* @__PURE__ */ __name((props) => {
-  const { path, circle } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, circle } = import_vanjs_core101.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -2169,9 +2489,9 @@ var Eye = /* @__PURE__ */ __name((props) => {
 }, "Eye");
 
 // src/icons/EyeOff.ts
-
+var import_vanjs_core102 = __toESM(require("vanjs-core"), 1);
 var EyeOff = /* @__PURE__ */ __name((props) => {
-  const { path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line } = import_vanjs_core102.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -2187,9 +2507,9 @@ var EyeOff = /* @__PURE__ */ __name((props) => {
 }, "EyeOff");
 
 // src/icons/Facebook.ts
-
+var import_vanjs_core103 = __toESM(require("vanjs-core"), 1);
 var Facebook = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core103.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -2199,9 +2519,9 @@ var Facebook = /* @__PURE__ */ __name((props) => {
 }, "Facebook");
 
 // src/icons/FastForward.ts
-
+var import_vanjs_core104 = __toESM(require("vanjs-core"), 1);
 var FastForward = /* @__PURE__ */ __name((props) => {
-  const { polygon } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polygon } = import_vanjs_core104.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polygon({
@@ -2214,9 +2534,9 @@ var FastForward = /* @__PURE__ */ __name((props) => {
 }, "FastForward");
 
 // src/icons/Feather.ts
-
+var import_vanjs_core105 = __toESM(require("vanjs-core"), 1);
 var Feather = /* @__PURE__ */ __name((props) => {
-  const { path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line } = import_vanjs_core105.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -2238,9 +2558,9 @@ var Feather = /* @__PURE__ */ __name((props) => {
 }, "Feather");
 
 // src/icons/Figma.ts
-
+var import_vanjs_core106 = __toESM(require("vanjs-core"), 1);
 var Figma = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core106.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -2262,9 +2582,9 @@ var Figma = /* @__PURE__ */ __name((props) => {
 }, "Figma");
 
 // src/icons/File.ts
-
+var import_vanjs_core107 = __toESM(require("vanjs-core"), 1);
 var File = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = import_vanjs_core107.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -2277,9 +2597,9 @@ var File = /* @__PURE__ */ __name((props) => {
 }, "File");
 
 // src/icons/FileMinus.ts
-
+var import_vanjs_core108 = __toESM(require("vanjs-core"), 1);
 var FileMinus = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = import_vanjs_core108.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -2298,9 +2618,9 @@ var FileMinus = /* @__PURE__ */ __name((props) => {
 }, "FileMinus");
 
 // src/icons/FilePlus.ts
-
+var import_vanjs_core109 = __toESM(require("vanjs-core"), 1);
 var FilePlus = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = import_vanjs_core109.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -2325,9 +2645,9 @@ var FilePlus = /* @__PURE__ */ __name((props) => {
 }, "FilePlus");
 
 // src/icons/FileText.ts
-
+var import_vanjs_core110 = __toESM(require("vanjs-core"), 1);
 var FileText = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = import_vanjs_core110.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -2355,9 +2675,9 @@ var FileText = /* @__PURE__ */ __name((props) => {
 }, "FileText");
 
 // src/icons/Film.ts
-
+var import_vanjs_core111 = __toESM(require("vanjs-core"), 1);
 var Film = /* @__PURE__ */ __name((props) => {
-  const { line, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { line, rect } = import_vanjs_core111.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     rect({
@@ -2414,9 +2734,9 @@ var Film = /* @__PURE__ */ __name((props) => {
 }, "Film");
 
 // src/icons/Filter.ts
-
+var import_vanjs_core112 = __toESM(require("vanjs-core"), 1);
 var Filter = /* @__PURE__ */ __name((props) => {
-  const { polygon } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polygon } = import_vanjs_core112.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polygon({
@@ -2426,9 +2746,9 @@ var Filter = /* @__PURE__ */ __name((props) => {
 }, "Filter");
 
 // src/icons/Flag.ts
-
+var import_vanjs_core113 = __toESM(require("vanjs-core"), 1);
 var Flag = /* @__PURE__ */ __name((props) => {
-  const { path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line } = import_vanjs_core113.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -2444,9 +2764,9 @@ var Flag = /* @__PURE__ */ __name((props) => {
 }, "Flag");
 
 // src/icons/Folder.ts
-
+var import_vanjs_core114 = __toESM(require("vanjs-core"), 1);
 var Folder = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core114.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -2456,9 +2776,9 @@ var Folder = /* @__PURE__ */ __name((props) => {
 }, "Folder");
 
 // src/icons/FolderMinus.ts
-
+var import_vanjs_core115 = __toESM(require("vanjs-core"), 1);
 var FolderMinus = /* @__PURE__ */ __name((props) => {
-  const { path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line } = import_vanjs_core115.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -2474,9 +2794,9 @@ var FolderMinus = /* @__PURE__ */ __name((props) => {
 }, "FolderMinus");
 
 // src/icons/FolderPlus.ts
-
+var import_vanjs_core116 = __toESM(require("vanjs-core"), 1);
 var FolderPlus = /* @__PURE__ */ __name((props) => {
-  const { path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line } = import_vanjs_core116.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -2498,9 +2818,9 @@ var FolderPlus = /* @__PURE__ */ __name((props) => {
 }, "FolderPlus");
 
 // src/icons/Framer.ts
-
+var import_vanjs_core117 = __toESM(require("vanjs-core"), 1);
 var Framer = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core117.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -2510,9 +2830,9 @@ var Framer = /* @__PURE__ */ __name((props) => {
 }, "Framer");
 
 // src/icons/Frown.ts
-
+var import_vanjs_core118 = __toESM(require("vanjs-core"), 1);
 var Frown = /* @__PURE__ */ __name((props) => {
-  const { path, circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, circle, line } = import_vanjs_core118.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -2539,9 +2859,9 @@ var Frown = /* @__PURE__ */ __name((props) => {
 }, "Frown");
 
 // src/icons/Gift.ts
-
+var import_vanjs_core119 = __toESM(require("vanjs-core"), 1);
 var Gift = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line, rect } = import_vanjs_core119.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -2569,9 +2889,9 @@ var Gift = /* @__PURE__ */ __name((props) => {
 }, "Gift");
 
 // src/icons/GitBranch.ts
-
+var import_vanjs_core120 = __toESM(require("vanjs-core"), 1);
 var GitBranch = /* @__PURE__ */ __name((props) => {
-  const { path, circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, circle, line } = import_vanjs_core120.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -2597,9 +2917,9 @@ var GitBranch = /* @__PURE__ */ __name((props) => {
 }, "GitBranch");
 
 // src/icons/GitCommit.ts
-
+var import_vanjs_core121 = __toESM(require("vanjs-core"), 1);
 var GitCommit = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = import_vanjs_core121.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -2623,9 +2943,9 @@ var GitCommit = /* @__PURE__ */ __name((props) => {
 }, "GitCommit");
 
 // src/icons/GitMerge.ts
-
+var import_vanjs_core122 = __toESM(require("vanjs-core"), 1);
 var GitMerge = /* @__PURE__ */ __name((props) => {
-  const { path, circle } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, circle } = import_vanjs_core122.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -2645,9 +2965,9 @@ var GitMerge = /* @__PURE__ */ __name((props) => {
 }, "GitMerge");
 
 // src/icons/GitPullRequest.ts
-
+var import_vanjs_core123 = __toESM(require("vanjs-core"), 1);
 var GitPullRequest = /* @__PURE__ */ __name((props) => {
-  const { path, circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, circle, line } = import_vanjs_core123.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -2673,9 +2993,9 @@ var GitPullRequest = /* @__PURE__ */ __name((props) => {
 }, "GitPullRequest");
 
 // src/icons/Github.ts
-
+var import_vanjs_core124 = __toESM(require("vanjs-core"), 1);
 var Github = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core124.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -2685,9 +3005,9 @@ var Github = /* @__PURE__ */ __name((props) => {
 }, "Github");
 
 // src/icons/Gitlab.ts
-
+var import_vanjs_core125 = __toESM(require("vanjs-core"), 1);
 var Gitlab = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core125.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -2697,9 +3017,9 @@ var Gitlab = /* @__PURE__ */ __name((props) => {
 }, "Gitlab");
 
 // src/icons/Globe.ts
-
+var import_vanjs_core126 = __toESM(require("vanjs-core"), 1);
 var Globe = /* @__PURE__ */ __name((props) => {
-  const { path, circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, circle, line } = import_vanjs_core126.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -2720,9 +3040,9 @@ var Globe = /* @__PURE__ */ __name((props) => {
 }, "Globe");
 
 // src/icons/Grid.ts
-
+var import_vanjs_core127 = __toESM(require("vanjs-core"), 1);
 var Grid = /* @__PURE__ */ __name((props) => {
-  const { rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { rect } = import_vanjs_core127.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     rect({
@@ -2753,9 +3073,9 @@ var Grid = /* @__PURE__ */ __name((props) => {
 }, "Grid");
 
 // src/icons/HardDrive.ts
-
+var import_vanjs_core128 = __toESM(require("vanjs-core"), 1);
 var HardDrive = /* @__PURE__ */ __name((props) => {
-  const { path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line } = import_vanjs_core128.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -2783,9 +3103,9 @@ var HardDrive = /* @__PURE__ */ __name((props) => {
 }, "HardDrive");
 
 // src/icons/Hash.ts
-
+var import_vanjs_core129 = __toESM(require("vanjs-core"), 1);
 var Hash = /* @__PURE__ */ __name((props) => {
-  const { line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { line } = import_vanjs_core129.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -2816,9 +3136,9 @@ var Hash = /* @__PURE__ */ __name((props) => {
 }, "Hash");
 
 // src/icons/Headphones.ts
-
+var import_vanjs_core130 = __toESM(require("vanjs-core"), 1);
 var Headphones = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core130.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -2831,9 +3151,9 @@ var Headphones = /* @__PURE__ */ __name((props) => {
 }, "Headphones");
 
 // src/icons/Heart.ts
-
+var import_vanjs_core131 = __toESM(require("vanjs-core"), 1);
 var Heart = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core131.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -2843,9 +3163,9 @@ var Heart = /* @__PURE__ */ __name((props) => {
 }, "Heart");
 
 // src/icons/HelpCircle.ts
-
+var import_vanjs_core132 = __toESM(require("vanjs-core"), 1);
 var HelpCircle = /* @__PURE__ */ __name((props) => {
-  const { path, circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, circle, line } = import_vanjs_core132.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -2866,9 +3186,9 @@ var HelpCircle = /* @__PURE__ */ __name((props) => {
 }, "HelpCircle");
 
 // src/icons/Hexagon.ts
-
+var import_vanjs_core133 = __toESM(require("vanjs-core"), 1);
 var Hexagon = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core133.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -2878,9 +3198,9 @@ var Hexagon = /* @__PURE__ */ __name((props) => {
 }, "Hexagon");
 
 // src/icons/Home.ts
-
+var import_vanjs_core134 = __toESM(require("vanjs-core"), 1);
 var Home = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = import_vanjs_core134.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -2893,9 +3213,9 @@ var Home = /* @__PURE__ */ __name((props) => {
 }, "Home");
 
 // src/icons/Image.ts
-
+var import_vanjs_core135 = __toESM(require("vanjs-core"), 1);
 var Image = /* @__PURE__ */ __name((props) => {
-  const { polyline, circle, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, circle, rect } = import_vanjs_core135.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     rect({
@@ -2918,9 +3238,9 @@ var Image = /* @__PURE__ */ __name((props) => {
 }, "Image");
 
 // src/icons/Inbox.ts
-
+var import_vanjs_core136 = __toESM(require("vanjs-core"), 1);
 var Inbox = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = import_vanjs_core136.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -2933,9 +3253,9 @@ var Inbox = /* @__PURE__ */ __name((props) => {
 }, "Inbox");
 
 // src/icons/Info.ts
-
+var import_vanjs_core137 = __toESM(require("vanjs-core"), 1);
 var Info = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = import_vanjs_core137.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -2959,9 +3279,9 @@ var Info = /* @__PURE__ */ __name((props) => {
 }, "Info");
 
 // src/icons/Instagram.ts
-
+var import_vanjs_core138 = __toESM(require("vanjs-core"), 1);
 var Instagram = /* @__PURE__ */ __name((props) => {
-  const { path, line, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line, rect } = import_vanjs_core138.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     rect({
@@ -2985,9 +3305,9 @@ var Instagram = /* @__PURE__ */ __name((props) => {
 }, "Instagram");
 
 // src/icons/Italic.ts
-
+var import_vanjs_core139 = __toESM(require("vanjs-core"), 1);
 var Italic = /* @__PURE__ */ __name((props) => {
-  const { line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { line } = import_vanjs_core139.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -3012,9 +3332,9 @@ var Italic = /* @__PURE__ */ __name((props) => {
 }, "Italic");
 
 // src/icons/Key.ts
-
+var import_vanjs_core140 = __toESM(require("vanjs-core"), 1);
 var Key = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core140.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -3024,9 +3344,9 @@ var Key = /* @__PURE__ */ __name((props) => {
 }, "Key");
 
 // src/icons/Layers.ts
-
+var import_vanjs_core141 = __toESM(require("vanjs-core"), 1);
 var Layers = /* @__PURE__ */ __name((props) => {
-  const { polyline, polygon } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, polygon } = import_vanjs_core141.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polygon({
@@ -3042,9 +3362,9 @@ var Layers = /* @__PURE__ */ __name((props) => {
 }, "Layers");
 
 // src/icons/Layout.ts
-
+var import_vanjs_core142 = __toESM(require("vanjs-core"), 1);
 var Layout = /* @__PURE__ */ __name((props) => {
-  const { line, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { line, rect } = import_vanjs_core142.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     rect({
@@ -3071,9 +3391,9 @@ var Layout = /* @__PURE__ */ __name((props) => {
 }, "Layout");
 
 // src/icons/LifeBuoy.ts
-
+var import_vanjs_core143 = __toESM(require("vanjs-core"), 1);
 var LifeBuoy = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = import_vanjs_core143.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -3120,9 +3440,9 @@ var LifeBuoy = /* @__PURE__ */ __name((props) => {
 }, "LifeBuoy");
 
 // src/icons/Link.ts
-
+var import_vanjs_core144 = __toESM(require("vanjs-core"), 1);
 var Link = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core144.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -3135,9 +3455,9 @@ var Link = /* @__PURE__ */ __name((props) => {
 }, "Link");
 
 // src/icons/Link2.ts
-
+var import_vanjs_core145 = __toESM(require("vanjs-core"), 1);
 var Link2 = /* @__PURE__ */ __name((props) => {
-  const { path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line } = import_vanjs_core145.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -3153,9 +3473,9 @@ var Link2 = /* @__PURE__ */ __name((props) => {
 }, "Link2");
 
 // src/icons/Linkedin.ts
-
+var import_vanjs_core146 = __toESM(require("vanjs-core"), 1);
 var Linkedin = /* @__PURE__ */ __name((props) => {
-  const { path, circle, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, circle, rect } = import_vanjs_core146.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -3176,9 +3496,9 @@ var Linkedin = /* @__PURE__ */ __name((props) => {
 }, "Linkedin");
 
 // src/icons/List.ts
-
+var import_vanjs_core147 = __toESM(require("vanjs-core"), 1);
 var List = /* @__PURE__ */ __name((props) => {
-  const { line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { line } = import_vanjs_core147.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -3221,9 +3541,9 @@ var List = /* @__PURE__ */ __name((props) => {
 }, "List");
 
 // src/icons/Loader.ts
-
+var import_vanjs_core148 = __toESM(require("vanjs-core"), 1);
 var Loader = /* @__PURE__ */ __name((props) => {
-  const { line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { line } = import_vanjs_core148.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -3278,9 +3598,9 @@ var Loader = /* @__PURE__ */ __name((props) => {
 }, "Loader");
 
 // src/icons/Lock.ts
-
+var import_vanjs_core149 = __toESM(require("vanjs-core"), 1);
 var Lock = /* @__PURE__ */ __name((props) => {
-  const { path, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, rect } = import_vanjs_core149.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     rect({
@@ -3298,9 +3618,9 @@ var Lock = /* @__PURE__ */ __name((props) => {
 }, "Lock");
 
 // src/icons/LogIn.ts
-
+var import_vanjs_core150 = __toESM(require("vanjs-core"), 1);
 var LogIn = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = import_vanjs_core150.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -3319,9 +3639,9 @@ var LogIn = /* @__PURE__ */ __name((props) => {
 }, "LogIn");
 
 // src/icons/LogOut.ts
-
+var import_vanjs_core151 = __toESM(require("vanjs-core"), 1);
 var LogOut = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = import_vanjs_core151.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -3340,9 +3660,9 @@ var LogOut = /* @__PURE__ */ __name((props) => {
 }, "LogOut");
 
 // src/icons/Mail.ts
-
+var import_vanjs_core152 = __toESM(require("vanjs-core"), 1);
 var Mail = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = import_vanjs_core152.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -3355,9 +3675,9 @@ var Mail = /* @__PURE__ */ __name((props) => {
 }, "Mail");
 
 // src/icons/Map.ts
-
+var import_vanjs_core153 = __toESM(require("vanjs-core"), 1);
 var Map = /* @__PURE__ */ __name((props) => {
-  const { polygon, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polygon, line } = import_vanjs_core153.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polygon({
@@ -3379,9 +3699,9 @@ var Map = /* @__PURE__ */ __name((props) => {
 }, "Map");
 
 // src/icons/MapPin.ts
-
+var import_vanjs_core154 = __toESM(require("vanjs-core"), 1);
 var MapPin = /* @__PURE__ */ __name((props) => {
-  const { path, circle } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, circle } = import_vanjs_core154.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -3396,9 +3716,9 @@ var MapPin = /* @__PURE__ */ __name((props) => {
 }, "MapPin");
 
 // src/icons/Maximize.ts
-
+var import_vanjs_core155 = __toESM(require("vanjs-core"), 1);
 var Maximize = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core155.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -3408,9 +3728,9 @@ var Maximize = /* @__PURE__ */ __name((props) => {
 }, "Maximize");
 
 // src/icons/Maximize2.ts
-
+var import_vanjs_core156 = __toESM(require("vanjs-core"), 1);
 var Maximize2 = /* @__PURE__ */ __name((props) => {
-  const { polyline, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, line } = import_vanjs_core156.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -3435,9 +3755,9 @@ var Maximize2 = /* @__PURE__ */ __name((props) => {
 }, "Maximize2");
 
 // src/icons/Meh.ts
-
+var import_vanjs_core157 = __toESM(require("vanjs-core"), 1);
 var Meh = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = import_vanjs_core157.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -3467,9 +3787,9 @@ var Meh = /* @__PURE__ */ __name((props) => {
 }, "Meh");
 
 // src/icons/Menu.ts
-
+var import_vanjs_core158 = __toESM(require("vanjs-core"), 1);
 var Menu = /* @__PURE__ */ __name((props) => {
-  const { line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { line } = import_vanjs_core158.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -3494,9 +3814,9 @@ var Menu = /* @__PURE__ */ __name((props) => {
 }, "Menu");
 
 // src/icons/MessageCircle.ts
-
+var import_vanjs_core159 = __toESM(require("vanjs-core"), 1);
 var MessageCircle = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core159.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -3506,9 +3826,9 @@ var MessageCircle = /* @__PURE__ */ __name((props) => {
 }, "MessageCircle");
 
 // src/icons/MessageSquare.ts
-
+var import_vanjs_core160 = __toESM(require("vanjs-core"), 1);
 var MessageSquare = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core160.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -3518,9 +3838,9 @@ var MessageSquare = /* @__PURE__ */ __name((props) => {
 }, "MessageSquare");
 
 // src/icons/Mic.ts
-
+var import_vanjs_core161 = __toESM(require("vanjs-core"), 1);
 var Mic = /* @__PURE__ */ __name((props) => {
-  const { path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line } = import_vanjs_core161.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -3545,9 +3865,9 @@ var Mic = /* @__PURE__ */ __name((props) => {
 }, "Mic");
 
 // src/icons/MicOff.ts
-
+var import_vanjs_core162 = __toESM(require("vanjs-core"), 1);
 var MicOff = /* @__PURE__ */ __name((props) => {
-  const { path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line } = import_vanjs_core162.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -3578,9 +3898,9 @@ var MicOff = /* @__PURE__ */ __name((props) => {
 }, "MicOff");
 
 // src/icons/Minimize.ts
-
+var import_vanjs_core163 = __toESM(require("vanjs-core"), 1);
 var Minimize = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core163.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -3590,9 +3910,9 @@ var Minimize = /* @__PURE__ */ __name((props) => {
 }, "Minimize");
 
 // src/icons/Minimize2.ts
-
+var import_vanjs_core164 = __toESM(require("vanjs-core"), 1);
 var Minimize2 = /* @__PURE__ */ __name((props) => {
-  const { polyline, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, line } = import_vanjs_core164.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -3617,9 +3937,9 @@ var Minimize2 = /* @__PURE__ */ __name((props) => {
 }, "Minimize2");
 
 // src/icons/Minus.ts
-
+var import_vanjs_core165 = __toESM(require("vanjs-core"), 1);
 var Minus = /* @__PURE__ */ __name((props) => {
-  const { line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { line } = import_vanjs_core165.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -3632,9 +3952,9 @@ var Minus = /* @__PURE__ */ __name((props) => {
 }, "Minus");
 
 // src/icons/MinusCircle.ts
-
+var import_vanjs_core166 = __toESM(require("vanjs-core"), 1);
 var MinusCircle = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = import_vanjs_core166.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -3652,9 +3972,9 @@ var MinusCircle = /* @__PURE__ */ __name((props) => {
 }, "MinusCircle");
 
 // src/icons/MinusSquare.ts
-
+var import_vanjs_core167 = __toESM(require("vanjs-core"), 1);
 var MinusSquare = /* @__PURE__ */ __name((props) => {
-  const { line, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { line, rect } = import_vanjs_core167.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     rect({
@@ -3675,9 +3995,9 @@ var MinusSquare = /* @__PURE__ */ __name((props) => {
 }, "MinusSquare");
 
 // src/icons/Monitor.ts
-
+var import_vanjs_core168 = __toESM(require("vanjs-core"), 1);
 var Monitor = /* @__PURE__ */ __name((props) => {
-  const { line, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { line, rect } = import_vanjs_core168.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     rect({
@@ -3704,9 +4024,9 @@ var Monitor = /* @__PURE__ */ __name((props) => {
 }, "Monitor");
 
 // src/icons/Moon.ts
-
+var import_vanjs_core169 = __toESM(require("vanjs-core"), 1);
 var Moon = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core169.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -3716,9 +4036,9 @@ var Moon = /* @__PURE__ */ __name((props) => {
 }, "Moon");
 
 // src/icons/MoreHorizontal.ts
-
+var import_vanjs_core170 = __toESM(require("vanjs-core"), 1);
 var MoreHorizontal = /* @__PURE__ */ __name((props) => {
-  const { circle } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle } = import_vanjs_core170.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -3740,9 +4060,9 @@ var MoreHorizontal = /* @__PURE__ */ __name((props) => {
 }, "MoreHorizontal");
 
 // src/icons/MoreVertical.ts
-
+var import_vanjs_core171 = __toESM(require("vanjs-core"), 1);
 var MoreVertical = /* @__PURE__ */ __name((props) => {
-  const { circle } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle } = import_vanjs_core171.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -3764,9 +4084,9 @@ var MoreVertical = /* @__PURE__ */ __name((props) => {
 }, "MoreVertical");
 
 // src/icons/MousePointer.ts
-
+var import_vanjs_core172 = __toESM(require("vanjs-core"), 1);
 var MousePointer = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core172.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -3779,9 +4099,9 @@ var MousePointer = /* @__PURE__ */ __name((props) => {
 }, "MousePointer");
 
 // src/icons/Move.ts
-
+var import_vanjs_core173 = __toESM(require("vanjs-core"), 1);
 var Move = /* @__PURE__ */ __name((props) => {
-  const { polyline, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, line } = import_vanjs_core173.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -3812,9 +4132,9 @@ var Move = /* @__PURE__ */ __name((props) => {
 }, "Move");
 
 // src/icons/Music.ts
-
+var import_vanjs_core174 = __toESM(require("vanjs-core"), 1);
 var Music = /* @__PURE__ */ __name((props) => {
-  const { path, circle } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, circle } = import_vanjs_core174.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -3834,9 +4154,9 @@ var Music = /* @__PURE__ */ __name((props) => {
 }, "Music");
 
 // src/icons/Navigation.ts
-
+var import_vanjs_core175 = __toESM(require("vanjs-core"), 1);
 var Navigation = /* @__PURE__ */ __name((props) => {
-  const { polygon } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polygon } = import_vanjs_core175.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polygon({
@@ -3846,9 +4166,9 @@ var Navigation = /* @__PURE__ */ __name((props) => {
 }, "Navigation");
 
 // src/icons/Navigation2.ts
-
+var import_vanjs_core176 = __toESM(require("vanjs-core"), 1);
 var Navigation2 = /* @__PURE__ */ __name((props) => {
-  const { polygon } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polygon } = import_vanjs_core176.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polygon({
@@ -3858,9 +4178,9 @@ var Navigation2 = /* @__PURE__ */ __name((props) => {
 }, "Navigation2");
 
 // src/icons/Octagon.ts
-
+var import_vanjs_core177 = __toESM(require("vanjs-core"), 1);
 var Octagon = /* @__PURE__ */ __name((props) => {
-  const { polygon } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polygon } = import_vanjs_core177.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polygon({
@@ -3870,9 +4190,9 @@ var Octagon = /* @__PURE__ */ __name((props) => {
 }, "Octagon");
 
 // src/icons/Package.ts
-
+var import_vanjs_core178 = __toESM(require("vanjs-core"), 1);
 var Package = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = import_vanjs_core178.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -3897,9 +4217,9 @@ var Package = /* @__PURE__ */ __name((props) => {
 }, "Package");
 
 // src/icons/Paperclip.ts
-
+var import_vanjs_core179 = __toESM(require("vanjs-core"), 1);
 var Paperclip = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core179.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -3909,9 +4229,9 @@ var Paperclip = /* @__PURE__ */ __name((props) => {
 }, "Paperclip");
 
 // src/icons/Pause.ts
-
+var import_vanjs_core180 = __toESM(require("vanjs-core"), 1);
 var Pause = /* @__PURE__ */ __name((props) => {
-  const { rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { rect } = import_vanjs_core180.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     rect({
@@ -3930,9 +4250,9 @@ var Pause = /* @__PURE__ */ __name((props) => {
 }, "Pause");
 
 // src/icons/PauseCircle.ts
-
+var import_vanjs_core181 = __toESM(require("vanjs-core"), 1);
 var PauseCircle = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = import_vanjs_core181.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -3956,9 +4276,9 @@ var PauseCircle = /* @__PURE__ */ __name((props) => {
 }, "PauseCircle");
 
 // src/icons/PenTool.ts
-
+var import_vanjs_core182 = __toESM(require("vanjs-core"), 1);
 var PenTool = /* @__PURE__ */ __name((props) => {
-  const { path, circle } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, circle } = import_vanjs_core182.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -3979,9 +4299,9 @@ var PenTool = /* @__PURE__ */ __name((props) => {
 }, "PenTool");
 
 // src/icons/Percent.ts
-
+var import_vanjs_core183 = __toESM(require("vanjs-core"), 1);
 var Percent = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = import_vanjs_core183.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -4004,9 +4324,9 @@ var Percent = /* @__PURE__ */ __name((props) => {
 }, "Percent");
 
 // src/icons/Phone.ts
-
+var import_vanjs_core184 = __toESM(require("vanjs-core"), 1);
 var Phone = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core184.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -4016,9 +4336,9 @@ var Phone = /* @__PURE__ */ __name((props) => {
 }, "Phone");
 
 // src/icons/PhoneCall.ts
-
+var import_vanjs_core185 = __toESM(require("vanjs-core"), 1);
 var PhoneCall = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core185.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -4028,9 +4348,9 @@ var PhoneCall = /* @__PURE__ */ __name((props) => {
 }, "PhoneCall");
 
 // src/icons/PhoneForwarded.ts
-
+var import_vanjs_core186 = __toESM(require("vanjs-core"), 1);
 var PhoneForwarded = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = import_vanjs_core186.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -4049,9 +4369,9 @@ var PhoneForwarded = /* @__PURE__ */ __name((props) => {
 }, "PhoneForwarded");
 
 // src/icons/PhoneIncoming.ts
-
+var import_vanjs_core187 = __toESM(require("vanjs-core"), 1);
 var PhoneIncoming = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = import_vanjs_core187.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -4070,9 +4390,9 @@ var PhoneIncoming = /* @__PURE__ */ __name((props) => {
 }, "PhoneIncoming");
 
 // src/icons/PhoneMissed.ts
-
+var import_vanjs_core188 = __toESM(require("vanjs-core"), 1);
 var PhoneMissed = /* @__PURE__ */ __name((props) => {
-  const { path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line } = import_vanjs_core188.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -4094,9 +4414,9 @@ var PhoneMissed = /* @__PURE__ */ __name((props) => {
 }, "PhoneMissed");
 
 // src/icons/PhoneOff.ts
-
+var import_vanjs_core189 = __toESM(require("vanjs-core"), 1);
 var PhoneOff = /* @__PURE__ */ __name((props) => {
-  const { path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line } = import_vanjs_core189.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -4112,9 +4432,9 @@ var PhoneOff = /* @__PURE__ */ __name((props) => {
 }, "PhoneOff");
 
 // src/icons/PhoneOutgoing.ts
-
+var import_vanjs_core190 = __toESM(require("vanjs-core"), 1);
 var PhoneOutgoing = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = import_vanjs_core190.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -4133,9 +4453,9 @@ var PhoneOutgoing = /* @__PURE__ */ __name((props) => {
 }, "PhoneOutgoing");
 
 // src/icons/PieChart.ts
-
+var import_vanjs_core191 = __toESM(require("vanjs-core"), 1);
 var PieChart = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core191.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -4148,9 +4468,9 @@ var PieChart = /* @__PURE__ */ __name((props) => {
 }, "PieChart");
 
 // src/icons/Play.ts
-
+var import_vanjs_core192 = __toESM(require("vanjs-core"), 1);
 var Play = /* @__PURE__ */ __name((props) => {
-  const { polygon } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polygon } = import_vanjs_core192.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polygon({
@@ -4160,9 +4480,9 @@ var Play = /* @__PURE__ */ __name((props) => {
 }, "Play");
 
 // src/icons/PlayCircle.ts
-
+var import_vanjs_core193 = __toESM(require("vanjs-core"), 1);
 var PlayCircle = /* @__PURE__ */ __name((props) => {
-  const { polygon, circle } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polygon, circle } = import_vanjs_core193.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -4177,9 +4497,9 @@ var PlayCircle = /* @__PURE__ */ __name((props) => {
 }, "PlayCircle");
 
 // src/icons/Plus.ts
-
+var import_vanjs_core194 = __toESM(require("vanjs-core"), 1);
 var Plus = /* @__PURE__ */ __name((props) => {
-  const { line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { line } = import_vanjs_core194.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -4198,9 +4518,9 @@ var Plus = /* @__PURE__ */ __name((props) => {
 }, "Plus");
 
 // src/icons/PlusCircle.ts
-
+var import_vanjs_core195 = __toESM(require("vanjs-core"), 1);
 var PlusCircle = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = import_vanjs_core195.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -4224,9 +4544,9 @@ var PlusCircle = /* @__PURE__ */ __name((props) => {
 }, "PlusCircle");
 
 // src/icons/PlusSquare.ts
-
+var import_vanjs_core196 = __toESM(require("vanjs-core"), 1);
 var PlusSquare = /* @__PURE__ */ __name((props) => {
-  const { line, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { line, rect } = import_vanjs_core196.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     rect({
@@ -4253,9 +4573,9 @@ var PlusSquare = /* @__PURE__ */ __name((props) => {
 }, "PlusSquare");
 
 // src/icons/Pocket.ts
-
+var import_vanjs_core197 = __toESM(require("vanjs-core"), 1);
 var Pocket = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = import_vanjs_core197.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -4268,9 +4588,9 @@ var Pocket = /* @__PURE__ */ __name((props) => {
 }, "Pocket");
 
 // src/icons/Power.ts
-
+var import_vanjs_core198 = __toESM(require("vanjs-core"), 1);
 var Power = /* @__PURE__ */ __name((props) => {
-  const { path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line } = import_vanjs_core198.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -4286,9 +4606,9 @@ var Power = /* @__PURE__ */ __name((props) => {
 }, "Power");
 
 // src/icons/Printer.ts
-
+var import_vanjs_core199 = __toESM(require("vanjs-core"), 1);
 var Printer = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, rect } = import_vanjs_core199.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -4307,9 +4627,9 @@ var Printer = /* @__PURE__ */ __name((props) => {
 }, "Printer");
 
 // src/icons/Radio.ts
-
+var import_vanjs_core200 = __toESM(require("vanjs-core"), 1);
 var Radio = /* @__PURE__ */ __name((props) => {
-  const { path, circle } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, circle } = import_vanjs_core200.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -4324,9 +4644,9 @@ var Radio = /* @__PURE__ */ __name((props) => {
 }, "Radio");
 
 // src/icons/RefreshCcw.ts
-
+var import_vanjs_core201 = __toESM(require("vanjs-core"), 1);
 var RefreshCcw = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = import_vanjs_core201.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -4342,9 +4662,9 @@ var RefreshCcw = /* @__PURE__ */ __name((props) => {
 }, "RefreshCcw");
 
 // src/icons/RefreshCw.ts
-
+var import_vanjs_core202 = __toESM(require("vanjs-core"), 1);
 var RefreshCw = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = import_vanjs_core202.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -4360,9 +4680,9 @@ var RefreshCw = /* @__PURE__ */ __name((props) => {
 }, "RefreshCw");
 
 // src/icons/Repeat.ts
-
+var import_vanjs_core203 = __toESM(require("vanjs-core"), 1);
 var Repeat = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = import_vanjs_core203.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -4381,9 +4701,9 @@ var Repeat = /* @__PURE__ */ __name((props) => {
 }, "Repeat");
 
 // src/icons/Rewind.ts
-
+var import_vanjs_core204 = __toESM(require("vanjs-core"), 1);
 var Rewind = /* @__PURE__ */ __name((props) => {
-  const { polygon } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polygon } = import_vanjs_core204.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polygon({
@@ -4396,9 +4716,9 @@ var Rewind = /* @__PURE__ */ __name((props) => {
 }, "Rewind");
 
 // src/icons/RotateCcw.ts
-
+var import_vanjs_core205 = __toESM(require("vanjs-core"), 1);
 var RotateCcw = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = import_vanjs_core205.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -4411,9 +4731,9 @@ var RotateCcw = /* @__PURE__ */ __name((props) => {
 }, "RotateCcw");
 
 // src/icons/RotateCw.ts
-
+var import_vanjs_core206 = __toESM(require("vanjs-core"), 1);
 var RotateCw = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = import_vanjs_core206.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -4426,9 +4746,9 @@ var RotateCw = /* @__PURE__ */ __name((props) => {
 }, "RotateCw");
 
 // src/icons/Rss.ts
-
+var import_vanjs_core207 = __toESM(require("vanjs-core"), 1);
 var Rss = /* @__PURE__ */ __name((props) => {
-  const { path, circle } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, circle } = import_vanjs_core207.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -4446,9 +4766,9 @@ var Rss = /* @__PURE__ */ __name((props) => {
 }, "Rss");
 
 // src/icons/Save.ts
-
+var import_vanjs_core208 = __toESM(require("vanjs-core"), 1);
 var Save = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = import_vanjs_core208.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -4464,9 +4784,9 @@ var Save = /* @__PURE__ */ __name((props) => {
 }, "Save");
 
 // src/icons/Scissors.ts
-
+var import_vanjs_core209 = __toESM(require("vanjs-core"), 1);
 var Scissors = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = import_vanjs_core209.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -4501,9 +4821,9 @@ var Scissors = /* @__PURE__ */ __name((props) => {
 }, "Scissors");
 
 // src/icons/Search.ts
-
+var import_vanjs_core210 = __toESM(require("vanjs-core"), 1);
 var Search = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = import_vanjs_core210.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -4521,9 +4841,9 @@ var Search = /* @__PURE__ */ __name((props) => {
 }, "Search");
 
 // src/icons/Send.ts
-
+var import_vanjs_core211 = __toESM(require("vanjs-core"), 1);
 var Send = /* @__PURE__ */ __name((props) => {
-  const { polygon, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polygon, line } = import_vanjs_core211.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -4539,9 +4859,9 @@ var Send = /* @__PURE__ */ __name((props) => {
 }, "Send");
 
 // src/icons/Server.ts
-
+var import_vanjs_core212 = __toESM(require("vanjs-core"), 1);
 var Server = /* @__PURE__ */ __name((props) => {
-  const { line, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { line, rect } = import_vanjs_core212.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     rect({
@@ -4576,9 +4896,9 @@ var Server = /* @__PURE__ */ __name((props) => {
 }, "Server");
 
 // src/icons/Settings.ts
-
+var import_vanjs_core213 = __toESM(require("vanjs-core"), 1);
 var Settings = /* @__PURE__ */ __name((props) => {
-  const { path, circle } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, circle } = import_vanjs_core213.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -4593,9 +4913,9 @@ var Settings = /* @__PURE__ */ __name((props) => {
 }, "Settings");
 
 // src/icons/Share.ts
-
+var import_vanjs_core214 = __toESM(require("vanjs-core"), 1);
 var Share = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = import_vanjs_core214.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -4614,9 +4934,9 @@ var Share = /* @__PURE__ */ __name((props) => {
 }, "Share");
 
 // src/icons/Share2.ts
-
+var import_vanjs_core215 = __toESM(require("vanjs-core"), 1);
 var Share2 = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = import_vanjs_core215.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -4650,9 +4970,9 @@ var Share2 = /* @__PURE__ */ __name((props) => {
 }, "Share2");
 
 // src/icons/Shield.ts
-
+var import_vanjs_core216 = __toESM(require("vanjs-core"), 1);
 var Shield = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core216.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -4662,9 +4982,9 @@ var Shield = /* @__PURE__ */ __name((props) => {
 }, "Shield");
 
 // src/icons/ShieldOff.ts
-
+var import_vanjs_core217 = __toESM(require("vanjs-core"), 1);
 var ShieldOff = /* @__PURE__ */ __name((props) => {
-  const { path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line } = import_vanjs_core217.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -4683,9 +5003,9 @@ var ShieldOff = /* @__PURE__ */ __name((props) => {
 }, "ShieldOff");
 
 // src/icons/ShoppingBag.ts
-
+var import_vanjs_core218 = __toESM(require("vanjs-core"), 1);
 var ShoppingBag = /* @__PURE__ */ __name((props) => {
-  const { path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line } = import_vanjs_core218.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -4704,9 +5024,9 @@ var ShoppingBag = /* @__PURE__ */ __name((props) => {
 }, "ShoppingBag");
 
 // src/icons/ShoppingCart.ts
-
+var import_vanjs_core219 = __toESM(require("vanjs-core"), 1);
 var ShoppingCart = /* @__PURE__ */ __name((props) => {
-  const { path, circle } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, circle } = import_vanjs_core219.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -4726,9 +5046,9 @@ var ShoppingCart = /* @__PURE__ */ __name((props) => {
 }, "ShoppingCart");
 
 // src/icons/Shuffle.ts
-
+var import_vanjs_core220 = __toESM(require("vanjs-core"), 1);
 var Shuffle = /* @__PURE__ */ __name((props) => {
-  const { polyline, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, line } = import_vanjs_core220.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -4759,9 +5079,9 @@ var Shuffle = /* @__PURE__ */ __name((props) => {
 }, "Shuffle");
 
 // src/icons/Sidebar.ts
-
+var import_vanjs_core221 = __toESM(require("vanjs-core"), 1);
 var Sidebar = /* @__PURE__ */ __name((props) => {
-  const { line, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { line, rect } = import_vanjs_core221.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     rect({
@@ -4782,9 +5102,9 @@ var Sidebar = /* @__PURE__ */ __name((props) => {
 }, "Sidebar");
 
 // src/icons/SkipBack.ts
-
+var import_vanjs_core222 = __toESM(require("vanjs-core"), 1);
 var SkipBack = /* @__PURE__ */ __name((props) => {
-  const { polygon, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polygon, line } = import_vanjs_core222.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polygon({
@@ -4800,9 +5120,9 @@ var SkipBack = /* @__PURE__ */ __name((props) => {
 }, "SkipBack");
 
 // src/icons/SkipForward.ts
-
+var import_vanjs_core223 = __toESM(require("vanjs-core"), 1);
 var SkipForward = /* @__PURE__ */ __name((props) => {
-  const { polygon, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polygon, line } = import_vanjs_core223.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polygon({
@@ -4818,9 +5138,9 @@ var SkipForward = /* @__PURE__ */ __name((props) => {
 }, "SkipForward");
 
 // src/icons/Slack.ts
-
+var import_vanjs_core224 = __toESM(require("vanjs-core"), 1);
 var Slack = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core224.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -4851,9 +5171,9 @@ var Slack = /* @__PURE__ */ __name((props) => {
 }, "Slack");
 
 // src/icons/Slash.ts
-
+var import_vanjs_core225 = __toESM(require("vanjs-core"), 1);
 var Slash = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = import_vanjs_core225.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -4871,9 +5191,9 @@ var Slash = /* @__PURE__ */ __name((props) => {
 }, "Slash");
 
 // src/icons/Sliders.ts
-
+var import_vanjs_core226 = __toESM(require("vanjs-core"), 1);
 var Sliders = /* @__PURE__ */ __name((props) => {
-  const { line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { line } = import_vanjs_core226.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -4934,9 +5254,9 @@ var Sliders = /* @__PURE__ */ __name((props) => {
 }, "Sliders");
 
 // src/icons/Smartphone.ts
-
+var import_vanjs_core227 = __toESM(require("vanjs-core"), 1);
 var Smartphone = /* @__PURE__ */ __name((props) => {
-  const { line, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { line, rect } = import_vanjs_core227.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     rect({
@@ -4957,9 +5277,9 @@ var Smartphone = /* @__PURE__ */ __name((props) => {
 }, "Smartphone");
 
 // src/icons/Smile.ts
-
+var import_vanjs_core228 = __toESM(require("vanjs-core"), 1);
 var Smile = /* @__PURE__ */ __name((props) => {
-  const { path, circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, circle, line } = import_vanjs_core228.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -4986,9 +5306,9 @@ var Smile = /* @__PURE__ */ __name((props) => {
 }, "Smile");
 
 // src/icons/Speaker.ts
-
+var import_vanjs_core229 = __toESM(require("vanjs-core"), 1);
 var Speaker = /* @__PURE__ */ __name((props) => {
-  const { circle, line, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle, line, rect } = import_vanjs_core229.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     rect({
@@ -5014,9 +5334,9 @@ var Speaker = /* @__PURE__ */ __name((props) => {
 }, "Speaker");
 
 // src/icons/Square.ts
-
+var import_vanjs_core230 = __toESM(require("vanjs-core"), 1);
 var Square = /* @__PURE__ */ __name((props) => {
-  const { rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { rect } = import_vanjs_core230.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     rect({
@@ -5031,9 +5351,9 @@ var Square = /* @__PURE__ */ __name((props) => {
 }, "Square");
 
 // src/icons/Star.ts
-
+var import_vanjs_core231 = __toESM(require("vanjs-core"), 1);
 var Star = /* @__PURE__ */ __name((props) => {
-  const { polygon } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polygon } = import_vanjs_core231.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polygon({
@@ -5043,9 +5363,9 @@ var Star = /* @__PURE__ */ __name((props) => {
 }, "Star");
 
 // src/icons/StopCircle.ts
-
+var import_vanjs_core232 = __toESM(require("vanjs-core"), 1);
 var StopCircle = /* @__PURE__ */ __name((props) => {
-  const { circle, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle, rect } = import_vanjs_core232.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -5063,9 +5383,9 @@ var StopCircle = /* @__PURE__ */ __name((props) => {
 }, "StopCircle");
 
 // src/icons/Sun.ts
-
+var import_vanjs_core233 = __toESM(require("vanjs-core"), 1);
 var Sun = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = import_vanjs_core233.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -5125,9 +5445,9 @@ var Sun = /* @__PURE__ */ __name((props) => {
 }, "Sun");
 
 // src/icons/Sunrise.ts
-
+var import_vanjs_core234 = __toESM(require("vanjs-core"), 1);
 var Sunrise = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = import_vanjs_core234.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -5176,9 +5496,9 @@ var Sunrise = /* @__PURE__ */ __name((props) => {
 }, "Sunrise");
 
 // src/icons/Sunset.ts
-
+var import_vanjs_core235 = __toESM(require("vanjs-core"), 1);
 var Sunset = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = import_vanjs_core235.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -5227,9 +5547,9 @@ var Sunset = /* @__PURE__ */ __name((props) => {
 }, "Sunset");
 
 // src/icons/Table.ts
-
+var import_vanjs_core236 = __toESM(require("vanjs-core"), 1);
 var Table = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core236.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -5239,9 +5559,9 @@ var Table = /* @__PURE__ */ __name((props) => {
 }, "Table");
 
 // src/icons/Tablet.ts
-
+var import_vanjs_core237 = __toESM(require("vanjs-core"), 1);
 var Tablet = /* @__PURE__ */ __name((props) => {
-  const { line, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { line, rect } = import_vanjs_core237.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     rect({
@@ -5262,9 +5582,9 @@ var Tablet = /* @__PURE__ */ __name((props) => {
 }, "Tablet");
 
 // src/icons/Tag.ts
-
+var import_vanjs_core238 = __toESM(require("vanjs-core"), 1);
 var Tag = /* @__PURE__ */ __name((props) => {
-  const { path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line } = import_vanjs_core238.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -5280,9 +5600,9 @@ var Tag = /* @__PURE__ */ __name((props) => {
 }, "Tag");
 
 // src/icons/Target.ts
-
+var import_vanjs_core239 = __toESM(require("vanjs-core"), 1);
 var Target = /* @__PURE__ */ __name((props) => {
-  const { circle } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle } = import_vanjs_core239.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -5304,9 +5624,9 @@ var Target = /* @__PURE__ */ __name((props) => {
 }, "Target");
 
 // src/icons/Terminal.ts
-
+var import_vanjs_core240 = __toESM(require("vanjs-core"), 1);
 var Terminal = /* @__PURE__ */ __name((props) => {
-  const { polyline, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, line } = import_vanjs_core240.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -5322,9 +5642,9 @@ var Terminal = /* @__PURE__ */ __name((props) => {
 }, "Terminal");
 
 // src/icons/Thermometer.ts
-
+var import_vanjs_core241 = __toESM(require("vanjs-core"), 1);
 var Thermometer = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core241.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -5334,9 +5654,9 @@ var Thermometer = /* @__PURE__ */ __name((props) => {
 }, "Thermometer");
 
 // src/icons/ThumbsDown.ts
-
+var import_vanjs_core242 = __toESM(require("vanjs-core"), 1);
 var ThumbsDown = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core242.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -5346,9 +5666,9 @@ var ThumbsDown = /* @__PURE__ */ __name((props) => {
 }, "ThumbsDown");
 
 // src/icons/ThumbsUp.ts
-
+var import_vanjs_core243 = __toESM(require("vanjs-core"), 1);
 var ThumbsUp = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core243.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -5358,9 +5678,9 @@ var ThumbsUp = /* @__PURE__ */ __name((props) => {
 }, "ThumbsUp");
 
 // src/icons/ToggleLeft.ts
-
+var import_vanjs_core244 = __toESM(require("vanjs-core"), 1);
 var ToggleLeft = /* @__PURE__ */ __name((props) => {
-  const { circle, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle, rect } = import_vanjs_core244.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     rect({
@@ -5380,9 +5700,9 @@ var ToggleLeft = /* @__PURE__ */ __name((props) => {
 }, "ToggleLeft");
 
 // src/icons/ToggleRight.ts
-
+var import_vanjs_core245 = __toESM(require("vanjs-core"), 1);
 var ToggleRight = /* @__PURE__ */ __name((props) => {
-  const { circle, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle, rect } = import_vanjs_core245.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     rect({
@@ -5402,9 +5722,9 @@ var ToggleRight = /* @__PURE__ */ __name((props) => {
 }, "ToggleRight");
 
 // src/icons/Tool.ts
-
+var import_vanjs_core246 = __toESM(require("vanjs-core"), 1);
 var Tool = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core246.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -5414,9 +5734,9 @@ var Tool = /* @__PURE__ */ __name((props) => {
 }, "Tool");
 
 // src/icons/Trash.ts
-
+var import_vanjs_core247 = __toESM(require("vanjs-core"), 1);
 var Trash = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = import_vanjs_core247.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -5429,9 +5749,9 @@ var Trash = /* @__PURE__ */ __name((props) => {
 }, "Trash");
 
 // src/icons/Trash2.ts
-
+var import_vanjs_core248 = __toESM(require("vanjs-core"), 1);
 var Trash2 = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = import_vanjs_core248.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -5456,9 +5776,9 @@ var Trash2 = /* @__PURE__ */ __name((props) => {
 }, "Trash2");
 
 // src/icons/Trello.ts
-
+var import_vanjs_core249 = __toESM(require("vanjs-core"), 1);
 var Trello = /* @__PURE__ */ __name((props) => {
-  const { rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { rect } = import_vanjs_core249.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     rect({
@@ -5485,9 +5805,9 @@ var Trello = /* @__PURE__ */ __name((props) => {
 }, "Trello");
 
 // src/icons/TrendingDown.ts
-
+var import_vanjs_core250 = __toESM(require("vanjs-core"), 1);
 var TrendingDown = /* @__PURE__ */ __name((props) => {
-  const { polyline } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline } = import_vanjs_core250.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -5500,9 +5820,9 @@ var TrendingDown = /* @__PURE__ */ __name((props) => {
 }, "TrendingDown");
 
 // src/icons/TrendingUp.ts
-
+var import_vanjs_core251 = __toESM(require("vanjs-core"), 1);
 var TrendingUp = /* @__PURE__ */ __name((props) => {
-  const { polyline } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline } = import_vanjs_core251.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -5515,9 +5835,9 @@ var TrendingUp = /* @__PURE__ */ __name((props) => {
 }, "TrendingUp");
 
 // src/icons/Triangle.ts
-
+var import_vanjs_core252 = __toESM(require("vanjs-core"), 1);
 var Triangle = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core252.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -5527,9 +5847,9 @@ var Triangle = /* @__PURE__ */ __name((props) => {
 }, "Triangle");
 
 // src/icons/Truck.ts
-
+var import_vanjs_core253 = __toESM(require("vanjs-core"), 1);
 var Truck = /* @__PURE__ */ __name((props) => {
-  const { polygon, circle, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polygon, circle, rect } = import_vanjs_core253.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     rect({
@@ -5555,9 +5875,9 @@ var Truck = /* @__PURE__ */ __name((props) => {
 }, "Truck");
 
 // src/icons/Tv.ts
-
+var import_vanjs_core254 = __toESM(require("vanjs-core"), 1);
 var Tv = /* @__PURE__ */ __name((props) => {
-  const { polyline, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, rect } = import_vanjs_core254.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     rect({
@@ -5575,9 +5895,9 @@ var Tv = /* @__PURE__ */ __name((props) => {
 }, "Tv");
 
 // src/icons/Twitch.ts
-
+var import_vanjs_core255 = __toESM(require("vanjs-core"), 1);
 var Twitch = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core255.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -5587,9 +5907,9 @@ var Twitch = /* @__PURE__ */ __name((props) => {
 }, "Twitch");
 
 // src/icons/Twitter.ts
-
+var import_vanjs_core256 = __toESM(require("vanjs-core"), 1);
 var Twitter = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core256.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -5599,9 +5919,9 @@ var Twitter = /* @__PURE__ */ __name((props) => {
 }, "Twitter");
 
 // src/icons/Type.ts
-
+var import_vanjs_core257 = __toESM(require("vanjs-core"), 1);
 var Type = /* @__PURE__ */ __name((props) => {
-  const { polyline, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, line } = import_vanjs_core257.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -5623,9 +5943,9 @@ var Type = /* @__PURE__ */ __name((props) => {
 }, "Type");
 
 // src/icons/Umbrella.ts
-
+var import_vanjs_core258 = __toESM(require("vanjs-core"), 1);
 var Umbrella = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core258.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -5635,9 +5955,9 @@ var Umbrella = /* @__PURE__ */ __name((props) => {
 }, "Umbrella");
 
 // src/icons/Underline.ts
-
+var import_vanjs_core259 = __toESM(require("vanjs-core"), 1);
 var Underline = /* @__PURE__ */ __name((props) => {
-  const { path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line } = import_vanjs_core259.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -5653,9 +5973,9 @@ var Underline = /* @__PURE__ */ __name((props) => {
 }, "Underline");
 
 // src/icons/Unlock.ts
-
+var import_vanjs_core260 = __toESM(require("vanjs-core"), 1);
 var Unlock = /* @__PURE__ */ __name((props) => {
-  const { path, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, rect } = import_vanjs_core260.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     rect({
@@ -5673,9 +5993,9 @@ var Unlock = /* @__PURE__ */ __name((props) => {
 }, "Unlock");
 
 // src/icons/Upload.ts
-
+var import_vanjs_core261 = __toESM(require("vanjs-core"), 1);
 var Upload = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = import_vanjs_core261.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -5694,9 +6014,9 @@ var Upload = /* @__PURE__ */ __name((props) => {
 }, "Upload");
 
 // src/icons/UploadCloud.ts
-
+var import_vanjs_core262 = __toESM(require("vanjs-core"), 1);
 var UploadCloud = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = import_vanjs_core262.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -5718,9 +6038,9 @@ var UploadCloud = /* @__PURE__ */ __name((props) => {
 }, "UploadCloud");
 
 // src/icons/User.ts
-
+var import_vanjs_core263 = __toESM(require("vanjs-core"), 1);
 var User = /* @__PURE__ */ __name((props) => {
-  const { path, circle } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, circle } = import_vanjs_core263.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -5735,9 +6055,9 @@ var User = /* @__PURE__ */ __name((props) => {
 }, "User");
 
 // src/icons/UserCheck.ts
-
+var import_vanjs_core264 = __toESM(require("vanjs-core"), 1);
 var UserCheck = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, circle } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, circle } = import_vanjs_core264.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -5755,9 +6075,9 @@ var UserCheck = /* @__PURE__ */ __name((props) => {
 }, "UserCheck");
 
 // src/icons/UserMinus.ts
-
+var import_vanjs_core265 = __toESM(require("vanjs-core"), 1);
 var UserMinus = /* @__PURE__ */ __name((props) => {
-  const { path, circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, circle, line } = import_vanjs_core265.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -5778,9 +6098,9 @@ var UserMinus = /* @__PURE__ */ __name((props) => {
 }, "UserMinus");
 
 // src/icons/UserPlus.ts
-
+var import_vanjs_core266 = __toESM(require("vanjs-core"), 1);
 var UserPlus = /* @__PURE__ */ __name((props) => {
-  const { path, circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, circle, line } = import_vanjs_core266.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -5807,9 +6127,9 @@ var UserPlus = /* @__PURE__ */ __name((props) => {
 }, "UserPlus");
 
 // src/icons/UserX.ts
-
+var import_vanjs_core267 = __toESM(require("vanjs-core"), 1);
 var UserX = /* @__PURE__ */ __name((props) => {
-  const { path, circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, circle, line } = import_vanjs_core267.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -5836,9 +6156,9 @@ var UserX = /* @__PURE__ */ __name((props) => {
 }, "UserX");
 
 // src/icons/Users.ts
-
+var import_vanjs_core268 = __toESM(require("vanjs-core"), 1);
 var Users = /* @__PURE__ */ __name((props) => {
-  const { path, circle } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, circle } = import_vanjs_core268.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -5859,9 +6179,9 @@ var Users = /* @__PURE__ */ __name((props) => {
 }, "Users");
 
 // src/icons/Video.ts
-
+var import_vanjs_core269 = __toESM(require("vanjs-core"), 1);
 var Video = /* @__PURE__ */ __name((props) => {
-  const { polygon, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polygon, rect } = import_vanjs_core269.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polygon({
@@ -5879,9 +6199,9 @@ var Video = /* @__PURE__ */ __name((props) => {
 }, "Video");
 
 // src/icons/VideoOff.ts
-
+var import_vanjs_core270 = __toESM(require("vanjs-core"), 1);
 var VideoOff = /* @__PURE__ */ __name((props) => {
-  const { path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line } = import_vanjs_core270.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -5897,9 +6217,9 @@ var VideoOff = /* @__PURE__ */ __name((props) => {
 }, "VideoOff");
 
 // src/icons/Voicemail.ts
-
+var import_vanjs_core271 = __toESM(require("vanjs-core"), 1);
 var Voicemail = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = import_vanjs_core271.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -5922,9 +6242,9 @@ var Voicemail = /* @__PURE__ */ __name((props) => {
 }, "Voicemail");
 
 // src/icons/Volume.ts
-
+var import_vanjs_core272 = __toESM(require("vanjs-core"), 1);
 var Volume = /* @__PURE__ */ __name((props) => {
-  const { polygon } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polygon } = import_vanjs_core272.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polygon({
@@ -5934,9 +6254,9 @@ var Volume = /* @__PURE__ */ __name((props) => {
 }, "Volume");
 
 // src/icons/Volume1.ts
-
+var import_vanjs_core273 = __toESM(require("vanjs-core"), 1);
 var Volume1 = /* @__PURE__ */ __name((props) => {
-  const { path, polygon } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, polygon } = import_vanjs_core273.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polygon({
@@ -5949,9 +6269,9 @@ var Volume1 = /* @__PURE__ */ __name((props) => {
 }, "Volume1");
 
 // src/icons/Volume2.ts
-
+var import_vanjs_core274 = __toESM(require("vanjs-core"), 1);
 var Volume2 = /* @__PURE__ */ __name((props) => {
-  const { path, polygon } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, polygon } = import_vanjs_core274.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polygon({
@@ -5964,9 +6284,9 @@ var Volume2 = /* @__PURE__ */ __name((props) => {
 }, "Volume2");
 
 // src/icons/VolumeX.ts
-
+var import_vanjs_core275 = __toESM(require("vanjs-core"), 1);
 var VolumeX = /* @__PURE__ */ __name((props) => {
-  const { polygon, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polygon, line } = import_vanjs_core275.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polygon({
@@ -5988,9 +6308,9 @@ var VolumeX = /* @__PURE__ */ __name((props) => {
 }, "VolumeX");
 
 // src/icons/Watch.ts
-
+var import_vanjs_core276 = __toESM(require("vanjs-core"), 1);
 var Watch = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, circle } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, circle } = import_vanjs_core276.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -6008,9 +6328,9 @@ var Watch = /* @__PURE__ */ __name((props) => {
 }, "Watch");
 
 // src/icons/Wifi.ts
-
+var import_vanjs_core277 = __toESM(require("vanjs-core"), 1);
 var Wifi = /* @__PURE__ */ __name((props) => {
-  const { path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line } = import_vanjs_core277.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -6032,9 +6352,9 @@ var Wifi = /* @__PURE__ */ __name((props) => {
 }, "Wifi");
 
 // src/icons/WifiOff.ts
-
+var import_vanjs_core278 = __toESM(require("vanjs-core"), 1);
 var WifiOff = /* @__PURE__ */ __name((props) => {
-  const { path, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, line } = import_vanjs_core278.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -6068,9 +6388,9 @@ var WifiOff = /* @__PURE__ */ __name((props) => {
 }, "WifiOff");
 
 // src/icons/Wind.ts
-
+var import_vanjs_core279 = __toESM(require("vanjs-core"), 1);
 var Wind = /* @__PURE__ */ __name((props) => {
-  const { path } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path } = import_vanjs_core279.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -6080,9 +6400,9 @@ var Wind = /* @__PURE__ */ __name((props) => {
 }, "Wind");
 
 // src/icons/X.ts
-
+var import_vanjs_core280 = __toESM(require("vanjs-core"), 1);
 var X = /* @__PURE__ */ __name((props) => {
-  const { line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { line } = import_vanjs_core280.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     line({
@@ -6101,9 +6421,9 @@ var X = /* @__PURE__ */ __name((props) => {
 }, "X");
 
 // src/icons/XCircle.ts
-
+var import_vanjs_core281 = __toESM(require("vanjs-core"), 1);
 var XCircle = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = import_vanjs_core281.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -6127,9 +6447,9 @@ var XCircle = /* @__PURE__ */ __name((props) => {
 }, "XCircle");
 
 // src/icons/XOctagon.ts
-
+var import_vanjs_core282 = __toESM(require("vanjs-core"), 1);
 var XOctagon = /* @__PURE__ */ __name((props) => {
-  const { polygon, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polygon, line } = import_vanjs_core282.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polygon({
@@ -6151,9 +6471,9 @@ var XOctagon = /* @__PURE__ */ __name((props) => {
 }, "XOctagon");
 
 // src/icons/XSquare.ts
-
+var import_vanjs_core283 = __toESM(require("vanjs-core"), 1);
 var XSquare = /* @__PURE__ */ __name((props) => {
-  const { line, rect } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { line, rect } = import_vanjs_core283.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     rect({
@@ -6180,9 +6500,9 @@ var XSquare = /* @__PURE__ */ __name((props) => {
 }, "XSquare");
 
 // src/icons/Youtube.ts
-
+var import_vanjs_core284 = __toESM(require("vanjs-core"), 1);
 var Youtube = /* @__PURE__ */ __name((props) => {
-  const { path, polygon } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { path, polygon } = import_vanjs_core284.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     path({
@@ -6195,9 +6515,9 @@ var Youtube = /* @__PURE__ */ __name((props) => {
 }, "Youtube");
 
 // src/icons/Zap.ts
-
+var import_vanjs_core285 = __toESM(require("vanjs-core"), 1);
 var Zap = /* @__PURE__ */ __name((props) => {
-  const { polygon } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polygon } = import_vanjs_core285.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polygon({
@@ -6207,9 +6527,9 @@ var Zap = /* @__PURE__ */ __name((props) => {
 }, "Zap");
 
 // src/icons/ZapOff.ts
-
+var import_vanjs_core286 = __toESM(require("vanjs-core"), 1);
 var ZapOff = /* @__PURE__ */ __name((props) => {
-  const { polyline, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { polyline, line } = import_vanjs_core286.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     polyline({
@@ -6231,9 +6551,9 @@ var ZapOff = /* @__PURE__ */ __name((props) => {
 }, "ZapOff");
 
 // src/icons/ZoomIn.ts
-
+var import_vanjs_core287 = __toESM(require("vanjs-core"), 1);
 var ZoomIn = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = import_vanjs_core287.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -6263,9 +6583,9 @@ var ZoomIn = /* @__PURE__ */ __name((props) => {
 }, "ZoomIn");
 
 // src/icons/ZoomOut.ts
-
+var import_vanjs_core288 = __toESM(require("vanjs-core"), 1);
 var ZoomOut = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = _vanjscore2.default.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = import_vanjs_core288.default.tags("http://www.w3.org/2000/svg");
   return FeatherIcon(
     props,
     circle({
@@ -6287,294 +6607,295 @@ var ZoomOut = /* @__PURE__ */ __name((props) => {
     })
   );
 }, "ZoomOut");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-exports.Activity = Activity; exports.Airplay = Airplay; exports.AlertCircle = AlertCircle; exports.AlertOctagon = AlertOctagon; exports.AlertTriangle = AlertTriangle; exports.AlignCenter = AlignCenter; exports.AlignJustify = AlignJustify; exports.AlignLeft = AlignLeft; exports.AlignRight = AlignRight; exports.Anchor = Anchor; exports.Aperture = Aperture; exports.Archive = Archive; exports.ArrowDown = ArrowDown; exports.ArrowDownCircle = ArrowDownCircle; exports.ArrowDownLeft = ArrowDownLeft; exports.ArrowDownRight = ArrowDownRight; exports.ArrowLeft = ArrowLeft; exports.ArrowLeftCircle = ArrowLeftCircle; exports.ArrowRight = ArrowRight; exports.ArrowRightCircle = ArrowRightCircle; exports.ArrowUp = ArrowUp; exports.ArrowUpCircle = ArrowUpCircle; exports.ArrowUpLeft = ArrowUpLeft; exports.ArrowUpRight = ArrowUpRight; exports.AtSign = AtSign; exports.Award = Award; exports.BarChart = BarChart; exports.BarChart2 = BarChart2; exports.Battery = Battery; exports.BatteryCharging = BatteryCharging; exports.Bell = Bell; exports.BellOff = BellOff; exports.Bluetooth = Bluetooth; exports.Bold = Bold; exports.Book = Book; exports.BookOpen = BookOpen; exports.Bookmark = Bookmark; exports.Box = Box; exports.Briefcase = Briefcase; exports.Calendar = Calendar; exports.Camera = Camera; exports.CameraOff = CameraOff; exports.Cast = Cast; exports.Check = Check; exports.CheckCircle = CheckCircle; exports.CheckSquare = CheckSquare; exports.ChevronDown = ChevronDown; exports.ChevronLeft = ChevronLeft; exports.ChevronRight = ChevronRight; exports.ChevronUp = ChevronUp; exports.ChevronsDown = ChevronsDown; exports.ChevronsLeft = ChevronsLeft; exports.ChevronsRight = ChevronsRight; exports.ChevronsUp = ChevronsUp; exports.Chrome = Chrome; exports.Circle = Circle; exports.Clipboard = Clipboard; exports.Clock = Clock; exports.Cloud = Cloud; exports.CloudDrizzle = CloudDrizzle; exports.CloudLightning = CloudLightning; exports.CloudOff = CloudOff; exports.CloudRain = CloudRain; exports.CloudSnow = CloudSnow; exports.Code = Code; exports.Codepen = Codepen; exports.Codesandbox = Codesandbox; exports.Coffee = Coffee; exports.Columns = Columns; exports.Command = Command; exports.Compass = Compass; exports.Copy = Copy; exports.CornerDownLeft = CornerDownLeft; exports.CornerDownRight = CornerDownRight; exports.CornerLeftDown = CornerLeftDown; exports.CornerLeftUp = CornerLeftUp; exports.CornerRightDown = CornerRightDown; exports.CornerRightUp = CornerRightUp; exports.CornerUpLeft = CornerUpLeft; exports.CornerUpRight = CornerUpRight; exports.Cpu = Cpu; exports.CreditCard = CreditCard; exports.Crop = Crop; exports.Crosshair = Crosshair; exports.Database = Database; exports.Delete = Delete; exports.Disc = Disc; exports.Divide = Divide; exports.DivideCircle = DivideCircle; exports.DivideSquare = DivideSquare; exports.DollarSign = DollarSign; exports.Download = Download; exports.DownloadCloud = DownloadCloud; exports.Dribbble = Dribbble; exports.Droplet = Droplet; exports.Edit = Edit; exports.Edit2 = Edit2; exports.Edit3 = Edit3; exports.ExternalLink = ExternalLink; exports.Eye = Eye; exports.EyeOff = EyeOff; exports.Facebook = Facebook; exports.FastForward = FastForward; exports.Feather = Feather; exports.Figma = Figma; exports.File = File; exports.FileMinus = FileMinus; exports.FilePlus = FilePlus; exports.FileText = FileText; exports.Film = Film; exports.Filter = Filter; exports.Flag = Flag; exports.Folder = Folder; exports.FolderMinus = FolderMinus; exports.FolderPlus = FolderPlus; exports.Framer = Framer; exports.Frown = Frown; exports.Gift = Gift; exports.GitBranch = GitBranch; exports.GitCommit = GitCommit; exports.GitMerge = GitMerge; exports.GitPullRequest = GitPullRequest; exports.Github = Github; exports.Gitlab = Gitlab; exports.Globe = Globe; exports.Grid = Grid; exports.HardDrive = HardDrive; exports.Hash = Hash; exports.Headphones = Headphones; exports.Heart = Heart; exports.HelpCircle = HelpCircle; exports.Hexagon = Hexagon; exports.Home = Home; exports.Image = Image; exports.Inbox = Inbox; exports.Info = Info; exports.Instagram = Instagram; exports.Italic = Italic; exports.Key = Key; exports.Layers = Layers; exports.Layout = Layout; exports.LifeBuoy = LifeBuoy; exports.Link = Link; exports.Link2 = Link2; exports.Linkedin = Linkedin; exports.List = List; exports.Loader = Loader; exports.Lock = Lock; exports.LogIn = LogIn; exports.LogOut = LogOut; exports.Mail = Mail; exports.Map = Map; exports.MapPin = MapPin; exports.Maximize = Maximize; exports.Maximize2 = Maximize2; exports.Meh = Meh; exports.Menu = Menu; exports.MessageCircle = MessageCircle; exports.MessageSquare = MessageSquare; exports.Mic = Mic; exports.MicOff = MicOff; exports.Minimize = Minimize; exports.Minimize2 = Minimize2; exports.Minus = Minus; exports.MinusCircle = MinusCircle; exports.MinusSquare = MinusSquare; exports.Monitor = Monitor; exports.Moon = Moon; exports.MoreHorizontal = MoreHorizontal; exports.MoreVertical = MoreVertical; exports.MousePointer = MousePointer; exports.Move = Move; exports.Music = Music; exports.Navigation = Navigation; exports.Navigation2 = Navigation2; exports.Octagon = Octagon; exports.Package = Package; exports.Paperclip = Paperclip; exports.Pause = Pause; exports.PauseCircle = PauseCircle; exports.PenTool = PenTool; exports.Percent = Percent; exports.Phone = Phone; exports.PhoneCall = PhoneCall; exports.PhoneForwarded = PhoneForwarded; exports.PhoneIncoming = PhoneIncoming; exports.PhoneMissed = PhoneMissed; exports.PhoneOff = PhoneOff; exports.PhoneOutgoing = PhoneOutgoing; exports.PieChart = PieChart; exports.Play = Play; exports.PlayCircle = PlayCircle; exports.Plus = Plus; exports.PlusCircle = PlusCircle; exports.PlusSquare = PlusSquare; exports.Pocket = Pocket; exports.Power = Power; exports.Printer = Printer; exports.Radio = Radio; exports.RefreshCcw = RefreshCcw; exports.RefreshCw = RefreshCw; exports.Repeat = Repeat; exports.Rewind = Rewind; exports.RotateCcw = RotateCcw; exports.RotateCw = RotateCw; exports.Rss = Rss; exports.Save = Save; exports.Scissors = Scissors; exports.Search = Search; exports.Send = Send; exports.Server = Server; exports.Settings = Settings; exports.Share = Share; exports.Share2 = Share2; exports.Shield = Shield; exports.ShieldOff = ShieldOff; exports.ShoppingBag = ShoppingBag; exports.ShoppingCart = ShoppingCart; exports.Shuffle = Shuffle; exports.Sidebar = Sidebar; exports.SkipBack = SkipBack; exports.SkipForward = SkipForward; exports.Slack = Slack; exports.Slash = Slash; exports.Sliders = Sliders; exports.Smartphone = Smartphone; exports.Smile = Smile; exports.Speaker = Speaker; exports.Square = Square; exports.Star = Star; exports.StopCircle = StopCircle; exports.Sun = Sun; exports.Sunrise = Sunrise; exports.Sunset = Sunset; exports.Table = Table; exports.Tablet = Tablet; exports.Tag = Tag; exports.Target = Target; exports.Terminal = Terminal; exports.Thermometer = Thermometer; exports.ThumbsDown = ThumbsDown; exports.ThumbsUp = ThumbsUp; exports.ToggleLeft = ToggleLeft; exports.ToggleRight = ToggleRight; exports.Tool = Tool; exports.Trash = Trash; exports.Trash2 = Trash2; exports.Trello = Trello; exports.TrendingDown = TrendingDown; exports.TrendingUp = TrendingUp; exports.Triangle = Triangle; exports.Truck = Truck; exports.Tv = Tv; exports.Twitch = Twitch; exports.Twitter = Twitter; exports.Type = Type; exports.Umbrella = Umbrella; exports.Underline = Underline; exports.Unlock = Unlock; exports.Upload = Upload; exports.UploadCloud = UploadCloud; exports.User = User; exports.UserCheck = UserCheck; exports.UserMinus = UserMinus; exports.UserPlus = UserPlus; exports.UserX = UserX; exports.Users = Users; exports.Video = Video; exports.VideoOff = VideoOff; exports.Voicemail = Voicemail; exports.Volume = Volume; exports.Volume1 = Volume1; exports.Volume2 = Volume2; exports.VolumeX = VolumeX; exports.Watch = Watch; exports.Wifi = Wifi; exports.WifiOff = WifiOff; exports.Wind = Wind; exports.X = X; exports.XCircle = XCircle; exports.XOctagon = XOctagon; exports.XSquare = XSquare; exports.Youtube = Youtube; exports.Zap = Zap; exports.ZapOff = ZapOff; exports.ZoomIn = ZoomIn; exports.ZoomOut = ZoomOut;
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
+  Activity,
+  Airplay,
+  AlertCircle,
+  AlertOctagon,
+  AlertTriangle,
+  AlignCenter,
+  AlignJustify,
+  AlignLeft,
+  AlignRight,
+  Anchor,
+  Aperture,
+  Archive,
+  ArrowDown,
+  ArrowDownCircle,
+  ArrowDownLeft,
+  ArrowDownRight,
+  ArrowLeft,
+  ArrowLeftCircle,
+  ArrowRight,
+  ArrowRightCircle,
+  ArrowUp,
+  ArrowUpCircle,
+  ArrowUpLeft,
+  ArrowUpRight,
+  AtSign,
+  Award,
+  BarChart,
+  BarChart2,
+  Battery,
+  BatteryCharging,
+  Bell,
+  BellOff,
+  Bluetooth,
+  Bold,
+  Book,
+  BookOpen,
+  Bookmark,
+  Box,
+  Briefcase,
+  Calendar,
+  Camera,
+  CameraOff,
+  Cast,
+  Check,
+  CheckCircle,
+  CheckSquare,
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  ChevronUp,
+  ChevronsDown,
+  ChevronsLeft,
+  ChevronsRight,
+  ChevronsUp,
+  Chrome,
+  Circle,
+  Clipboard,
+  Clock,
+  Cloud,
+  CloudDrizzle,
+  CloudLightning,
+  CloudOff,
+  CloudRain,
+  CloudSnow,
+  Code,
+  Codepen,
+  Codesandbox,
+  Coffee,
+  Columns,
+  Command,
+  Compass,
+  Copy,
+  CornerDownLeft,
+  CornerDownRight,
+  CornerLeftDown,
+  CornerLeftUp,
+  CornerRightDown,
+  CornerRightUp,
+  CornerUpLeft,
+  CornerUpRight,
+  Cpu,
+  CreditCard,
+  Crop,
+  Crosshair,
+  Database,
+  Delete,
+  Disc,
+  Divide,
+  DivideCircle,
+  DivideSquare,
+  DollarSign,
+  Download,
+  DownloadCloud,
+  Dribbble,
+  Droplet,
+  Edit,
+  Edit2,
+  Edit3,
+  ExternalLink,
+  Eye,
+  EyeOff,
+  Facebook,
+  FastForward,
+  Feather,
+  Figma,
+  File,
+  FileMinus,
+  FilePlus,
+  FileText,
+  Film,
+  Filter,
+  Flag,
+  Folder,
+  FolderMinus,
+  FolderPlus,
+  Framer,
+  Frown,
+  Gift,
+  GitBranch,
+  GitCommit,
+  GitMerge,
+  GitPullRequest,
+  Github,
+  Gitlab,
+  Globe,
+  Grid,
+  HardDrive,
+  Hash,
+  Headphones,
+  Heart,
+  HelpCircle,
+  Hexagon,
+  Home,
+  Image,
+  Inbox,
+  Info,
+  Instagram,
+  Italic,
+  Key,
+  Layers,
+  Layout,
+  LifeBuoy,
+  Link,
+  Link2,
+  Linkedin,
+  List,
+  Loader,
+  Lock,
+  LogIn,
+  LogOut,
+  Mail,
+  Map,
+  MapPin,
+  Maximize,
+  Maximize2,
+  Meh,
+  Menu,
+  MessageCircle,
+  MessageSquare,
+  Mic,
+  MicOff,
+  Minimize,
+  Minimize2,
+  Minus,
+  MinusCircle,
+  MinusSquare,
+  Monitor,
+  Moon,
+  MoreHorizontal,
+  MoreVertical,
+  MousePointer,
+  Move,
+  Music,
+  Navigation,
+  Navigation2,
+  Octagon,
+  Package,
+  Paperclip,
+  Pause,
+  PauseCircle,
+  PenTool,
+  Percent,
+  Phone,
+  PhoneCall,
+  PhoneForwarded,
+  PhoneIncoming,
+  PhoneMissed,
+  PhoneOff,
+  PhoneOutgoing,
+  PieChart,
+  Play,
+  PlayCircle,
+  Plus,
+  PlusCircle,
+  PlusSquare,
+  Pocket,
+  Power,
+  Printer,
+  Radio,
+  RefreshCcw,
+  RefreshCw,
+  Repeat,
+  Rewind,
+  RotateCcw,
+  RotateCw,
+  Rss,
+  Save,
+  Scissors,
+  Search,
+  Send,
+  Server,
+  Settings,
+  Share,
+  Share2,
+  Shield,
+  ShieldOff,
+  ShoppingBag,
+  ShoppingCart,
+  Shuffle,
+  Sidebar,
+  SkipBack,
+  SkipForward,
+  Slack,
+  Slash,
+  Sliders,
+  Smartphone,
+  Smile,
+  Speaker,
+  Square,
+  Star,
+  StopCircle,
+  Sun,
+  Sunrise,
+  Sunset,
+  Table,
+  Tablet,
+  Tag,
+  Target,
+  Terminal,
+  Thermometer,
+  ThumbsDown,
+  ThumbsUp,
+  ToggleLeft,
+  ToggleRight,
+  Tool,
+  Trash,
+  Trash2,
+  Trello,
+  TrendingDown,
+  TrendingUp,
+  Triangle,
+  Truck,
+  Tv,
+  Twitch,
+  Twitter,
+  Type,
+  Umbrella,
+  Underline,
+  Unlock,
+  Upload,
+  UploadCloud,
+  User,
+  UserCheck,
+  UserMinus,
+  UserPlus,
+  UserX,
+  Users,
+  Video,
+  VideoOff,
+  Voicemail,
+  Volume,
+  Volume1,
+  Volume2,
+  VolumeX,
+  Watch,
+  Wifi,
+  WifiOff,
+  Wind,
+  X,
+  XCircle,
+  XOctagon,
+  XSquare,
+  Youtube,
+  Zap,
+  ZapOff,
+  ZoomIn,
+  ZoomOut
+});
 //# sourceMappingURL=index.cjs.map
 //# sourceMappingURL=index.cjs.map

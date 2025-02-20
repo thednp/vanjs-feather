@@ -12,6 +12,7 @@ export default defineConfig(
     outDir: 'dist',
     target: 'es2020',
     globalName: 'VanJSFeather',
+    pure: "strict",
     outExtension: ({ format }) => ({
       js: {
         esm: '.mjs',

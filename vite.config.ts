@@ -12,7 +12,6 @@ export default defineConfig({
   esbuild: {
     legalComments: 'none',
   },
-
   build: {
     minify: 'esbuild',
     emptyOutDir: false,

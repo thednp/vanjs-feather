@@ -1,9 +1,10 @@
 // VanJS Feather - SkipBack
 import van from "vanjs-core";
-import { FeatherIcon, type IconProps } from "../FeatherIcon";
+import { FeatherIcon, svgNamespace } from "../FeatherIcon";
+import { type SVGProps } from "../types";
 
-export const SkipBack = (props?: IconProps) => {
-  const { polygon, line } = van.tags("http://www.w3.org/2000/svg");
+export const SkipBack = (props?: Partial<SVGProps>) => {
+  const { polygon, line } = van.tags(svgNamespace);
   return FeatherIcon(
     props,
     polygon({

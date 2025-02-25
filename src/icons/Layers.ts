@@ -1,9 +1,10 @@
 // VanJS Feather - Layers
 import van from "vanjs-core";
-import { FeatherIcon, type IconProps } from "../FeatherIcon";
+import { FeatherIcon, svgNamespace } from "../FeatherIcon";
+import { type SVGProps } from "../types";
 
-export const Layers = (props?: IconProps) => {
-  const { polyline, polygon } = van.tags("http://www.w3.org/2000/svg");
+export const Layers = (props?: Partial<SVGProps>) => {
+  const { polyline, polygon } = van.tags(svgNamespace);
   return FeatherIcon(
     props,
     polygon({

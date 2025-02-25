@@ -1,9 +1,10 @@
 // VanJS Feather - EyeOff
 import van from "vanjs-core";
-import { FeatherIcon, type IconProps } from "../FeatherIcon";
+import { FeatherIcon, svgNamespace } from "../FeatherIcon";
+import { type SVGProps } from "../types";
 
-export const EyeOff = (props?: IconProps) => {
-  const { path, line } = van.tags("http://www.w3.org/2000/svg");
+export const EyeOff = (props?: Partial<SVGProps>) => {
+  const { path, line } = van.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({

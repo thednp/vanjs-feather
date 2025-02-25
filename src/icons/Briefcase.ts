@@ -1,9 +1,10 @@
 // VanJS Feather - Briefcase
 import van from "vanjs-core";
-import { FeatherIcon, type IconProps } from "../FeatherIcon";
+import { FeatherIcon, svgNamespace } from "../FeatherIcon";
+import { type SVGProps } from "../types";
 
-export const Briefcase = (props?: IconProps) => {
-  const { path, rect } = van.tags("http://www.w3.org/2000/svg");
+export const Briefcase = (props?: Partial<SVGProps>) => {
+  const { path, rect } = van.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({

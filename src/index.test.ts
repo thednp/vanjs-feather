@@ -32,7 +32,7 @@ test(`Test icon with props`, () => {
     width,
     height,
     stroke,
-    strokeWidth,
+    "stroke-width": strokeWidth,
   });
 
   expect(Icon).toBeInstanceOf(SVGElement);

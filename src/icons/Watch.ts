@@ -1,9 +1,10 @@
 // VanJS Feather - Watch
 import van from "vanjs-core";
-import { FeatherIcon, type IconProps } from "../FeatherIcon";
+import { FeatherIcon, svgNamespace } from "../FeatherIcon";
+import { type SVGProps } from "../types";
 
-export const Watch = (props?: IconProps) => {
-  const { polyline, path, circle } = van.tags("http://www.w3.org/2000/svg");
+export const Watch = (props?: Partial<SVGProps>) => {
+  const { polyline, path, circle } = van.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({

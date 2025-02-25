@@ -1,5 +1,5 @@
 import van from "vanjs-core";
-import { ArrowDown } from "../../../dist";
+import { ArrowDown } from "../../../src/index";
 
 export default function Header() {
   const { header, div, ul, li, a, h1, span } = van.tags;
@@ -11,7 +11,7 @@ export default function Header() {
     ul(
       { class: "relative container px-5 mx-auto flex flex-row gap-3" },
       li(
-        { class: "p-3 flex flex-row items-center gap-3 text-xl" },
+        { class: "py-3 flex flex-row items-center gap-3 text-xl" },
         h1(
           {
             class: "font-black font-stretch-125% text-black dark:text-white",
@@ -21,7 +21,7 @@ export default function Header() {
         ),
       ),
       li(
-        { class: "p-3 flex flex-row items-center gap-3 ml-auto text-md" },
+        { class: "py-3 flex flex-row items-center gap-3 ml-auto text-md" },
         a(
           {
             class:
@@ -30,7 +30,10 @@ export default function Header() {
               "https://github.com/thednp/vanjs-feather/archive/refs/heads/main.zip",
           },
           ArrowDown({ class: "h-6" }),
-          "Download",
+          span(
+            { class: "sr-only sm:not-sr-only" },
+            "Download",
+          ),
         ),
       ),
     ),

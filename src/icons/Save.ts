@@ -1,9 +1,10 @@
 // VanJS Feather - Save
 import van from "vanjs-core";
-import { FeatherIcon, type IconProps } from "../FeatherIcon";
+import { FeatherIcon, svgNamespace } from "../FeatherIcon";
+import { type SVGProps } from "../types";
 
-export const Save = (props?: IconProps) => {
-  const { polyline, path } = van.tags("http://www.w3.org/2000/svg");
+export const Save = (props?: Partial<SVGProps>) => {
+  const { polyline, path } = van.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({

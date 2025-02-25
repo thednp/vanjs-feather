@@ -1,9 +1,10 @@
 // VanJS Feather - ArrowDownRight
 import van from "vanjs-core";
-import { FeatherIcon, type IconProps } from "../FeatherIcon";
+import { FeatherIcon, svgNamespace } from "../FeatherIcon";
+import { type SVGProps } from "../types";
 
-export const ArrowDownRight = (props?: IconProps) => {
-  const { polyline, line } = van.tags("http://www.w3.org/2000/svg");
+export const ArrowDownRight = (props?: Partial<SVGProps>) => {
+  const { polyline, line } = van.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({

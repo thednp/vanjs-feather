@@ -1,9 +1,10 @@
 // VanJS Feather - HelpCircle
 import van from "vanjs-core";
-import { FeatherIcon, type IconProps } from "../FeatherIcon";
+import { FeatherIcon, svgNamespace } from "../FeatherIcon";
+import { type SVGProps } from "../types";
 
-export const HelpCircle = (props?: IconProps) => {
-  const { path, circle, line } = van.tags("http://www.w3.org/2000/svg");
+export const HelpCircle = (props?: Partial<SVGProps>) => {
+  const { path, circle, line } = van.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({

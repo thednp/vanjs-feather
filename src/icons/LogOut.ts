@@ -1,9 +1,10 @@
 // VanJS Feather - LogOut
 import van from "vanjs-core";
-import { FeatherIcon, type IconProps } from "../FeatherIcon";
+import { FeatherIcon, svgNamespace } from "../FeatherIcon";
+import { type SVGProps } from "../types";
 
-export const LogOut = (props?: IconProps) => {
-  const { polyline, path, line } = van.tags("http://www.w3.org/2000/svg");
+export const LogOut = (props?: Partial<SVGProps>) => {
+  const { polyline, path, line } = van.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({

@@ -22,60 +22,66 @@ Powered by:
 
 ## Installation
 
-  **Install with npm**:
-   ```bash
-   npm install vanjs-feather
-   ```
+**Install with npm**:
+```bash
+npm install vanjs-feather
+```
 
-  **Install with pnpm**:
-   ```bash
-   pnpm install vanjs-feather
-   ```
+**Install with pnpm**:
+```bash
+pnpm add vanjs-feather
+```
 
-  **Install with yarn**:
-   ```bash
-   yarn add vanjs-feather
-   ```
+**Install with bun**:
+```bash
+bun add vanjs-feather
+```
 
-  **Install with deno**:
-   ```bash
-   deno install npm:vanjs-feather
-   ```
+**Install with deno**:
+```bash
+deno install npm:vanjs-feather
+```
 
-  **Install with bun**:
-   ```bash
-   bun add vanjs-feather
-   ```
 
 ## Usage
 
-   **Basic Usage**
-   ```ts
-   import van from "vanjs-core";
-   import { Activity } from "vanjs-feather";
-   const { main } = van.tags;
+**Basic Usage**
+You can call any icon(s) within your VanJS app: 
+```ts
+import van from "vanjs-core";
+import { Activity } from "vanjs-feather";
+const { main } = van.tags;
 
-   const App = () => {
-      return main({},
-         Activity({ class="icon", style="color: turquoise" });
-      );
-   };
+const App = () => {
+   return main({},
+      Activity({ class="icon", style="color: turquoise" });
+   );
+};
 
-   van.add(document.body, App());
-   ```
+van.add(document.body, App());
+```
 
-   **Properties**
-   * `id`: *string | undefined* - sets an *id* **non-state** attribute for your icon, *default: ""*
-   * `class`: *string | undefined* - sets a *class* **state** for your icon, *default: ""*
-   * `style`: *string | undefined* - sets a *style* **state** for your icon, *default: ""*
-   * `stroke`: *string | undefined* - sets a *stroke* **state** for your icon, *default: currentColor*
-   * `strokeWidth`: *number | undefined* - sets a *stroke-width* **state** for your icon, *default: 2*
-   * `width`: *number | undefined* - sets a *width* **state** for your icon, *default: 24*
-   * `height`: *number | undefined* - sets a *height* **state** for your icon, *default: 24*
+**JSX Usage**
+When using [vite-plugin-vanjs](https://github/thednp/vite-plugin-vanjs) with JSX transformation enabled you can call any icon(s) within your VanJS app: 
+```tsx
+import van from "vanjs-core";
+import { Activity } from "vanjs-feather";
 
-Since the feather library adds color to icons via the `stroke` property, any text `color` value inherited from parent elements would apply to your icons.
+const App = () => {
+   return <main>
+      <Activity class="icon" style={{ color: "turquoise" }} />
+   </main>;
+};
 
-The `width` and `height` properties can change the scale of the icons, something you may not want when using custom `style` and / or `class`.
+van.add(document.body, <App />);
+```
+
+**Notes**
+* All `SVGSVGElement` attributes should be supported, even with reactive values;
+* Camel case attribute names are not supported and strongly discouraged (EG: use `"stroke-width"` instead of `strokeWidth`);
+* Since the feather library adds color to icons via the `stroke` property, any text `color` value inherited from parent elements would apply to your icons;
+* The `width` and `height` properties can change the scale of the icons, something you may not want when using custom `style` and / or `class`;
+* JSX transformation via [vite-plugin-vanjs](https://github/thednp/vite-plugin-vanjs) allows you to use `CSSStyleDeclaration` like objects for your icons and elements in general. 
 
 ## License
 

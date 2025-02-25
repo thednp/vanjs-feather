@@ -1,9 +1,10 @@
 // VanJS Feather - MoreVertical
 import van from "vanjs-core";
-import { FeatherIcon, type IconProps } from "../FeatherIcon";
+import { FeatherIcon, svgNamespace } from "../FeatherIcon";
+import { type SVGProps } from "../types";
 
-export const MoreVertical = (props?: IconProps) => {
-  const { circle } = van.tags("http://www.w3.org/2000/svg");
+export const MoreVertical = (props?: Partial<SVGProps>) => {
+  const { circle } = van.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({

@@ -1,9 +1,10 @@
 // VanJS Feather - Star
 import van from "vanjs-core";
-import { FeatherIcon, type IconProps } from "../FeatherIcon";
+import { FeatherIcon, svgNamespace } from "../FeatherIcon";
+import { type SVGProps } from "../types";
 
-export const Star = (props?: IconProps) => {
-  const { polygon } = van.tags("http://www.w3.org/2000/svg");
+export const Star = (props?: Partial<SVGProps>) => {
+  const { polygon } = van.tags(svgNamespace);
   return FeatherIcon(
     props,
     polygon({

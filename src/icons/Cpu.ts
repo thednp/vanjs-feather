@@ -1,9 +1,10 @@
 // VanJS Feather - Cpu
 import van from "vanjs-core";
-import { FeatherIcon, type IconProps } from "../FeatherIcon";
+import { FeatherIcon, svgNamespace } from "../FeatherIcon";
+import { type SVGProps } from "../types";
 
-export const Cpu = (props?: IconProps) => {
-  const { line, rect } = van.tags("http://www.w3.org/2000/svg");
+export const Cpu = (props?: Partial<SVGProps>) => {
+  const { line, rect } = van.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({

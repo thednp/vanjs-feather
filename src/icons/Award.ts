@@ -1,9 +1,10 @@
 // VanJS Feather - Award
 import van from "vanjs-core";
-import { FeatherIcon, type IconProps } from "../FeatherIcon";
+import { FeatherIcon, svgNamespace } from "../FeatherIcon";
+import { type SVGProps } from "../types";
 
-export const Award = (props?: IconProps) => {
-  const { polyline, circle } = van.tags("http://www.w3.org/2000/svg");
+export const Award = (props?: Partial<SVGProps>) => {
+  const { polyline, circle } = van.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({

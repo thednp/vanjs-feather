@@ -1,38 +1,185 @@
 import van from "vanjs-core";
+import * as vanX from "vanjs-ext";
 import copyToClipboard from "../util/copyToClipboard";
 import * as VanJSFeather from "../../../src/index";
 import Tooltip from "./tooltip";
+import Tags from "./tags.json";
 
-const Icons = Object.entries(VanJSFeather);
+import { Activity } from "../../../src/index";
+
+const Icons = Object.entries(VanJSFeather).map(([name, icon]) => {
+  const lowerName = name.toLowerCase() as keyof typeof Tags;
+  const tags = [lowerName, ...(Tags[lowerName] || [])];
+  return {
+    name,
+    lowerName,
+    icon,
+    tags,
+  };
+});
+
+type ChangeEvent<T extends EventTarget & Element = HTMLInputElement> =
+  & InputEvent
+  & { target: T };
 
 export default function Main() {
-  const { main, div, button, span, h2, img, p, pre, a } = van.tags;
+  const { circle, path, svg } = van.tags("http://www.w3.org/2000/svg");
+  const { main, div, button, span, h2, img, p, pre, a, label, input } =
+    van.tags;
+  const size = van.state(64);
+  const sWidth = van.state(1);
+  const count = van.state(64);
+  const query = van.state("");
+
+  const loader = div(
+    {
+      class:
+        "w-full flex flex-col items-center mt-4 py-8 xl:py-12 rounded-[5px] bg-slate-50 dark:bg-slate-950",
+    },
+    svg(
+      {
+        class: "size-5 animate-spin text-current",
+        xmlns: "http://www.w3.org/2000/svg",
+        fill: "none",
+        viewBox: "0 0 24 24",
+      },
+      circle({
+        class: "opacity-25",
+        cx: "12",
+        cy: "12",
+        "r": "10",
+        stroke: "currentColor",
+        "stroke-width": "4",
+      }),
+      path({
+        class: "opacity-75",
+        fill: "currentColor",
+        "d":
+          "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z",
+      }),
+    ),
+  );
+  const startObserver = () => {
+    if (typeof window === "undefined") return;
+    const observer = new IntersectionObserver(([entry], currentObserver) => {
+      if (entry.isIntersecting && count.oldVal < Icons.length) {
+        const remaining = Icons.length - count.oldVal;
+        count.val = count.oldVal + (remaining < 64 ? remaining : 64);
+      }
+      if (count.val >= Icons.length) {
+        currentObserver.disconnect();
+        loader.remove();
+      }
+    }, { rootMargin: "100px" });
+    observer.observe(loader);
+  };
+
+  startObserver();
+
+  const List = vanX.reactive({ icons: Icons });
+
+  van.derive(() => {
+    const currentQuery = query.val;
+    const currentCount = count.val;
+    if (currentQuery.length) {
+      vanX.replace(
+        List.icons,
+        Icons.filter(({ lowerName, tags }) =>
+          lowerName === query.val || lowerName.includes(query.val) ||
+          tags.some((t) => t === query.val || t.includes(query.val))
+        ),
+      );
+      loader.remove();
+      count.val = Icons.length;
+    } else if (currentCount < Icons.length) {
+      vanX.replace(List.icons, Icons.slice(0, currentCount));
+    } else {
+      vanX.replace(List.icons, Icons);
+    }
+  });
 
   return main(
     { class: "main" },
     div(
-      { class: "container h-[75vh] px-5 mx-auto flex flex-row items-center" },
+      {
+        class:
+          "container h-[50vh] md:h-[75vh] px-5 mx-auto flex flex-col flex-row items-center",
+      },
       div(
-        { class: "flex gap-5 items-center" },
-        img({
-          src: "./vanjs.svg",
-          class: "w-20 h-20",
-          alt: "VanJS logo",
-          width: "80",
-          height: "80",
-        }),
+        { class: "w-full flex flex-col md:flex-row items-center" },
         div(
-          {},
-          h2(
+          {
+            class:
+              "w-full lg:w-1/2 my-8 flex flex-col sm:flex-row gap-6 sm:items-center",
+          },
+          img({
+            src: "./vanjs.svg",
+            class: "w-20 h-20",
+            alt: "VanJS logo",
+            width: "80",
+            height: "80",
+          }),
+          div(
+            h2(
+              {
+                class:
+                  "text-xl md:text-2xl font-light font-stretch-125% text-black dark:text-white",
+              },
+              "Feather Icons for VanJS",
+            ),
+            p(
+              { class: "font-stretch-125% font-bold" },
+              "Powered by Vite, Vitest & Typescript",
+            ),
+          ),
+        ),
+        div(
+          {
+            class: "hidden w-1/2 xl:w-1/3 xl:ml-auto lg:flex flex-row",
+          },
+          div(
             {
               class:
-                "text-xl md:text-2xl font-light font-stretch-125% text-black dark:text-white",
+                "w-full my-8 p-4 bg-gray-500/10 rounded-lg flex flex-row items-center",
             },
-            "Feather Icons for VanJS",
-          ),
-          p(
-            { class: "font-stretch-125% font-bold" },
-            "Powered by Vite, Vitest & Typescript",
+            label(
+              { for: "stroke", class: "m-2" },
+              "Stroke",
+              input({
+                class: "ml-2 text-right border border-gray-500/30 rounded",
+                placeholder: "Set stroke-width",
+                name: "stroke",
+                id: "stroke",
+                value: sWidth,
+                step: 0.1,
+                min: 0.1,
+                max: 5,
+                type: "number",
+                onchange: (e: ChangeEvent) =>
+                  sWidth.val = Number(e.target.value),
+              }),
+            ),
+            label(
+              { for: "size", class: "m-2" },
+              "Size",
+              input({
+                class: "ml-2 text-right border border-gray-500/30 rounded",
+                placeholder: "Set width and height",
+                name: "size",
+                id: "size",
+                value: size,
+                min: 24,
+                max: 128,
+                type: "number",
+                onchange: (e: ChangeEvent) => size.val = Number(e.target.value),
+              }),
+            ),
+            Activity({
+              class: "h-auto self-center max-w-full ml-auto",
+              "stroke-width": sWidth,
+              width: size,
+              height: size,
+            }),
           ),
         ),
       ),
@@ -58,12 +205,13 @@ export default function Main() {
             pre(
               { class: "font-mono mb-10 whitespace-pre-line" },
               "> npm install vanjs-feather\n",
-              "> pnpm install vanjs-feather\n",
-              "> yarn add vanjs-feather",
+              "> pnpm add vanjs-feather\n",
+              "> deno add npm:vanjs-feather\n",
+              "> bun add vanjs-feather",
             ),
           ),
           div(
-            { id: "usage", class: "lg:w-[calc(50%-2.5rem)]" },
+            { id: "usage", class: "w-full lg:w-[calc(50%-2.5rem)]" },
             h2(
               {
                 class:
@@ -71,24 +219,35 @@ export default function Main() {
               },
               "Usage",
             ),
-            pre(
-              { class: "font-mono mb-5 whitespace-pre-line" },
-              span(
-                { class: "text-sky-800 dark:text-sky-300" },
-                "// import the icon(s)\n",
+            div(
+              {
+                class:
+                  "mb-5 max-w-full overflow-x-auto whitespace-nowrap scrollbar",
+              },
+              pre(
+                { class: "font-mono whitespace-pre-line w-max" },
+                span(
+                  { class: "text-sky-800 dark:text-sky-300" },
+                  "// import the icon(s)\n",
+                ),
+                'import { Activity } from "vanjs-feather";\n\n',
+                span(
+                  { class: "text-sky-800 dark:text-sky-300" },
+                  "// call anywhere within VanJS codespace\n",
+                ),
+                'Activity({ class: "icon" })\n\n',
+                span(
+                  { class: "text-sky-800 dark:text-sky-300" },
+                  "// even with JSX transformation\n",
+                ),
+                '<Activity class="icon" />\n',
               ),
-              'import { Activity } from "vanjs-feather";\n\n',
-              span(
-                { class: "text-sky-800 dark:text-sky-300" },
-                "// call anywhere within VanJS codespace\n",
-              ),
-              'Activity({ class: "icon" })\n',
             ),
             div(
-              { class: "flex flex-row gap-5" },
+              { class: "flex flex-col md:flex-row gap-5 my-10" },
               a(
                 {
-                  class: "py-3 flex items-center mb-10 gap-3",
+                  class: "py-3 flex items-center gap-3",
                   href: "https://github.com/thednp/vanjs-feather",
                   target: "_blank",
                   title: "Get more guides on Github page",
@@ -98,7 +257,7 @@ export default function Main() {
               ),
               a(
                 {
-                  class: "py-3 flex items-center mb-10 gap-3",
+                  class: "py-3 flex items-center gap-3",
                   href: "#preview",
                   title: "Click to preview the icons",
                 },
@@ -112,43 +271,61 @@ export default function Main() {
     ),
     div(
       { id: "preview", class: "container p-5 mx-auto my-20" },
-      h2(
-        {
-          class:
-            "mb-5 text-2xl font-light font-stretch-125% text-black dark:text-white",
-        },
-        "Preview",
-      ),
       div(
-        {
+        { class: "flex flex-row mb-5 " },
+        h2(
+          {
+            class:
+              "text-2xl font-light font-stretch-125% text-black dark:text-white",
+          },
+          "Preview",
+        ),
+        input({
+          class:
+            "ml-auto min-w-20 w-48 px-3 py-2 border border-gray-500/30 rounded autofill:!bg-transparent",
+          placeholder: "Find icon",
+          name: "query",
+          id: "query",
+          value: query,
+          type: "text",
+          "aria-label": "Search icon",
+          oninput: (e: ChangeEvent) => query.val = String(e.target.value),
+        }),
+      ),
+      vanX.list(
+        div({
           class:
             "grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 grid-flow-row gap-4",
-        },
-        ...Icons.map(([name, icon]) =>
-          Tooltip(
+        }),
+        List.icons,
+        (item) => {
+          const { name, icon, lowerName } = item.val;
+
+          return Tooltip(
             {
               tip: name,
             },
             button(
               {
-                "data-target": `feather-icon-${name}`,
+                "data-target": `feather-icon-${lowerName}`,
                 onclick: copyToClipboard,
                 class:
-                  "w-full flex flex-col items-center cursor-pointer p-3 lg:py-4 xl:py-5 rounded-[5px] bg-slate-50 hover:bg-slate-200 dark:bg-slate-950 dark:hover:bg-slate-800",
+                  "w-full flex flex-col items-center cursor-pointer p-3 py-8 xl:py-12 rounded-[5px] bg-slate-50 hover:bg-slate-200 dark:bg-slate-950 dark:hover:bg-slate-800",
               },
               icon({ class: "text-slate-500" }),
               span(
                 {
-                  id: `feather-icon-${name}`,
+                  id: `feather-icon-${lowerName}`,
                   class:
                     "text-[12px] font-semibold font-stretch-90% text-black dark:text-white",
                 },
                 name,
               ),
             ),
-          )
-        ),
+          );
+        },
       ),
+      loader,
     ),
   );
 }

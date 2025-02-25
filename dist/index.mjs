@@ -6,56 +6,24 @@ import van2 from "vanjs-core";
 
 // src/FeatherIcon.ts
 import van from "vanjs-core";
-var isState = /* @__PURE__ */ __name((v) => {
-  return v !== null && typeof v === "object" && "val" in v;
-}, "isState");
+var svgNamespace = "http://www.w3.org/2000/svg";
 var FeatherIcon = /* @__PURE__ */ __name((props = {}, ...children) => {
-  const ns = "http://www.w3.org/2000/svg";
-  const { svg } = van.tags(ns);
-  const {
-    id,
-    class: className,
-    style,
-    width,
-    height,
-    strokeWidth,
-    stroke,
-    ...rest
-  } = props;
-  const reactiveProps = {
-    xmlns: ns,
+  const { svg } = van.tags(svgNamespace);
+  const defaultProps = {
+    xmlns: svgNamespace,
     viewBox: "0 0 24 24",
     fill: "none",
-    width: van.derive(() => isState(width) ? width.val : width || 24),
-    height: van.derive(
-      () => isState(height) ? height.val : height || 24
-    ),
-    stroke: van.derive(
-      () => isState(stroke) ? stroke.val : stroke || "currentColor"
-    ),
-    "stroke-width": van.derive(
-      () => isState(strokeWidth) ? strokeWidth.val : strokeWidth || 2
-    ),
+    width: 24,
+    height: 24,
+    stroke: "currentColor",
+    "stroke-width": 2,
     "stroke-linecap": "round",
     "stroke-linejoin": "round"
   };
-  if (id) {
-    reactiveProps.id = id;
-  }
-  van.derive(() => {
-    if (className) {
-      reactiveProps.class = isState(className) ? className.val : className || "";
-    }
-  });
-  van.derive(() => {
-    if (style) {
-      reactiveProps.style = isState(style) ? style.val : style || "";
-    }
-  });
   return svg(
     {
-      ...reactiveProps,
-      ...rest
+      ...defaultProps,
+      ...props
     },
     children
   );
@@ -63,7 +31,7 @@ var FeatherIcon = /* @__PURE__ */ __name((props = {}, ...children) => {
 
 // src/icons/Activity.ts
 var Activity = /* @__PURE__ */ __name((props) => {
-  const { polyline } = van2.tags("http://www.w3.org/2000/svg");
+  const { polyline } = van2.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -75,7 +43,7 @@ var Activity = /* @__PURE__ */ __name((props) => {
 // src/icons/Airplay.ts
 import van3 from "vanjs-core";
 var Airplay = /* @__PURE__ */ __name((props) => {
-  const { path, polygon } = van3.tags("http://www.w3.org/2000/svg");
+  const { path, polygon } = van3.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -90,7 +58,7 @@ var Airplay = /* @__PURE__ */ __name((props) => {
 // src/icons/AlertCircle.ts
 import van4 from "vanjs-core";
 var AlertCircle = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = van4.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = van4.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -116,7 +84,7 @@ var AlertCircle = /* @__PURE__ */ __name((props) => {
 // src/icons/AlertOctagon.ts
 import van5 from "vanjs-core";
 var AlertOctagon = /* @__PURE__ */ __name((props) => {
-  const { polygon, line } = van5.tags("http://www.w3.org/2000/svg");
+  const { polygon, line } = van5.tags(svgNamespace);
   return FeatherIcon(
     props,
     polygon({
@@ -140,7 +108,7 @@ var AlertOctagon = /* @__PURE__ */ __name((props) => {
 // src/icons/AlertTriangle.ts
 import van6 from "vanjs-core";
 var AlertTriangle = /* @__PURE__ */ __name((props) => {
-  const { path, line } = van6.tags("http://www.w3.org/2000/svg");
+  const { path, line } = van6.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -164,7 +132,7 @@ var AlertTriangle = /* @__PURE__ */ __name((props) => {
 // src/icons/AlignCenter.ts
 import van7 from "vanjs-core";
 var AlignCenter = /* @__PURE__ */ __name((props) => {
-  const { line } = van7.tags("http://www.w3.org/2000/svg");
+  const { line } = van7.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -197,7 +165,7 @@ var AlignCenter = /* @__PURE__ */ __name((props) => {
 // src/icons/AlignJustify.ts
 import van8 from "vanjs-core";
 var AlignJustify = /* @__PURE__ */ __name((props) => {
-  const { line } = van8.tags("http://www.w3.org/2000/svg");
+  const { line } = van8.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -230,7 +198,7 @@ var AlignJustify = /* @__PURE__ */ __name((props) => {
 // src/icons/AlignLeft.ts
 import van9 from "vanjs-core";
 var AlignLeft = /* @__PURE__ */ __name((props) => {
-  const { line } = van9.tags("http://www.w3.org/2000/svg");
+  const { line } = van9.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -263,7 +231,7 @@ var AlignLeft = /* @__PURE__ */ __name((props) => {
 // src/icons/AlignRight.ts
 import van10 from "vanjs-core";
 var AlignRight = /* @__PURE__ */ __name((props) => {
-  const { line } = van10.tags("http://www.w3.org/2000/svg");
+  const { line } = van10.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -296,7 +264,7 @@ var AlignRight = /* @__PURE__ */ __name((props) => {
 // src/icons/Anchor.ts
 import van11 from "vanjs-core";
 var Anchor = /* @__PURE__ */ __name((props) => {
-  const { path, circle, line } = van11.tags("http://www.w3.org/2000/svg");
+  const { path, circle, line } = van11.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -319,7 +287,7 @@ var Anchor = /* @__PURE__ */ __name((props) => {
 // src/icons/Aperture.ts
 import van12 from "vanjs-core";
 var Aperture = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = van12.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = van12.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -369,7 +337,7 @@ var Aperture = /* @__PURE__ */ __name((props) => {
 // src/icons/Archive.ts
 import van13 from "vanjs-core";
 var Archive = /* @__PURE__ */ __name((props) => {
-  const { polyline, line, rect } = van13.tags("http://www.w3.org/2000/svg");
+  const { polyline, line, rect } = van13.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -393,7 +361,7 @@ var Archive = /* @__PURE__ */ __name((props) => {
 // src/icons/ArrowDown.ts
 import van14 from "vanjs-core";
 var ArrowDown = /* @__PURE__ */ __name((props) => {
-  const { polyline, line } = van14.tags("http://www.w3.org/2000/svg");
+  const { polyline, line } = van14.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -411,7 +379,7 @@ var ArrowDown = /* @__PURE__ */ __name((props) => {
 // src/icons/ArrowDownCircle.ts
 import van15 from "vanjs-core";
 var ArrowDownCircle = /* @__PURE__ */ __name((props) => {
-  const { polyline, circle, line } = van15.tags("http://www.w3.org/2000/svg");
+  const { polyline, circle, line } = van15.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -434,7 +402,7 @@ var ArrowDownCircle = /* @__PURE__ */ __name((props) => {
 // src/icons/ArrowDownLeft.ts
 import van16 from "vanjs-core";
 var ArrowDownLeft = /* @__PURE__ */ __name((props) => {
-  const { polyline, line } = van16.tags("http://www.w3.org/2000/svg");
+  const { polyline, line } = van16.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -452,7 +420,7 @@ var ArrowDownLeft = /* @__PURE__ */ __name((props) => {
 // src/icons/ArrowDownRight.ts
 import van17 from "vanjs-core";
 var ArrowDownRight = /* @__PURE__ */ __name((props) => {
-  const { polyline, line } = van17.tags("http://www.w3.org/2000/svg");
+  const { polyline, line } = van17.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -470,7 +438,7 @@ var ArrowDownRight = /* @__PURE__ */ __name((props) => {
 // src/icons/ArrowLeft.ts
 import van18 from "vanjs-core";
 var ArrowLeft = /* @__PURE__ */ __name((props) => {
-  const { polyline, line } = van18.tags("http://www.w3.org/2000/svg");
+  const { polyline, line } = van18.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -488,7 +456,7 @@ var ArrowLeft = /* @__PURE__ */ __name((props) => {
 // src/icons/ArrowLeftCircle.ts
 import van19 from "vanjs-core";
 var ArrowLeftCircle = /* @__PURE__ */ __name((props) => {
-  const { polyline, circle, line } = van19.tags("http://www.w3.org/2000/svg");
+  const { polyline, circle, line } = van19.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -511,7 +479,7 @@ var ArrowLeftCircle = /* @__PURE__ */ __name((props) => {
 // src/icons/ArrowRight.ts
 import van20 from "vanjs-core";
 var ArrowRight = /* @__PURE__ */ __name((props) => {
-  const { polyline, line } = van20.tags("http://www.w3.org/2000/svg");
+  const { polyline, line } = van20.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -529,7 +497,7 @@ var ArrowRight = /* @__PURE__ */ __name((props) => {
 // src/icons/ArrowRightCircle.ts
 import van21 from "vanjs-core";
 var ArrowRightCircle = /* @__PURE__ */ __name((props) => {
-  const { polyline, circle, line } = van21.tags("http://www.w3.org/2000/svg");
+  const { polyline, circle, line } = van21.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -552,7 +520,7 @@ var ArrowRightCircle = /* @__PURE__ */ __name((props) => {
 // src/icons/ArrowUp.ts
 import van22 from "vanjs-core";
 var ArrowUp = /* @__PURE__ */ __name((props) => {
-  const { polyline, line } = van22.tags("http://www.w3.org/2000/svg");
+  const { polyline, line } = van22.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -570,7 +538,7 @@ var ArrowUp = /* @__PURE__ */ __name((props) => {
 // src/icons/ArrowUpCircle.ts
 import van23 from "vanjs-core";
 var ArrowUpCircle = /* @__PURE__ */ __name((props) => {
-  const { polyline, circle, line } = van23.tags("http://www.w3.org/2000/svg");
+  const { polyline, circle, line } = van23.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -593,7 +561,7 @@ var ArrowUpCircle = /* @__PURE__ */ __name((props) => {
 // src/icons/ArrowUpLeft.ts
 import van24 from "vanjs-core";
 var ArrowUpLeft = /* @__PURE__ */ __name((props) => {
-  const { polyline, line } = van24.tags("http://www.w3.org/2000/svg");
+  const { polyline, line } = van24.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -611,7 +579,7 @@ var ArrowUpLeft = /* @__PURE__ */ __name((props) => {
 // src/icons/ArrowUpRight.ts
 import van25 from "vanjs-core";
 var ArrowUpRight = /* @__PURE__ */ __name((props) => {
-  const { polyline, line } = van25.tags("http://www.w3.org/2000/svg");
+  const { polyline, line } = van25.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -629,7 +597,7 @@ var ArrowUpRight = /* @__PURE__ */ __name((props) => {
 // src/icons/AtSign.ts
 import van26 from "vanjs-core";
 var AtSign = /* @__PURE__ */ __name((props) => {
-  const { path, circle } = van26.tags("http://www.w3.org/2000/svg");
+  const { path, circle } = van26.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -646,7 +614,7 @@ var AtSign = /* @__PURE__ */ __name((props) => {
 // src/icons/Award.ts
 import van27 from "vanjs-core";
 var Award = /* @__PURE__ */ __name((props) => {
-  const { polyline, circle } = van27.tags("http://www.w3.org/2000/svg");
+  const { polyline, circle } = van27.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -663,7 +631,7 @@ var Award = /* @__PURE__ */ __name((props) => {
 // src/icons/BarChart.ts
 import van28 from "vanjs-core";
 var BarChart = /* @__PURE__ */ __name((props) => {
-  const { line } = van28.tags("http://www.w3.org/2000/svg");
+  const { line } = van28.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -690,7 +658,7 @@ var BarChart = /* @__PURE__ */ __name((props) => {
 // src/icons/BarChart2.ts
 import van29 from "vanjs-core";
 var BarChart2 = /* @__PURE__ */ __name((props) => {
-  const { line } = van29.tags("http://www.w3.org/2000/svg");
+  const { line } = van29.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -717,7 +685,7 @@ var BarChart2 = /* @__PURE__ */ __name((props) => {
 // src/icons/Battery.ts
 import van30 from "vanjs-core";
 var Battery = /* @__PURE__ */ __name((props) => {
-  const { line, rect } = van30.tags("http://www.w3.org/2000/svg");
+  const { line, rect } = van30.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({
@@ -740,7 +708,7 @@ var Battery = /* @__PURE__ */ __name((props) => {
 // src/icons/BatteryCharging.ts
 import van31 from "vanjs-core";
 var BatteryCharging = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = van31.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = van31.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -761,7 +729,7 @@ var BatteryCharging = /* @__PURE__ */ __name((props) => {
 // src/icons/Bell.ts
 import van32 from "vanjs-core";
 var Bell = /* @__PURE__ */ __name((props) => {
-  const { path } = van32.tags("http://www.w3.org/2000/svg");
+  const { path } = van32.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -776,7 +744,7 @@ var Bell = /* @__PURE__ */ __name((props) => {
 // src/icons/BellOff.ts
 import van33 from "vanjs-core";
 var BellOff = /* @__PURE__ */ __name((props) => {
-  const { path, line } = van33.tags("http://www.w3.org/2000/svg");
+  const { path, line } = van33.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -803,7 +771,7 @@ var BellOff = /* @__PURE__ */ __name((props) => {
 // src/icons/Bluetooth.ts
 import van34 from "vanjs-core";
 var Bluetooth = /* @__PURE__ */ __name((props) => {
-  const { polyline } = van34.tags("http://www.w3.org/2000/svg");
+  const { polyline } = van34.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -815,7 +783,7 @@ var Bluetooth = /* @__PURE__ */ __name((props) => {
 // src/icons/Bold.ts
 import van35 from "vanjs-core";
 var Bold = /* @__PURE__ */ __name((props) => {
-  const { path } = van35.tags("http://www.w3.org/2000/svg");
+  const { path } = van35.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -830,7 +798,7 @@ var Bold = /* @__PURE__ */ __name((props) => {
 // src/icons/Book.ts
 import van36 from "vanjs-core";
 var Book = /* @__PURE__ */ __name((props) => {
-  const { path } = van36.tags("http://www.w3.org/2000/svg");
+  const { path } = van36.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -845,7 +813,7 @@ var Book = /* @__PURE__ */ __name((props) => {
 // src/icons/BookOpen.ts
 import van37 from "vanjs-core";
 var BookOpen = /* @__PURE__ */ __name((props) => {
-  const { path } = van37.tags("http://www.w3.org/2000/svg");
+  const { path } = van37.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -860,7 +828,7 @@ var BookOpen = /* @__PURE__ */ __name((props) => {
 // src/icons/Bookmark.ts
 import van38 from "vanjs-core";
 var Bookmark = /* @__PURE__ */ __name((props) => {
-  const { path } = van38.tags("http://www.w3.org/2000/svg");
+  const { path } = van38.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -872,7 +840,7 @@ var Bookmark = /* @__PURE__ */ __name((props) => {
 // src/icons/Box.ts
 import van39 from "vanjs-core";
 var Box = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = van39.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = van39.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -893,7 +861,7 @@ var Box = /* @__PURE__ */ __name((props) => {
 // src/icons/Briefcase.ts
 import van40 from "vanjs-core";
 var Briefcase = /* @__PURE__ */ __name((props) => {
-  const { path, rect } = van40.tags("http://www.w3.org/2000/svg");
+  const { path, rect } = van40.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({
@@ -913,7 +881,7 @@ var Briefcase = /* @__PURE__ */ __name((props) => {
 // src/icons/Calendar.ts
 import van41 from "vanjs-core";
 var Calendar = /* @__PURE__ */ __name((props) => {
-  const { line, rect } = van41.tags("http://www.w3.org/2000/svg");
+  const { line, rect } = van41.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({
@@ -948,7 +916,7 @@ var Calendar = /* @__PURE__ */ __name((props) => {
 // src/icons/Camera.ts
 import van42 from "vanjs-core";
 var Camera = /* @__PURE__ */ __name((props) => {
-  const { path, circle } = van42.tags("http://www.w3.org/2000/svg");
+  const { path, circle } = van42.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -965,7 +933,7 @@ var Camera = /* @__PURE__ */ __name((props) => {
 // src/icons/CameraOff.ts
 import van43 from "vanjs-core";
 var CameraOff = /* @__PURE__ */ __name((props) => {
-  const { path, line } = van43.tags("http://www.w3.org/2000/svg");
+  const { path, line } = van43.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -983,7 +951,7 @@ var CameraOff = /* @__PURE__ */ __name((props) => {
 // src/icons/Cast.ts
 import van44 from "vanjs-core";
 var Cast = /* @__PURE__ */ __name((props) => {
-  const { path, line } = van44.tags("http://www.w3.org/2000/svg");
+  const { path, line } = van44.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -1001,7 +969,7 @@ var Cast = /* @__PURE__ */ __name((props) => {
 // src/icons/Check.ts
 import van45 from "vanjs-core";
 var Check = /* @__PURE__ */ __name((props) => {
-  const { polyline } = van45.tags("http://www.w3.org/2000/svg");
+  const { polyline } = van45.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -1013,7 +981,7 @@ var Check = /* @__PURE__ */ __name((props) => {
 // src/icons/CheckCircle.ts
 import van46 from "vanjs-core";
 var CheckCircle = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = van46.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = van46.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -1028,7 +996,7 @@ var CheckCircle = /* @__PURE__ */ __name((props) => {
 // src/icons/CheckSquare.ts
 import van47 from "vanjs-core";
 var CheckSquare = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = van47.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = van47.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -1043,7 +1011,7 @@ var CheckSquare = /* @__PURE__ */ __name((props) => {
 // src/icons/ChevronDown.ts
 import van48 from "vanjs-core";
 var ChevronDown = /* @__PURE__ */ __name((props) => {
-  const { polyline } = van48.tags("http://www.w3.org/2000/svg");
+  const { polyline } = van48.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -1055,7 +1023,7 @@ var ChevronDown = /* @__PURE__ */ __name((props) => {
 // src/icons/ChevronLeft.ts
 import van49 from "vanjs-core";
 var ChevronLeft = /* @__PURE__ */ __name((props) => {
-  const { polyline } = van49.tags("http://www.w3.org/2000/svg");
+  const { polyline } = van49.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -1067,7 +1035,7 @@ var ChevronLeft = /* @__PURE__ */ __name((props) => {
 // src/icons/ChevronRight.ts
 import van50 from "vanjs-core";
 var ChevronRight = /* @__PURE__ */ __name((props) => {
-  const { polyline } = van50.tags("http://www.w3.org/2000/svg");
+  const { polyline } = van50.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -1079,7 +1047,7 @@ var ChevronRight = /* @__PURE__ */ __name((props) => {
 // src/icons/ChevronUp.ts
 import van51 from "vanjs-core";
 var ChevronUp = /* @__PURE__ */ __name((props) => {
-  const { polyline } = van51.tags("http://www.w3.org/2000/svg");
+  const { polyline } = van51.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -1091,7 +1059,7 @@ var ChevronUp = /* @__PURE__ */ __name((props) => {
 // src/icons/ChevronsDown.ts
 import van52 from "vanjs-core";
 var ChevronsDown = /* @__PURE__ */ __name((props) => {
-  const { polyline } = van52.tags("http://www.w3.org/2000/svg");
+  const { polyline } = van52.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -1106,7 +1074,7 @@ var ChevronsDown = /* @__PURE__ */ __name((props) => {
 // src/icons/ChevronsLeft.ts
 import van53 from "vanjs-core";
 var ChevronsLeft = /* @__PURE__ */ __name((props) => {
-  const { polyline } = van53.tags("http://www.w3.org/2000/svg");
+  const { polyline } = van53.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -1121,7 +1089,7 @@ var ChevronsLeft = /* @__PURE__ */ __name((props) => {
 // src/icons/ChevronsRight.ts
 import van54 from "vanjs-core";
 var ChevronsRight = /* @__PURE__ */ __name((props) => {
-  const { polyline } = van54.tags("http://www.w3.org/2000/svg");
+  const { polyline } = van54.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -1136,7 +1104,7 @@ var ChevronsRight = /* @__PURE__ */ __name((props) => {
 // src/icons/ChevronsUp.ts
 import van55 from "vanjs-core";
 var ChevronsUp = /* @__PURE__ */ __name((props) => {
-  const { polyline } = van55.tags("http://www.w3.org/2000/svg");
+  const { polyline } = van55.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -1151,7 +1119,7 @@ var ChevronsUp = /* @__PURE__ */ __name((props) => {
 // src/icons/Chrome.ts
 import van56 from "vanjs-core";
 var Chrome = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = van56.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = van56.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -1188,7 +1156,7 @@ var Chrome = /* @__PURE__ */ __name((props) => {
 // src/icons/Circle.ts
 import van57 from "vanjs-core";
 var Circle = /* @__PURE__ */ __name((props) => {
-  const { circle } = van57.tags("http://www.w3.org/2000/svg");
+  const { circle } = van57.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -1202,7 +1170,7 @@ var Circle = /* @__PURE__ */ __name((props) => {
 // src/icons/Clipboard.ts
 import van58 from "vanjs-core";
 var Clipboard = /* @__PURE__ */ __name((props) => {
-  const { path, rect } = van58.tags("http://www.w3.org/2000/svg");
+  const { path, rect } = van58.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -1222,7 +1190,7 @@ var Clipboard = /* @__PURE__ */ __name((props) => {
 // src/icons/Clock.ts
 import van59 from "vanjs-core";
 var Clock = /* @__PURE__ */ __name((props) => {
-  const { polyline, circle } = van59.tags("http://www.w3.org/2000/svg");
+  const { polyline, circle } = van59.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -1239,7 +1207,7 @@ var Clock = /* @__PURE__ */ __name((props) => {
 // src/icons/Cloud.ts
 import van60 from "vanjs-core";
 var Cloud = /* @__PURE__ */ __name((props) => {
-  const { path } = van60.tags("http://www.w3.org/2000/svg");
+  const { path } = van60.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -1251,7 +1219,7 @@ var Cloud = /* @__PURE__ */ __name((props) => {
 // src/icons/CloudDrizzle.ts
 import van61 from "vanjs-core";
 var CloudDrizzle = /* @__PURE__ */ __name((props) => {
-  const { path, line } = van61.tags("http://www.w3.org/2000/svg");
+  const { path, line } = van61.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -1299,7 +1267,7 @@ var CloudDrizzle = /* @__PURE__ */ __name((props) => {
 // src/icons/CloudLightning.ts
 import van62 from "vanjs-core";
 var CloudLightning = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = van62.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = van62.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -1314,7 +1282,7 @@ var CloudLightning = /* @__PURE__ */ __name((props) => {
 // src/icons/CloudOff.ts
 import van63 from "vanjs-core";
 var CloudOff = /* @__PURE__ */ __name((props) => {
-  const { path, line } = van63.tags("http://www.w3.org/2000/svg");
+  const { path, line } = van63.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -1332,7 +1300,7 @@ var CloudOff = /* @__PURE__ */ __name((props) => {
 // src/icons/CloudRain.ts
 import van64 from "vanjs-core";
 var CloudRain = /* @__PURE__ */ __name((props) => {
-  const { path, line } = van64.tags("http://www.w3.org/2000/svg");
+  const { path, line } = van64.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -1362,7 +1330,7 @@ var CloudRain = /* @__PURE__ */ __name((props) => {
 // src/icons/CloudSnow.ts
 import van65 from "vanjs-core";
 var CloudSnow = /* @__PURE__ */ __name((props) => {
-  const { path, line } = van65.tags("http://www.w3.org/2000/svg");
+  const { path, line } = van65.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -1410,7 +1378,7 @@ var CloudSnow = /* @__PURE__ */ __name((props) => {
 // src/icons/Code.ts
 import van66 from "vanjs-core";
 var Code = /* @__PURE__ */ __name((props) => {
-  const { polyline } = van66.tags("http://www.w3.org/2000/svg");
+  const { polyline } = van66.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -1425,7 +1393,7 @@ var Code = /* @__PURE__ */ __name((props) => {
 // src/icons/Codepen.ts
 import van67 from "vanjs-core";
 var Codepen = /* @__PURE__ */ __name((props) => {
-  const { polyline, polygon, line } = van67.tags("http://www.w3.org/2000/svg");
+  const { polyline, polygon, line } = van67.tags(svgNamespace);
   return FeatherIcon(
     props,
     polygon({
@@ -1455,7 +1423,7 @@ var Codepen = /* @__PURE__ */ __name((props) => {
 // src/icons/Codesandbox.ts
 import van68 from "vanjs-core";
 var Codesandbox = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = van68.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = van68.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -1485,7 +1453,7 @@ var Codesandbox = /* @__PURE__ */ __name((props) => {
 // src/icons/Coffee.ts
 import van69 from "vanjs-core";
 var Coffee = /* @__PURE__ */ __name((props) => {
-  const { path, line } = van69.tags("http://www.w3.org/2000/svg");
+  const { path, line } = van69.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -1518,7 +1486,7 @@ var Coffee = /* @__PURE__ */ __name((props) => {
 // src/icons/Columns.ts
 import van70 from "vanjs-core";
 var Columns = /* @__PURE__ */ __name((props) => {
-  const { path } = van70.tags("http://www.w3.org/2000/svg");
+  const { path } = van70.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -1530,7 +1498,7 @@ var Columns = /* @__PURE__ */ __name((props) => {
 // src/icons/Command.ts
 import van71 from "vanjs-core";
 var Command = /* @__PURE__ */ __name((props) => {
-  const { path } = van71.tags("http://www.w3.org/2000/svg");
+  const { path } = van71.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -1542,7 +1510,7 @@ var Command = /* @__PURE__ */ __name((props) => {
 // src/icons/Compass.ts
 import van72 from "vanjs-core";
 var Compass = /* @__PURE__ */ __name((props) => {
-  const { polygon, circle } = van72.tags("http://www.w3.org/2000/svg");
+  const { polygon, circle } = van72.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -1559,7 +1527,7 @@ var Compass = /* @__PURE__ */ __name((props) => {
 // src/icons/Copy.ts
 import van73 from "vanjs-core";
 var Copy = /* @__PURE__ */ __name((props) => {
-  const { path, rect } = van73.tags("http://www.w3.org/2000/svg");
+  const { path, rect } = van73.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({
@@ -1579,7 +1547,7 @@ var Copy = /* @__PURE__ */ __name((props) => {
 // src/icons/CornerDownLeft.ts
 import van74 from "vanjs-core";
 var CornerDownLeft = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = van74.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = van74.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -1594,7 +1562,7 @@ var CornerDownLeft = /* @__PURE__ */ __name((props) => {
 // src/icons/CornerDownRight.ts
 import van75 from "vanjs-core";
 var CornerDownRight = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = van75.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = van75.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -1609,7 +1577,7 @@ var CornerDownRight = /* @__PURE__ */ __name((props) => {
 // src/icons/CornerLeftDown.ts
 import van76 from "vanjs-core";
 var CornerLeftDown = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = van76.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = van76.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -1624,7 +1592,7 @@ var CornerLeftDown = /* @__PURE__ */ __name((props) => {
 // src/icons/CornerLeftUp.ts
 import van77 from "vanjs-core";
 var CornerLeftUp = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = van77.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = van77.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -1639,7 +1607,7 @@ var CornerLeftUp = /* @__PURE__ */ __name((props) => {
 // src/icons/CornerRightDown.ts
 import van78 from "vanjs-core";
 var CornerRightDown = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = van78.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = van78.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -1654,7 +1622,7 @@ var CornerRightDown = /* @__PURE__ */ __name((props) => {
 // src/icons/CornerRightUp.ts
 import van79 from "vanjs-core";
 var CornerRightUp = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = van79.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = van79.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -1669,7 +1637,7 @@ var CornerRightUp = /* @__PURE__ */ __name((props) => {
 // src/icons/CornerUpLeft.ts
 import van80 from "vanjs-core";
 var CornerUpLeft = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = van80.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = van80.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -1684,7 +1652,7 @@ var CornerUpLeft = /* @__PURE__ */ __name((props) => {
 // src/icons/CornerUpRight.ts
 import van81 from "vanjs-core";
 var CornerUpRight = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = van81.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = van81.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -1699,7 +1667,7 @@ var CornerUpRight = /* @__PURE__ */ __name((props) => {
 // src/icons/Cpu.ts
 import van82 from "vanjs-core";
 var Cpu = /* @__PURE__ */ __name((props) => {
-  const { line, rect } = van82.tags("http://www.w3.org/2000/svg");
+  const { line, rect } = van82.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({
@@ -1770,7 +1738,7 @@ var Cpu = /* @__PURE__ */ __name((props) => {
 // src/icons/CreditCard.ts
 import van83 from "vanjs-core";
 var CreditCard = /* @__PURE__ */ __name((props) => {
-  const { line, rect } = van83.tags("http://www.w3.org/2000/svg");
+  const { line, rect } = van83.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({
@@ -1793,7 +1761,7 @@ var CreditCard = /* @__PURE__ */ __name((props) => {
 // src/icons/Crop.ts
 import van84 from "vanjs-core";
 var Crop = /* @__PURE__ */ __name((props) => {
-  const { path } = van84.tags("http://www.w3.org/2000/svg");
+  const { path } = van84.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -1808,7 +1776,7 @@ var Crop = /* @__PURE__ */ __name((props) => {
 // src/icons/Crosshair.ts
 import van85 from "vanjs-core";
 var Crosshair = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = van85.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = van85.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -1846,7 +1814,7 @@ var Crosshair = /* @__PURE__ */ __name((props) => {
 // src/icons/Database.ts
 import van86 from "vanjs-core";
 var Database = /* @__PURE__ */ __name((props) => {
-  const { path, ellipse } = van86.tags("http://www.w3.org/2000/svg");
+  const { path, ellipse } = van86.tags(svgNamespace);
   return FeatherIcon(
     props,
     ellipse({
@@ -1867,7 +1835,7 @@ var Database = /* @__PURE__ */ __name((props) => {
 // src/icons/Delete.ts
 import van87 from "vanjs-core";
 var Delete = /* @__PURE__ */ __name((props) => {
-  const { path, line } = van87.tags("http://www.w3.org/2000/svg");
+  const { path, line } = van87.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -1891,7 +1859,7 @@ var Delete = /* @__PURE__ */ __name((props) => {
 // src/icons/Disc.ts
 import van88 from "vanjs-core";
 var Disc = /* @__PURE__ */ __name((props) => {
-  const { circle } = van88.tags("http://www.w3.org/2000/svg");
+  const { circle } = van88.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -1910,7 +1878,7 @@ var Disc = /* @__PURE__ */ __name((props) => {
 // src/icons/Divide.ts
 import van89 from "vanjs-core";
 var Divide = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = van89.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = van89.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -1935,7 +1903,7 @@ var Divide = /* @__PURE__ */ __name((props) => {
 // src/icons/DivideCircle.ts
 import van90 from "vanjs-core";
 var DivideCircle = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = van90.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = van90.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -1967,7 +1935,7 @@ var DivideCircle = /* @__PURE__ */ __name((props) => {
 // src/icons/DivideSquare.ts
 import van91 from "vanjs-core";
 var DivideSquare = /* @__PURE__ */ __name((props) => {
-  const { line, rect } = van91.tags("http://www.w3.org/2000/svg");
+  const { line, rect } = van91.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({
@@ -2002,7 +1970,7 @@ var DivideSquare = /* @__PURE__ */ __name((props) => {
 // src/icons/DollarSign.ts
 import van92 from "vanjs-core";
 var DollarSign = /* @__PURE__ */ __name((props) => {
-  const { path, line } = van92.tags("http://www.w3.org/2000/svg");
+  const { path, line } = van92.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -2020,7 +1988,7 @@ var DollarSign = /* @__PURE__ */ __name((props) => {
 // src/icons/Download.ts
 import van93 from "vanjs-core";
 var Download = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = van93.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = van93.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -2041,7 +2009,7 @@ var Download = /* @__PURE__ */ __name((props) => {
 // src/icons/DownloadCloud.ts
 import van94 from "vanjs-core";
 var DownloadCloud = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = van94.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = van94.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -2062,7 +2030,7 @@ var DownloadCloud = /* @__PURE__ */ __name((props) => {
 // src/icons/Dribbble.ts
 import van95 from "vanjs-core";
 var Dribbble = /* @__PURE__ */ __name((props) => {
-  const { path, circle } = van95.tags("http://www.w3.org/2000/svg");
+  const { path, circle } = van95.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -2079,7 +2047,7 @@ var Dribbble = /* @__PURE__ */ __name((props) => {
 // src/icons/Droplet.ts
 import van96 from "vanjs-core";
 var Droplet = /* @__PURE__ */ __name((props) => {
-  const { path } = van96.tags("http://www.w3.org/2000/svg");
+  const { path } = van96.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -2091,7 +2059,7 @@ var Droplet = /* @__PURE__ */ __name((props) => {
 // src/icons/Edit.ts
 import van97 from "vanjs-core";
 var Edit = /* @__PURE__ */ __name((props) => {
-  const { path } = van97.tags("http://www.w3.org/2000/svg");
+  const { path } = van97.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -2106,7 +2074,7 @@ var Edit = /* @__PURE__ */ __name((props) => {
 // src/icons/Edit2.ts
 import van98 from "vanjs-core";
 var Edit2 = /* @__PURE__ */ __name((props) => {
-  const { path } = van98.tags("http://www.w3.org/2000/svg");
+  const { path } = van98.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -2118,7 +2086,7 @@ var Edit2 = /* @__PURE__ */ __name((props) => {
 // src/icons/Edit3.ts
 import van99 from "vanjs-core";
 var Edit3 = /* @__PURE__ */ __name((props) => {
-  const { path } = van99.tags("http://www.w3.org/2000/svg");
+  const { path } = van99.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -2133,7 +2101,7 @@ var Edit3 = /* @__PURE__ */ __name((props) => {
 // src/icons/ExternalLink.ts
 import van100 from "vanjs-core";
 var ExternalLink = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = van100.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = van100.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -2154,7 +2122,7 @@ var ExternalLink = /* @__PURE__ */ __name((props) => {
 // src/icons/Eye.ts
 import van101 from "vanjs-core";
 var Eye = /* @__PURE__ */ __name((props) => {
-  const { path, circle } = van101.tags("http://www.w3.org/2000/svg");
+  const { path, circle } = van101.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -2171,7 +2139,7 @@ var Eye = /* @__PURE__ */ __name((props) => {
 // src/icons/EyeOff.ts
 import van102 from "vanjs-core";
 var EyeOff = /* @__PURE__ */ __name((props) => {
-  const { path, line } = van102.tags("http://www.w3.org/2000/svg");
+  const { path, line } = van102.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -2189,7 +2157,7 @@ var EyeOff = /* @__PURE__ */ __name((props) => {
 // src/icons/Facebook.ts
 import van103 from "vanjs-core";
 var Facebook = /* @__PURE__ */ __name((props) => {
-  const { path } = van103.tags("http://www.w3.org/2000/svg");
+  const { path } = van103.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -2201,7 +2169,7 @@ var Facebook = /* @__PURE__ */ __name((props) => {
 // src/icons/FastForward.ts
 import van104 from "vanjs-core";
 var FastForward = /* @__PURE__ */ __name((props) => {
-  const { polygon } = van104.tags("http://www.w3.org/2000/svg");
+  const { polygon } = van104.tags(svgNamespace);
   return FeatherIcon(
     props,
     polygon({
@@ -2216,7 +2184,7 @@ var FastForward = /* @__PURE__ */ __name((props) => {
 // src/icons/Feather.ts
 import van105 from "vanjs-core";
 var Feather = /* @__PURE__ */ __name((props) => {
-  const { path, line } = van105.tags("http://www.w3.org/2000/svg");
+  const { path, line } = van105.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -2240,7 +2208,7 @@ var Feather = /* @__PURE__ */ __name((props) => {
 // src/icons/Figma.ts
 import van106 from "vanjs-core";
 var Figma = /* @__PURE__ */ __name((props) => {
-  const { path } = van106.tags("http://www.w3.org/2000/svg");
+  const { path } = van106.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -2264,7 +2232,7 @@ var Figma = /* @__PURE__ */ __name((props) => {
 // src/icons/File.ts
 import van107 from "vanjs-core";
 var File = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = van107.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = van107.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -2279,7 +2247,7 @@ var File = /* @__PURE__ */ __name((props) => {
 // src/icons/FileMinus.ts
 import van108 from "vanjs-core";
 var FileMinus = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = van108.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = van108.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -2300,7 +2268,7 @@ var FileMinus = /* @__PURE__ */ __name((props) => {
 // src/icons/FilePlus.ts
 import van109 from "vanjs-core";
 var FilePlus = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = van109.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = van109.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -2327,7 +2295,7 @@ var FilePlus = /* @__PURE__ */ __name((props) => {
 // src/icons/FileText.ts
 import van110 from "vanjs-core";
 var FileText = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = van110.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = van110.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -2357,7 +2325,7 @@ var FileText = /* @__PURE__ */ __name((props) => {
 // src/icons/Film.ts
 import van111 from "vanjs-core";
 var Film = /* @__PURE__ */ __name((props) => {
-  const { line, rect } = van111.tags("http://www.w3.org/2000/svg");
+  const { line, rect } = van111.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({
@@ -2416,7 +2384,7 @@ var Film = /* @__PURE__ */ __name((props) => {
 // src/icons/Filter.ts
 import van112 from "vanjs-core";
 var Filter = /* @__PURE__ */ __name((props) => {
-  const { polygon } = van112.tags("http://www.w3.org/2000/svg");
+  const { polygon } = van112.tags(svgNamespace);
   return FeatherIcon(
     props,
     polygon({
@@ -2428,7 +2396,7 @@ var Filter = /* @__PURE__ */ __name((props) => {
 // src/icons/Flag.ts
 import van113 from "vanjs-core";
 var Flag = /* @__PURE__ */ __name((props) => {
-  const { path, line } = van113.tags("http://www.w3.org/2000/svg");
+  const { path, line } = van113.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -2446,7 +2414,7 @@ var Flag = /* @__PURE__ */ __name((props) => {
 // src/icons/Folder.ts
 import van114 from "vanjs-core";
 var Folder = /* @__PURE__ */ __name((props) => {
-  const { path } = van114.tags("http://www.w3.org/2000/svg");
+  const { path } = van114.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -2458,7 +2426,7 @@ var Folder = /* @__PURE__ */ __name((props) => {
 // src/icons/FolderMinus.ts
 import van115 from "vanjs-core";
 var FolderMinus = /* @__PURE__ */ __name((props) => {
-  const { path, line } = van115.tags("http://www.w3.org/2000/svg");
+  const { path, line } = van115.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -2476,7 +2444,7 @@ var FolderMinus = /* @__PURE__ */ __name((props) => {
 // src/icons/FolderPlus.ts
 import van116 from "vanjs-core";
 var FolderPlus = /* @__PURE__ */ __name((props) => {
-  const { path, line } = van116.tags("http://www.w3.org/2000/svg");
+  const { path, line } = van116.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -2500,7 +2468,7 @@ var FolderPlus = /* @__PURE__ */ __name((props) => {
 // src/icons/Framer.ts
 import van117 from "vanjs-core";
 var Framer = /* @__PURE__ */ __name((props) => {
-  const { path } = van117.tags("http://www.w3.org/2000/svg");
+  const { path } = van117.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -2512,7 +2480,7 @@ var Framer = /* @__PURE__ */ __name((props) => {
 // src/icons/Frown.ts
 import van118 from "vanjs-core";
 var Frown = /* @__PURE__ */ __name((props) => {
-  const { path, circle, line } = van118.tags("http://www.w3.org/2000/svg");
+  const { path, circle, line } = van118.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -2541,7 +2509,7 @@ var Frown = /* @__PURE__ */ __name((props) => {
 // src/icons/Gift.ts
 import van119 from "vanjs-core";
 var Gift = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line, rect } = van119.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line, rect } = van119.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -2571,7 +2539,7 @@ var Gift = /* @__PURE__ */ __name((props) => {
 // src/icons/GitBranch.ts
 import van120 from "vanjs-core";
 var GitBranch = /* @__PURE__ */ __name((props) => {
-  const { path, circle, line } = van120.tags("http://www.w3.org/2000/svg");
+  const { path, circle, line } = van120.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -2599,7 +2567,7 @@ var GitBranch = /* @__PURE__ */ __name((props) => {
 // src/icons/GitCommit.ts
 import van121 from "vanjs-core";
 var GitCommit = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = van121.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = van121.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -2625,7 +2593,7 @@ var GitCommit = /* @__PURE__ */ __name((props) => {
 // src/icons/GitMerge.ts
 import van122 from "vanjs-core";
 var GitMerge = /* @__PURE__ */ __name((props) => {
-  const { path, circle } = van122.tags("http://www.w3.org/2000/svg");
+  const { path, circle } = van122.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -2647,7 +2615,7 @@ var GitMerge = /* @__PURE__ */ __name((props) => {
 // src/icons/GitPullRequest.ts
 import van123 from "vanjs-core";
 var GitPullRequest = /* @__PURE__ */ __name((props) => {
-  const { path, circle, line } = van123.tags("http://www.w3.org/2000/svg");
+  const { path, circle, line } = van123.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -2675,7 +2643,7 @@ var GitPullRequest = /* @__PURE__ */ __name((props) => {
 // src/icons/Github.ts
 import van124 from "vanjs-core";
 var Github = /* @__PURE__ */ __name((props) => {
-  const { path } = van124.tags("http://www.w3.org/2000/svg");
+  const { path } = van124.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -2687,7 +2655,7 @@ var Github = /* @__PURE__ */ __name((props) => {
 // src/icons/Gitlab.ts
 import van125 from "vanjs-core";
 var Gitlab = /* @__PURE__ */ __name((props) => {
-  const { path } = van125.tags("http://www.w3.org/2000/svg");
+  const { path } = van125.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -2699,7 +2667,7 @@ var Gitlab = /* @__PURE__ */ __name((props) => {
 // src/icons/Globe.ts
 import van126 from "vanjs-core";
 var Globe = /* @__PURE__ */ __name((props) => {
-  const { path, circle, line } = van126.tags("http://www.w3.org/2000/svg");
+  const { path, circle, line } = van126.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -2722,7 +2690,7 @@ var Globe = /* @__PURE__ */ __name((props) => {
 // src/icons/Grid.ts
 import van127 from "vanjs-core";
 var Grid = /* @__PURE__ */ __name((props) => {
-  const { rect } = van127.tags("http://www.w3.org/2000/svg");
+  const { rect } = van127.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({
@@ -2755,7 +2723,7 @@ var Grid = /* @__PURE__ */ __name((props) => {
 // src/icons/HardDrive.ts
 import van128 from "vanjs-core";
 var HardDrive = /* @__PURE__ */ __name((props) => {
-  const { path, line } = van128.tags("http://www.w3.org/2000/svg");
+  const { path, line } = van128.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -2785,7 +2753,7 @@ var HardDrive = /* @__PURE__ */ __name((props) => {
 // src/icons/Hash.ts
 import van129 from "vanjs-core";
 var Hash = /* @__PURE__ */ __name((props) => {
-  const { line } = van129.tags("http://www.w3.org/2000/svg");
+  const { line } = van129.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -2818,7 +2786,7 @@ var Hash = /* @__PURE__ */ __name((props) => {
 // src/icons/Headphones.ts
 import van130 from "vanjs-core";
 var Headphones = /* @__PURE__ */ __name((props) => {
-  const { path } = van130.tags("http://www.w3.org/2000/svg");
+  const { path } = van130.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -2833,7 +2801,7 @@ var Headphones = /* @__PURE__ */ __name((props) => {
 // src/icons/Heart.ts
 import van131 from "vanjs-core";
 var Heart = /* @__PURE__ */ __name((props) => {
-  const { path } = van131.tags("http://www.w3.org/2000/svg");
+  const { path } = van131.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -2845,7 +2813,7 @@ var Heart = /* @__PURE__ */ __name((props) => {
 // src/icons/HelpCircle.ts
 import van132 from "vanjs-core";
 var HelpCircle = /* @__PURE__ */ __name((props) => {
-  const { path, circle, line } = van132.tags("http://www.w3.org/2000/svg");
+  const { path, circle, line } = van132.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -2868,7 +2836,7 @@ var HelpCircle = /* @__PURE__ */ __name((props) => {
 // src/icons/Hexagon.ts
 import van133 from "vanjs-core";
 var Hexagon = /* @__PURE__ */ __name((props) => {
-  const { path } = van133.tags("http://www.w3.org/2000/svg");
+  const { path } = van133.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -2880,7 +2848,7 @@ var Hexagon = /* @__PURE__ */ __name((props) => {
 // src/icons/Home.ts
 import van134 from "vanjs-core";
 var Home = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = van134.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = van134.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -2895,7 +2863,7 @@ var Home = /* @__PURE__ */ __name((props) => {
 // src/icons/Image.ts
 import van135 from "vanjs-core";
 var Image = /* @__PURE__ */ __name((props) => {
-  const { polyline, circle, rect } = van135.tags("http://www.w3.org/2000/svg");
+  const { polyline, circle, rect } = van135.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({
@@ -2920,7 +2888,7 @@ var Image = /* @__PURE__ */ __name((props) => {
 // src/icons/Inbox.ts
 import van136 from "vanjs-core";
 var Inbox = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = van136.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = van136.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -2935,7 +2903,7 @@ var Inbox = /* @__PURE__ */ __name((props) => {
 // src/icons/Info.ts
 import van137 from "vanjs-core";
 var Info = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = van137.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = van137.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -2961,7 +2929,7 @@ var Info = /* @__PURE__ */ __name((props) => {
 // src/icons/Instagram.ts
 import van138 from "vanjs-core";
 var Instagram = /* @__PURE__ */ __name((props) => {
-  const { path, line, rect } = van138.tags("http://www.w3.org/2000/svg");
+  const { path, line, rect } = van138.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({
@@ -2987,7 +2955,7 @@ var Instagram = /* @__PURE__ */ __name((props) => {
 // src/icons/Italic.ts
 import van139 from "vanjs-core";
 var Italic = /* @__PURE__ */ __name((props) => {
-  const { line } = van139.tags("http://www.w3.org/2000/svg");
+  const { line } = van139.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -3014,7 +2982,7 @@ var Italic = /* @__PURE__ */ __name((props) => {
 // src/icons/Key.ts
 import van140 from "vanjs-core";
 var Key = /* @__PURE__ */ __name((props) => {
-  const { path } = van140.tags("http://www.w3.org/2000/svg");
+  const { path } = van140.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -3026,7 +2994,7 @@ var Key = /* @__PURE__ */ __name((props) => {
 // src/icons/Layers.ts
 import van141 from "vanjs-core";
 var Layers = /* @__PURE__ */ __name((props) => {
-  const { polyline, polygon } = van141.tags("http://www.w3.org/2000/svg");
+  const { polyline, polygon } = van141.tags(svgNamespace);
   return FeatherIcon(
     props,
     polygon({
@@ -3044,7 +3012,7 @@ var Layers = /* @__PURE__ */ __name((props) => {
 // src/icons/Layout.ts
 import van142 from "vanjs-core";
 var Layout = /* @__PURE__ */ __name((props) => {
-  const { line, rect } = van142.tags("http://www.w3.org/2000/svg");
+  const { line, rect } = van142.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({
@@ -3073,7 +3041,7 @@ var Layout = /* @__PURE__ */ __name((props) => {
 // src/icons/LifeBuoy.ts
 import van143 from "vanjs-core";
 var LifeBuoy = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = van143.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = van143.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -3122,7 +3090,7 @@ var LifeBuoy = /* @__PURE__ */ __name((props) => {
 // src/icons/Link.ts
 import van144 from "vanjs-core";
 var Link = /* @__PURE__ */ __name((props) => {
-  const { path } = van144.tags("http://www.w3.org/2000/svg");
+  const { path } = van144.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -3137,7 +3105,7 @@ var Link = /* @__PURE__ */ __name((props) => {
 // src/icons/Link2.ts
 import van145 from "vanjs-core";
 var Link2 = /* @__PURE__ */ __name((props) => {
-  const { path, line } = van145.tags("http://www.w3.org/2000/svg");
+  const { path, line } = van145.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -3155,7 +3123,7 @@ var Link2 = /* @__PURE__ */ __name((props) => {
 // src/icons/Linkedin.ts
 import van146 from "vanjs-core";
 var Linkedin = /* @__PURE__ */ __name((props) => {
-  const { path, circle, rect } = van146.tags("http://www.w3.org/2000/svg");
+  const { path, circle, rect } = van146.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -3178,7 +3146,7 @@ var Linkedin = /* @__PURE__ */ __name((props) => {
 // src/icons/List.ts
 import van147 from "vanjs-core";
 var List = /* @__PURE__ */ __name((props) => {
-  const { line } = van147.tags("http://www.w3.org/2000/svg");
+  const { line } = van147.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -3223,7 +3191,7 @@ var List = /* @__PURE__ */ __name((props) => {
 // src/icons/Loader.ts
 import van148 from "vanjs-core";
 var Loader = /* @__PURE__ */ __name((props) => {
-  const { line } = van148.tags("http://www.w3.org/2000/svg");
+  const { line } = van148.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -3280,7 +3248,7 @@ var Loader = /* @__PURE__ */ __name((props) => {
 // src/icons/Lock.ts
 import van149 from "vanjs-core";
 var Lock = /* @__PURE__ */ __name((props) => {
-  const { path, rect } = van149.tags("http://www.w3.org/2000/svg");
+  const { path, rect } = van149.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({
@@ -3300,7 +3268,7 @@ var Lock = /* @__PURE__ */ __name((props) => {
 // src/icons/LogIn.ts
 import van150 from "vanjs-core";
 var LogIn = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = van150.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = van150.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -3321,7 +3289,7 @@ var LogIn = /* @__PURE__ */ __name((props) => {
 // src/icons/LogOut.ts
 import van151 from "vanjs-core";
 var LogOut = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = van151.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = van151.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -3342,7 +3310,7 @@ var LogOut = /* @__PURE__ */ __name((props) => {
 // src/icons/Mail.ts
 import van152 from "vanjs-core";
 var Mail = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = van152.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = van152.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -3357,7 +3325,7 @@ var Mail = /* @__PURE__ */ __name((props) => {
 // src/icons/Map.ts
 import van153 from "vanjs-core";
 var Map = /* @__PURE__ */ __name((props) => {
-  const { polygon, line } = van153.tags("http://www.w3.org/2000/svg");
+  const { polygon, line } = van153.tags(svgNamespace);
   return FeatherIcon(
     props,
     polygon({
@@ -3381,7 +3349,7 @@ var Map = /* @__PURE__ */ __name((props) => {
 // src/icons/MapPin.ts
 import van154 from "vanjs-core";
 var MapPin = /* @__PURE__ */ __name((props) => {
-  const { path, circle } = van154.tags("http://www.w3.org/2000/svg");
+  const { path, circle } = van154.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -3398,7 +3366,7 @@ var MapPin = /* @__PURE__ */ __name((props) => {
 // src/icons/Maximize.ts
 import van155 from "vanjs-core";
 var Maximize = /* @__PURE__ */ __name((props) => {
-  const { path } = van155.tags("http://www.w3.org/2000/svg");
+  const { path } = van155.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -3410,7 +3378,7 @@ var Maximize = /* @__PURE__ */ __name((props) => {
 // src/icons/Maximize2.ts
 import van156 from "vanjs-core";
 var Maximize2 = /* @__PURE__ */ __name((props) => {
-  const { polyline, line } = van156.tags("http://www.w3.org/2000/svg");
+  const { polyline, line } = van156.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -3437,7 +3405,7 @@ var Maximize2 = /* @__PURE__ */ __name((props) => {
 // src/icons/Meh.ts
 import van157 from "vanjs-core";
 var Meh = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = van157.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = van157.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -3469,7 +3437,7 @@ var Meh = /* @__PURE__ */ __name((props) => {
 // src/icons/Menu.ts
 import van158 from "vanjs-core";
 var Menu = /* @__PURE__ */ __name((props) => {
-  const { line } = van158.tags("http://www.w3.org/2000/svg");
+  const { line } = van158.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -3496,7 +3464,7 @@ var Menu = /* @__PURE__ */ __name((props) => {
 // src/icons/MessageCircle.ts
 import van159 from "vanjs-core";
 var MessageCircle = /* @__PURE__ */ __name((props) => {
-  const { path } = van159.tags("http://www.w3.org/2000/svg");
+  const { path } = van159.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -3508,7 +3476,7 @@ var MessageCircle = /* @__PURE__ */ __name((props) => {
 // src/icons/MessageSquare.ts
 import van160 from "vanjs-core";
 var MessageSquare = /* @__PURE__ */ __name((props) => {
-  const { path } = van160.tags("http://www.w3.org/2000/svg");
+  const { path } = van160.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -3520,7 +3488,7 @@ var MessageSquare = /* @__PURE__ */ __name((props) => {
 // src/icons/Mic.ts
 import van161 from "vanjs-core";
 var Mic = /* @__PURE__ */ __name((props) => {
-  const { path, line } = van161.tags("http://www.w3.org/2000/svg");
+  const { path, line } = van161.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -3547,7 +3515,7 @@ var Mic = /* @__PURE__ */ __name((props) => {
 // src/icons/MicOff.ts
 import van162 from "vanjs-core";
 var MicOff = /* @__PURE__ */ __name((props) => {
-  const { path, line } = van162.tags("http://www.w3.org/2000/svg");
+  const { path, line } = van162.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -3580,7 +3548,7 @@ var MicOff = /* @__PURE__ */ __name((props) => {
 // src/icons/Minimize.ts
 import van163 from "vanjs-core";
 var Minimize = /* @__PURE__ */ __name((props) => {
-  const { path } = van163.tags("http://www.w3.org/2000/svg");
+  const { path } = van163.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -3592,7 +3560,7 @@ var Minimize = /* @__PURE__ */ __name((props) => {
 // src/icons/Minimize2.ts
 import van164 from "vanjs-core";
 var Minimize2 = /* @__PURE__ */ __name((props) => {
-  const { polyline, line } = van164.tags("http://www.w3.org/2000/svg");
+  const { polyline, line } = van164.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -3619,7 +3587,7 @@ var Minimize2 = /* @__PURE__ */ __name((props) => {
 // src/icons/Minus.ts
 import van165 from "vanjs-core";
 var Minus = /* @__PURE__ */ __name((props) => {
-  const { line } = van165.tags("http://www.w3.org/2000/svg");
+  const { line } = van165.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -3634,7 +3602,7 @@ var Minus = /* @__PURE__ */ __name((props) => {
 // src/icons/MinusCircle.ts
 import van166 from "vanjs-core";
 var MinusCircle = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = van166.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = van166.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -3654,7 +3622,7 @@ var MinusCircle = /* @__PURE__ */ __name((props) => {
 // src/icons/MinusSquare.ts
 import van167 from "vanjs-core";
 var MinusSquare = /* @__PURE__ */ __name((props) => {
-  const { line, rect } = van167.tags("http://www.w3.org/2000/svg");
+  const { line, rect } = van167.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({
@@ -3677,7 +3645,7 @@ var MinusSquare = /* @__PURE__ */ __name((props) => {
 // src/icons/Monitor.ts
 import van168 from "vanjs-core";
 var Monitor = /* @__PURE__ */ __name((props) => {
-  const { line, rect } = van168.tags("http://www.w3.org/2000/svg");
+  const { line, rect } = van168.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({
@@ -3706,7 +3674,7 @@ var Monitor = /* @__PURE__ */ __name((props) => {
 // src/icons/Moon.ts
 import van169 from "vanjs-core";
 var Moon = /* @__PURE__ */ __name((props) => {
-  const { path } = van169.tags("http://www.w3.org/2000/svg");
+  const { path } = van169.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -3718,7 +3686,7 @@ var Moon = /* @__PURE__ */ __name((props) => {
 // src/icons/MoreHorizontal.ts
 import van170 from "vanjs-core";
 var MoreHorizontal = /* @__PURE__ */ __name((props) => {
-  const { circle } = van170.tags("http://www.w3.org/2000/svg");
+  const { circle } = van170.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -3742,7 +3710,7 @@ var MoreHorizontal = /* @__PURE__ */ __name((props) => {
 // src/icons/MoreVertical.ts
 import van171 from "vanjs-core";
 var MoreVertical = /* @__PURE__ */ __name((props) => {
-  const { circle } = van171.tags("http://www.w3.org/2000/svg");
+  const { circle } = van171.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -3766,7 +3734,7 @@ var MoreVertical = /* @__PURE__ */ __name((props) => {
 // src/icons/MousePointer.ts
 import van172 from "vanjs-core";
 var MousePointer = /* @__PURE__ */ __name((props) => {
-  const { path } = van172.tags("http://www.w3.org/2000/svg");
+  const { path } = van172.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -3781,7 +3749,7 @@ var MousePointer = /* @__PURE__ */ __name((props) => {
 // src/icons/Move.ts
 import van173 from "vanjs-core";
 var Move = /* @__PURE__ */ __name((props) => {
-  const { polyline, line } = van173.tags("http://www.w3.org/2000/svg");
+  const { polyline, line } = van173.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -3814,7 +3782,7 @@ var Move = /* @__PURE__ */ __name((props) => {
 // src/icons/Music.ts
 import van174 from "vanjs-core";
 var Music = /* @__PURE__ */ __name((props) => {
-  const { path, circle } = van174.tags("http://www.w3.org/2000/svg");
+  const { path, circle } = van174.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -3836,7 +3804,7 @@ var Music = /* @__PURE__ */ __name((props) => {
 // src/icons/Navigation.ts
 import van175 from "vanjs-core";
 var Navigation = /* @__PURE__ */ __name((props) => {
-  const { polygon } = van175.tags("http://www.w3.org/2000/svg");
+  const { polygon } = van175.tags(svgNamespace);
   return FeatherIcon(
     props,
     polygon({
@@ -3848,7 +3816,7 @@ var Navigation = /* @__PURE__ */ __name((props) => {
 // src/icons/Navigation2.ts
 import van176 from "vanjs-core";
 var Navigation2 = /* @__PURE__ */ __name((props) => {
-  const { polygon } = van176.tags("http://www.w3.org/2000/svg");
+  const { polygon } = van176.tags(svgNamespace);
   return FeatherIcon(
     props,
     polygon({
@@ -3860,7 +3828,7 @@ var Navigation2 = /* @__PURE__ */ __name((props) => {
 // src/icons/Octagon.ts
 import van177 from "vanjs-core";
 var Octagon = /* @__PURE__ */ __name((props) => {
-  const { polygon } = van177.tags("http://www.w3.org/2000/svg");
+  const { polygon } = van177.tags(svgNamespace);
   return FeatherIcon(
     props,
     polygon({
@@ -3872,7 +3840,7 @@ var Octagon = /* @__PURE__ */ __name((props) => {
 // src/icons/Package.ts
 import van178 from "vanjs-core";
 var Package = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = van178.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = van178.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -3899,7 +3867,7 @@ var Package = /* @__PURE__ */ __name((props) => {
 // src/icons/Paperclip.ts
 import van179 from "vanjs-core";
 var Paperclip = /* @__PURE__ */ __name((props) => {
-  const { path } = van179.tags("http://www.w3.org/2000/svg");
+  const { path } = van179.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -3911,7 +3879,7 @@ var Paperclip = /* @__PURE__ */ __name((props) => {
 // src/icons/Pause.ts
 import van180 from "vanjs-core";
 var Pause = /* @__PURE__ */ __name((props) => {
-  const { rect } = van180.tags("http://www.w3.org/2000/svg");
+  const { rect } = van180.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({
@@ -3932,7 +3900,7 @@ var Pause = /* @__PURE__ */ __name((props) => {
 // src/icons/PauseCircle.ts
 import van181 from "vanjs-core";
 var PauseCircle = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = van181.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = van181.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -3958,7 +3926,7 @@ var PauseCircle = /* @__PURE__ */ __name((props) => {
 // src/icons/PenTool.ts
 import van182 from "vanjs-core";
 var PenTool = /* @__PURE__ */ __name((props) => {
-  const { path, circle } = van182.tags("http://www.w3.org/2000/svg");
+  const { path, circle } = van182.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -3981,7 +3949,7 @@ var PenTool = /* @__PURE__ */ __name((props) => {
 // src/icons/Percent.ts
 import van183 from "vanjs-core";
 var Percent = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = van183.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = van183.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -4006,7 +3974,7 @@ var Percent = /* @__PURE__ */ __name((props) => {
 // src/icons/Phone.ts
 import van184 from "vanjs-core";
 var Phone = /* @__PURE__ */ __name((props) => {
-  const { path } = van184.tags("http://www.w3.org/2000/svg");
+  const { path } = van184.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -4018,7 +3986,7 @@ var Phone = /* @__PURE__ */ __name((props) => {
 // src/icons/PhoneCall.ts
 import van185 from "vanjs-core";
 var PhoneCall = /* @__PURE__ */ __name((props) => {
-  const { path } = van185.tags("http://www.w3.org/2000/svg");
+  const { path } = van185.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -4030,7 +3998,7 @@ var PhoneCall = /* @__PURE__ */ __name((props) => {
 // src/icons/PhoneForwarded.ts
 import van186 from "vanjs-core";
 var PhoneForwarded = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = van186.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = van186.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -4051,7 +4019,7 @@ var PhoneForwarded = /* @__PURE__ */ __name((props) => {
 // src/icons/PhoneIncoming.ts
 import van187 from "vanjs-core";
 var PhoneIncoming = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = van187.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = van187.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -4072,7 +4040,7 @@ var PhoneIncoming = /* @__PURE__ */ __name((props) => {
 // src/icons/PhoneMissed.ts
 import van188 from "vanjs-core";
 var PhoneMissed = /* @__PURE__ */ __name((props) => {
-  const { path, line } = van188.tags("http://www.w3.org/2000/svg");
+  const { path, line } = van188.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -4096,7 +4064,7 @@ var PhoneMissed = /* @__PURE__ */ __name((props) => {
 // src/icons/PhoneOff.ts
 import van189 from "vanjs-core";
 var PhoneOff = /* @__PURE__ */ __name((props) => {
-  const { path, line } = van189.tags("http://www.w3.org/2000/svg");
+  const { path, line } = van189.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -4114,7 +4082,7 @@ var PhoneOff = /* @__PURE__ */ __name((props) => {
 // src/icons/PhoneOutgoing.ts
 import van190 from "vanjs-core";
 var PhoneOutgoing = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = van190.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = van190.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -4135,7 +4103,7 @@ var PhoneOutgoing = /* @__PURE__ */ __name((props) => {
 // src/icons/PieChart.ts
 import van191 from "vanjs-core";
 var PieChart = /* @__PURE__ */ __name((props) => {
-  const { path } = van191.tags("http://www.w3.org/2000/svg");
+  const { path } = van191.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -4150,7 +4118,7 @@ var PieChart = /* @__PURE__ */ __name((props) => {
 // src/icons/Play.ts
 import van192 from "vanjs-core";
 var Play = /* @__PURE__ */ __name((props) => {
-  const { polygon } = van192.tags("http://www.w3.org/2000/svg");
+  const { polygon } = van192.tags(svgNamespace);
   return FeatherIcon(
     props,
     polygon({
@@ -4162,7 +4130,7 @@ var Play = /* @__PURE__ */ __name((props) => {
 // src/icons/PlayCircle.ts
 import van193 from "vanjs-core";
 var PlayCircle = /* @__PURE__ */ __name((props) => {
-  const { polygon, circle } = van193.tags("http://www.w3.org/2000/svg");
+  const { polygon, circle } = van193.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -4179,7 +4147,7 @@ var PlayCircle = /* @__PURE__ */ __name((props) => {
 // src/icons/Plus.ts
 import van194 from "vanjs-core";
 var Plus = /* @__PURE__ */ __name((props) => {
-  const { line } = van194.tags("http://www.w3.org/2000/svg");
+  const { line } = van194.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -4200,7 +4168,7 @@ var Plus = /* @__PURE__ */ __name((props) => {
 // src/icons/PlusCircle.ts
 import van195 from "vanjs-core";
 var PlusCircle = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = van195.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = van195.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -4226,7 +4194,7 @@ var PlusCircle = /* @__PURE__ */ __name((props) => {
 // src/icons/PlusSquare.ts
 import van196 from "vanjs-core";
 var PlusSquare = /* @__PURE__ */ __name((props) => {
-  const { line, rect } = van196.tags("http://www.w3.org/2000/svg");
+  const { line, rect } = van196.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({
@@ -4255,7 +4223,7 @@ var PlusSquare = /* @__PURE__ */ __name((props) => {
 // src/icons/Pocket.ts
 import van197 from "vanjs-core";
 var Pocket = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = van197.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = van197.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -4270,7 +4238,7 @@ var Pocket = /* @__PURE__ */ __name((props) => {
 // src/icons/Power.ts
 import van198 from "vanjs-core";
 var Power = /* @__PURE__ */ __name((props) => {
-  const { path, line } = van198.tags("http://www.w3.org/2000/svg");
+  const { path, line } = van198.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -4288,7 +4256,7 @@ var Power = /* @__PURE__ */ __name((props) => {
 // src/icons/Printer.ts
 import van199 from "vanjs-core";
 var Printer = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, rect } = van199.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, rect } = van199.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -4309,7 +4277,7 @@ var Printer = /* @__PURE__ */ __name((props) => {
 // src/icons/Radio.ts
 import van200 from "vanjs-core";
 var Radio = /* @__PURE__ */ __name((props) => {
-  const { path, circle } = van200.tags("http://www.w3.org/2000/svg");
+  const { path, circle } = van200.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -4326,7 +4294,7 @@ var Radio = /* @__PURE__ */ __name((props) => {
 // src/icons/RefreshCcw.ts
 import van201 from "vanjs-core";
 var RefreshCcw = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = van201.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = van201.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -4344,7 +4312,7 @@ var RefreshCcw = /* @__PURE__ */ __name((props) => {
 // src/icons/RefreshCw.ts
 import van202 from "vanjs-core";
 var RefreshCw = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = van202.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = van202.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -4362,7 +4330,7 @@ var RefreshCw = /* @__PURE__ */ __name((props) => {
 // src/icons/Repeat.ts
 import van203 from "vanjs-core";
 var Repeat = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = van203.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = van203.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -4383,7 +4351,7 @@ var Repeat = /* @__PURE__ */ __name((props) => {
 // src/icons/Rewind.ts
 import van204 from "vanjs-core";
 var Rewind = /* @__PURE__ */ __name((props) => {
-  const { polygon } = van204.tags("http://www.w3.org/2000/svg");
+  const { polygon } = van204.tags(svgNamespace);
   return FeatherIcon(
     props,
     polygon({
@@ -4398,7 +4366,7 @@ var Rewind = /* @__PURE__ */ __name((props) => {
 // src/icons/RotateCcw.ts
 import van205 from "vanjs-core";
 var RotateCcw = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = van205.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = van205.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -4413,7 +4381,7 @@ var RotateCcw = /* @__PURE__ */ __name((props) => {
 // src/icons/RotateCw.ts
 import van206 from "vanjs-core";
 var RotateCw = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = van206.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = van206.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -4428,7 +4396,7 @@ var RotateCw = /* @__PURE__ */ __name((props) => {
 // src/icons/Rss.ts
 import van207 from "vanjs-core";
 var Rss = /* @__PURE__ */ __name((props) => {
-  const { path, circle } = van207.tags("http://www.w3.org/2000/svg");
+  const { path, circle } = van207.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -4448,7 +4416,7 @@ var Rss = /* @__PURE__ */ __name((props) => {
 // src/icons/Save.ts
 import van208 from "vanjs-core";
 var Save = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = van208.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = van208.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -4466,7 +4434,7 @@ var Save = /* @__PURE__ */ __name((props) => {
 // src/icons/Scissors.ts
 import van209 from "vanjs-core";
 var Scissors = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = van209.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = van209.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -4503,7 +4471,7 @@ var Scissors = /* @__PURE__ */ __name((props) => {
 // src/icons/Search.ts
 import van210 from "vanjs-core";
 var Search = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = van210.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = van210.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -4523,7 +4491,7 @@ var Search = /* @__PURE__ */ __name((props) => {
 // src/icons/Send.ts
 import van211 from "vanjs-core";
 var Send = /* @__PURE__ */ __name((props) => {
-  const { polygon, line } = van211.tags("http://www.w3.org/2000/svg");
+  const { polygon, line } = van211.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -4541,7 +4509,7 @@ var Send = /* @__PURE__ */ __name((props) => {
 // src/icons/Server.ts
 import van212 from "vanjs-core";
 var Server = /* @__PURE__ */ __name((props) => {
-  const { line, rect } = van212.tags("http://www.w3.org/2000/svg");
+  const { line, rect } = van212.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({
@@ -4578,7 +4546,7 @@ var Server = /* @__PURE__ */ __name((props) => {
 // src/icons/Settings.ts
 import van213 from "vanjs-core";
 var Settings = /* @__PURE__ */ __name((props) => {
-  const { path, circle } = van213.tags("http://www.w3.org/2000/svg");
+  const { path, circle } = van213.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -4595,7 +4563,7 @@ var Settings = /* @__PURE__ */ __name((props) => {
 // src/icons/Share.ts
 import van214 from "vanjs-core";
 var Share = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = van214.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = van214.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -4616,7 +4584,7 @@ var Share = /* @__PURE__ */ __name((props) => {
 // src/icons/Share2.ts
 import van215 from "vanjs-core";
 var Share2 = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = van215.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = van215.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -4652,7 +4620,7 @@ var Share2 = /* @__PURE__ */ __name((props) => {
 // src/icons/Shield.ts
 import van216 from "vanjs-core";
 var Shield = /* @__PURE__ */ __name((props) => {
-  const { path } = van216.tags("http://www.w3.org/2000/svg");
+  const { path } = van216.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -4664,7 +4632,7 @@ var Shield = /* @__PURE__ */ __name((props) => {
 // src/icons/ShieldOff.ts
 import van217 from "vanjs-core";
 var ShieldOff = /* @__PURE__ */ __name((props) => {
-  const { path, line } = van217.tags("http://www.w3.org/2000/svg");
+  const { path, line } = van217.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -4685,7 +4653,7 @@ var ShieldOff = /* @__PURE__ */ __name((props) => {
 // src/icons/ShoppingBag.ts
 import van218 from "vanjs-core";
 var ShoppingBag = /* @__PURE__ */ __name((props) => {
-  const { path, line } = van218.tags("http://www.w3.org/2000/svg");
+  const { path, line } = van218.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -4706,7 +4674,7 @@ var ShoppingBag = /* @__PURE__ */ __name((props) => {
 // src/icons/ShoppingCart.ts
 import van219 from "vanjs-core";
 var ShoppingCart = /* @__PURE__ */ __name((props) => {
-  const { path, circle } = van219.tags("http://www.w3.org/2000/svg");
+  const { path, circle } = van219.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -4728,7 +4696,7 @@ var ShoppingCart = /* @__PURE__ */ __name((props) => {
 // src/icons/Shuffle.ts
 import van220 from "vanjs-core";
 var Shuffle = /* @__PURE__ */ __name((props) => {
-  const { polyline, line } = van220.tags("http://www.w3.org/2000/svg");
+  const { polyline, line } = van220.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -4761,7 +4729,7 @@ var Shuffle = /* @__PURE__ */ __name((props) => {
 // src/icons/Sidebar.ts
 import van221 from "vanjs-core";
 var Sidebar = /* @__PURE__ */ __name((props) => {
-  const { line, rect } = van221.tags("http://www.w3.org/2000/svg");
+  const { line, rect } = van221.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({
@@ -4784,7 +4752,7 @@ var Sidebar = /* @__PURE__ */ __name((props) => {
 // src/icons/SkipBack.ts
 import van222 from "vanjs-core";
 var SkipBack = /* @__PURE__ */ __name((props) => {
-  const { polygon, line } = van222.tags("http://www.w3.org/2000/svg");
+  const { polygon, line } = van222.tags(svgNamespace);
   return FeatherIcon(
     props,
     polygon({
@@ -4802,7 +4770,7 @@ var SkipBack = /* @__PURE__ */ __name((props) => {
 // src/icons/SkipForward.ts
 import van223 from "vanjs-core";
 var SkipForward = /* @__PURE__ */ __name((props) => {
-  const { polygon, line } = van223.tags("http://www.w3.org/2000/svg");
+  const { polygon, line } = van223.tags(svgNamespace);
   return FeatherIcon(
     props,
     polygon({
@@ -4820,7 +4788,7 @@ var SkipForward = /* @__PURE__ */ __name((props) => {
 // src/icons/Slack.ts
 import van224 from "vanjs-core";
 var Slack = /* @__PURE__ */ __name((props) => {
-  const { path } = van224.tags("http://www.w3.org/2000/svg");
+  const { path } = van224.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -4853,7 +4821,7 @@ var Slack = /* @__PURE__ */ __name((props) => {
 // src/icons/Slash.ts
 import van225 from "vanjs-core";
 var Slash = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = van225.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = van225.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -4873,7 +4841,7 @@ var Slash = /* @__PURE__ */ __name((props) => {
 // src/icons/Sliders.ts
 import van226 from "vanjs-core";
 var Sliders = /* @__PURE__ */ __name((props) => {
-  const { line } = van226.tags("http://www.w3.org/2000/svg");
+  const { line } = van226.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -4936,7 +4904,7 @@ var Sliders = /* @__PURE__ */ __name((props) => {
 // src/icons/Smartphone.ts
 import van227 from "vanjs-core";
 var Smartphone = /* @__PURE__ */ __name((props) => {
-  const { line, rect } = van227.tags("http://www.w3.org/2000/svg");
+  const { line, rect } = van227.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({
@@ -4959,7 +4927,7 @@ var Smartphone = /* @__PURE__ */ __name((props) => {
 // src/icons/Smile.ts
 import van228 from "vanjs-core";
 var Smile = /* @__PURE__ */ __name((props) => {
-  const { path, circle, line } = van228.tags("http://www.w3.org/2000/svg");
+  const { path, circle, line } = van228.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -4988,7 +4956,7 @@ var Smile = /* @__PURE__ */ __name((props) => {
 // src/icons/Speaker.ts
 import van229 from "vanjs-core";
 var Speaker = /* @__PURE__ */ __name((props) => {
-  const { circle, line, rect } = van229.tags("http://www.w3.org/2000/svg");
+  const { circle, line, rect } = van229.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({
@@ -5016,7 +4984,7 @@ var Speaker = /* @__PURE__ */ __name((props) => {
 // src/icons/Square.ts
 import van230 from "vanjs-core";
 var Square = /* @__PURE__ */ __name((props) => {
-  const { rect } = van230.tags("http://www.w3.org/2000/svg");
+  const { rect } = van230.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({
@@ -5033,7 +5001,7 @@ var Square = /* @__PURE__ */ __name((props) => {
 // src/icons/Star.ts
 import van231 from "vanjs-core";
 var Star = /* @__PURE__ */ __name((props) => {
-  const { polygon } = van231.tags("http://www.w3.org/2000/svg");
+  const { polygon } = van231.tags(svgNamespace);
   return FeatherIcon(
     props,
     polygon({
@@ -5045,7 +5013,7 @@ var Star = /* @__PURE__ */ __name((props) => {
 // src/icons/StopCircle.ts
 import van232 from "vanjs-core";
 var StopCircle = /* @__PURE__ */ __name((props) => {
-  const { circle, rect } = van232.tags("http://www.w3.org/2000/svg");
+  const { circle, rect } = van232.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -5065,7 +5033,7 @@ var StopCircle = /* @__PURE__ */ __name((props) => {
 // src/icons/Sun.ts
 import van233 from "vanjs-core";
 var Sun = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = van233.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = van233.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -5127,7 +5095,7 @@ var Sun = /* @__PURE__ */ __name((props) => {
 // src/icons/Sunrise.ts
 import van234 from "vanjs-core";
 var Sunrise = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = van234.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = van234.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -5178,7 +5146,7 @@ var Sunrise = /* @__PURE__ */ __name((props) => {
 // src/icons/Sunset.ts
 import van235 from "vanjs-core";
 var Sunset = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = van235.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = van235.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -5229,7 +5197,7 @@ var Sunset = /* @__PURE__ */ __name((props) => {
 // src/icons/Table.ts
 import van236 from "vanjs-core";
 var Table = /* @__PURE__ */ __name((props) => {
-  const { path } = van236.tags("http://www.w3.org/2000/svg");
+  const { path } = van236.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -5241,7 +5209,7 @@ var Table = /* @__PURE__ */ __name((props) => {
 // src/icons/Tablet.ts
 import van237 from "vanjs-core";
 var Tablet = /* @__PURE__ */ __name((props) => {
-  const { line, rect } = van237.tags("http://www.w3.org/2000/svg");
+  const { line, rect } = van237.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({
@@ -5264,7 +5232,7 @@ var Tablet = /* @__PURE__ */ __name((props) => {
 // src/icons/Tag.ts
 import van238 from "vanjs-core";
 var Tag = /* @__PURE__ */ __name((props) => {
-  const { path, line } = van238.tags("http://www.w3.org/2000/svg");
+  const { path, line } = van238.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -5282,7 +5250,7 @@ var Tag = /* @__PURE__ */ __name((props) => {
 // src/icons/Target.ts
 import van239 from "vanjs-core";
 var Target = /* @__PURE__ */ __name((props) => {
-  const { circle } = van239.tags("http://www.w3.org/2000/svg");
+  const { circle } = van239.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -5306,7 +5274,7 @@ var Target = /* @__PURE__ */ __name((props) => {
 // src/icons/Terminal.ts
 import van240 from "vanjs-core";
 var Terminal = /* @__PURE__ */ __name((props) => {
-  const { polyline, line } = van240.tags("http://www.w3.org/2000/svg");
+  const { polyline, line } = van240.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -5324,7 +5292,7 @@ var Terminal = /* @__PURE__ */ __name((props) => {
 // src/icons/Thermometer.ts
 import van241 from "vanjs-core";
 var Thermometer = /* @__PURE__ */ __name((props) => {
-  const { path } = van241.tags("http://www.w3.org/2000/svg");
+  const { path } = van241.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -5336,7 +5304,7 @@ var Thermometer = /* @__PURE__ */ __name((props) => {
 // src/icons/ThumbsDown.ts
 import van242 from "vanjs-core";
 var ThumbsDown = /* @__PURE__ */ __name((props) => {
-  const { path } = van242.tags("http://www.w3.org/2000/svg");
+  const { path } = van242.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -5348,7 +5316,7 @@ var ThumbsDown = /* @__PURE__ */ __name((props) => {
 // src/icons/ThumbsUp.ts
 import van243 from "vanjs-core";
 var ThumbsUp = /* @__PURE__ */ __name((props) => {
-  const { path } = van243.tags("http://www.w3.org/2000/svg");
+  const { path } = van243.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -5360,7 +5328,7 @@ var ThumbsUp = /* @__PURE__ */ __name((props) => {
 // src/icons/ToggleLeft.ts
 import van244 from "vanjs-core";
 var ToggleLeft = /* @__PURE__ */ __name((props) => {
-  const { circle, rect } = van244.tags("http://www.w3.org/2000/svg");
+  const { circle, rect } = van244.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({
@@ -5382,7 +5350,7 @@ var ToggleLeft = /* @__PURE__ */ __name((props) => {
 // src/icons/ToggleRight.ts
 import van245 from "vanjs-core";
 var ToggleRight = /* @__PURE__ */ __name((props) => {
-  const { circle, rect } = van245.tags("http://www.w3.org/2000/svg");
+  const { circle, rect } = van245.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({
@@ -5404,7 +5372,7 @@ var ToggleRight = /* @__PURE__ */ __name((props) => {
 // src/icons/Tool.ts
 import van246 from "vanjs-core";
 var Tool = /* @__PURE__ */ __name((props) => {
-  const { path } = van246.tags("http://www.w3.org/2000/svg");
+  const { path } = van246.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -5416,7 +5384,7 @@ var Tool = /* @__PURE__ */ __name((props) => {
 // src/icons/Trash.ts
 import van247 from "vanjs-core";
 var Trash = /* @__PURE__ */ __name((props) => {
-  const { polyline, path } = van247.tags("http://www.w3.org/2000/svg");
+  const { polyline, path } = van247.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -5431,7 +5399,7 @@ var Trash = /* @__PURE__ */ __name((props) => {
 // src/icons/Trash2.ts
 import van248 from "vanjs-core";
 var Trash2 = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = van248.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = van248.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -5458,7 +5426,7 @@ var Trash2 = /* @__PURE__ */ __name((props) => {
 // src/icons/Trello.ts
 import van249 from "vanjs-core";
 var Trello = /* @__PURE__ */ __name((props) => {
-  const { rect } = van249.tags("http://www.w3.org/2000/svg");
+  const { rect } = van249.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({
@@ -5487,7 +5455,7 @@ var Trello = /* @__PURE__ */ __name((props) => {
 // src/icons/TrendingDown.ts
 import van250 from "vanjs-core";
 var TrendingDown = /* @__PURE__ */ __name((props) => {
-  const { polyline } = van250.tags("http://www.w3.org/2000/svg");
+  const { polyline } = van250.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -5502,7 +5470,7 @@ var TrendingDown = /* @__PURE__ */ __name((props) => {
 // src/icons/TrendingUp.ts
 import van251 from "vanjs-core";
 var TrendingUp = /* @__PURE__ */ __name((props) => {
-  const { polyline } = van251.tags("http://www.w3.org/2000/svg");
+  const { polyline } = van251.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -5517,7 +5485,7 @@ var TrendingUp = /* @__PURE__ */ __name((props) => {
 // src/icons/Triangle.ts
 import van252 from "vanjs-core";
 var Triangle = /* @__PURE__ */ __name((props) => {
-  const { path } = van252.tags("http://www.w3.org/2000/svg");
+  const { path } = van252.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -5529,7 +5497,7 @@ var Triangle = /* @__PURE__ */ __name((props) => {
 // src/icons/Truck.ts
 import van253 from "vanjs-core";
 var Truck = /* @__PURE__ */ __name((props) => {
-  const { polygon, circle, rect } = van253.tags("http://www.w3.org/2000/svg");
+  const { polygon, circle, rect } = van253.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({
@@ -5557,7 +5525,7 @@ var Truck = /* @__PURE__ */ __name((props) => {
 // src/icons/Tv.ts
 import van254 from "vanjs-core";
 var Tv = /* @__PURE__ */ __name((props) => {
-  const { polyline, rect } = van254.tags("http://www.w3.org/2000/svg");
+  const { polyline, rect } = van254.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({
@@ -5577,7 +5545,7 @@ var Tv = /* @__PURE__ */ __name((props) => {
 // src/icons/Twitch.ts
 import van255 from "vanjs-core";
 var Twitch = /* @__PURE__ */ __name((props) => {
-  const { path } = van255.tags("http://www.w3.org/2000/svg");
+  const { path } = van255.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -5589,7 +5557,7 @@ var Twitch = /* @__PURE__ */ __name((props) => {
 // src/icons/Twitter.ts
 import van256 from "vanjs-core";
 var Twitter = /* @__PURE__ */ __name((props) => {
-  const { path } = van256.tags("http://www.w3.org/2000/svg");
+  const { path } = van256.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -5601,7 +5569,7 @@ var Twitter = /* @__PURE__ */ __name((props) => {
 // src/icons/Type.ts
 import van257 from "vanjs-core";
 var Type = /* @__PURE__ */ __name((props) => {
-  const { polyline, line } = van257.tags("http://www.w3.org/2000/svg");
+  const { polyline, line } = van257.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -5625,7 +5593,7 @@ var Type = /* @__PURE__ */ __name((props) => {
 // src/icons/Umbrella.ts
 import van258 from "vanjs-core";
 var Umbrella = /* @__PURE__ */ __name((props) => {
-  const { path } = van258.tags("http://www.w3.org/2000/svg");
+  const { path } = van258.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -5637,7 +5605,7 @@ var Umbrella = /* @__PURE__ */ __name((props) => {
 // src/icons/Underline.ts
 import van259 from "vanjs-core";
 var Underline = /* @__PURE__ */ __name((props) => {
-  const { path, line } = van259.tags("http://www.w3.org/2000/svg");
+  const { path, line } = van259.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -5655,7 +5623,7 @@ var Underline = /* @__PURE__ */ __name((props) => {
 // src/icons/Unlock.ts
 import van260 from "vanjs-core";
 var Unlock = /* @__PURE__ */ __name((props) => {
-  const { path, rect } = van260.tags("http://www.w3.org/2000/svg");
+  const { path, rect } = van260.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({
@@ -5675,7 +5643,7 @@ var Unlock = /* @__PURE__ */ __name((props) => {
 // src/icons/Upload.ts
 import van261 from "vanjs-core";
 var Upload = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = van261.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = van261.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -5696,7 +5664,7 @@ var Upload = /* @__PURE__ */ __name((props) => {
 // src/icons/UploadCloud.ts
 import van262 from "vanjs-core";
 var UploadCloud = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, line } = van262.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, line } = van262.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -5720,7 +5688,7 @@ var UploadCloud = /* @__PURE__ */ __name((props) => {
 // src/icons/User.ts
 import van263 from "vanjs-core";
 var User = /* @__PURE__ */ __name((props) => {
-  const { path, circle } = van263.tags("http://www.w3.org/2000/svg");
+  const { path, circle } = van263.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -5737,7 +5705,7 @@ var User = /* @__PURE__ */ __name((props) => {
 // src/icons/UserCheck.ts
 import van264 from "vanjs-core";
 var UserCheck = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, circle } = van264.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, circle } = van264.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -5757,7 +5725,7 @@ var UserCheck = /* @__PURE__ */ __name((props) => {
 // src/icons/UserMinus.ts
 import van265 from "vanjs-core";
 var UserMinus = /* @__PURE__ */ __name((props) => {
-  const { path, circle, line } = van265.tags("http://www.w3.org/2000/svg");
+  const { path, circle, line } = van265.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -5780,7 +5748,7 @@ var UserMinus = /* @__PURE__ */ __name((props) => {
 // src/icons/UserPlus.ts
 import van266 from "vanjs-core";
 var UserPlus = /* @__PURE__ */ __name((props) => {
-  const { path, circle, line } = van266.tags("http://www.w3.org/2000/svg");
+  const { path, circle, line } = van266.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -5809,7 +5777,7 @@ var UserPlus = /* @__PURE__ */ __name((props) => {
 // src/icons/UserX.ts
 import van267 from "vanjs-core";
 var UserX = /* @__PURE__ */ __name((props) => {
-  const { path, circle, line } = van267.tags("http://www.w3.org/2000/svg");
+  const { path, circle, line } = van267.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -5838,7 +5806,7 @@ var UserX = /* @__PURE__ */ __name((props) => {
 // src/icons/Users.ts
 import van268 from "vanjs-core";
 var Users = /* @__PURE__ */ __name((props) => {
-  const { path, circle } = van268.tags("http://www.w3.org/2000/svg");
+  const { path, circle } = van268.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -5861,7 +5829,7 @@ var Users = /* @__PURE__ */ __name((props) => {
 // src/icons/Video.ts
 import van269 from "vanjs-core";
 var Video = /* @__PURE__ */ __name((props) => {
-  const { polygon, rect } = van269.tags("http://www.w3.org/2000/svg");
+  const { polygon, rect } = van269.tags(svgNamespace);
   return FeatherIcon(
     props,
     polygon({
@@ -5881,7 +5849,7 @@ var Video = /* @__PURE__ */ __name((props) => {
 // src/icons/VideoOff.ts
 import van270 from "vanjs-core";
 var VideoOff = /* @__PURE__ */ __name((props) => {
-  const { path, line } = van270.tags("http://www.w3.org/2000/svg");
+  const { path, line } = van270.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -5899,7 +5867,7 @@ var VideoOff = /* @__PURE__ */ __name((props) => {
 // src/icons/Voicemail.ts
 import van271 from "vanjs-core";
 var Voicemail = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = van271.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = van271.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -5924,7 +5892,7 @@ var Voicemail = /* @__PURE__ */ __name((props) => {
 // src/icons/Volume.ts
 import van272 from "vanjs-core";
 var Volume = /* @__PURE__ */ __name((props) => {
-  const { polygon } = van272.tags("http://www.w3.org/2000/svg");
+  const { polygon } = van272.tags(svgNamespace);
   return FeatherIcon(
     props,
     polygon({
@@ -5936,7 +5904,7 @@ var Volume = /* @__PURE__ */ __name((props) => {
 // src/icons/Volume1.ts
 import van273 from "vanjs-core";
 var Volume1 = /* @__PURE__ */ __name((props) => {
-  const { path, polygon } = van273.tags("http://www.w3.org/2000/svg");
+  const { path, polygon } = van273.tags(svgNamespace);
   return FeatherIcon(
     props,
     polygon({
@@ -5951,7 +5919,7 @@ var Volume1 = /* @__PURE__ */ __name((props) => {
 // src/icons/Volume2.ts
 import van274 from "vanjs-core";
 var Volume2 = /* @__PURE__ */ __name((props) => {
-  const { path, polygon } = van274.tags("http://www.w3.org/2000/svg");
+  const { path, polygon } = van274.tags(svgNamespace);
   return FeatherIcon(
     props,
     polygon({
@@ -5966,7 +5934,7 @@ var Volume2 = /* @__PURE__ */ __name((props) => {
 // src/icons/VolumeX.ts
 import van275 from "vanjs-core";
 var VolumeX = /* @__PURE__ */ __name((props) => {
-  const { polygon, line } = van275.tags("http://www.w3.org/2000/svg");
+  const { polygon, line } = van275.tags(svgNamespace);
   return FeatherIcon(
     props,
     polygon({
@@ -5990,7 +5958,7 @@ var VolumeX = /* @__PURE__ */ __name((props) => {
 // src/icons/Watch.ts
 import van276 from "vanjs-core";
 var Watch = /* @__PURE__ */ __name((props) => {
-  const { polyline, path, circle } = van276.tags("http://www.w3.org/2000/svg");
+  const { polyline, path, circle } = van276.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -6010,7 +5978,7 @@ var Watch = /* @__PURE__ */ __name((props) => {
 // src/icons/Wifi.ts
 import van277 from "vanjs-core";
 var Wifi = /* @__PURE__ */ __name((props) => {
-  const { path, line } = van277.tags("http://www.w3.org/2000/svg");
+  const { path, line } = van277.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -6034,7 +6002,7 @@ var Wifi = /* @__PURE__ */ __name((props) => {
 // src/icons/WifiOff.ts
 import van278 from "vanjs-core";
 var WifiOff = /* @__PURE__ */ __name((props) => {
-  const { path, line } = van278.tags("http://www.w3.org/2000/svg");
+  const { path, line } = van278.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -6070,7 +6038,7 @@ var WifiOff = /* @__PURE__ */ __name((props) => {
 // src/icons/Wind.ts
 import van279 from "vanjs-core";
 var Wind = /* @__PURE__ */ __name((props) => {
-  const { path } = van279.tags("http://www.w3.org/2000/svg");
+  const { path } = van279.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -6082,7 +6050,7 @@ var Wind = /* @__PURE__ */ __name((props) => {
 // src/icons/X.ts
 import van280 from "vanjs-core";
 var X = /* @__PURE__ */ __name((props) => {
-  const { line } = van280.tags("http://www.w3.org/2000/svg");
+  const { line } = van280.tags(svgNamespace);
   return FeatherIcon(
     props,
     line({
@@ -6103,7 +6071,7 @@ var X = /* @__PURE__ */ __name((props) => {
 // src/icons/XCircle.ts
 import van281 from "vanjs-core";
 var XCircle = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = van281.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = van281.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -6129,7 +6097,7 @@ var XCircle = /* @__PURE__ */ __name((props) => {
 // src/icons/XOctagon.ts
 import van282 from "vanjs-core";
 var XOctagon = /* @__PURE__ */ __name((props) => {
-  const { polygon, line } = van282.tags("http://www.w3.org/2000/svg");
+  const { polygon, line } = van282.tags(svgNamespace);
   return FeatherIcon(
     props,
     polygon({
@@ -6153,7 +6121,7 @@ var XOctagon = /* @__PURE__ */ __name((props) => {
 // src/icons/XSquare.ts
 import van283 from "vanjs-core";
 var XSquare = /* @__PURE__ */ __name((props) => {
-  const { line, rect } = van283.tags("http://www.w3.org/2000/svg");
+  const { line, rect } = van283.tags(svgNamespace);
   return FeatherIcon(
     props,
     rect({
@@ -6182,7 +6150,7 @@ var XSquare = /* @__PURE__ */ __name((props) => {
 // src/icons/Youtube.ts
 import van284 from "vanjs-core";
 var Youtube = /* @__PURE__ */ __name((props) => {
-  const { path, polygon } = van284.tags("http://www.w3.org/2000/svg");
+  const { path, polygon } = van284.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({
@@ -6197,7 +6165,7 @@ var Youtube = /* @__PURE__ */ __name((props) => {
 // src/icons/Zap.ts
 import van285 from "vanjs-core";
 var Zap = /* @__PURE__ */ __name((props) => {
-  const { polygon } = van285.tags("http://www.w3.org/2000/svg");
+  const { polygon } = van285.tags(svgNamespace);
   return FeatherIcon(
     props,
     polygon({
@@ -6209,7 +6177,7 @@ var Zap = /* @__PURE__ */ __name((props) => {
 // src/icons/ZapOff.ts
 import van286 from "vanjs-core";
 var ZapOff = /* @__PURE__ */ __name((props) => {
-  const { polyline, line } = van286.tags("http://www.w3.org/2000/svg");
+  const { polyline, line } = van286.tags(svgNamespace);
   return FeatherIcon(
     props,
     polyline({
@@ -6233,7 +6201,7 @@ var ZapOff = /* @__PURE__ */ __name((props) => {
 // src/icons/ZoomIn.ts
 import van287 from "vanjs-core";
 var ZoomIn = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = van287.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = van287.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({
@@ -6265,7 +6233,7 @@ var ZoomIn = /* @__PURE__ */ __name((props) => {
 // src/icons/ZoomOut.ts
 import van288 from "vanjs-core";
 var ZoomOut = /* @__PURE__ */ __name((props) => {
-  const { circle, line } = van288.tags("http://www.w3.org/2000/svg");
+  const { circle, line } = van288.tags(svgNamespace);
   return FeatherIcon(
     props,
     circle({

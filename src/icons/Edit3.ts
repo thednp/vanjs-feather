@@ -1,9 +1,10 @@
 // VanJS Feather - Edit3
 import van from "vanjs-core";
-import { FeatherIcon, type IconProps } from "../FeatherIcon";
+import { FeatherIcon, svgNamespace } from "../FeatherIcon";
+import { type SVGProps } from "../types";
 
-export const Edit3 = (props?: IconProps) => {
-  const { path } = van.tags("http://www.w3.org/2000/svg");
+export const Edit3 = (props?: Partial<SVGProps>) => {
+  const { path } = van.tags(svgNamespace);
   return FeatherIcon(
     props,
     path({

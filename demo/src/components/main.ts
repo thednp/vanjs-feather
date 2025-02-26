@@ -26,7 +26,7 @@ export default function Main() {
   const { circle, path, svg } = van.tags("http://www.w3.org/2000/svg");
   const { main, div, button, span, h2, img, p, pre, a, label, input } =
     van.tags;
-  const size = van.state(64);
+  const size = van.state(24);
   const sWidth = van.state(1);
   const count = van.state(64);
   const query = van.state("");
@@ -79,16 +79,28 @@ export default function Main() {
   const List = vanX.reactive({ icons: Icons });
 
   van.derive(() => {
-    const currentQuery = query.val;
+    const currentQuery = query.val.split(" ");
     const currentCount = count.val;
-    if (currentQuery.length) {
-      vanX.replace(
-        List.icons,
-        Icons.filter(({ lowerName, tags }) =>
-          lowerName === query.val || lowerName.includes(query.val) ||
-          tags.some((t) => t === query.val || t.includes(query.val))
-        ),
+    if (query.val.length && currentQuery.length) {
+      const searchResults = Icons.filter(({ lowerName, tags }) =>
+        currentQuery.some((q) => lowerName === q) || currentQuery.some((q) =>
+          lowerName.includes(q)
+        ) ||
+        tags.some((t) => currentQuery.some((q) => q === t || t.includes(q)))
       );
+      if (searchResults.length) {
+        vanX.replace(List.icons, searchResults);
+      } else {
+        vanX.replace(List.icons, [{
+          name: "No icon found...",
+          icon: (Icons.find(({ name }) =>
+            name === "Info"
+          ) as typeof Icons[0]).icon,
+          lowerName: "not-found" as "tag",
+          tags: [],
+        }]);
+      }
+
       loader.remove();
       count.val = Icons.length;
     } else if (currentCount < Icons.length) {
@@ -288,6 +300,8 @@ export default function Main() {
           id: "query",
           value: query,
           type: "text",
+          autocomplete: "off",
+          spellcheck: "false",
           "aria-label": "Search icon",
           oninput: (e: ChangeEvent) => query.val = String(e.target.value),
         }),
@@ -307,8 +321,13 @@ export default function Main() {
             },
             button(
               {
+                type: "button",
+                "data-clip":
+                  `${name}({ width: ${size.val}, height: ${size.val}, "stroke-width": ${sWidth.val} })`,
                 "data-target": `feather-icon-${lowerName}`,
-                onclick: copyToClipboard,
+                onclick: lowerName !== "not-found" as "tag"
+                  ? copyToClipboard
+                  : null,
                 class:
                   "w-full flex flex-col items-center cursor-pointer p-3 py-8 xl:py-12 rounded-[5px] bg-slate-50 hover:bg-slate-200 dark:bg-slate-950 dark:hover:bg-slate-800",
               },

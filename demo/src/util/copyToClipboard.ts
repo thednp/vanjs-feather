@@ -3,11 +3,11 @@ const copyToClipboard = (
 ) => {
   if (typeof document === "undefined") return;
   const btn = e.target.closest("button") as HTMLButtonElement;
-  const pre = document.getElementById(btn.dataset.target as string);
-  if (pre) {
-    const textContent = pre.textContent?.trim() as string;
-    navigator.clipboard.writeText(textContent + "()");
-    alert(`Copied Icon Component "${textContent + "()"}" to clipboard`);
+  const clip = btn.dataset.clip;
+
+  if (clip?.length) {
+    navigator.clipboard.writeText(clip);
+    alert(`Copied Icon Component "${clip}" to clipboard`);
   }
 };
 

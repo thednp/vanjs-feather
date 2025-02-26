@@ -45,7 +45,7 @@ importers:
         version: 0.6.2
       vite-plugin-vanjs:
         specifier: github:thednp/vite-plugin-vanjs
-        version: https://codeload.github.com/thednp/vite-plugin-vanjs/tar.gz/fe9fb1777fa88a9ca3df08b2c67007b6ad06d014(csstype@3.1.3)(mini-van-plate@0.6.3)(vanjs-core@1.5.3)(vanjs-ext@0.6.2)
+        version: https://codeload.github.com/thednp/vite-plugin-vanjs/tar.gz/b643c91083e269a2400f15df8637daca0c95dc52(csstype@3.1.3)(mini-van-plate@0.6.3)(vanjs-core@1.5.3)(vanjs-ext@0.6.2)
     devDependencies:
       "@tailwindcss/vite":
         specifier: ^4.0.9
@@ -1411,9 +1411,9 @@ packages:
     }
     engines: { node: ">= 0.8" }
 
-  vite-plugin-vanjs@https://codeload.github.com/thednp/vite-plugin-vanjs/tar.gz/fe9fb1777fa88a9ca3df08b2c67007b6ad06d014:
+  vite-plugin-vanjs@https://codeload.github.com/thednp/vite-plugin-vanjs/tar.gz/b643c91083e269a2400f15df8637daca0c95dc52:
     resolution: {
-      tarball: https://codeload.github.com/thednp/vite-plugin-vanjs/tar.gz/fe9fb1777fa88a9ca3df08b2c67007b6ad06d014,
+      tarball: https://codeload.github.com/thednp/vite-plugin-vanjs/tar.gz/b643c91083e269a2400f15df8637daca0c95dc52,
     }
     version: 0.0.6
     engines: { node: ">=20", pnpm: ">=8.6.0" }
@@ -2313,7 +2313,7 @@ snapshots:
 
   vary@1.1.2: {}
 
-  vite-plugin-vanjs@https://codeload.github.com/thednp/vite-plugin-vanjs/tar.gz/fe9fb1777fa88a9ca3df08b2c67007b6ad06d014(csstype@3.1.3)(mini-van-plate@0.6.3)(vanjs-core@1.5.3)(vanjs-ext@0.6.2):
+  vite-plugin-vanjs@https://codeload.github.com/thednp/vite-plugin-vanjs/tar.gz/b643c91083e269a2400f15df8637daca0c95dc52(csstype@3.1.3)(mini-van-plate@0.6.3)(vanjs-core@1.5.3)(vanjs-ext@0.6.2):
     dependencies:
       csstype: 3.1.3
       mini-van-plate: 0.6.3

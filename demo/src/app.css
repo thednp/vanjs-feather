@@ -1,7 +1,7 @@
 @import "tailwindcss";
-@import "@/css/scrollbar.css" layer(base);
 @import "@/css/scalfolding.css" layer(base);
-@import "@/css/tooltip.css" layer(base);
+@import "@/css/scrollbar.css" layer(components);
+@import "@/css/tooltip.css" layer(components);
 @theme {
   --font-sans:
     "Mona Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",

@@ -1,6 +1,6 @@
 {
   "name": "vanjs-feather",
-  "version": "0.0.12",
+  "version": "0.1.0",
   "description": "🫦 Feather icons for VanJS",
   "files": [
     "dist/index.js",

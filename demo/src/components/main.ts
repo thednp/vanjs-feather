@@ -331,7 +331,12 @@ export default function Main() {
                 class:
                   "w-full flex flex-col items-center cursor-pointer p-3 py-8 xl:py-12 rounded-[5px] bg-slate-50 hover:bg-slate-200 dark:bg-slate-950 dark:hover:bg-slate-800",
               },
-              icon({ class: "text-slate-500" }),
+              icon({
+                class: "text-slate-500",
+                width: size,
+                height: size,
+                "stroke-width": sWidth,
+              }),
               span(
                 {
                   id: `feather-icon-${lowerName}`,

@@ -1,5 +1,6 @@
 import van from "vanjs-core";
-import { ArrowDown } from "../../../src/index";
+import { DownloadCloud } from "../../../src/icons/DownloadCloud";
+import { Github } from "../../../src/icons/Github";
 
 export default function Header() {
   const { header, div, ul, li, a, h1, span } = van.tags;
@@ -29,10 +30,25 @@ export default function Header() {
             href:
               "https://github.com/thednp/vanjs-feather/archive/refs/heads/main.zip",
           },
-          ArrowDown({ class: "h-6" }),
+          DownloadCloud({ class: "h-6" }),
           span(
             { class: "sr-only sm:not-sr-only" },
             "Download",
+          ),
+        ),
+      ),
+      li(
+        { class: "py-3 flex flex-row items-center gap-3 text-md" },
+        a(
+          {
+            class:
+              "text-slate-600 hover:text-slate-950 dark:text-slate-400 dark:hover:text-slate-100 font-semibold font-stretch-125% flex items-center gap-2",
+            href: "https://github.com/thednp/vanjs-feather",
+          },
+          Github({ class: "h-6" }),
+          span(
+            { class: "sr-only sm:not-sr-only" },
+            "Github",
           ),
         ),
       ),

@@ -5,7 +5,7 @@ import * as VanJSFeather from "../../../src/index";
 import Tooltip from "./tooltip";
 import Tags from "./tags.json";
 
-import { Activity } from "../../../src/index";
+import { Activity, ArrowRight } from "../../../src/index";
 
 const Icons = Object.entries(VanJSFeather).map(([name, icon]) => {
   const lowerName = name.toLowerCase() as keyof typeof Tags;
@@ -26,7 +26,7 @@ export default function Main() {
   const { circle, path, svg } = van.tags("http://www.w3.org/2000/svg");
   const { main, div, button, span, h2, img, p, pre, a, label, input } =
     van.tags;
-  const size = van.state(24);
+  const size = van.state(32);
   const sWidth = van.state(1);
   const count = van.state(64);
   const query = van.state("");
@@ -34,7 +34,7 @@ export default function Main() {
   const loader = div(
     {
       class:
-        "w-full flex flex-col items-center mt-4 py-8 xl:py-12 rounded-[5px] bg-slate-50 dark:bg-slate-950",
+        "w-full flex flex-col items-center mt-4 py-4 rounded-lg bg-slate-50 dark:bg-slate-950",
     },
     svg(
       {
@@ -115,7 +115,7 @@ export default function Main() {
     div(
       {
         class:
-          "container h-[50vh] md:h-[75vh] px-5 mx-auto flex flex-col flex-row items-center",
+          "container h-[50vh] md:h-[75vh] px-5 mx-auto flex flex-row items-center",
       },
       div(
         { class: "w-full flex flex-col md:flex-row items-center" },
@@ -265,7 +265,7 @@ export default function Main() {
                   title: "Get more guides on Github page",
                 },
                 "More guides",
-                VanJSFeather.ArrowRight({ class: "w-6 h-auto" }),
+                ArrowRight({ class: "w-6 h-auto" }),
               ),
               a(
                 {
@@ -274,7 +274,7 @@ export default function Main() {
                   title: "Click to preview the icons",
                 },
                 "Preview Icons",
-                VanJSFeather.ArrowRight({ class: "w-6 h-auto" }),
+                ArrowRight({ class: "w-6 h-auto" }),
               ),
             ),
           ),
@@ -332,7 +332,7 @@ export default function Main() {
                   "w-full flex flex-col items-center cursor-pointer p-3 py-8 xl:py-12 rounded-[5px] bg-slate-50 hover:bg-slate-200 dark:bg-slate-950 dark:hover:bg-slate-800",
               },
               icon({
-                class: "text-slate-500",
+                class: "text-slate-500 mb-4",
                 width: size,
                 height: size,
                 "stroke-width": sWidth,

@@ -1,6 +1,6 @@
 {
   "name": "vanjs-feather",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "🫦 Feather icons for VanJS",
   "files": [
     "dist/index.js",
@@ -65,10 +65,10 @@
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/typography": "^0.5.16",
-    "@types/node": "^20.17.19",
-    "@vitest/browser": "^3.0.7",
-    "@vitest/coverage-istanbul": "^3.0.7",
-    "autoprefixer": "^10.4.20",
+    "@types/node": "^20.17.24",
+    "@vitest/browser": "^3.0.8",
+    "@vitest/coverage-istanbul": "^3.0.8",
+    "autoprefixer": "^10.4.21",
     "express": "^5.0.1",
     "happy-dom": "^14.12.3",
     "postcss": "^8.5.3",
@@ -76,9 +76,9 @@
     "postcss-nesting": "^13.0.1",
     "tailwindcss": "^3.4.17",
     "tsup": "^8.4.0",
-    "typescript": "^5.7.3",
-    "vite": "^6.2.0",
-    "vitest": "^3.0.7"
+    "typescript": "^5.8.2",
+    "vite": "^6.2.2",
+    "vitest": "^3.0.8"
   },
   "peerDependencies": {
     "vanjs-core": "^1.5.3"

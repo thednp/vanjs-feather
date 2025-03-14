@@ -327,8 +327,11 @@ var import_vanjs_core2 = __toESM(require("vanjs-core"), 1);
 // src/FeatherIcon.ts
 var import_vanjs_core = __toESM(require("vanjs-core"), 1);
 var svgNamespace = "http://www.w3.org/2000/svg";
-var FeatherIcon = /* @__PURE__ */ __name((props = {}, ...children) => {
+var FeatherIcon = /* @__PURE__ */ __name((initialProps = {}, ...children) => {
   const { svg } = import_vanjs_core.default.tags(svgNamespace);
+  const props = Object.fromEntries(
+    Object.entries(initialProps).filter(([_, val]) => val)
+  );
   const defaultProps = {
     xmlns: svgNamespace,
     viewBox: "0 0 24 24",

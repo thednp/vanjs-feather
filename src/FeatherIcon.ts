@@ -6,10 +6,13 @@ export const svgNamespace = "http://www.w3.org/2000/svg";
 
 // VanJS Feather - FeatherIcon
 export const FeatherIcon = (
-  props: Partial<SVGProps> = {},
+  initialProps: Partial<SVGProps> = {},
   ...children: ChildDom[]
 ) => {
   const { svg } = van.tags(svgNamespace);
+  const props = Object.fromEntries(
+    Object.entries(initialProps).filter(([_, val]) => val),
+  );
 
   const defaultProps: Partial<SVGProps> = {
     xmlns: svgNamespace,

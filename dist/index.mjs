@@ -7,8 +7,11 @@ import van2 from "vanjs-core";
 // src/FeatherIcon.ts
 import van from "vanjs-core";
 var svgNamespace = "http://www.w3.org/2000/svg";
-var FeatherIcon = /* @__PURE__ */ __name((props = {}, ...children) => {
+var FeatherIcon = /* @__PURE__ */ __name((initialProps = {}, ...children) => {
   const { svg } = van.tags(svgNamespace);
+  const props = Object.fromEntries(
+    Object.entries(initialProps).filter(([_, val]) => val)
+  );
   const defaultProps = {
     xmlns: svgNamespace,
     viewBox: "0 0 24 24",

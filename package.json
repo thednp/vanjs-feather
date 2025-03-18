@@ -66,8 +66,8 @@
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^20.17.24",
-    "@vitest/browser": "^3.0.8",
-    "@vitest/coverage-istanbul": "^3.0.8",
+    "@vitest/browser": "^3.0.9",
+    "@vitest/coverage-istanbul": "^3.0.9",
     "autoprefixer": "^10.4.21",
     "express": "^5.0.1",
     "happy-dom": "^14.12.3",
@@ -78,7 +78,7 @@
     "tsup": "^8.4.0",
     "typescript": "^5.8.2",
     "vite": "^6.2.2",
-    "vitest": "^3.0.8"
+    "vitest": "^3.0.9"
   },
   "peerDependencies": {
     "vanjs-core": "^1.5.3"

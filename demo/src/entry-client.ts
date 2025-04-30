@@ -5,9 +5,6 @@ import App from "./app.ts";
 const root = document.getElementById("app") as HTMLElement;
 
 van.hydrate(root, (dom) => {
-  const children = App();
-  dom.replaceChildren(
-    ...(Array.isArray(children) ? children : [children]) as Element[],
-  );
+  dom.replaceChildren(...App());
   return dom;
 });

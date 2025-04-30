@@ -3,11 +3,10 @@ import { renderPreloadLinks, renderToString } from "@vanjs/server";
 import App from "./app.ts";
 
 export async function render(_url: string, manifest: Record<string, string[]>) {
-  const head = "";
   const html = await renderToString(App());
-  const preloadLinks = renderPreloadLinks(
-    Object.keys(manifest),
-    manifest,
+  const manifestFiles = Object.keys(manifest).filter((file) =>
+    file !== undefined
   );
-  return { html, head, preloadLinks };
+  const preloadLinks = renderPreloadLinks(manifestFiles, manifest);
+  return { html, preloadLinks };
 }

@@ -1,8 +1,11 @@
 // server.js
 import fs from "node:fs/promises";
+import { existsSync } from "node:fs";
 import path from "node:path";
 import url from "node:url";
+import process from "node:process";
 import express from "express";
+import * as icons from "vanjs-feather";
 
 // Constants
 const isProduction = process.env.NODE_ENV === "production";
@@ -19,6 +22,15 @@ const templateHtml = isProduction
     "utf-8",
   )
   : "";
+
+function findEntry() {
+  const paths = [".tsx", ".jsx", ".ts", ".js"].map((ext) =>
+    `/src/entry-server${ext}`
+  );
+  const path = paths.find((path) => existsSync(resolve(path.slice(1))));
+
+  return path || "/src/entry-server.js";
+}
 
 // Cached production manifest
 const manifest = isProduction
@@ -51,33 +63,94 @@ if (!isProduction) {
   app.use(base, sirv("./dist/client", { extensions: [] }));
 }
 
+// add icons middleware
+app.use("/icons-api", (req, res) => {
+  try {
+    const requestedIcons = req.query.icons;
+
+    if (!requestedIcons) {
+      res.status(400).json({ error: "No icons specified" });
+      return;
+    }
+
+    const iconNames = requestedIcons.split(",");
+    const iconData = [];
+
+    iconNames.forEach((name) => {
+      if (name in icons) {
+        iconData.push({ [name]: icons[name] });
+      }
+    });
+    console.log(JSON.stringify(iconData));
+
+    res.json(iconData);
+  } catch (error) {
+    console.error("Icons middleware error:", error);
+    res.status(500).json({ error: "Failed to fetch icons" });
+  }
+});
+
 // Serve HTML
 app.use("*all", async (req, res) => {
   try {
     const url = req.originalUrl.replace(base, "");
+    const urlParts = url.split("/").filter(Boolean);
 
     /** @type {string} */
-    let template;
+    let template = "";
     /** @type {import('./src/entry-server.ts').render} */
     let render;
     if (!isProduction) {
       // Always read fresh template in development
       template = await fs.readFile("./index.html", "utf-8");
-      template = await vite.transformIndexHtml(url, template);
-      render = (await vite.ssrLoadModule("/src/entry-server.ts")).render;
+      render = (await vite.ssrLoadModule(findEntry())).render;
+      template = await vite.transformIndexHtml(url || "/", template);
     } else {
       template = templateHtml;
       render = (await import("./dist/server/entry-server.js")).render;
     }
 
-    let html = templateHtml;
+    let html = "";
+    if (isStatic) {
+      try {
+        // First try the exact path
+        html = await fs.readFile(
+          `./dist/static${url?.length > 0 ? "/" + url : ""}/index.html`,
+          "utf-8",
+        );
+      } catch (error) {
+        // If exact path fails, try to find a 404.html going up the directory tree
+        let currentPath = urlParts;
+        if (currentPath.length > 0) {
+          while (currentPath.length > 0) {
+            try {
+              html = await fs.readFile(
+                `./dist/static/${currentPath.join("/")}/404.html`,
+                "utf-8",
+              );
+              break;
+            } catch {
+              currentPath.pop();
+            }
+          }
+        }
+        if (!html) {
+          try {
+            html = await fs.readFile(
+              "./dist/static/404.html",
+              "utf-8",
+            );
+          } catch {
+            html = "Page not found and no route configured for 404 page.";
+          }
+        }
 
-    if (!isStatic) {
+        // Set 404 status code
+        res.status(404);
+      }
+    } else {
       const rendered = await render(url, manifest);
-      html = template
-        .replace(`<!--preload-links-->`, rendered.preloadLinks ?? "")
-        .replace(`<!--app-head-->`, rendered.head ?? "")
-        .replace(`<!--app-html-->`, rendered.html ?? "");
+      html = template.replace(`<!--app-html-->`, rendered.html);
     }
 
     res.status(200).set({ "Content-Type": "text/html" }).send(html);

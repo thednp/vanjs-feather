@@ -4,8 +4,8 @@
 [![ci](https://github.com/thednp/vanjs-feather/actions/workflows/ci.yml/badge.svg)](https://github.com/thednp/vanjs-feather/actions/workflows/ci.yml)
 [![NPM Version](https://img.shields.io/npm/v/vanjs-feather.svg)](https://www.npmjs.com/package/vanjs-feather)
 [![typescript version](https://img.shields.io/badge/typescript-5.8.3-brightgreen)](https://www.typescriptlang.org/)
-[![vitest version](https://img.shields.io/badge/vitest-3.1.2-brightgreen)](https://www.vitest.dev/)
-[![vite version](https://img.shields.io/badge/vite-6.3.4-brightgreen)](https://vitejs.dev/)
+[![vitest version](https://img.shields.io/badge/vitest-3.1.4-brightgreen)](https://www.vitest.dev/)
+[![vite version](https://img.shields.io/badge/vite-6.3.5-brightgreen)](https://vitejs.dev/)
 
 [<img width="100%" src="vanjs-feather.png" alt="vanjs-feather">](https://thednp.github.io/vanjs-feather)
 

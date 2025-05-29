@@ -1,6 +1,6 @@
 {
   "name": "vanjs-feather",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "🫦 Feather icons for VanJS",
   "files": [
     "dist/index.js",
@@ -54,8 +54,8 @@
     "build:all": "pnpm build && pnpm build:docs",
     "prepublishOnly": "pnpm upd && pnpm format && pnpm lint && pnpm build:all",
     "upd": "pnpm run --parallel /^up:/",
-    "up:root": "pnpm up",
-    "up:demo": "cd demo && pnpm up",
+    "up:root": "pnpm up --latest",
+    "up:demo": "cd demo && pnpm up --latest",
     "lint": "pnpm lint:types && pnpm lint:code",
     "lint:code": "deno lint src",
     "lint:types": "tsc --noEmit",
@@ -65,27 +65,27 @@
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/typography": "^0.5.16",
-    "@types/node": "^20.17.32",
-    "@vitest/browser": "^3.1.2",
-    "@vitest/coverage-istanbul": "^3.1.2",
+    "@types/node": "^22.15.24",
+    "@vitest/browser": "^3.1.4",
+    "@vitest/coverage-istanbul": "^3.1.4",
     "autoprefixer": "^10.4.21",
     "express": "^5.1.0",
-    "happy-dom": "^14.12.3",
-    "postcss": "^8.5.3",
+    "happy-dom": "^17.5.6",
+    "postcss": "^8.5.4",
     "postcss-import": "^16.1.0",
     "postcss-nesting": "^13.0.1",
-    "tailwindcss": "^3.4.17",
-    "tsup": "^8.4.0",
+    "tailwindcss": "^4.1.8",
+    "tsup": "^8.5.0",
     "typescript": "^5.8.3",
-    "vite": "^6.3.4",
-    "vitest": "^3.1.2"
+    "vite": "^6.3.5",
+    "vitest": "^3.1.4"
   },
   "peerDependencies": {
     "vanjs-core": "^1.5.3"
   },
   "dependencies": {
     "vanjs-core": "^1.5.5",
-    "vite-plugin-vanjs": "^0.1.5"
+    "vite-plugin-vanjs": "^0.1.9"
   },
   "packageManager": "pnpm@8.6.12"
 }

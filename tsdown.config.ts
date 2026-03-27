@@ -34,21 +34,7 @@ export default defineConfig([
     }
     
   },
-  // { // CJS
-  //   entry: {
-  //     index: "src/index.ts",
-  //   },
-  //   target: "esnext",
-  //   platform: "neutral",
-  //   exports: true,
-  //   format: ["cjs"],
-  //   dts: true,
-  //   // clean: true,
-  //   sourcemap: true,
-  //   globalName: "VanJSFeather",
-  //   banner: banner.replace("$package", "CJS"),
-  //   plugins: [stripComments({ type: "keep-jsdoc" })],
-  // },
+
   { // UMD
     entry: {
       index: "src/index.ts",

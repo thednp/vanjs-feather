@@ -22,10 +22,9 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "baseUrl": "./",
     "paths": {
       "~/*": ["./src/*",],
-      "@/*": ["demo/assets"],
+      "@/*": ["./demo/assets"],
     }
   },
   "include": ["src", "src/icons", "demo", "env.d.ts"],

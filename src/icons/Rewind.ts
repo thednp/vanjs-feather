@@ -1,7 +1,7 @@
 // VanJS Feather - Rewind
 import van from "vanjs-core";
-import { FeatherIcon, svgNamespace } from "../FeatherIcon";
-import { type SVGProps } from "../types";
+import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
+import { type SVGProps } from "../types.ts";
 
 export const Rewind = (props?: Partial<SVGProps>) => {
   const { polygon } = van.tags(svgNamespace);

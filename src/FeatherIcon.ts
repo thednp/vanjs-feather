@@ -1,5 +1,5 @@
 import type { ChildDom, PropValueOrDerived, TagFunc } from "vanjs-core";
-import type { SVGProps } from "./types";
+import type { SVGProps } from "./types.d.ts";
 import van from "vanjs-core";
 
 export const svgNamespace = "http://www.w3.org/2000/svg";

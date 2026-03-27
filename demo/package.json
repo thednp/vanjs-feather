@@ -16,26 +16,26 @@
     "preview": "npm run generate && NODE_ENV=production STATIC=true node server --port 5173"
   },
   "dependencies": {
-    "@tailwindcss/forms": "^0.5.10",
-    "@tailwindcss/postcss": "^4.1.8",
-    "@tailwindcss/typography": "^0.5.16",
-    "compression": "^1.8.0",
-    "express": "^5.1.0",
+    "@tailwindcss/forms": "^0.5.11",
+    "@tailwindcss/postcss": "^4.2.2",
+    "@tailwindcss/typography": "^0.5.19",
+    "compression": "^1.8.1",
+    "express": "^5.2.1",
     "mini-van-plate": "^0.6.3",
-    "postcss": "^8.5.4",
-    "postcss-nesting": "^13.0.1",
-    "sirv": "^3.0.1",
-    "tailwindcss": "^4.1.8",
-    "vanjs-core": "^1.5.5",
-    "vanjs-ext": "^0.6.2",
-    "vite-plugin-vanjs": "^0.1.9"
+    "postcss": "^8.5.8",
+    "postcss-nesting": "^14.0.0",
+    "sirv": "^3.0.2",
+    "tailwindcss": "^4.2.2",
+    "vanjs-core": "^1.6.0",
+    "vanjs-ext": "^0.6.3",
+    "vite-plugin-vanjs": "^0.1.12"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.1.8",
-    "@types/express": "^5.0.2",
-    "@types/node": "^22.15.24",
-    "cross-env": "^7.0.3",
-    "typescript": "~5.8.3",
-    "vite": "^6.3.5"
+    "@tailwindcss/vite": "^4.2.2",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.5.0",
+    "cross-env": "^10.1.0",
+    "typescript": "^6.0.2",
+    "vite": "^8.0.3"
   }
 }

@@ -1,7 +1,7 @@
 // VanJS Feather - ArrowDownLeft
 import van from "vanjs-core";
-import { FeatherIcon, svgNamespace } from "../FeatherIcon";
-import { type SVGProps } from "../types";
+import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
+import { type SVGProps } from "../types.ts";
 
 export const ArrowDownLeft = (props?: Partial<SVGProps>) => {
   const { polyline, line } = van.tags(svgNamespace);

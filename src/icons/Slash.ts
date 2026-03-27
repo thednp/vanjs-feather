@@ -1,7 +1,7 @@
 // VanJS Feather - Slash
 import van from "vanjs-core";
-import { FeatherIcon, svgNamespace } from "../FeatherIcon";
-import { type SVGProps } from "../types";
+import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
+import { type SVGProps } from "../types.ts";
 
 export const Slash = (props?: Partial<SVGProps>) => {
   const { circle, line } = van.tags(svgNamespace);

@@ -1,7 +1,7 @@
 // VanJS Feather - Edit2
 import van from "vanjs-core";
-import { FeatherIcon, svgNamespace } from "../FeatherIcon";
-import { type SVGProps } from "../types";
+import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
+import { type SVGProps } from "../types.ts";
 
 export const Edit2 = (props?: Partial<SVGProps>) => {
   const { path } = van.tags(svgNamespace);

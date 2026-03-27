@@ -1,7 +1,7 @@
 // VanJS Feather - AlignJustify
 import van from "vanjs-core";
-import { FeatherIcon, svgNamespace } from "../FeatherIcon";
-import { type SVGProps } from "../types";
+import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
+import { type SVGProps } from "../types.ts";
 
 export const AlignJustify = (props?: Partial<SVGProps>) => {
   const { line } = van.tags(svgNamespace);

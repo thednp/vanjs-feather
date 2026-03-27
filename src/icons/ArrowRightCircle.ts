@@ -1,7 +1,7 @@
 // VanJS Feather - ArrowRightCircle
 import van from "vanjs-core";
-import { FeatherIcon, svgNamespace } from "../FeatherIcon";
-import { type SVGProps } from "../types";
+import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
+import { type SVGProps } from "../types.ts";
 
 export const ArrowRightCircle = (props?: Partial<SVGProps>) => {
   const { polyline, circle, line } = van.tags(svgNamespace);

@@ -2,7 +2,7 @@ import type { State, TagFunc } from "vanjs-core";
 
 type PropValueOrDerived<T> = T | State<T>;
 
-interface EventHandler<T, E extends Event> {
+interface EventHandler<T, E extends Event = Event> {
   (
     e: E & {
       currentTarget: T;
@@ -13,7 +13,7 @@ interface EventHandler<T, E extends Event> {
 interface BoundEventHandler<
   T,
   E extends Event,
-  EHandler extends EventHandler<T, unknown> = EventHandler<T, E>,
+  EHandler extends EventHandler<T, E> = EventHandler<T, E>,
 > {
   0: (data: unknown, ...e: Parameters<EHandler>) => void;
   1: unknown;
@@ -22,7 +22,7 @@ interface BoundEventHandler<
 type EventHandlerUnion<
   T,
   E extends Event,
-  EHandler extends EventHandler<T, unknown> = EventHandler<T, E>,
+  EHandler extends EventHandler<T, E> = EventHandler<T, E>,
 > = EHandler | BoundEventHandler<T, E, EHandler>;
 
 interface DOMAttributes<T> {
@@ -32,8 +32,8 @@ interface DOMAttributes<T> {
   oncompositionend?: EventHandlerUnion<T, CompositionEvent> | undefined;
   oncompositionstart?: EventHandlerUnion<T, CompositionEvent> | undefined;
   oncompositionupdate?: EventHandlerUnion<T, CompositionEvent> | undefined;
-  onfocusout?: FocusEventHandlerUnion<T, FocusEvent> | undefined;
-  onfocusin?: FocusEventHandlerUnion<T, FocusEvent> | undefined;
+  onfocusout?: EventHandlerUnion<T, FocusEvent> | undefined;
+  onfocusin?: EventHandlerUnion<T, FocusEvent> | undefined;
   onencrypted?: EventHandlerUnion<T, Event> | undefined;
   ondragexit?: EventHandlerUnion<T, DragEvent> | undefined;
 }
@@ -648,6 +648,6 @@ export type SVGProps = {
     | undefined;
 };
 
-export const SVGTag: (
+export type SVGTag = (
   props?: Partial<SVGProps>,
 ) => ReturnType<TagFunc<SVGSVGElement>>;

@@ -1,7 +1,7 @@
 // VanJS Feather - Filter
 import van from "vanjs-core";
-import { FeatherIcon, svgNamespace } from "../FeatherIcon";
-import { type SVGProps } from "../types";
+import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
+import { type SVGProps } from "../types.ts";
 
 export const Filter = (props?: Partial<SVGProps>) => {
   const { polygon } = van.tags(svgNamespace);

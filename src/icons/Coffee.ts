@@ -1,7 +1,7 @@
 // VanJS Feather - Coffee
 import van from "vanjs-core";
-import { FeatherIcon, svgNamespace } from "../FeatherIcon";
-import { type SVGProps } from "../types";
+import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
+import { type SVGProps } from "../types.ts";
 
 export const Coffee = (props?: Partial<SVGProps>) => {
   const { path, line } = van.tags(svgNamespace);

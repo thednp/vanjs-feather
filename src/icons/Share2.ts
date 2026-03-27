@@ -1,7 +1,7 @@
 // VanJS Feather - Share2
 import van from "vanjs-core";
-import { FeatherIcon, svgNamespace } from "../FeatherIcon";
-import { type SVGProps } from "../types";
+import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
+import { type SVGProps } from "../types.ts";
 
 export const Share2 = (props?: Partial<SVGProps>) => {
   const { circle, line } = van.tags(svgNamespace);

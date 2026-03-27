@@ -1,7 +1,7 @@
 // VanJS Feather - Airplay
 import van from "vanjs-core";
-import { FeatherIcon, svgNamespace } from "../FeatherIcon";
-import { type SVGProps } from "../types";
+import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
+import { type SVGProps } from "../types.ts";
 
 export const Airplay = (props?: Partial<SVGProps>) => {
   const { path, polygon } = van.tags(svgNamespace);

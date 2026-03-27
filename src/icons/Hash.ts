@@ -1,7 +1,7 @@
 // VanJS Feather - Hash
 import van from "vanjs-core";
-import { FeatherIcon, svgNamespace } from "../FeatherIcon";
-import { type SVGProps } from "../types";
+import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
+import { type SVGProps } from "../types.ts";
 
 export const Hash = (props?: Partial<SVGProps>) => {
   const { line } = van.tags(svgNamespace);

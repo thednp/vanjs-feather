@@ -1,5 +1,5 @@
 /*!
-* vanjs-feather ESM v0.1.4 (https://thednp.github.io/vanjs-feather)
+* vanjs-feather ESM v0.1.5 (https://thednp.github.io/vanjs-feather)
 * Copyright 2026 © thednp
 * Licensed under MIT (https://github.com/thednp/vanjs-feather/blob/main/LICENSE)
 */

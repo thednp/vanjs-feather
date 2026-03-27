@@ -19,7 +19,7 @@ export default defineConfig([
       index: "src/index.ts",
     },
     target: "esnext",
-    platform: "browser",
+    platform: "neutral",
     exports: true,
     format: ["esm"],
     dts: true,

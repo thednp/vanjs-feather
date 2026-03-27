@@ -1,6 +1,6 @@
-/*! vanjs-feather UMD v0.1.5 | thednp © 2026 | MIT-License */
+/*! vanjs-feather UMD v0.1.6 | thednp © 2026 | MIT-License */
 (function(global, factory) {
-	typeof exports === "object" && typeof module !== "undefined" ? factory(exports, require("vanjs-core")) : typeof define === "function" && define.amd ? define(["exports", "vanjs-core"], factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, factory(global.VanJSFeather = {}, global.vanjs_core));
+	typeof exports === "object" && typeof module !== "undefined" ? factory(exports, require("vanjs-core")) : typeof define === "function" && define.amd ? define(["exports", "vanjs-core"], factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, factory(global.VanJSFeather = {}, global.van));
 })(this, function(exports, vanjs_core) {
 	Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
 	//#region \0rolldown/runtime.js

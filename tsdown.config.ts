@@ -34,7 +34,6 @@ export default defineConfig([
     }
     
   },
-
   { // UMD
     entry: {
       index: "src/index.ts",
@@ -48,9 +47,14 @@ export default defineConfig([
     banner: miniBanner.replace("$package", "UMD"),
     globalName: "VanJSFeather",
     plugins: [stripComments({ type: "none" })],
+    outputOptions: {
+      globals: {
+        "vanjs-core": "van"
+      }
+    },
     deps: {
-      // skipNodeModulesBundle: true,
-      // alwaysBundle: ["vanjs-core"]
+      skipNodeModulesBundle: true,
+      neverBundle: ["vanjs-core"]
     }
   },
 ]);

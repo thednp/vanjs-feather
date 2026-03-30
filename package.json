@@ -44,7 +44,7 @@
     "test": "vitest --config demo/vitest.config.ts",
     "format": "deno fmt src demo",
     "build": "tsdown",
-    "build:docs": "cd demo && pnpm generate && pnpm copy:docs",
+    "build:docs": "rm -rf docs/* && cd demo && pnpm generate && pnpm copy:docs",
     "build:all": "pnpm build && pnpm build:docs",
     "prepublishOnly": "pnpm upd && pnpm format && pnpm lint && pnpm build:all",
     "upd": "pnpm run --parallel /^up:/",

@@ -1,31 +1,59 @@
 import van, { ChildDom } from "vanjs-core";
 import * as vanX from "vanjs-ext";
-import * as VanJSFeather from "../../../src/index";
 import Tooltip from "./tooltip";
 import { Modal, showModal } from "./modal";
-import Tags from "./tags.json";
+import { TagNames, TagsEntries, type TagsType } from "./tags";
+import { fetchIcons, startIcons } from "./fetchIcons";
+// import Tags from "./tags.json";
 
-import { Activity, ArrowRight } from "../../../src/index";
+import { Info } from "../../../src/icons/Info.ts";
+import { Activity } from "../../../src/icons/Activity";
+import { ArrowRight } from "../../../src/icons/ArrowRight";
+// import { type SVGTag } from "../../../src/types.ts";
 
-const Icons = Object.entries(VanJSFeather).map(([name, icon]) => {
-  const lowerName = name.toLowerCase() as (string & keyof typeof Tags);
-  const tags = [lowerName, ...(Tags[lowerName] || [])];
-  return {
-    name,
-    lowerName,
-    icon,
-    tags,
-  };
-});
+// const TagsEntries = Object.entries(Tags);
+// const TagNames = TagsEntries.map(([name]) => name);
+
+const { circle, path, svg } = van.tags("http://www.w3.org/2000/svg");
+const { main, div, button, span, h2, img, p, pre, a, label, input } = van.tags;
+const fetching = van.state(false);
+
+const Loader = div(
+  {
+    "data-fetching": fetching,
+    class:
+      "w-full flex flex-col items-center mt-4 py-4 rounded-lg bg-slate-50 dark:bg-slate-950 opacity-0 data-[fetching=true]:opacity-100",
+  },
+  svg(
+    {
+      class: "size-5 animate-spin text-current",
+      xmlns: "http://www.w3.org/2000/svg",
+      fill: "none",
+      viewBox: "0 0 24 24",
+    },
+    circle({
+      class: "opacity-25",
+      cx: "12",
+      cy: "12",
+      "r": "10",
+      stroke: "currentColor",
+      "stroke-width": "4",
+    }),
+    path({
+      class: "opacity-75",
+      fill: "currentColor",
+      "d":
+        "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z",
+    }),
+  ),
+);
 
 type ChangeEvent<T extends EventTarget & Element = HTMLInputElement> =
   & InputEvent
   & { target: T };
 
 export default function Main() {
-  const { circle, path, svg } = van.tags("http://www.w3.org/2000/svg");
-  const { main, div, button, span, h2, img, p, pre, a, label, input } =
-    van.tags;
+  const List = vanX.reactive({ icons: startIcons });
   const size = van.state(32);
   const sWidth = van.state(1);
   const count = van.state(64);
@@ -33,83 +61,68 @@ export default function Main() {
   const modalId = "confirmModal";
   const modalContent = van.state<{ code: ChildDom }>({ code: "" });
   const ModalContentComponent = () => modalContent.val.code;
+  const isInitial = van.state(true);
 
-  const loader = div(
-    {
-      class:
-        "w-full flex flex-col items-center mt-4 py-4 rounded-lg bg-slate-50 dark:bg-slate-950",
-    },
-    svg(
-      {
-        class: "size-5 animate-spin text-current",
-        xmlns: "http://www.w3.org/2000/svg",
-        fill: "none",
-        viewBox: "0 0 24 24",
-      },
-      circle({
-        class: "opacity-25",
-        cx: "12",
-        cy: "12",
-        "r": "10",
-        stroke: "currentColor",
-        "stroke-width": "4",
-      }),
-      path({
-        class: "opacity-75",
-        fill: "currentColor",
-        "d":
-          "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z",
-      }),
-    ),
-  );
   const startObserver = () => {
     if (typeof window === "undefined") return;
-    const observer = new IntersectionObserver(([entry], currentObserver) => {
-      if (entry.isIntersecting && count.oldVal < Icons.length) {
-        const remaining = Icons.length - count.oldVal;
-        count.val = count.oldVal + (remaining < 64 ? remaining : 64);
-      }
-      if (count.val >= Icons.length) {
-        currentObserver.disconnect();
-        loader.remove();
-      }
-    }, { rootMargin: "100px" });
-    observer.observe(loader);
+    const observer = new IntersectionObserver(
+      async ([entry] /*, currentObserver*/) => {
+        const oldCount = count.oldVal;
+        if (entry.isIntersecting && oldCount < TagNames.length) {
+          const remaining = TagNames.length - oldCount;
+          count.val = oldCount + (remaining < 64 ? remaining : 64);
+        }
+      },
+      { rootMargin: "100px" },
+    );
+    observer.observe(Loader);
   };
 
-  startObserver();
-
-  const List = vanX.reactive({ icons: Icons });
-
-  van.derive(() => {
-    const currentQuery = query.val.split(" ");
+  van.derive(async () => {
+    const currentQuery = query.val;
+    const currentQueryMulti = currentQuery.split(/\s|\-/);
     const currentCount = count.val;
-    if (query.val.length && currentQuery.length) {
-      const searchResults = Icons.filter(({ lowerName, tags }) =>
-        currentQuery.some((q) => lowerName === q) || currentQuery.some((q) =>
-          lowerName.includes(q)
-        ) ||
-        tags.some((t) => currentQuery.some((q) => q === t || t.includes(q)))
-      );
+    const init = isInitial.val;
+
+    if (init) {
+      startObserver();
+      isInitial.val = false;
+
+      return;
+    }
+
+    if (currentQuery.length) {
+      const searchResults = TagsEntries.filter(([name, tags]) => {
+        const lowerName = name.toLowerCase();
+        return currentQueryMulti.some((q) => lowerName === q) ||
+          currentQueryMulti.some((q) => lowerName.includes(q)) ||
+          tags.some((t) =>
+            currentQueryMulti.some((q) => q === t || t.includes(q))
+          );
+      });
       if (searchResults.length) {
-        vanX.replace(List.icons, searchResults);
+        const iconsList = searchResults.map(([val]) => val);
+        fetching.val === true;
+
+        fetchIcons(iconsList).then((results) => {
+          vanX.replace(List.icons, results);
+          fetching.val === false;
+        });
       } else {
         vanX.replace(List.icons, [{
-          name: "No icon found...",
-          icon: (Icons.find(({ name }) =>
-            name === "Info"
-          ) as typeof Icons[0]).icon,
-          lowerName: "not-found" as keyof typeof Tags,
-          tags: [],
+          "not-found": Info,
         }]);
       }
+      count.val = 64;
+    } else if (currentCount <= TagsEntries.length) {
+      const newList = TagNames.slice(0, currentCount);
 
-      loader.remove();
-      count.val = Icons.length;
-    } else if (currentCount < Icons.length) {
-      vanX.replace(List.icons, Icons.slice(0, currentCount));
-    } else {
-      vanX.replace(List.icons, Icons);
+      fetching.val === true;
+
+      fetchIcons(newList).then((results) => {
+        vanX.replace(List.icons, results);
+        fetching.val === false;
+      });
     }
   });
 
@@ -316,7 +329,8 @@ export default function Main() {
         }),
         List.icons,
         (item) => {
-          const { name, icon } = item.val;
+          // const { name, icon } = item.val;
+          const [name, icon] = Object.entries(item.val)[0];
           const lowerName = name.toLowerCase();
           const realName = lowerName === "not-found" ? "No icon found" : name;
           const iconProps =
@@ -330,7 +344,7 @@ export default function Main() {
             button(
               {
                 type: "button",
-                onclick: lowerName !== "not-found" as keyof typeof Tags
+                onclick: lowerName !== "not-found" as keyof TagsType
                   ? (e) => {
                     e.preventDefault();
 
@@ -367,7 +381,7 @@ export default function Main() {
           );
         },
       ),
-      loader,
+      Loader,
       Modal(
         { id: modalId, title: "VanJS Feather" },
         p("Copied Icon Component to clipboard:"),

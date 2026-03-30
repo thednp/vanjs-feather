@@ -1,0 +1,78 @@
+.modal {
+  pointer-events: none;
+  visibility: hidden;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  color: inherit;
+  transition:
+    visibility 0.3s allow-discrete,
+    background-color 0.3s ease-out,
+    opacity 0.1s ease-out;
+  overscroll-behavior: contain;
+  z-index: 999;
+  scrollbar-gutter: auto;
+  background-color: #0000;
+  place-items: center;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  position: fixed;
+  inset: 0;
+  overflow: clip;
+}
+
+.modal.modal-open, .modal[open], .modal:target, .modal-toggle:checked + .modal {
+  pointer-events: auto;
+  visibility: visible;
+  opacity: 1;
+  transition:
+    visibility 0s allow-discrete,
+    background-color 0.3s ease-out,
+    opacity 0.1s ease-out;
+  background-color: #0006;
+}
+.modal-backdrop {
+  color: #0000;
+  z-index: -1;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  place-self: stretch stretch;
+  display: grid;
+}
+.modal-box {
+  background-color: var(--color-gray-900);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  opacity: 0;
+  overscroll-behavior: contain;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  width: 91.6667%;
+  max-width: 32rem;
+  max-height: 100vh;
+  padding: 1.5rem;
+  transition:
+    translate 0.3s ease-out,
+    scale 0.3s ease-out,
+    opacity 0.2s ease-out 50ms,
+    box-shadow 0.3s ease-out;
+  overflow-y: auto;
+  scale: 95%;
+  box-shadow: 0 25px 50px -12px #00000040;
+}
+
+:is(
+  .modal.modal-open,
+  .modal[open],
+  .modal:target,
+  .modal-toggle:checked + .modal
+)
+  .modal-box {
+  opacity: 1;
+  translate: 0;
+  scale: 1;
+}

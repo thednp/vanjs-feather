@@ -1,5 +1,5 @@
 import van from "vanjs-core";
-import { Github } from "../../../src/index";
+import { Github } from "../../../src/icons/Github";
 
 export default function Footer() {
   const { footer, a, img, span } = van.tags;

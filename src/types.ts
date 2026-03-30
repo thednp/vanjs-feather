@@ -1,4 +1,4 @@
-import type { State, TagFunc } from "vanjs-core";
+import type { State } from "vanjs-core";
 
 type PropValueOrDerived<T> = T | State<T>;
 
@@ -650,4 +650,4 @@ export type SVGProps = {
 
 export type SVGTag = (
   props?: Partial<SVGProps>,
-) => ReturnType<TagFunc<SVGSVGElement>>;
+) => SVGSVGElement;

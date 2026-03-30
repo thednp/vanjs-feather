@@ -28,7 +28,7 @@
     "tailwindcss": "^4.2.2",
     "vanjs-core": "^1.6.0",
     "vanjs-ext": "^0.6.3",
-    "vite-plugin-vanjs": "^0.1.12"
+    "vite-plugin-vanjs": "^0.1.14"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.2.2",

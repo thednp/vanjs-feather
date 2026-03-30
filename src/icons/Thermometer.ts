@@ -3,12 +3,11 @@ import van from "vanjs-core";
 import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
 import { type SVGProps } from "../types.ts";
 
-export const Thermometer = (props?: Partial<SVGProps>) => {
+export const Thermometer = (props: Partial<SVGProps> = {}) => {
   const { path } = van.tags(svgNamespace);
+
   return FeatherIcon(
     props,
-    path({
-      d: "M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z",
-    }),
+    path({ "d": "M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z" }),
   );
 };

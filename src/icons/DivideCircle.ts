@@ -3,8 +3,9 @@ import van from "vanjs-core";
 import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
 import { type SVGProps } from "../types.ts";
 
-export const DivideCircle = (props?: Partial<SVGProps>) => {
-  const { circle, line } = van.tags(svgNamespace);
+export const DivideCircle = (props: Partial<SVGProps> = {}) => {
+  const { line, circle } = van.tags(svgNamespace);
+
   return FeatherIcon(
     props,
     line({
@@ -28,7 +29,7 @@ export const DivideCircle = (props?: Partial<SVGProps>) => {
     circle({
       cx: "12",
       cy: "12",
-      r: "10",
+      "r": "10",
     }),
   );
 };

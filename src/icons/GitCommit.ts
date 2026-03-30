@@ -3,14 +3,15 @@ import van from "vanjs-core";
 import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
 import { type SVGProps } from "../types.ts";
 
-export const GitCommit = (props?: Partial<SVGProps>) => {
+export const GitCommit = (props: Partial<SVGProps> = {}) => {
   const { circle, line } = van.tags(svgNamespace);
+
   return FeatherIcon(
     props,
     circle({
       cx: "12",
       cy: "12",
-      r: "4",
+      "r": "4",
     }),
     line({
       x1: "1.05",

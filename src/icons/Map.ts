@@ -3,13 +3,12 @@ import van from "vanjs-core";
 import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
 import { type SVGProps } from "../types.ts";
 
-export const Map = (props?: Partial<SVGProps>) => {
+export const Map = (props: Partial<SVGProps> = {}) => {
   const { polygon, line } = van.tags(svgNamespace);
+
   return FeatherIcon(
     props,
-    polygon({
-      points: "1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6",
-    }),
+    polygon({ points: "1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" }),
     line({
       x1: "8",
       y1: "2",

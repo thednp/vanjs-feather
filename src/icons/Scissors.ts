@@ -3,19 +3,20 @@ import van from "vanjs-core";
 import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
 import { type SVGProps } from "../types.ts";
 
-export const Scissors = (props?: Partial<SVGProps>) => {
+export const Scissors = (props: Partial<SVGProps> = {}) => {
   const { circle, line } = van.tags(svgNamespace);
+
   return FeatherIcon(
     props,
     circle({
       cx: "6",
       cy: "6",
-      r: "3",
+      "r": "3",
     }),
     circle({
       cx: "6",
       cy: "18",
-      r: "3",
+      "r": "3",
     }),
     line({
       x1: "20",

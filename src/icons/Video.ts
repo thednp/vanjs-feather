@@ -3,16 +3,15 @@ import van from "vanjs-core";
 import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
 import { type SVGProps } from "../types.ts";
 
-export const Video = (props?: Partial<SVGProps>) => {
+export const Video = (props: Partial<SVGProps> = {}) => {
   const { polygon, rect } = van.tags(svgNamespace);
+
   return FeatherIcon(
     props,
-    polygon({
-      points: "23 7 16 12 23 17 23 7",
-    }),
+    polygon({ points: "23 7 16 12 23 17 23 7" }),
     rect({
-      x: "1",
-      y: "5",
+      "x": "1",
+      "y": "5",
       width: "15",
       height: "14",
       rx: "2",

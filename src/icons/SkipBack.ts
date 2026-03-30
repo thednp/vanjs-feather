@@ -3,13 +3,12 @@ import van from "vanjs-core";
 import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
 import { type SVGProps } from "../types.ts";
 
-export const SkipBack = (props?: Partial<SVGProps>) => {
+export const SkipBack = (props: Partial<SVGProps> = {}) => {
   const { polygon, line } = van.tags(svgNamespace);
+
   return FeatherIcon(
     props,
-    polygon({
-      points: "19 20 9 12 19 4 19 20",
-    }),
+    polygon({ points: "19 20 9 12 19 4 19 20" }),
     line({
       x1: "5",
       y1: "19",

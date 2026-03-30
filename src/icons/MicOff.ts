@@ -3,8 +3,9 @@ import van from "vanjs-core";
 import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
 import { type SVGProps } from "../types.ts";
 
-export const MicOff = (props?: Partial<SVGProps>) => {
-  const { path, line } = van.tags(svgNamespace);
+export const MicOff = (props: Partial<SVGProps> = {}) => {
+  const { line, path } = van.tags(svgNamespace);
+
   return FeatherIcon(
     props,
     line({
@@ -13,12 +14,8 @@ export const MicOff = (props?: Partial<SVGProps>) => {
       x2: "23",
       y2: "23",
     }),
-    path({
-      d: "M9 9v3a3 3 0 0 0 5.12 2.12M15 9.34V4a3 3 0 0 0-5.94-.6",
-    }),
-    path({
-      d: "M17 16.95A7 7 0 0 1 5 12v-2m14 0v2a7 7 0 0 1-.11 1.23",
-    }),
+    path({ "d": "M9 9v3a3 3 0 0 0 5.12 2.12M15 9.34V4a3 3 0 0 0-5.94-.6" }),
+    path({ "d": "M17 16.95A7 7 0 0 1 5 12v-2m14 0v2a7 7 0 0 1-.11 1.23" }),
     line({
       x1: "12",
       y1: "19",

@@ -3,13 +3,14 @@ import van from "vanjs-core";
 import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
 import { type SVGProps } from "../types.ts";
 
-export const Sidebar = (props?: Partial<SVGProps>) => {
-  const { line, rect } = van.tags(svgNamespace);
+export const Sidebar = (props: Partial<SVGProps> = {}) => {
+  const { rect, line } = van.tags(svgNamespace);
+
   return FeatherIcon(
     props,
     rect({
-      x: "3",
-      y: "3",
+      "x": "3",
+      "y": "3",
       width: "18",
       height: "18",
       rx: "2",

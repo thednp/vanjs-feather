@@ -3,8 +3,9 @@ import van from "vanjs-core";
 import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
 import { type SVGProps } from "../types.ts";
 
-export const XOctagon = (props?: Partial<SVGProps>) => {
+export const XOctagon = (props: Partial<SVGProps> = {}) => {
   const { polygon, line } = van.tags(svgNamespace);
+
   return FeatherIcon(
     props,
     polygon({

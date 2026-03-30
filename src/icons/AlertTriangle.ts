@@ -3,12 +3,14 @@ import van from "vanjs-core";
 import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
 import { type SVGProps } from "../types.ts";
 
-export const AlertTriangle = (props?: Partial<SVGProps>) => {
+export const AlertTriangle = (props: Partial<SVGProps> = {}) => {
   const { path, line } = van.tags(svgNamespace);
+
   return FeatherIcon(
     props,
     path({
-      d: "M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z",
+      "d":
+        "M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z",
     }),
     line({
       x1: "12",

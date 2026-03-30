@@ -1,5 +1,5 @@
 /*!
-* vanjs-feather ESM v0.1.6 (https://thednp.github.io/vanjs-feather)
+* vanjs-feather ESM v0.1.7 (https://thednp.github.io/vanjs-feather)
 * Copyright 2026 © thednp
 * Licensed under MIT (https://github.com/thednp/vanjs-feather/blob/main/LICENSE)
 */
@@ -430,9 +430,6 @@ declare const Aperture: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#region src/icons/Archive.d.ts
 declare const Archive: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/ArrowDown.d.ts
-declare const ArrowDown: (props?: Partial<SVGProps>) => SVGSVGElement;
-//#endregion
 //#region src/icons/ArrowDownCircle.d.ts
 declare const ArrowDownCircle: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
@@ -442,20 +439,20 @@ declare const ArrowDownLeft: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#region src/icons/ArrowDownRight.d.ts
 declare const ArrowDownRight: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/ArrowLeft.d.ts
-declare const ArrowLeft: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#region src/icons/ArrowDown.d.ts
+declare const ArrowDown: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/ArrowLeftCircle.d.ts
 declare const ArrowLeftCircle: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/ArrowRight.d.ts
-declare const ArrowRight: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#region src/icons/ArrowLeft.d.ts
+declare const ArrowLeft: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/ArrowRightCircle.d.ts
 declare const ArrowRightCircle: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/ArrowUp.d.ts
-declare const ArrowUp: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#region src/icons/ArrowRight.d.ts
+declare const ArrowRight: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/ArrowUpCircle.d.ts
 declare const ArrowUpCircle: (props?: Partial<SVGProps>) => SVGSVGElement;
@@ -466,29 +463,32 @@ declare const ArrowUpLeft: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#region src/icons/ArrowUpRight.d.ts
 declare const ArrowUpRight: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
+//#region src/icons/ArrowUp.d.ts
+declare const ArrowUp: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#endregion
 //#region src/icons/AtSign.d.ts
 declare const AtSign: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/Award.d.ts
 declare const Award: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/BarChart.d.ts
-declare const BarChart: (props?: Partial<SVGProps>) => SVGSVGElement;
-//#endregion
 //#region src/icons/BarChart2.d.ts
 declare const BarChart2: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/Battery.d.ts
-declare const Battery: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#region src/icons/BarChart.d.ts
+declare const BarChart: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/BatteryCharging.d.ts
 declare const BatteryCharging: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/Bell.d.ts
-declare const Bell: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#region src/icons/Battery.d.ts
+declare const Battery: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/BellOff.d.ts
 declare const BellOff: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#endregion
+//#region src/icons/Bell.d.ts
+declare const Bell: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/Bluetooth.d.ts
 declare const Bluetooth: (props?: Partial<SVGProps>) => SVGSVGElement;
@@ -496,11 +496,11 @@ declare const Bluetooth: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#region src/icons/Bold.d.ts
 declare const Bold: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/Book.d.ts
-declare const Book: (props?: Partial<SVGProps>) => SVGSVGElement;
-//#endregion
 //#region src/icons/BookOpen.d.ts
 declare const BookOpen: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#endregion
+//#region src/icons/Book.d.ts
+declare const Book: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/Bookmark.d.ts
 declare const Bookmark: (props?: Partial<SVGProps>) => SVGSVGElement;
@@ -514,23 +514,23 @@ declare const Briefcase: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#region src/icons/Calendar.d.ts
 declare const Calendar: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/Camera.d.ts
-declare const Camera: (props?: Partial<SVGProps>) => SVGSVGElement;
-//#endregion
 //#region src/icons/CameraOff.d.ts
 declare const CameraOff: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
+//#region src/icons/Camera.d.ts
+declare const Camera: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#endregion
 //#region src/icons/Cast.d.ts
 declare const Cast: (props?: Partial<SVGProps>) => SVGSVGElement;
-//#endregion
-//#region src/icons/Check.d.ts
-declare const Check: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/CheckCircle.d.ts
 declare const CheckCircle: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/CheckSquare.d.ts
 declare const CheckSquare: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#endregion
+//#region src/icons/Check.d.ts
+declare const Check: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/ChevronDown.d.ts
 declare const ChevronDown: (props?: Partial<SVGProps>) => SVGSVGElement;
@@ -568,9 +568,6 @@ declare const Clipboard: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#region src/icons/Clock.d.ts
 declare const Clock: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/Cloud.d.ts
-declare const Cloud: (props?: Partial<SVGProps>) => SVGSVGElement;
-//#endregion
 //#region src/icons/CloudDrizzle.d.ts
 declare const CloudDrizzle: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
@@ -585,6 +582,9 @@ declare const CloudRain: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/CloudSnow.d.ts
 declare const CloudSnow: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#endregion
+//#region src/icons/Cloud.d.ts
+declare const Cloud: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/Code.d.ts
 declare const Code: (props?: Partial<SVGProps>) => SVGSVGElement;
@@ -655,23 +655,23 @@ declare const Delete: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#region src/icons/Disc.d.ts
 declare const Disc: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/Divide.d.ts
-declare const Divide: (props?: Partial<SVGProps>) => SVGSVGElement;
-//#endregion
 //#region src/icons/DivideCircle.d.ts
 declare const DivideCircle: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/DivideSquare.d.ts
 declare const DivideSquare: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
+//#region src/icons/Divide.d.ts
+declare const Divide: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#endregion
 //#region src/icons/DollarSign.d.ts
 declare const DollarSign: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/Download.d.ts
-declare const Download: (props?: Partial<SVGProps>) => SVGSVGElement;
-//#endregion
 //#region src/icons/DownloadCloud.d.ts
 declare const DownloadCloud: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#endregion
+//#region src/icons/Download.d.ts
+declare const Download: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/Dribbble.d.ts
 declare const Dribbble: (props?: Partial<SVGProps>) => SVGSVGElement;
@@ -679,23 +679,23 @@ declare const Dribbble: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#region src/icons/Droplet.d.ts
 declare const Droplet: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/Edit.d.ts
-declare const Edit: (props?: Partial<SVGProps>) => SVGSVGElement;
-//#endregion
 //#region src/icons/Edit2.d.ts
 declare const Edit2: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/Edit3.d.ts
 declare const Edit3: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
+//#region src/icons/Edit.d.ts
+declare const Edit: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#endregion
 //#region src/icons/ExternalLink.d.ts
 declare const ExternalLink: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/Eye.d.ts
-declare const Eye: (props?: Partial<SVGProps>) => SVGSVGElement;
-//#endregion
 //#region src/icons/EyeOff.d.ts
 declare const EyeOff: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#endregion
+//#region src/icons/Eye.d.ts
+declare const Eye: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/Facebook.d.ts
 declare const Facebook: (props?: Partial<SVGProps>) => SVGSVGElement;
@@ -709,9 +709,6 @@ declare const Feather: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#region src/icons/Figma.d.ts
 declare const Figma: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/File.d.ts
-declare const File: (props?: Partial<SVGProps>) => SVGSVGElement;
-//#endregion
 //#region src/icons/FileMinus.d.ts
 declare const FileMinus: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
@@ -720,6 +717,9 @@ declare const FilePlus: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/FileText.d.ts
 declare const FileText: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#endregion
+//#region src/icons/File.d.ts
+declare const File: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/Film.d.ts
 declare const Film: (props?: Partial<SVGProps>) => SVGSVGElement;
@@ -730,14 +730,14 @@ declare const Filter: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#region src/icons/Flag.d.ts
 declare const Flag: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/Folder.d.ts
-declare const Folder: (props?: Partial<SVGProps>) => SVGSVGElement;
-//#endregion
 //#region src/icons/FolderMinus.d.ts
 declare const FolderMinus: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/FolderPlus.d.ts
 declare const FolderPlus: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#endregion
+//#region src/icons/Folder.d.ts
+declare const Folder: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/Framer.d.ts
 declare const Framer: (props?: Partial<SVGProps>) => SVGSVGElement;
@@ -820,11 +820,11 @@ declare const Layout: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#region src/icons/LifeBuoy.d.ts
 declare const LifeBuoy: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/Link.d.ts
-declare const Link: (props?: Partial<SVGProps>) => SVGSVGElement;
-//#endregion
 //#region src/icons/Link2.d.ts
 declare const Link2: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#endregion
+//#region src/icons/Link.d.ts
+declare const Link: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/Linkedin.d.ts
 declare const Linkedin: (props?: Partial<SVGProps>) => SVGSVGElement;
@@ -847,17 +847,17 @@ declare const LogOut: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#region src/icons/Mail.d.ts
 declare const Mail: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/Map.d.ts
-declare const Map: (props?: Partial<SVGProps>) => SVGSVGElement;
-//#endregion
 //#region src/icons/MapPin.d.ts
 declare const MapPin: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/Maximize.d.ts
-declare const Maximize: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#region src/icons/Map.d.ts
+declare const Map: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/Maximize2.d.ts
 declare const Maximize2: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#endregion
+//#region src/icons/Maximize.d.ts
+declare const Maximize: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/Meh.d.ts
 declare const Meh: (props?: Partial<SVGProps>) => SVGSVGElement;
@@ -871,26 +871,26 @@ declare const MessageCircle: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#region src/icons/MessageSquare.d.ts
 declare const MessageSquare: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/Mic.d.ts
-declare const Mic: (props?: Partial<SVGProps>) => SVGSVGElement;
-//#endregion
 //#region src/icons/MicOff.d.ts
 declare const MicOff: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/Minimize.d.ts
-declare const Minimize: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#region src/icons/Mic.d.ts
+declare const Mic: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/Minimize2.d.ts
 declare const Minimize2: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/Minus.d.ts
-declare const Minus: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#region src/icons/Minimize.d.ts
+declare const Minimize: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/MinusCircle.d.ts
 declare const MinusCircle: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/MinusSquare.d.ts
 declare const MinusSquare: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#endregion
+//#region src/icons/Minus.d.ts
+declare const Minus: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/Monitor.d.ts
 declare const Monitor: (props?: Partial<SVGProps>) => SVGSVGElement;
@@ -913,11 +913,11 @@ declare const Move: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#region src/icons/Music.d.ts
 declare const Music: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/Navigation.d.ts
-declare const Navigation: (props?: Partial<SVGProps>) => SVGSVGElement;
-//#endregion
 //#region src/icons/Navigation2.d.ts
 declare const Navigation2: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#endregion
+//#region src/icons/Navigation.d.ts
+declare const Navigation: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/Octagon.d.ts
 declare const Octagon: (props?: Partial<SVGProps>) => SVGSVGElement;
@@ -928,20 +928,17 @@ declare const Package: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#region src/icons/Paperclip.d.ts
 declare const Paperclip: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/Pause.d.ts
-declare const Pause: (props?: Partial<SVGProps>) => SVGSVGElement;
-//#endregion
 //#region src/icons/PauseCircle.d.ts
 declare const PauseCircle: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#endregion
+//#region src/icons/Pause.d.ts
+declare const Pause: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/PenTool.d.ts
 declare const PenTool: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/Percent.d.ts
 declare const Percent: (props?: Partial<SVGProps>) => SVGSVGElement;
-//#endregion
-//#region src/icons/Phone.d.ts
-declare const Phone: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/PhoneCall.d.ts
 declare const PhoneCall: (props?: Partial<SVGProps>) => SVGSVGElement;
@@ -961,23 +958,26 @@ declare const PhoneOff: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#region src/icons/PhoneOutgoing.d.ts
 declare const PhoneOutgoing: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
+//#region src/icons/Phone.d.ts
+declare const Phone: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#endregion
 //#region src/icons/PieChart.d.ts
 declare const PieChart: (props?: Partial<SVGProps>) => SVGSVGElement;
-//#endregion
-//#region src/icons/Play.d.ts
-declare const Play: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/PlayCircle.d.ts
 declare const PlayCircle: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/Plus.d.ts
-declare const Plus: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#region src/icons/Play.d.ts
+declare const Play: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/PlusCircle.d.ts
 declare const PlusCircle: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/PlusSquare.d.ts
 declare const PlusSquare: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#endregion
+//#region src/icons/Plus.d.ts
+declare const Plus: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/Pocket.d.ts
 declare const Pocket: (props?: Partial<SVGProps>) => SVGSVGElement;
@@ -1030,17 +1030,17 @@ declare const Server: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#region src/icons/Settings.d.ts
 declare const Settings: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/Share.d.ts
-declare const Share: (props?: Partial<SVGProps>) => SVGSVGElement;
-//#endregion
 //#region src/icons/Share2.d.ts
 declare const Share2: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/Shield.d.ts
-declare const Shield: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#region src/icons/Share.d.ts
+declare const Share: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/ShieldOff.d.ts
 declare const ShieldOff: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#endregion
+//#region src/icons/Shield.d.ts
+declare const Shield: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/ShoppingBag.d.ts
 declare const ShoppingBag: (props?: Partial<SVGProps>) => SVGSVGElement;
@@ -1129,11 +1129,11 @@ declare const ToggleRight: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#region src/icons/Tool.d.ts
 declare const Tool: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/Trash.d.ts
-declare const Trash: (props?: Partial<SVGProps>) => SVGSVGElement;
-//#endregion
 //#region src/icons/Trash2.d.ts
 declare const Trash2: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#endregion
+//#region src/icons/Trash.d.ts
+declare const Trash: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/Trello.d.ts
 declare const Trello: (props?: Partial<SVGProps>) => SVGSVGElement;
@@ -1171,14 +1171,11 @@ declare const Underline: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#region src/icons/Unlock.d.ts
 declare const Unlock: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/Upload.d.ts
-declare const Upload: (props?: Partial<SVGProps>) => SVGSVGElement;
-//#endregion
 //#region src/icons/UploadCloud.d.ts
 declare const UploadCloud: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/User.d.ts
-declare const User: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#region src/icons/Upload.d.ts
+declare const Upload: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/UserCheck.d.ts
 declare const UserCheck: (props?: Partial<SVGProps>) => SVGSVGElement;
@@ -1192,20 +1189,20 @@ declare const UserPlus: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#region src/icons/UserX.d.ts
 declare const UserX: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
+//#region src/icons/User.d.ts
+declare const User: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#endregion
 //#region src/icons/Users.d.ts
 declare const Users: (props?: Partial<SVGProps>) => SVGSVGElement;
-//#endregion
-//#region src/icons/Video.d.ts
-declare const Video: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/VideoOff.d.ts
 declare const VideoOff: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
+//#region src/icons/Video.d.ts
+declare const Video: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#endregion
 //#region src/icons/Voicemail.d.ts
 declare const Voicemail: (props?: Partial<SVGProps>) => SVGSVGElement;
-//#endregion
-//#region src/icons/Volume.d.ts
-declare const Volume: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/Volume1.d.ts
 declare const Volume1: (props?: Partial<SVGProps>) => SVGSVGElement;
@@ -1216,20 +1213,20 @@ declare const Volume2: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#region src/icons/VolumeX.d.ts
 declare const VolumeX: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
+//#region src/icons/Volume.d.ts
+declare const Volume: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#endregion
 //#region src/icons/Watch.d.ts
 declare const Watch: (props?: Partial<SVGProps>) => SVGSVGElement;
-//#endregion
-//#region src/icons/Wifi.d.ts
-declare const Wifi: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/WifiOff.d.ts
 declare const WifiOff: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
+//#region src/icons/Wifi.d.ts
+declare const Wifi: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#endregion
 //#region src/icons/Wind.d.ts
 declare const Wind: (props?: Partial<SVGProps>) => SVGSVGElement;
-//#endregion
-//#region src/icons/X.d.ts
-declare const X: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/XCircle.d.ts
 declare const XCircle: (props?: Partial<SVGProps>) => SVGSVGElement;
@@ -1240,14 +1237,17 @@ declare const XOctagon: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#region src/icons/XSquare.d.ts
 declare const XSquare: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
+//#region src/icons/X.d.ts
+declare const X: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#endregion
 //#region src/icons/Youtube.d.ts
 declare const Youtube: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
-//#region src/icons/Zap.d.ts
-declare const Zap: (props?: Partial<SVGProps>) => SVGSVGElement;
-//#endregion
 //#region src/icons/ZapOff.d.ts
 declare const ZapOff: (props?: Partial<SVGProps>) => SVGSVGElement;
+//#endregion
+//#region src/icons/Zap.d.ts
+declare const Zap: (props?: Partial<SVGProps>) => SVGSVGElement;
 //#endregion
 //#region src/icons/ZoomIn.d.ts
 declare const ZoomIn: (props?: Partial<SVGProps>) => SVGSVGElement;

@@ -3,8 +3,9 @@ import van from "vanjs-core";
 import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
 import { type SVGProps } from "../types.ts";
 
-export const HardDrive = (props?: Partial<SVGProps>) => {
-  const { path, line } = van.tags(svgNamespace);
+export const HardDrive = (props: Partial<SVGProps> = {}) => {
+  const { line, path } = van.tags(svgNamespace);
+
   return FeatherIcon(
     props,
     line({
@@ -14,7 +15,8 @@ export const HardDrive = (props?: Partial<SVGProps>) => {
       y2: "12",
     }),
     path({
-      d: "M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z",
+      "d":
+        "M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z",
     }),
     line({
       x1: "6",

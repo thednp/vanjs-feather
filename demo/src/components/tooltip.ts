@@ -1,11 +1,17 @@
 import van from "vanjs-core";
-import { type ChildDom, type Props } from "vanjs-core";
+import type { ChildDom, PropsWithKnownKeys } from "vanjs-core";
+import { cn } from "../util/cn";
 
-const Tooltip = (props: Props = {}, ...children: ChildDom[]) => {
+type TooltipProps = PropsWithKnownKeys<HTMLDivElement> & {
+  tip?: string;
+  class?: string;
+};
+
+const Tooltip = (props: TooltipProps = {}, ...children: ChildDom[]) => {
   const { div } = van.tags;
-  const { tip, ...rest } = props;
+  const { tip, class: className, ...rest } = props;
   const newProps = Object.assign(rest, {
-    class: "tooltip",
+    class: cn("tooltip", className),
     "data-tip": tip || "Tooltip",
   });
   return (

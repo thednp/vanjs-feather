@@ -1,6 +1,6 @@
 {
   "name": "vanjs-feather",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "🫦 Feather icons for VanJS",
   "author": "thednp",
   "license": "MIT",
@@ -69,11 +69,12 @@
     "postcss-import": "^16.1.1",
     "postcss-nesting": "^14.0.0",
     "tailwindcss": "^4.2.2",
-    "tsdown": "^0.21.6",
+    "tsdown": "^0.21.7",
     "tsup": "^8.5.1",
     "typescript": "^6.0.2",
     "vite": "^8.0.3",
     "vite-plugin-strip-comments": "^0.0.10",
+    "vite-vanjs-svg": "^0.0.14",
     "vitest": "^4.1.2"
   },
   "peerDependencies": {
@@ -81,7 +82,7 @@
   },
   "dependencies": {
     "vanjs-core": "^1.6.0",
-    "vite-plugin-vanjs": "^0.1.12"
+    "vite-plugin-vanjs": "^0.1.14"
   },
   "packageManager": "pnpm@10.33.0"
 }

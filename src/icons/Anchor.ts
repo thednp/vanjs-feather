@@ -3,14 +3,15 @@ import van from "vanjs-core";
 import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
 import { type SVGProps } from "../types.ts";
 
-export const Anchor = (props?: Partial<SVGProps>) => {
-  const { path, circle, line } = van.tags(svgNamespace);
+export const Anchor = (props: Partial<SVGProps> = {}) => {
+  const { circle, line, path } = van.tags(svgNamespace);
+
   return FeatherIcon(
     props,
     circle({
       cx: "12",
       cy: "5",
-      r: "3",
+      "r": "3",
     }),
     line({
       x1: "12",
@@ -18,8 +19,6 @@ export const Anchor = (props?: Partial<SVGProps>) => {
       x2: "12",
       y2: "8",
     }),
-    path({
-      d: "M5 12H2a10 10 0 0 0 20 0h-3",
-    }),
+    path({ "d": "M5 12H2a10 10 0 0 0 20 0h-3" }),
   );
 };

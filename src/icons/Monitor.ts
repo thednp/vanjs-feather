@@ -3,13 +3,14 @@ import van from "vanjs-core";
 import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
 import { type SVGProps } from "../types.ts";
 
-export const Monitor = (props?: Partial<SVGProps>) => {
-  const { line, rect } = van.tags(svgNamespace);
+export const Monitor = (props: Partial<SVGProps> = {}) => {
+  const { rect, line } = van.tags(svgNamespace);
+
   return FeatherIcon(
     props,
     rect({
-      x: "2",
-      y: "3",
+      "x": "2",
+      "y": "3",
       width: "20",
       height: "14",
       rx: "2",

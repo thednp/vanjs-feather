@@ -3,8 +3,9 @@ import van from "vanjs-core";
 import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
 import { type SVGProps } from "../types.ts";
 
-export const Percent = (props?: Partial<SVGProps>) => {
-  const { circle, line } = van.tags(svgNamespace);
+export const Percent = (props: Partial<SVGProps> = {}) => {
+  const { line, circle } = van.tags(svgNamespace);
+
   return FeatherIcon(
     props,
     line({
@@ -16,12 +17,12 @@ export const Percent = (props?: Partial<SVGProps>) => {
     circle({
       cx: "6.5",
       cy: "6.5",
-      r: "2.5",
+      "r": "2.5",
     }),
     circle({
       cx: "17.5",
       cy: "17.5",
-      r: "2.5",
+      "r": "2.5",
     }),
   );
 };

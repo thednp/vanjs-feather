@@ -3,13 +3,14 @@ import van from "vanjs-core";
 import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
 import { type SVGProps } from "../types.ts";
 
-export const Speaker = (props?: Partial<SVGProps>) => {
-  const { circle, line, rect } = van.tags(svgNamespace);
+export const Speaker = (props: Partial<SVGProps> = {}) => {
+  const { rect, circle, line } = van.tags(svgNamespace);
+
   return FeatherIcon(
     props,
     rect({
-      x: "4",
-      y: "2",
+      "x": "4",
+      "y": "2",
       width: "16",
       height: "20",
       rx: "2",
@@ -18,7 +19,7 @@ export const Speaker = (props?: Partial<SVGProps>) => {
     circle({
       cx: "12",
       cy: "14",
-      r: "4",
+      "r": "4",
     }),
     line({
       x1: "12",

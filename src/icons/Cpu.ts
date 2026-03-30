@@ -3,21 +3,22 @@ import van from "vanjs-core";
 import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
 import { type SVGProps } from "../types.ts";
 
-export const Cpu = (props?: Partial<SVGProps>) => {
-  const { line, rect } = van.tags(svgNamespace);
+export const Cpu = (props: Partial<SVGProps> = {}) => {
+  const { rect, line } = van.tags(svgNamespace);
+
   return FeatherIcon(
     props,
     rect({
-      x: "4",
-      y: "4",
+      "x": "4",
+      "y": "4",
       width: "16",
       height: "16",
       rx: "2",
       ry: "2",
     }),
     rect({
-      x: "9",
-      y: "9",
+      "x": "9",
+      "y": "9",
       width: "6",
       height: "6",
     }),

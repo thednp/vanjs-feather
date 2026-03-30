@@ -1,14 +1,14 @@
-import van from "vanjs-core";
+import van, { ChildDom } from "vanjs-core";
 import * as vanX from "vanjs-ext";
-import copyToClipboard from "../util/copyToClipboard";
 import * as VanJSFeather from "../../../src/index";
 import Tooltip from "./tooltip";
+import { Modal, showModal } from "./modal";
 import Tags from "./tags.json";
 
 import { Activity, ArrowRight } from "../../../src/index";
 
 const Icons = Object.entries(VanJSFeather).map(([name, icon]) => {
-  const lowerName = name.toLowerCase() as keyof typeof Tags;
+  const lowerName = name.toLowerCase() as (string & keyof typeof Tags);
   const tags = [lowerName, ...(Tags[lowerName] || [])];
   return {
     name,
@@ -30,6 +30,9 @@ export default function Main() {
   const sWidth = van.state(1);
   const count = van.state(64);
   const query = van.state("");
+  const modalId = "confirmModal";
+  const modalContent = van.state<{ code: ChildDom }>({ code: "" });
+  const ModalContentComponent = () => modalContent.val.code;
 
   const loader = div(
     {
@@ -96,7 +99,7 @@ export default function Main() {
           icon: (Icons.find(({ name }) =>
             name === "Info"
           ) as typeof Icons[0]).icon,
-          lowerName: "not-found" as "tag",
+          lowerName: "not-found" as keyof typeof Tags,
           tags: [],
         }]);
       }
@@ -201,10 +204,10 @@ export default function Main() {
       div(
         {
           class:
-            "container h-[100vh] lg:h-[75vh] px-5 mx-auto flex flex-row items-center",
+            "container h-screen lg:h-[75vh] px-5 mx-auto flex flex-row items-center",
         },
         div(
-          { class: "w-full flex flex-row gap-[5rem] flex-wrap" },
+          { class: "w-full flex flex-row gap-20 flex-wrap" },
           div(
             { id: "installation", class: "lg:w-[calc(50%-2.5rem)]" },
             h2(
@@ -294,7 +297,7 @@ export default function Main() {
         ),
         input({
           class:
-            "ml-auto min-w-20 w-48 px-3 py-2 border border-gray-500/30 rounded autofill:!bg-transparent",
+            "ml-auto min-w-20 w-48 px-3 py-2 border border-gray-500/30 rounded autofill:bg-transparent!",
           placeholder: "Find icon",
           name: "query",
           id: "query",
@@ -313,7 +316,12 @@ export default function Main() {
         }),
         List.icons,
         (item) => {
-          const { name, icon, lowerName } = item.val;
+          const { name, icon } = item.val;
+          const lowerName = name.toLowerCase();
+          const realName = lowerName === "not-found" ? "No icon found" : name;
+          const iconProps =
+            `{\n  width: ${size.val},\n  height: ${size.val},\n  "stroke-width": ${sWidth.val},\n}`;
+          const clip = `${name}(${iconProps})`;
 
           return Tooltip(
             {
@@ -322,11 +330,21 @@ export default function Main() {
             button(
               {
                 type: "button",
-                "data-clip":
-                  `${name}({ width: ${size.val}, height: ${size.val}, "stroke-width": ${sWidth.val} })`,
-                "data-target": `feather-icon-${lowerName}`,
-                onclick: lowerName !== "not-found" as "tag"
-                  ? copyToClipboard
+                onclick: lowerName !== "not-found" as keyof typeof Tags
+                  ? (e) => {
+                    e.preventDefault();
+
+                    if (clip?.length) {
+                      navigator.clipboard.writeText(clip);
+                      modalContent.val = {
+                        code: pre(
+                          { class: "p-3 bg-gray-800 rounded mt-3" },
+                          clip,
+                        ),
+                      };
+                    }
+                    showModal(modalId);
+                  }
                   : null,
                 class:
                   "w-full flex flex-col items-center cursor-pointer p-3 py-8 xl:py-12 rounded-[5px] bg-slate-50 hover:bg-slate-200 dark:bg-slate-950 dark:hover:bg-slate-800",
@@ -343,13 +361,18 @@ export default function Main() {
                   class:
                     "text-[12px] font-semibold font-stretch-90% text-black dark:text-white",
                 },
-                name,
+                realName,
               ),
             ),
           );
         },
       ),
       loader,
+      Modal(
+        { id: modalId, title: "VanJS Feather" },
+        p("Copied Icon Component to clipboard:"),
+        ModalContentComponent,
+      ),
     ),
   );
 }

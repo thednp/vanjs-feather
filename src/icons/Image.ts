@@ -3,13 +3,14 @@ import van from "vanjs-core";
 import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
 import { type SVGProps } from "../types.ts";
 
-export const Image = (props?: Partial<SVGProps>) => {
-  const { polyline, circle, rect } = van.tags(svgNamespace);
+export const Image = (props: Partial<SVGProps> = {}) => {
+  const { rect, circle, polyline } = van.tags(svgNamespace);
+
   return FeatherIcon(
     props,
     rect({
-      x: "3",
-      y: "3",
+      "x": "3",
+      "y": "3",
       width: "18",
       height: "18",
       rx: "2",
@@ -18,10 +19,8 @@ export const Image = (props?: Partial<SVGProps>) => {
     circle({
       cx: "8.5",
       cy: "8.5",
-      r: "1.5",
+      "r": "1.5",
     }),
-    polyline({
-      points: "21 15 16 10 5 21",
-    }),
+    polyline({ points: "21 15 16 10 5 21" }),
   );
 };

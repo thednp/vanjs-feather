@@ -3,15 +3,12 @@ import van from "vanjs-core";
 import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
 import { type SVGProps } from "../types.ts";
 
-export const ChevronsUp = (props?: Partial<SVGProps>) => {
+export const ChevronsUp = (props: Partial<SVGProps> = {}) => {
   const { polyline } = van.tags(svgNamespace);
+
   return FeatherIcon(
     props,
-    polyline({
-      points: "17 11 12 6 7 11",
-    }),
-    polyline({
-      points: "17 18 12 13 7 18",
-    }),
+    polyline({ points: "17 11 12 6 7 11" }),
+    polyline({ points: "17 18 12 13 7 18" }),
   );
 };

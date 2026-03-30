@@ -3,13 +3,14 @@ import van from "vanjs-core";
 import { FeatherIcon, svgNamespace } from "../FeatherIcon.ts";
 import { type SVGProps } from "../types.ts";
 
-export const ToggleLeft = (props?: Partial<SVGProps>) => {
-  const { circle, rect } = van.tags(svgNamespace);
+export const ToggleLeft = (props: Partial<SVGProps> = {}) => {
+  const { rect, circle } = van.tags(svgNamespace);
+
   return FeatherIcon(
     props,
     rect({
-      x: "1",
-      y: "5",
+      "x": "1",
+      "y": "5",
       width: "22",
       height: "14",
       rx: "7",
@@ -18,7 +19,7 @@ export const ToggleLeft = (props?: Partial<SVGProps>) => {
     circle({
       cx: "8",
       cy: "12",
-      r: "3",
+      "r": "3",
     }),
   );
 };

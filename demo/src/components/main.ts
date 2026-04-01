@@ -130,7 +130,6 @@ export default function Main() {
       fetching.val === true;
 
       fetchIcons(newList).then((results) => {
-        console.log(results)
         vanX.replace(List.icons, results);
         fetching.val === false;
       });

@@ -137,7 +137,6 @@ let allIcons: Record<string, SVGTag>;
 export const fetchIcons = async (items: string[]) => {
   const len = items.length;
   allIcons = allIcons || await import(`../../../src/index.ts`);
-  console.log(allIcons)
 
   const newIcons: Record<string, SVGTag>[] = [];
 

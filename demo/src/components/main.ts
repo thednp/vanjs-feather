@@ -2,17 +2,25 @@ import van, { ChildDom } from "vanjs-core";
 import * as vanX from "vanjs-ext";
 import Tooltip from "./tooltip";
 import { Modal, showModal } from "./modal";
-import { TagNames, TagsEntries, type TagsType } from "./tags";
+import { getTags, type TagEntries } from "./tags.ts";
 import { fetchIcons, startIcons } from "./fetchIcons";
-// import Tags from "./tags.json";
 
 import { Info } from "../../../src/icons/Info.ts";
 import { Activity } from "../../../src/icons/Activity";
 import { ArrowRight } from "../../../src/icons/ArrowRight";
 // import { type SVGTag } from "../../../src/types.ts";
 
-// const TagsEntries = Object.entries(Tags);
-// const TagNames = TagsEntries.map(([name]) => name);
+let TagNames: string[] = []
+let TagsEntries: TagEntries = []
+
+const checkTags = async () => {
+  if (!TagNames.length) {
+    const { entries, names } = await getTags();
+    TagsEntries = entries;
+    TagNames = names;
+    // console.log({ entries, names })
+  }
+}
 
 const { circle, path, svg } = van.tags("http://www.w3.org/2000/svg");
 const { main, div, button, span, h2, img, p, pre, a, label, input } = van.tags;
@@ -65,16 +73,15 @@ export default function Main() {
 
   const startObserver = () => {
     if (typeof window === "undefined") return;
-    const observer = new IntersectionObserver(
-      async ([entry] /*, currentObserver*/) => {
-        const oldCount = count.oldVal;
-        if (entry.isIntersecting && oldCount < TagNames.length) {
-          const remaining = TagNames.length - oldCount;
-          count.val = oldCount + (remaining < 64 ? remaining : 64);
-        }
-      },
-      { rootMargin: "100px" },
-    );
+    const observer = new IntersectionObserver(async ([entry] /*currentObserver*/) => {
+      if (!entry.isIntersecting) return;
+      const oldCount = count.oldVal;
+      !isInitial.oldVal && await checkTags();
+      if (TagNames.length && oldCount < TagNames.length) {
+        const remaining = TagNames.length - oldCount;
+        count.val = oldCount + (remaining < 64 ? remaining : 64);
+      }
+    }, { rootMargin: "100px" });
     observer.observe(Loader);
   };
 
@@ -91,14 +98,17 @@ export default function Main() {
       return;
     }
 
-    if (currentQuery.length) {
+    !isInitial.oldVal && await checkTags();
+    if (!TagsEntries.length) return;
+
+    if (currentQuery.length > 2 && !fetching.oldVal) {
       const searchResults = TagsEntries.filter(([name, tags]) => {
         const lowerName = name.toLowerCase();
         return currentQueryMulti.some((q) => lowerName === q) ||
           currentQueryMulti.some((q) => lowerName.includes(q)) ||
-          tags.some((t) =>
+          (tags && tags.length && tags.some((t) =>
             currentQueryMulti.some((q) => q === t || t.includes(q))
-          );
+          ));
       });
       if (searchResults.length) {
         const iconsList = searchResults.map(([val]) => val);
@@ -344,7 +354,7 @@ export default function Main() {
             button(
               {
                 type: "button",
-                onclick: lowerName !== "not-found" as keyof TagsType
+                onclick: lowerName !== "not-found" as "Activity"
                   ? (e) => {
                     e.preventDefault();
 

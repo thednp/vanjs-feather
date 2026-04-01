@@ -1,6 +1,13 @@
-import Tags from "./tags.json";
+export type TagEntries = [string, string[]][];
 
-export type TagsType = [string, string[]][];
+let Tags: typeof import("./tags.json");
 
-export const TagsEntries = Object.entries(Tags);
-export const TagNames = TagsEntries.map(([name]) => name);
+export const getTags = async () => {
+  Tags = Tags || await import("./tags.json");
+  const entries = Object.entries(Tags);
+  const names = entries.map(([name]) => name);
+  return {
+    entries,
+    names,
+  }
+};

@@ -272,7 +272,7 @@ export default function Main() {
                   { class: "text-sky-800 dark:text-sky-300" },
                   "// import the icon(s)\n",
                 ),
-                'import { Activity } from "vanjs-feather";\n\n',
+                'import { Activity } from "vanjs-feather/icons/Activity";\n\n',
                 span(
                   { class: "text-sky-800 dark:text-sky-300" },
                   "// call anywhere within VanJS codespace\n",

@@ -5,7 +5,8 @@ import path from "node:path";
 import url from "node:url";
 import process from "node:process";
 import express from "express";
-import * as icons from "vanjs-feather";
+// import * as icons from "vanjs-feather";
+import * as icons from "../dist/index.js";
 
 // Constants
 const isProduction = process.env.NODE_ENV === "production";

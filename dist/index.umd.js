@@ -1,4 +1,4 @@
-/*! vanjs-feather UMD v0.1.7 | thednp © 2026 | MIT-License */
+/*! vanjs-feather UMD v0.2.0 | thednp © 2026 | MIT-License */
 (function(global, factory) {
 	typeof exports === "object" && typeof module !== "undefined" ? factory(exports, require("vanjs-core")) : typeof define === "function" && define.amd ? define(["exports", "vanjs-core"], factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, factory(global.VanJSFeather = {}, global.van));
 })(this, function(exports, vanjs_core) {
@@ -20,12 +20,12 @@
 		}
 		return to;
 	};
-	var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", {
+	var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(isNodeMode || !mod || !mod.__esModule || !__hasOwnProp.call(mod, "default") ? __defProp(target, "default", {
 		value: mod,
 		enumerable: true
 	}) : target, mod));
 	//#endregion
-	vanjs_core = __toESM(vanjs_core);
+	vanjs_core = __toESM(vanjs_core, 1);
 	//#region src/FeatherIcon.ts
 	const svgNamespace = "http://www.w3.org/2000/svg";
 	const FeatherIcon = (initialProps = {}, ...children) => {

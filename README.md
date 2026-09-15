@@ -46,7 +46,7 @@ deno install npm:vanjs-feather
 You can call any icon(s) within your VanJS app: 
 ```ts
 import van from "vanjs-core";
-import { Activity } from "vanjs-feather";
+import { Activity } from "vanjs-feather/icons/Activity";
 const { main } = van.tags;
 
 const App = () => {
@@ -62,7 +62,7 @@ van.add(document.body, App());
 When using [vite-plugin-vanjs](https://github/thednp/vite-plugin-vanjs) with JSX transformation enabled you can call any icon(s) within your VanJS app: 
 ```tsx
 import van from "vanjs-core";
-import { Activity } from "vanjs-feather";
+import { Activity } from "vanjs-feather/icons/Activity";
 
 const App = () => {
    return <main>

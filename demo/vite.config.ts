@@ -2,6 +2,9 @@ import { defineConfig } from "vite";
 import path from "path";
 import vanjs from "vite-plugin-vanjs";
 import tailwind from "@tailwindcss/vite";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // import generateIcons from "../generate";
 // if (typeof generateIcons === "function") {

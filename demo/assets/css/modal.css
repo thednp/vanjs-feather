@@ -23,7 +23,10 @@
   overflow: clip;
 }
 
-.modal.modal-open, .modal[open], .modal:target, .modal-toggle:checked + .modal {
+.modal.modal-open,
+.modal[open],
+.modal:target,
+.modal-toggle:checked + .modal {
   pointer-events: auto;
   visibility: visible;
   opacity: 1;
@@ -65,13 +68,7 @@
   box-shadow: 0 25px 50px -12px #00000040;
 }
 
-:is(
-  .modal.modal-open,
-  .modal[open],
-  .modal:target,
-  .modal-toggle:checked + .modal
-)
-  .modal-box {
+:is(.modal.modal-open, .modal[open], .modal:target, .modal-toggle:checked + .modal) .modal-box {
   opacity: 1;
   translate: 0;
   scale: 1;

@@ -17,25 +17,25 @@
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.5.11",
-    "@tailwindcss/postcss": "^4.2.2",
-    "@tailwindcss/typography": "^0.5.19",
-    "compression": "^1.8.1",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@tailwindcss/typography": "^0.5.20",
+    "compression": "^1.8.2",
     "express": "^5.2.1",
     "mini-van-plate": "^0.6.3",
-    "postcss": "^8.5.8",
-    "postcss-nesting": "^14.0.0",
+    "postcss": "^8.5.28",
+    "postcss-nesting": "^14.0.1",
     "sirv": "^3.0.2",
-    "tailwindcss": "^4.2.2",
-    "vanjs-core": "^1.6.0",
+    "tailwindcss": "^4.3.3",
+    "vanjs-core": "^1.6.1",
     "vanjs-ext": "^0.6.3",
-    "vite-plugin-vanjs": "^0.1.14"
+    "vite-plugin-vanjs": "^0.1.25"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.2.2",
+    "@tailwindcss/vite": "^4.3.3",
     "@types/express": "^5.0.6",
-    "@types/node": "^25.5.0",
+    "@types/node": "^26.5.1",
     "cross-env": "^10.1.0",
-    "typescript": "^6.0.2",
-    "vite": "^8.0.3"
+    "typescript": "^7.0.2",
+    "vite": "^8.3.0"
   }
 }

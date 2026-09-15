@@ -9,5 +9,5 @@ export const getTags = async () => {
   return {
     entries,
     names,
-  }
+  };
 };

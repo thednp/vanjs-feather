@@ -17,6 +17,7 @@ export default defineConfig([
   { // ES
     entry: {
       index: "src/index.ts",
+      "icons/*": "src/icons/*.ts",
     },
     target: "esnext",
     platform: "neutral",
@@ -29,7 +30,7 @@ export default defineConfig([
     banner: banner.replace("$package", "ESM"),
     plugins: [stripComments({ type: "keep-jsdoc" })],
     deps: {
-      skipNodeModulesBundle: true,
+      // skipNodeModulesBundle: true,
       neverBundle: ["vanjs-core"]
     }
     
@@ -53,7 +54,7 @@ export default defineConfig([
       }
     },
     deps: {
-      skipNodeModulesBundle: true,
+      // skipNodeModulesBundle: true,
       neverBundle: ["vanjs-core"]
     }
   },

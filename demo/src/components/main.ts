@@ -10,8 +10,8 @@ import { Activity } from "../../../src/icons/Activity";
 import { ArrowRight } from "../../../src/icons/ArrowRight";
 // import { type SVGTag } from "../../../src/types.ts";
 
-let TagNames: string[] = []
-let TagsEntries: TagEntries = []
+let TagNames: string[] = [];
+let TagsEntries: TagEntries = [];
 
 const checkTags = async () => {
   if (!TagNames.length) {
@@ -20,7 +20,7 @@ const checkTags = async () => {
     TagNames = names;
     // console.log({ entries, names })
   }
-}
+};
 
 const { circle, path, svg } = van.tags("http://www.w3.org/2000/svg");
 const { main, div, button, span, h2, img, p, pre, a, label, input } = van.tags;
@@ -73,15 +73,18 @@ export default function Main() {
 
   const startObserver = () => {
     if (typeof window === "undefined") return;
-    const observer = new IntersectionObserver(async ([entry] /*currentObserver*/) => {
-      if (!entry.isIntersecting) return;
-      const oldCount = count.oldVal;
-      !isInitial.oldVal && await checkTags();
-      if (TagNames.length && oldCount < TagNames.length) {
-        const remaining = TagNames.length - oldCount;
-        count.val = oldCount + (remaining < 64 ? remaining : 64);
-      }
-    }, { rootMargin: "100px" });
+    const observer = new IntersectionObserver(
+      async ([entry] /*currentObserver*/) => {
+        if (!entry.isIntersecting) return;
+        const oldCount = count.oldVal;
+        !isInitial.oldVal && await checkTags();
+        if (TagNames.length && oldCount < TagNames.length) {
+          const remaining = TagNames.length - oldCount;
+          count.val = oldCount + (remaining < 64 ? remaining : 64);
+        }
+      },
+      { rootMargin: "100px" },
+    );
     observer.observe(Loader);
   };
 
@@ -106,9 +109,10 @@ export default function Main() {
         const lowerName = name.toLowerCase();
         return currentQueryMulti.some((q) => lowerName === q) ||
           currentQueryMulti.some((q) => lowerName.includes(q)) ||
-          (tags && tags.length && tags.some((t) =>
-            currentQueryMulti.some((q) => q === t || t.includes(q))
-          ));
+          (tags && tags.length &&
+            tags.some((t) =>
+              currentQueryMulti.some((q) => q === t || t.includes(q))
+            ));
       });
       if (searchResults.length) {
         const iconsList = searchResults.map(([val]) => val);
